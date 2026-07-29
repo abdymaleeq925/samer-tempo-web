@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "Samer Tempo | Ersatzteile für Nutzfahrzeuge und Anhänger",
+    "description": "Elektrokabel, Tankdeckel, Reparatursätze, Luftkupplungen und Diebstahlsicherungen für Nutzfahrzeuge und Anhänger."
+  },
+  "navigation": {
+    "home": "Startseite",
+    "catalog": "Katalog",
+    "categories": "Kategorien",
+    "about": "Über uns",
+    "contacts": "Kontakt",
+    "requestQuote": "Angebot anfordern"
+  },
+  "common": {
+    "searchPlaceholder": "Suche nach OEM, Cross-Referenz oder Name...",
+    "searchButton": "Suchen",
+    "viewDetails": "Details anzeigen",
+    "downloadPdf": "PDF-Katalog herunterladen",
+    "oemNumber": "OEM-Nummer",
+    "crossReferences": "Cross-Referenzen",
+    "specifications": "Technische Daten",
+    "videoReview": "Video-Review",
+    "inStock": "Auf Lager",
+    "inquireNow": "Jetzt anfragen",
+    "sendRequest": "Anfrage senden",
+    "close": "Schließen",
+    "allCategories": "Alle Kategorien"
+  },
+  "hero": {
+    "title": "Nutzfahrzeugkomponenten & Exportlösungen",
+    "subtitle": "Hochwertige Elektrowendeln, Bremsköpfe und Kraftstoff-Diebstahlsicherungen für europäische LKW und Anhänger.",
+    "quickSearchTitle": "Teilesuche nach OEM oder Artikelnummer"
+  },
+  "sections": {
+    "featuredProducts": "Empfohlene Produkte",
+    "topCategories": "Hauptkategorien",
+    "whyChooseUs": "Ihre Vorteile mit uns",
+    "exportMarkets": "Globale Liefernetze"
+  },
+  "product": {
+    "description": "Produktbeschreibung",
+    "application": "Passend für Fahrzeuge & Achsen",
+    "packaging": "Verpackung & Mindestbestellmenge",
+    "relatedProducts": "Ähnliche Artikel",
+    "watchOnYoutube": "Übersicht auf YouTube ansehen"
+  },
+  "contactForm": {
+    "title": "B2B-Angebot anfordern",
+    "subtitle": "Füllen Sie das Formular aus, um Großhandelspreise und Lieferzeiten zu erhalten.",
+    "name": "Vollständiger Name / Firma",
+    "email": "Geschäftliche E-Mail",
+    "phone": "Telefon / WhatsApp",
+    "message": "Benötigte OEM-Nummern oder Teileliste...",
+    "submit": "Anfrage absenden"
+  }
+}

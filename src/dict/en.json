@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "Samer Tempo | Spare Parts for Commercial Vehicles and Trailers",
+    "description": "Electrical cables, tank caps, repair kits, air couplings, and anti-theft systems for commercial vehicles and trailers."
+  },
+  "navigation": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "categories": "Categories",
+    "about": "About Us",
+    "contacts": "Contacts",
+    "requestQuote": "Request Quote"
+  },
+  "common": {
+    "searchPlaceholder": "Search by OEM, Cross-reference, or Part Name...",
+    "searchButton": "Search",
+    "viewDetails": "View Details",
+    "downloadPdf": "Download PDF Catalog",
+    "oemNumber": "OEM Number",
+    "crossReferences": "Cross References",
+    "specifications": "Technical Specifications",
+    "videoReview": "Video Review",
+    "inStock": "In Stock",
+    "inquireNow": "Inquire Now",
+    "sendRequest": "Send Request",
+    "close": "Close",
+    "allCategories": "All Categories"
+  },
+  "hero": {
+    "title": "Commercial Vehicle Components & Export Solutions",
+    "subtitle": "Premium quality electrical spiralled cables, air couplings, and anti-theft fuel protection for European trucks and trailers.",
+    "quickSearchTitle": "Find Parts by OEM or Article"
+  },
+  "sections": {
+    "featuredProducts": "Featured Products",
+    "topCategories": "Main Product Categories",
+    "whyChooseUs": "Why Partner With Us",
+    "exportMarkets": "Global Export Reach"
+  },
+  "product": {
+    "description": "Product Description",
+    "application": "Compatible Vehicles & Axles",
+    "packaging": "Packaging & MOQ",
+    "relatedProducts": "Related Components",
+    "watchOnYoutube": "Watch Overview on YouTube"
+  },
+  "contactForm": {
+    "title": "Request B2B Quote",
+    "subtitle": "Fill out the form below to receive pricing and availability for wholesale orders.",
+    "name": "Full Name / Company",
+    "email": "Business Email",
+    "phone": "Phone Number (WhatsApp)",
+    "message": "Part numbers or list of items required...",
+    "submit": "Submit RFQ"
+  }
+}

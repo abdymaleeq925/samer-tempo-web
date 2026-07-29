@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "Samer Tempo | Ticari Araç ve Treyler Yedek Parçaları",
+    "description": "Ticari araçlar ve treylerler için elektrik kabloları, depo kapakları, tamir takımları, hava kaplinleri ve hırsızlık önleme sistemleri."
+  },
+  "navigation": {
+    "home": "Anasayfa",
+    "catalog": "Katalog",
+    "categories": "Kategoriler",
+    "about": "Hakkımızda",
+    "contacts": "İletişim",
+    "requestQuote": "Teklif İste"
+  },
+  "common": {
+    "searchPlaceholder": "OEM Numarası, Çapraz Kod veya Parça Adı Ara...",
+    "searchButton": "Ara",
+    "viewDetails": "Detayları Gör",
+    "downloadPdf": "PDF Kataloğu İndir",
+    "oemNumber": "OEM Numarası",
+    "crossReferences": "Çapraz Referanslar (Cross)",
+    "specifications": "Teknik Özellikler",
+    "videoReview": "Video İnceleme",
+    "inStock": "Stokta Var",
+    "inquireNow": "Fiyat Sor",
+    "sendRequest": "Talep Gönder",
+    "close": "Kapat",
+    "allCategories": "Tüm Kategoriler"
+  },
+  "hero": {
+    "title": "Ticari Araç Aksamları ve İhracat Çözümleri",
+    "subtitle": "Avrupa kamyon ve treylerleri için yüksek kaliteli elektrik spiralleri, hava kaplinleri ve yakıt güvenlik sistemleri.",
+    "quickSearchTitle": "OEM veya Kod ile Parça Bulun"
+  },
+  "sections": {
+    "featuredProducts": "Öne Çıkan Ürünler",
+    "topCategories": "Ana Ürün Kategorileri",
+    "whyChooseUs": "Neden Bizi Seçmelisiniz",
+    "exportMarkets": "Küresel İhracat Ağımız"
+  },
+  "product": {
+    "description": "Ürün Açıklaması",
+    "application": "Uyumlu Araçlar ve Dingiller",
+    "packaging": "Ambalaj ve Minimum Sipariş",
+    "relatedProducts": "İlgili Yan Ürünler",
+    "watchOnYoutube": "YouTube'da İncelemeyi İzle"
+  },
+  "contactForm": {
+    "title": "B2B Fiyat Teklifi İsteyin",
+    "subtitle": "Toptan siparişleriniz için fiyat ve teslimat süresi almak üzere formu doldurun.",
+    "name": "Ad Soyad / Firma Adı",
+    "email": "E-posta Adresi",
+    "phone": "Telefon / WhatsApp",
+    "message": "Talep edilen OEM kodları veya parça listesi...",
+    "submit": "Teklifi Gönder"
+  }
+}
