@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
@@ -9,7 +10,9 @@ import Footer from "@/components/layout/footer";
 import LenisProvider from '@/components/providers/lenis-provider';
 
 import "./globals.css";
+import { LangProvider } from "@/context/lang-context";
 
+const getCachedDictionary = cache(getDictionary);
 
 const manrope = Manrope({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
@@ -24,8 +27,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params;
-  const dict = await getDictionary(lang);
+  const lang = (await params).lang as Locale;
+  const dict = await getCachedDictionary(lang);
 
   return {
     title: dict.meta.title,
@@ -54,21 +57,25 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function RootLayout({
-  children, params
-}: Props) {
+export default async function RootLayout({ children, params }: Props) {
 
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: Locale };
+  const dict = await getCachedDictionary(lang);
   return (
     <html
       lang={lang}
-      className={`${manrope.variable} h-full antialiased`}
+      className={`${manrope.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LenisProvider>
-          <Header lang={lang}/>
-          {children}
-          <Footer lang={lang}/>
+          <LangProvider lang={lang} dict={dict}>
+            <Header/>
+              <main className="flex-1">
+                {children}
+              </main>
+            <Footer/>
+          </LangProvider>
+          
         </LenisProvider>
       </body>
     </html>

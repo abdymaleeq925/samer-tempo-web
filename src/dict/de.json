@@ -3,16 +3,33 @@
     "title": "Samer Tempo | Ersatzteile für Nutzfahrzeuge und Anhänger",
     "description": "Elektrokabel, Tankdeckel, Reparatursätze, Luftkupplungen und Diebstahlsicherungen für Nutzfahrzeuge und Anhänger."
   },
+  "accessibility": {
+    "selectLanguage": "Sprache auswählen",
+    "toggleMenu": "Navigationsmenü umschalten",
+    "toggleSubmenu": "Untermenü umschalten",
+    "mainNavLabel": "Hauptnavigation",
+    "footerNavAria": "Footer-Navigation",
+    "close": "Schließen"
+  },
   "navigation": {
     "home": "Startseite",
     "catalog": "Katalog",
     "categories": "Kategorien",
     "about": "Über uns",
     "contacts": "Kontakt",
-    "requestQuote": "Angebot anfordern"
+    "sub": {
+      "cables": "Elektrokabel & Stecker",
+      "couplings": "Pneumatik-Kupplungen & Ventile",
+      "tankCaps": "Tankdeckel & Diebstahlsicherungssysteme",
+      "repairKits": "Reparatursätze",
+      "company": "Über uns",
+      "vision": "Unsere Vision",
+      "mission": "Unsere Mission",
+      "certificates": "Zertifikate"
+    }
   },
   "common": {
-    "searchPlaceholder": "Suche nach OEM, Cross-Referenz oder Name...",
+    "searchPlaceholder": "Suche nach Artikelnummer oder OEM (z. B. 441-032-8080, S010-01)...",
     "searchButton": "Suchen",
     "viewDetails": "Details anzeigen",
     "downloadPdf": "PDF-Katalog herunterladen",
@@ -27,9 +44,38 @@
     "allCategories": "Alle Kategorien"
   },
   "hero": {
-    "title": "Nutzfahrzeugkomponenten & Exportlösungen",
-    "subtitle": "Hochwertige Elektrowendeln, Bremsköpfe und Kraftstoff-Diebstahlsicherungen für europäische LKW und Anhänger.",
-    "quickSearchTitle": "Teilesuche nach OEM oder Artikelnummer"
+    "title": "Suche nach Autoteilen",
+    "subtitle": "Geben Sie die OEM-Nummer, Artikelnummer oder Teilebezeichnung ein"
+  },
+  "features": [
+    {
+      "title": "Hohe Qualität",
+      "description": "Strenge Ersatzteilkontrolle"
+    },
+    {
+      "title": "Zertifizierte Teile",
+      "description": "ISO 9001, IATF 16949, TÜV, ADR"
+    },
+    {
+      "title": "Import & Export",
+      "description": "Weltweite B2B-Lieferung"
+    },
+    {
+      "title": "Schnelle Logistik",
+      "description": "Express-Versandoptionen"
+    }
+  ],
+  "about": {
+    "badge": "Über Samer Automotive",
+    "heading": "Ihr zuverlässiger B2B-Partner für Nutzfahrzeugkomponenten",
+    "lead": "Seit 2001 ist Samer Automotive ein führender Hersteller und Exporteur von hochpräzisen Ersatzteilen für Nutzfahrzeuge, LKW und Anhänger.",
+    "paragraph1": "Als globale Vertriebs- und Exportabteilung von Acar Metal verbinden wir fortschrittliche Fertigungskapazitäten mit nahtlosem internationalen Handel. Von der Produktentwicklung bis zum Kundendienst beliefern wir Großhändler in Europa und weltweit.",
+    "paragraph2": "Unsere Philosophie basiert auf langfristigen Partnerschaften statt kurzfristiger Gewinne. Jedes Bauteil entspricht strengsten weltweiten Qualitätsstandards, zertifiziert nach ISO 9001, TÜV und ADR.",
+    "stats": {
+      "experience": "25+ Jahre Erfahrung",
+      "export": "Globales Exportnetzwerk",
+      "certified": "TÜV- & ADR-zertifiziert"
+    }
   },
   "sections": {
     "featuredProducts": "Empfohlene Produkte",
@@ -52,5 +98,20 @@
     "phone": "Telefon / WhatsApp",
     "message": "Benötigte OEM-Nummern oder Teileliste...",
     "submit": "Anfrage absenden"
+  },
+  "footer": {
+    "description": "Herstellung und Export von Präzisionsersatzteilen für Nutzfahrzeuge, Anhänger und Pneumatiksysteme seit 2001.",
+    "navigationTitle": "Navigation",
+    "nav": {
+      "catalog": "Ersatzteilkatalog",
+      "categories": "Kategorien",
+      "about": "Über uns",
+      "contact": "Kontakt"
+    },
+    "contactTitle": "B2B-Exportzentrale",
+    "address": "Baysal Str. Nr. 24, Organisierte Industriezone, Y.Dudullu, Ümraniye / Istanbul, Türkei",
+    "rights": "Alle Rechte vorbehalten.",
+    "companyDivision": "Samer Tempo Import/Export Vertriebsabteilung",
+    "certifiedBadge": "ISO 9001 • TÜV • ADR Zertifiziert"
   }
 }

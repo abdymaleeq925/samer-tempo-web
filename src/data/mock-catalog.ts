@@ -37,7 +37,7 @@ export const MOCK_CATEGORIES: Category[] = [
     title: {
       en: 'Electrical Cables & Sockets',
       tr: 'Elektrik Kabloları ve Fişler',
-      ru: 'Электрические кабели и розетки',
+      ru: 'Электрические кабели и вилки',
       de: 'Elektrokabel & Steckdosen',
     },
     image: '/images/categories/electrical-cables.jpg',

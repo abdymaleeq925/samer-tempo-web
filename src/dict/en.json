@@ -3,16 +3,33 @@
     "title": "Samer Tempo | Spare Parts for Commercial Vehicles and Trailers",
     "description": "Electrical cables, tank caps, repair kits, air couplings, and anti-theft systems for commercial vehicles and trailers."
   },
+  "accessibility": {
+    "selectLanguage": "Select language",
+    "toggleMenu": "Toggle navigation menu",
+    "toggleSubmenu": "Toggle sub-menu",
+    "footerNavAria": "Footer Navigation",
+    "mainNavLabel": "Main Navigation",
+    "close": "Close"
+  },
   "navigation": {
     "home": "Home",
     "catalog": "Catalog",
     "categories": "Categories",
     "about": "About Us",
     "contacts": "Contacts",
-    "requestQuote": "Request Quote"
+    "sub": {
+      "cables": "Electrical Cables & Plugs",
+      "couplings": "Pneumatic Couplings & Valves",
+      "tankCaps": "Fuel Tank Caps & Anti-Siphon Systems",
+      "repairKits": "Repair Kits",
+      "company": "About Us",
+      "vision": "Our Vision",
+      "mission": "Our Mission",
+      "certificates": "Certificates"
+    }
   },
   "common": {
-    "searchPlaceholder": "Search by OEM, Cross-reference, or Part Name...",
+    "searchPlaceholder": "Search by part number or OEM (e.g. 441-032-8080, S010-01)...",
     "searchButton": "Search",
     "viewDetails": "View Details",
     "downloadPdf": "Download PDF Catalog",
@@ -27,9 +44,38 @@
     "allCategories": "All Categories"
   },
   "hero": {
-    "title": "Commercial Vehicle Components & Export Solutions",
-    "subtitle": "Premium quality electrical spiralled cables, air couplings, and anti-theft fuel protection for European trucks and trailers.",
-    "quickSearchTitle": "Find Parts by OEM or Article"
+    "title": "Automotive Spare Parts Search",
+    "subtitle": "Enter OEM number, code number, or part name"
+  },
+  "features": [
+    {
+      "title": "High Quality",
+      "description": "Strict spare part control"
+    },
+    {
+      "title": "Certified Parts",
+      "description": "ISO 9001, IATF 16949, TÜV, ADR"
+    },
+    {
+      "title": "Import & Export",
+      "description": "Worldwide B2B delivery"
+    },
+    {
+      "title": "Fast Logistics",
+      "description": "Express dispatch options"
+    }
+  ],
+  "about": {
+    "badge": "About Samer Automotive",
+    "heading": "Your Trusted B2B Partner in Commercial Vehicle Components",
+    "lead": "Since 2001, Samer Automotive has been a leading manufacturer and exporter of high-precision spare parts for commercial vehicles, trucks, and trailers.",
+    "paragraph1": "Acting as the global sales and distribution division of Acar Metal, we combine advanced manufacturing capabilities with seamless international trade. From engineering to post-sales support, we supply premium components to distributors across Europe and worldwide.",
+    "paragraph2": "Our strategy is built on long-term partnerships rather than short-term gains. Every component strictly complies with global quality standards, verified by ISO 9001, TÜV, and ADR certifications.",
+    "stats": {
+      "experience": "25+ Years Experience",
+      "export": "Global Export Network",
+      "certified": "TÜV & ADR Certified"
+    }
   },
   "sections": {
     "featuredProducts": "Featured Products",
@@ -52,5 +98,20 @@
     "phone": "Phone Number (WhatsApp)",
     "message": "Part numbers or list of items required...",
     "submit": "Submit RFQ"
+  },
+  "footer": {
+    "description": "Premium manufacturing & export of commercial vehicle components, trailer equipment, and pneumatic systems since 2001.",
+    "navigationTitle": "Navigation",
+    "nav": {
+      "catalog": "Parts Catalog",
+      "categories": "Categories",
+      "about": "About Us",
+      "contact": "Contacts"
+    },
+    "contactTitle": "B2B Export Headquarters",
+    "address": "Baysal St. No: 24, Organize Sanayi Region, Y.Dudullu, Umraniye / Istanbul, Turkey",
+    "rights": "All rights reserved.",
+    "companyDivision": "Samer Tempo Import/Export Sales Division",
+    "certifiedBadge": "ISO 9001 • TÜV • ADR Certified"
   }
 }
