@@ -9,6 +9,7 @@ import Footer from "@/components/layout/footer";
 import LenisProvider from '@/components/providers/lenis-provider';
 
 import "./globals.css";
+import { LangProvider } from "@/context/lang-context";
 
 
 const manrope = Manrope({
@@ -24,7 +25,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params;
+  const lang = (await params).lang as Locale;
   const dict = await getDictionary(lang);
 
   return {
@@ -54,21 +55,25 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function RootLayout({
-  children, params
-}: Props) {
+export default async function RootLayout({ children, params }: Props) {
 
-  const { lang } = await params;
+  const { lang } = (await params) as { lang: Locale };
+  const dict = await getDictionary(lang);
   return (
     <html
       lang={lang}
-      className={`${manrope.variable} h-full antialiased`}
+      className={`${manrope.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LenisProvider>
-          <Header lang={lang}/>
-          {children}
-          <Footer lang={lang}/>
+          <LangProvider lang={lang} dict={dict}>
+            <Header/>
+              <main className="flex-1">
+                {children}
+              </main>
+            <Footer/>
+          </LangProvider>
+          
         </LenisProvider>
       </body>
     </html>

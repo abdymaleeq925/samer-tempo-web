@@ -1,30 +1,114 @@
-import Link from 'next/link';
+'use client';
 
-export default function Footer({ lang }: { lang: string }) {
+import Link from 'next/link';
+import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+
+import { useLang } from '@/context/lang-context';
+
+export default function Footer() {
+  const { lang, dict } = useLang();
+  const f = dict.footer;
+
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-800/80 text-zinc-400 py-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <h3 className="text-2xl font-bold text-brand mb-4">SAMER TEMPO</h3>
-          <p className="text-sm text-zinc-500">
-            Качественные комплектующие для коммерческого транспорта, кабели, фитинги и противоугонные системы[cite: 1].
+    <footer className="w-full bg-zinc-950 border-t border-zinc-800/80 text-zinc-400 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="lg:col-span-5 flex flex-col space-y-4">
+            <Link 
+              href={`/${lang}`} 
+              className="inline-block text-2xl font-black text-brand tracking-tight focus:outline-none focus:ring-2 focus:ring-brand rounded-md w-max"
+            >
+              SAMER TEMPO
+            </Link>
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-sm">
+              {f.description}
+            </p>
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 bg-zinc-900/90 border border-zinc-800 px-3 py-1.5 rounded-lg w-max mt-2">
+              <ShieldCheck className="w-4 h-4 text-brand shrink-0" />
+              <span>{f.certifiedBadge}</span>
+            </div>
+          </div>
+          <nav className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start" aria-label={f.footerNavAria}>
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+              {f.navigationTitle}
+            </h3>
+            
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <Link 
+                  href={`/${lang}/catalog`} 
+                  className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
+                >
+                  {f.nav.catalog}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href={`/${lang}/categories`} 
+                  className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
+                >
+                  {f.nav.categories}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href={`/${lang}/about`} 
+                  className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
+                >
+                  {f.nav.about}
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href={`/${lang}/contact`} 
+                  className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
+                >
+                  {f.nav.contact}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <address className="lg:col-span-4 flex flex-col space-y-3 not-italic">
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+              {f.contactTitle}
+            </h3>
+            
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li className="flex items-center gap-2.5 text-zinc-300">
+                <MapPin className="w-4 h-4 text-brand shrink-0" />
+                <span>{f.address}</span>
+              </li>
+              <li>
+                <a 
+                  href="mailto:info@samer.com.tr" 
+                  className="inline-flex items-center gap-2.5 hover:text-brand transition-colors focus:outline-none focus:text-brand"
+                >
+                  <Mail className="w-4 h-4 text-brand shrink-0" />
+                  <span>info@samer.com.tr</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="tel:+902163647319" 
+                  className="inline-flex items-center gap-2.5 hover:text-brand transition-colors focus:outline-none focus:text-brand"
+                >
+                  <Phone className="w-4 h-4 text-brand shrink-0" />
+                  <span>+90 (216) 364 73 19-20</span>
+                </a>
+              </li>
+            </ul>
+          </address>
+
+        </div>
+
+        {/* Нижний бар с копирайтом */}
+        <div className="border-t border-zinc-900 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+          <p>© {new Date().getFullYear()} SAMER TEMPO. {f.rights}</p>
+          <p className="text-[11px] text-zinc-600">
+            {f.companyDivision}
           </p>
         </div>
-        <div>
-          <h4 className="text-white font-semibold mb-3">Навигация</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link href={`/${lang}/categories`} className="hover:text-brand">Категории</Link></li>
-            <li><Link href={`/${lang}/contact`} className="hover:text-brand">Контакты</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-brand font-semibold mb-3">Контакты B2B</h4>
-          <p className="text-sm">Turkey / Istanbul</p>
-          <p className="text-sm">Email: export@samer.com.tr</p>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto border-t border-zinc-900 mt-8 pt-6 text-center text-xs text-zinc-600">
-        © {new Date().getFullYear()} SAMER TEMPO. All rights reserved.
+
       </div>
     </footer>
   );

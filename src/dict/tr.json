@@ -9,10 +9,20 @@
     "categories": "Kategoriler",
     "about": "Hakkımızda",
     "contacts": "İletişim",
-    "requestQuote": "Teklif İste"
+    "sub": {
+      "cables": "Elektrik Kabloları ve Fişler",
+      "couplings": "Pnömatik Bağlantılar ve Valfler",
+      "tankCaps": "Depo Kilitleri и Yakıt Güvenlik Sistemleri",
+      "repairKits": "Tamir Takımları",
+      "company": "Hakkımızda",
+      "vision": "Vizyonumuz",
+      "mission": "Misyonumuz",
+      "certificates": "Sertifikalarımız"
+    },
+    "mainNavLabel": "Ana Menü"
   },
   "common": {
-    "searchPlaceholder": "OEM Numarası, Çapraz Kod veya Parça Adı Ara...",
+    "searchPlaceholder": "Parça kodu veya OEM ile ara (örn. 441-032-8080, S010-01)...",
     "searchButton": "Ara",
     "viewDetails": "Detayları Gör",
     "downloadPdf": "PDF Kataloğu İndir",
@@ -27,9 +37,38 @@
     "allCategories": "Tüm Kategoriler"
   },
   "hero": {
-    "title": "Ticari Araç Aksamları ve İhracat Çözümleri",
-    "subtitle": "Avrupa kamyon ve treylerleri için yüksek kaliteli elektrik spiralleri, hava kaplinleri ve yakıt güvenlik sistemleri.",
-    "quickSearchTitle": "OEM veya Kod ile Parça Bulun"
+    "title": "Otomotiv Parça Arama",
+    "subtitle": "OEM numarası, parça kodu veya ürün adını girin"
+  },
+  "features": [
+    {
+      "title": "Yüksek Kalite",
+      "description": "Sıkı yedek parça kontrolü"
+    },
+    {
+      "title": "Sertifikalı Parçalar",
+      "description": "ISO 9001, IATF 16949, TÜV ve ADR"
+    },
+    {
+      "title": "İthalat & İhracat",
+      "description": "Dünya çapında B2B teslimat"
+    },
+    {
+      "title": "Hızlı Lojistik",
+      "description": "Ekspres sevkiyat seçenekleri"
+    }
+  ],
+  "about": {
+    "badge": "Samer Otomotiv Hakkında",
+    "heading": "Ticari Araç Yedek Parçasında Güvenilir B2B Ortaklığınız",
+    "lead": "2001 yılından bu yana Samer Otomotiv, ticari araçlar, kamyonlar ve treylerler için yüksek kaliteli yedek parça üretimi ve ihracatında öncü konumdadır.",
+    "paragraph1": "Acar Metal Fabrikası'nın satış ve ihracat yapılanması olarak, gelişmiş imalat gücümüzü uluslararası satış ve satış sonrası hizmetlerle birleştiriyoruz. Avrupa başta olmak üzere dünya çapındaki toptancı ortaklarımıza kesintisiz tedarik sağlıyoruz.",
+    "paragraph2": "Odak noktamız kısa vadeli ticari beklentiler değil, karşılıklı memnuniyete dayalı uzun vadeli iş birlikleridir. Ürettiğimiz tüm ürünler ISO 9001, TÜV ve ADR sertifikaları ile uluslararası kalite standartlarına tam uyumludur.",
+    "stats": {
+      "experience": "25+ Yıllık Tecrübe",
+      "export": "Küresel İhracat Ağı",
+      "certified": "TÜV ve ADR Sertifikalı"
+    }
   },
   "sections": {
     "featuredProducts": "Öne Çıkan Ürünler",
@@ -52,5 +91,21 @@
     "phone": "Telefon / WhatsApp",
     "message": "Talep edilen OEM kodları veya parça listesi...",
     "submit": "Teklifi Gönder"
+  },
+  "footer": {
+    "description": "2001'den bu yana ticari araçlar, treylerler ve pnömatik sistemler için yüksek kaliteli yedek parça üretimi ve ihracatı.",
+    "navigationTitle": "Navigasyon",
+    "nav": {
+      "catalog": "Parça Kataloğu",
+      "categories": "Kategoriler",
+      "about": "Hakkımızda",
+      "contact": "İletişim"
+    },
+    "contactTitle": "B2B İhracat Merkezi",
+    "address": "Organize Sanayi Bölgesi, Baysal Sok. No: 24, Y.Dudullu, Ümraniye / İstanbul",
+    "rights": "Tüm hakları saklıdır.",
+    "companyDivision": "Samer Tempo İthalat/İhracat Satış Departmanı",
+    "certifiedBadge": "ISO 9001 • TÜV • ADR Sertifikalı",
+    "footerNavAria": "Alt Bilgi Navigasyonu"
   }
 }
