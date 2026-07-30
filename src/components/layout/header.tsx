@@ -30,7 +30,7 @@ export default function Header() {
           />
         </Link>
         <nav
-          aria-label={dict.navigation.mainNavLabel}
+          aria-label={dict.accessibility.mainNavLabel}
           className="hidden md:block"
         >
           <ul className="flex items-center gap-6 xl:gap-8 text-sm font-medium">

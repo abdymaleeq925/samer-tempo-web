@@ -1,5 +1,3 @@
-"use client"
-
 import HeroCollage from '@/components/homepage/hero-collage';
 import FeatureCards from '@/components/homepage/feature-card';
 import About from '@/components/homepage/about';

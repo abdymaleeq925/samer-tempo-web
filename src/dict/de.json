@@ -3,6 +3,14 @@
     "title": "Samer Tempo | Ersatzteile für Nutzfahrzeuge und Anhänger",
     "description": "Elektrokabel, Tankdeckel, Reparatursätze, Luftkupplungen und Diebstahlsicherungen für Nutzfahrzeuge und Anhänger."
   },
+  "accessibility": {
+    "selectLanguage": "Sprache auswählen",
+    "toggleMenu": "Navigationsmenü umschalten",
+    "toggleSubmenu": "Untermenü umschalten",
+    "mainNavLabel": "Hauptnavigation",
+    "footerNavAria": "Footer-Navigation",
+    "close": "Schließen"
+  },
   "navigation": {
     "home": "Startseite",
     "catalog": "Katalog",
@@ -18,8 +26,7 @@
       "vision": "Unsere Vision",
       "mission": "Unsere Mission",
       "certificates": "Zertifikate"
-    },
-    "mainNavLabel": "Hauptnavigation"
+    }
   },
   "common": {
     "searchPlaceholder": "Suche nach Artikelnummer oder OEM (z. B. 441-032-8080, S010-01)...",
@@ -105,7 +112,6 @@
     "address": "Baysal Str. Nr. 24, Organisierte Industriezone, Y.Dudullu, Ümraniye / Istanbul, Türkei",
     "rights": "Alle Rechte vorbehalten.",
     "companyDivision": "Samer Tempo Import/Export Vertriebsabteilung",
-    "certifiedBadge": "ISO 9001 • TÜV • ADR Zertiﬁziert",
-    "footerNavAria": "Footer-Navigation"
+    "certifiedBadge": "ISO 9001 • TÜV • ADR Zertifiziert"
   }
 }

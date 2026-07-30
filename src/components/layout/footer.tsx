@@ -28,7 +28,7 @@ export default function Footer() {
               <span>{f.certifiedBadge}</span>
             </div>
           </div>
-          <nav className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start" aria-label={f.footerNavAria}>
+          <nav className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start" aria-label={dict.accessibility.footerNavAria}>
             <h3 className="text-sm font-bold text-white uppercase tracking-wider">
               {f.navigationTitle}
             </h3>

@@ -1,3 +1,4 @@
+import { cache } from "react";
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 
@@ -11,6 +12,7 @@ import LenisProvider from '@/components/providers/lenis-provider';
 import "./globals.css";
 import { LangProvider } from "@/context/lang-context";
 
+const getCachedDictionary = cache(getDictionary);
 
 const manrope = Manrope({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
@@ -26,7 +28,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const lang = (await params).lang as Locale;
-  const dict = await getDictionary(lang);
+  const dict = await getCachedDictionary(lang);
 
   return {
     title: dict.meta.title,
@@ -58,7 +60,7 @@ export async function generateStaticParams() {
 export default async function RootLayout({ children, params }: Props) {
 
   const { lang } = (await params) as { lang: Locale };
-  const dict = await getDictionary(lang);
+  const dict = await getCachedDictionary(lang);
   return (
     <html
       lang={lang}

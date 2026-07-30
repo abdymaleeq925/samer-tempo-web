@@ -9,6 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useLang } from '@/context/lang-context';
 
 const LANGUAGES = [
   { code: 'ru', label: 'RU' },
@@ -24,6 +25,7 @@ interface LanguageSwitcherProps {
 export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const { dict } = useLang();
 
   const currentLangLabel = LANGUAGES.find((lang) => lang.code === currentLang)?.label ?? currentLang.toUpperCase();
 
@@ -42,7 +44,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
           <DropdownMenuTrigger
             type="button"
             className="flex items-center gap-1.5 bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-colors outline-none focus:ring-1 focus:ring-brand shrink-0"
-            aria-label="Select language"
+            aria-label={dict.accessibility.selectLanguage}
           >
             <Globe className="w-3.5 h-3.5 text-brand shrink-0" />
             <span>{currentLangLabel}</span>
@@ -77,7 +79,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
       {/* Desktop Version */}
       <div className="hidden md:flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-3 py-1.5 text-sm">
         <Globe className="w-4 h-4 text-brand shrink-0" />
-        <div className="flex gap-1" role="radiogroup" aria-label="Select language">
+        <div className="flex gap-1" role="radiogroup" aria-label={dict.accessibility.selectLanguage}>
           {LANGUAGES.map((lang) => {
             const isActive = currentLang === lang.code;
             return (

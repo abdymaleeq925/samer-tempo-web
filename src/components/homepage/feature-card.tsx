@@ -10,9 +10,9 @@ export default function FeatureCards() {
     <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 md:px-8 lg:px-20">
       {dict.features.map((feature, index) => {
         const Icon = FEATURES_ICONS[index];
-
+        if (!Icon) return null;
         return (
-          <div key={feature.title} className="flex items-start gap-3 sm:gap-4 bg-transparent select-none min-w-0">
+          <div key={feature.title || index} className="flex items-start gap-3 sm:gap-4 bg-transparent select-none min-w-0">
             <Icon 
               className="w-8 h-8 sm:w-12 sm:h-12 text-brand shrink-0"
               strokeWidth={1.75}

@@ -32,17 +32,17 @@ export const PRODUCT_IMAGES = [
 type SubKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits' | 'company' | 'vision' | 'mission' | 'certificates';
 
 interface SubNavItem {
-  key: SubKey,
-  href: string
+  readonly key: SubKey,
+  readonly href: string
 }
 interface NavItem {
-  key: 'home' | 'catalog' | 'categories' | 'about' | 'contacts',
-  href: string,
-  icon: LucideIcon,
-  children?: SubNavItem[]
+  readonly key: 'home' | 'catalog' | 'categories' | 'about' | 'contacts',
+  readonly href: string,
+  readonly icon: LucideIcon,
+  readonly children?: readonly SubNavItem[]
 }
 
-export const NAV_LINKS: NavItem[] = [
+export const NAV_LINKS = [
   { key: 'home', href: '', icon: House },
   { key: 'catalog', href: '/catalog', icon: Grid },
   { key: 'categories', href: '/categories', icon: FolderTree,
@@ -62,7 +62,7 @@ export const NAV_LINKS: NavItem[] = [
     ]
   },
   { key: 'contacts', href: '/contacts', icon: PhoneCall },
-] as const;
+] as const satisfies readonly NavItem[];
 
 export const GRID_CELLS_COUNT = 8;
 

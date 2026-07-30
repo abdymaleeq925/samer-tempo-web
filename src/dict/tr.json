@@ -3,6 +3,14 @@
     "title": "Samer Tempo | Ticari Araç ve Treyler Yedek Parçaları",
     "description": "Ticari araçlar ve treylerler için elektrik kabloları, depo kapakları, tamir takımları, hava kaplinleri ve hırsızlık önleme sistemleri."
   },
+  "accessibility": {
+    "selectLanguage": "Dil seçin",
+    "toggleMenu": "Navigasyon menüsünü aç/kapat",
+    "toggleSubmenu": "Alt menüyü aç/kapat",
+    "mainNavLabel": "Ana Menü",
+    "footerNavAria": "Alt Bilgi Navigasyonu",
+    "close": "Kapat"
+  },
   "navigation": {
     "home": "Anasayfa",
     "catalog": "Katalog",
@@ -12,14 +20,13 @@
     "sub": {
       "cables": "Elektrik Kabloları ve Fişler",
       "couplings": "Pnömatik Bağlantılar ve Valfler",
-      "tankCaps": "Depo Kilitleri и Yakıt Güvenlik Sistemleri",
+      "tankCaps": "Depo Kilitleri ve Yakıt Güvenlik Sistemleri",
       "repairKits": "Tamir Takımları",
       "company": "Hakkımızda",
       "vision": "Vizyonumuz",
       "mission": "Misyonumuz",
       "certificates": "Sertifikalarımız"
-    },
-    "mainNavLabel": "Ana Menü"
+    }
   },
   "common": {
     "searchPlaceholder": "Parça kodu veya OEM ile ara (örn. 441-032-8080, S010-01)...",
@@ -105,7 +112,6 @@
     "address": "Organize Sanayi Bölgesi, Baysal Sok. No: 24, Y.Dudullu, Ümraniye / İstanbul",
     "rights": "Tüm hakları saklıdır.",
     "companyDivision": "Samer Tempo İthalat/İhracat Satış Departmanı",
-    "certifiedBadge": "ISO 9001 • TÜV • ADR Sertifikalı",
-    "footerNavAria": "Alt Bilgi Navigasyonu"
+    "certifiedBadge": "ISO 9001 • TÜV • ADR Sertifikalı"
   }
 }

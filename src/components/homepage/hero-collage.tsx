@@ -46,7 +46,7 @@ export default function HeroCollage() {
   return (
     <section className="relative w-full h-[calc(100dvh-105px)] overflow-hidden bg-zinc-950 flex items-center justify-center">
       {/* BACKGROUND LAYER: Skewed 2x4 Image Collage Grid */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
         <div className="w-full h-full transform skew-x-6 sm:skew-x-12 scale-110 grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-2 bg-brand-dark">
           {cellImages.map((imgIndex, cellIdx) => (
             <div

@@ -1,3 +1,4 @@
+"use client"
 
 import { useState } from 'react';
 import { ChevronDown, Menu } from 'lucide-react';
@@ -31,7 +32,7 @@ export default function MobileNavbar() {
               variant="ghost"
               size="icon"
               className="text-white hover:bg-white/10 h-10 w-10 rounded-xl"
-              aria-label="Toggle navigation menu"
+              aria-label={dict.accessibility.toggleMenu}
             >
               <Menu className="w-6 h-6" />
             </Button>
@@ -40,6 +41,7 @@ export default function MobileNavbar() {
         {/* Left-slide menu */}
         <SheetContent
           side="right"
+          closeLabel={dict.accessibility.close}
           className="w-75 sm:w-95 bg-zinc-950 border-l border-white/10 p-0 text-white flex flex-col"
         >
           <SheetHeader className="p-6 border-b border-white/10 text-left">
@@ -51,7 +53,7 @@ export default function MobileNavbar() {
           <div className="flex-1 overflow-y-auto px-4 py-6 space-y-2">
             {NAV_LINKS.map((link) => {
               const Icon = link.icon;
-              const hasChildren = Boolean(link.children?.length);
+              const hasChildren = "children" in link && Boolean(link.children?.length);
               const linkLabel = dict.navigation[link.key] ?? link.key;
               const isExpanded = expandedSubMenu === link.key;
 
@@ -72,7 +74,7 @@ export default function MobileNavbar() {
                         type="button"
                         onClick={() => toggleSubMenu(link.key)}
                         className="p-2 text-zinc-400 hover:text-white transition-colors"
-                        aria-label="Toggle sub-menu"
+                        aria-label={dict.accessibility.toggleSubmenu}
                       >
                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
                       </button>

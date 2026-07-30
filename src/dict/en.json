@@ -3,6 +3,14 @@
     "title": "Samer Tempo | Spare Parts for Commercial Vehicles and Trailers",
     "description": "Electrical cables, tank caps, repair kits, air couplings, and anti-theft systems for commercial vehicles and trailers."
   },
+  "accessibility": {
+    "selectLanguage": "Select language",
+    "toggleMenu": "Toggle navigation menu",
+    "toggleSubmenu": "Toggle sub-menu",
+    "footerNavAria": "Footer Navigation",
+    "mainNavLabel": "Main Navigation",
+    "close": "Close"
+  },
   "navigation": {
     "home": "Home",
     "catalog": "Catalog",
@@ -18,8 +26,7 @@
       "vision": "Our Vision",
       "mission": "Our Mission",
       "certificates": "Certificates"
-    },
-    "mainNavLabel": "Main Navigation"
+    }
   },
   "common": {
     "searchPlaceholder": "Search by part number or OEM (e.g. 441-032-8080, S010-01)...",
@@ -105,7 +112,6 @@
     "address": "Baysal St. No: 24, Organize Sanayi Region, Y.Dudullu, Umraniye / Istanbul, Turkey",
     "rights": "All rights reserved.",
     "companyDivision": "Samer Tempo Import/Export Sales Division",
-    "certifiedBadge": "ISO 9001 • TÜV • ADR Certified",
-    "footerNavAria": "Footer Navigation"
+    "certifiedBadge": "ISO 9001 • TÜV • ADR Certified"
   }
 }
