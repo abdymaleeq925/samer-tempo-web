@@ -6,6 +6,7 @@
   "accessibility": {
     "selectLanguage": "Sprache auswählen",
     "selectCategory": "Kategorie auswählen",
+    "goToSlide": "Zu Folie {slide} gehen",
     "toggleMenu": "Navigationsmenü umschalten",
     "toggleSubmenu": "Untermenü umschalten",
     "mainNavLabel": "Hauptnavigation",
@@ -85,10 +86,10 @@
     "items": [
       {
         "id": "cables",
-        "name": "Elektrokabel und Steckdosen",
+        "name": "Elektrokabel und Stecker",
         "tagline": "OEM-Standard",
-        "title": "Hochfeste Elektrokabel & Steckdosen",
-        "description": "Robuste Kabelbäume, Wendelkabel und mehrpolige Steckdosen für eine zuverlässige Signal- und Stromübertragung in Nutzfahrzeugen.",
+        "title": "Hochfeste Elektrokabel & Stecker",
+        "description": "Robuste Kabelbäume, Wendelkabel und mehrpolige Stecker für eine zuverlässige Signal- und Stromübertragung in Nutzfahrzeugen.",
         "highlights": [
           "ISO 9001 Zertifiziert",
           "Öl- und witterungsbeständig",

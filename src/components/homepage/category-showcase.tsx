@@ -36,10 +36,10 @@ export default function CategoryShowcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const activeMeta = CATEGORY_META[activeTab];
+  const activeMeta = CATEGORY_META[activeTab as keyof typeof CATEGORY_META];
   const activeImages = activeMeta?.imageSrc && activeMeta.imageSrc.length > 0
     ? activeMeta.imageSrc
-    : ['/public/products/placeholder.png'];
+    : ['/products/placeholder.png'];
 
   useEffect(() => {
     if (activeImages.length <= 1 || isPaused) return;
@@ -92,7 +92,7 @@ export default function CategoryShowcase() {
               aria-label={dict.accessibility?.selectCategory || "Select category"}
             >
               {categories.map((cat) => {
-                const meta = CATEGORY_META[cat.id];
+                const meta = CATEGORY_META[cat.id as keyof typeof CATEGORY_META];
                 const Icon = meta?.icon;
 
                 return (
@@ -113,8 +113,8 @@ export default function CategoryShowcase() {
 
           {/* Selected category content */}
           {categories.map((cat) => {
-            const meta = CATEGORY_META[cat.id];
-            const imageSrc = meta?.imageSrc || ['/placeholder.png'];
+            const meta = CATEGORY_META[cat.id as keyof typeof CATEGORY_META];
+            const imageSrc = meta?.imageSrc || ['/products/placeholder.png'];
             const href = meta?.href || '/catalog';
             const isActive = activeTab === cat.id;
 
@@ -220,7 +220,7 @@ export default function CategoryShowcase() {
                                     ? "w-6 bg-brand"
                                     : "w-1.5 bg-white/50 hover:bg-white/80"
                                 )}
-                                aria-label={`Go to slide ${idx + 1}`}
+                                aria-label={ dict.accessibility?.goToSlide?.replace('{slide}', String(idx + 1)) }
                               />
                             ))}
                           </div>

@@ -6,6 +6,7 @@
   "accessibility": {
     "selectLanguage": "Dil seçin",
     "selectCategory": "Kategori seçin",
+    "goToSlide": "{slide}. slayta git",
     "toggleMenu": "Navigasyon menüsünü aç/kapat",
     "toggleSubmenu": "Alt menüyü aç/kapat",
     "mainNavLabel": "Ana Menü",

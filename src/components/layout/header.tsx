@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { NAV_LINKS, type SubKey } from '@/constants';
+import { CLOSE_DELAY, NAV_LINKS, OPEN_DELAY, type SubKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
 import LanguageSwitcher from './language-switcher';
 import MobileNavbar from './mobile-navbar';
@@ -18,12 +18,12 @@ export default function Header() {
 
   function openWithDelay(key: string) {
     if (closeTimer.current) clearTimeout(closeTimer.current);
-    openTimer.current = setTimeout(() => setOpenKey(key), 60);
+    openTimer.current = setTimeout(() => setOpenKey(key), OPEN_DELAY);
   }
 
   function closeWithDelay() {
     if (openTimer.current) clearTimeout(openTimer.current);
-    closeTimer.current = setTimeout(() => setOpenKey(null), 150);
+    closeTimer.current = setTimeout(() => setOpenKey(null), CLOSE_DELAY);
   }
 
   return (

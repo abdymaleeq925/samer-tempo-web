@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
           </div>
           <nav className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start" aria-label={dict.accessibility.footerNavAria}>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h3 className="text-sm font-bold uppercase tracking-wider">
               {f.navigationTitle}
             </h3>
             

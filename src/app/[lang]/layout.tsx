@@ -15,19 +15,19 @@ import { LangProvider } from "@/context/lang-context";
 const getCachedDictionary = cache(getDictionary);
 
 const commissioner = Commissioner({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin", 'latin-ext', "cyrillic"],
   variable: "--font-commissioner",
-  weight: ["500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const mulish = Mulish({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin", 'latin-ext', "cyrillic"],
   variable: "--font-mulish",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 const ptSansCaption = PT_Sans_Caption({
-  subsets: ["latin", "cyrillic"],
+  subsets: ["latin", 'latin-ext', "cyrillic"],
   weight: ["400", "700"],
   variable: "--font-pt-caption",
 });

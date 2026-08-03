@@ -83,7 +83,7 @@ interface CategoryShowcaseProps {
   readonly href: string;
 }
 
-export const CATEGORY_META: Record<string, CategoryShowcaseProps> = {
+export const CATEGORY_META: Partial<Record<SubKey, CategoryShowcaseProps>> = {
   cables: {
     icon: Cable,
     imageSrc: ['/products/s182-245pur.jpg', '/products/r030-172.jpg', '/products/s186-115.jpg', '/products/r030-130.jpg'],

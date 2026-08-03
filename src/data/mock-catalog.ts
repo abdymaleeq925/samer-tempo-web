@@ -35,7 +35,7 @@ export const MOCK_CATEGORIES: Category[] = [
     id: 'cat-cables',
     slug: 'electrical-cables-plugs',
     title: {
-      en: 'Electrical Cables & plugs',
+      en: 'Electrical Cables & Plugs',
       tr: 'Elektrik Kabloları ve Fişler',
       ru: 'Электрические кабели и вилки',
       de: 'Elektrokabel & Steckdosen',
@@ -401,7 +401,7 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
   },
 
-  // --- ELECTRICAL CABLES & plugS ---
+  // --- ELECTRICAL CABLES & plugs ---
   {
     id: 'prod-r020-01a',
     slug: 'r020-01a-24v-7pin-plastic-plug-n-type',
@@ -411,7 +411,7 @@ export const MOCK_PRODUCTS: Product[] = [
     categoryId: 'cat-cables',
     subcategoryId: 'subcat-plug',
     title: {
-      en: '24V 7-Pin Plastic plug Black N-Type (Pinned Terminals)',
+      en: '24V 7-Pin Plastic Plug Black N-Type (Pinned Terminals)',
       tr: '24V PLASTİK SOKET SİYAH N TİPİ AYAKLAR PİMLİ',
       ru: 'Розетка 24V 7-контактная пластиковая (Тип N, штыревые контакты)',
       de: '24V 7-Polige Kunststoff-Steckdose Schwarz N-Typ',

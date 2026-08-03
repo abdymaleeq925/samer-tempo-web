@@ -6,6 +6,7 @@
   "accessibility": {
     "selectLanguage": "Select language",
     "selectCategory": "Select category",
+    "goToSlide": "Go to slide {slide}",
     "toggleMenu": "Toggle navigation menu",
     "toggleSubmenu": "Toggle sub-menu",
     "footerNavAria": "Footer Navigation",
@@ -85,9 +86,9 @@
     "items": [
       {
         "id": "cables",
-        "name": "Electrical Cables and plugs",
+        "name": "Electrical Cables and Plugs",
         "tagline": "OEM Standard",
-        "title": "High-Durability Electrical Cables & plugs",
+        "title": "High-Durability Electrical Cables & Plugs",
         "description": "Heavy-duty electrical harnesses, spiral cables, and multi-pin plugs designed for reliable signal and power transmission in commercial vehicles.",
         "highlights": [
           "ISO 9001 Certified",
@@ -111,7 +112,7 @@
       },
       {
         "id": "tankCaps",
-        "name": "Fuel Tank Caps and Antitheft Systems",
+        "name": "Fuel Tank Caps and Anti-Theft Systems",
         "tagline": "Fuel Security & Protection",
         "title": "Fuel Tank Caps & Anti-Siphon Security Systems",
         "description": "Robust fuel tank caps and integrated anti-theft devices designed to prevent fuel loss, tampering, and contamination in commercial fleet tanks.",
