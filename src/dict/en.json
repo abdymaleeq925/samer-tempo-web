@@ -5,6 +5,7 @@
   },
   "accessibility": {
     "selectLanguage": "Select language",
+    "selectCategory": "Select category",
     "toggleMenu": "Toggle navigation menu",
     "toggleSubmenu": "Toggle sub-menu",
     "footerNavAria": "Footer Navigation",
@@ -76,6 +77,65 @@
       "export": "Global Export Network",
       "certified": "TÜV & ADR Certified"
     }
+  },
+  "categoryShowcase": {
+    "title": "Product Categories",
+    "subtitle": "Explore our high-performance spare parts.",
+    "exploreBtn": "View Category Products",
+    "items": [
+      {
+        "id": "cables",
+        "name": "Electrical Cables and plugs",
+        "tagline": "OEM Standard",
+        "title": "High-Durability Electrical Cables & plugs",
+        "description": "Heavy-duty electrical harnesses, spiral cables, and multi-pin plugs designed for reliable signal and power transmission in commercial vehicles.",
+        "highlights": [
+          "ISO 9001 Certified",
+          "Weather & Oil Resistant Shell",
+          "High Conductivity Copper",
+          "Custom Pin Configurations"
+        ]
+      },
+      {
+        "id": "couplings",
+        "name": "Air Couplings and Valves",
+        "tagline": "Pneumatic Systems",
+        "title": "Industrial-Grade Air Couplings & Pneumatic Valves",
+        "description": "Precision-engineered pneumatic couplings and control valves built to maintain optimal pressure stability in heavy-duty brake and air suspension systems.",
+        "highlights": [
+          "High Pressure Tolerance",
+          "Corrosion-Resistant Coating",
+          "Leak-Free Seal Technology",
+          "Direct OEM Replacement"
+        ]
+      },
+      {
+        "id": "tankCaps",
+        "name": "Fuel Tank Caps and Antitheft Systems",
+        "tagline": "Fuel Security & Protection",
+        "title": "Fuel Tank Caps & Anti-Siphon Security Systems",
+        "description": "Robust fuel tank caps and integrated anti-theft devices designed to prevent fuel loss, tampering, and contamination in commercial fleet tanks.",
+        "highlights": [
+          "Tamper-Proof Design",
+          "Vented & Non-Vented Options",
+          "High-Impact Materials",
+          "Universal & Custom Fitment"
+        ]
+      },
+      {
+        "id": "repairKits",
+        "name": "Repair Kits",
+        "tagline": "Maintenance & Service",
+        "title": "Complete OEM Repair & Service Kits",
+        "description": "All-in-one maintenance kits containing high-grade seals, gaskets, and hardware for fast, reliable, and cost-effective vehicle servicing.",
+        "highlights": [
+          "Complete Component Matching",
+          "Premium Grade Elastomers",
+          "Reduced Downtime",
+          "Rigorous Quality Testing"
+        ]
+      }
+    ]
   },
   "sections": {
     "featuredProducts": "Featured Products",

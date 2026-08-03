@@ -33,9 +33,9 @@ export interface Product {
 export const MOCK_CATEGORIES: Category[] = [
   {
     id: 'cat-cables',
-    slug: 'electrical-cables-sockets',
+    slug: 'electrical-cables-plugs',
     title: {
-      en: 'Electrical Cables & Sockets',
+      en: 'Electrical Cables & plugs',
       tr: 'Elektrik Kabloları ve Fişler',
       ru: 'Электрические кабели и вилки',
       de: 'Elektrokabel & Steckdosen',
@@ -401,23 +401,23 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
   },
 
-  // --- ELECTRICAL CABLES & SOCKETS ---
+  // --- ELECTRICAL CABLES & plugS ---
   {
     id: 'prod-r020-01a',
-    slug: 'r020-01a-24v-7pin-plastic-socket-n-type',
+    slug: 'r020-01a-24v-7pin-plastic-plug-n-type',
     article: 'R 020-01A',
     oemNumbers: ['111008', '111009', '51305287', '000 545 62 14'],
     crossReferences: ['HELLA 8JB001933011', 'DT 4.80250'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-socket',
+    subcategoryId: 'subcat-plug',
     title: {
-      en: '24V 7-Pin Plastic Socket Black N-Type (Pinned Terminals)',
+      en: '24V 7-Pin Plastic plug Black N-Type (Pinned Terminals)',
       tr: '24V PLASTİK SOKET SİYAH N TİPİ AYAKLAR PİMLİ',
       ru: 'Розетка 24V 7-контактная пластиковая (Тип N, штыревые контакты)',
       de: '24V 7-Polige Kunststoff-Steckdose Schwarz N-Typ',
     },
     description: {
-      en: '24V 7-pin N-type female socket made of impact-resistant polyamide plastic with crimp pin terminals (ISO 1185 standard).',
+      en: '24V 7-pin N-type female plug made of impact-resistant polyamide plastic with crimp pin terminals (ISO 1185 standard).',
       tr: 'ISO 1185 standardına uygun, sıkmalı/pimli terminallere sahip دارбеye dayanıklı plastik 24V 7li N Tipi dişi soket.',
       ru: 'Пластиковая 7-контактная розетка тип N (24V) из ударопрочного полиамида со штыревыми контактами (стандарт ISO 1185).',
       de: '24V 7-polige N-Typ Steckdose aus schlagfestem Kunststoff mit Stiftkontakten nach ISO 1185.',
@@ -446,7 +446,7 @@ export const MOCK_PRODUCTS: Product[] = [
     oemNumbers: ['111030', '000 545 78 14', '81254320002'],
     crossReferences: ['HELLA 8JA001930001', 'DT 4.80252'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-socket',
+    subcategoryId: 'subcat-plug',
     title: {
       en: '24V 7-Pin Plastic Green Plug S-Type',
       tr: '24V PLASTİK YEŞİL FİŞ S TİPİ',
@@ -483,7 +483,7 @@ export const MOCK_PRODUCTS: Product[] = [
     oemNumbers: ['441 035 001 0', '000 545 80 14', '150 493 8'],
     crossReferences: ['WABCO 4410350010', 'COJALI 2210001', 'DT 2.30200'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-socket',
+    subcategoryId: 'subcat-plug',
     title: {
       en: 'EBS 7-Pin Trailer Plug with Crimp Contacts',
       tr: 'EBS 7 Lİ FİŞ AYAKLAR SIKMALI',

@@ -55,7 +55,7 @@ export default function OemSearchInput({ isHero = false }: OemSearchInputProps) 
               : 'h-8 sm:h-9 px-2.5 sm:px-4 rounded-lg text-xs'
           }`}
         >
-          <span className="hidden xs:inline sm:inline">
+          <span className="hidden xs:inline sm:inline font-heading">
             {dict.common?.searchButton}
           </span>
           <Search className="w-4 h-4 xs:hidden sm:hidden" />
