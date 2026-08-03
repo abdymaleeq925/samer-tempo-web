@@ -10,7 +10,7 @@ export default function Footer() {
   const f = dict.footer;
 
   return (
-    <footer className="w-full bg-zinc-950 border-t border-zinc-800/80 text-zinc-400 font-sans">
+    <footer className="w-full bg-stone-100 border-t border-zinc-800/80 font-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-5 flex flex-col space-y-4">
@@ -20,7 +20,7 @@ export default function Footer() {
             >
               SAMER TEMPO
             </Link>
-            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm leading-relaxed max-w-sm">
               {f.description}
             </p>
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-zinc-300 bg-zinc-900/90 border border-zinc-800 px-3 py-1.5 rounded-lg w-max mt-2">
@@ -29,7 +29,7 @@ export default function Footer() {
             </div>
           </div>
           <nav className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start" aria-label={dict.accessibility.footerNavAria}>
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h3 className="text-sm font-bold uppercase tracking-wider">
               {f.navigationTitle}
             </h3>
             
@@ -69,12 +69,12 @@ export default function Footer() {
             </ul>
           </nav>
           <address className="lg:col-span-4 flex flex-col space-y-3 not-italic">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider">
+            <h3 className="text-sm font-bold uppercase tracking-wider">
               {f.contactTitle}
             </h3>
             
             <ul className="space-y-2.5 text-xs sm:text-sm">
-              <li className="flex items-center gap-2.5 text-zinc-300">
+              <li className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-brand shrink-0" />
                 <span>{f.address}</span>
               </li>
@@ -102,9 +102,9 @@ export default function Footer() {
         </div>
 
         {/* Нижний бар с копирайтом */}
-        <div className="border-t border-zinc-900 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="border-t border-zinc-900 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p>© {new Date().getFullYear()} SAMER TEMPO. {f.rights}</p>
-          <p className="text-[11px] text-zinc-600">
+          <p className="text-xs">
             {f.companyDivision}
           </p>
         </div>

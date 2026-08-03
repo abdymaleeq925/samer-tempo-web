@@ -1,6 +1,6 @@
 import { cache } from "react";
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Commissioner, PT_Sans_Caption, Mulish } from "next/font/google";
 
 import { getDictionary } from '@/lib/get-dictionary';
 import { locales, type Locale } from '@/config/locales';
@@ -14,11 +14,22 @@ import { LangProvider } from "@/context/lang-context";
 
 const getCachedDictionary = cache(getDictionary);
 
-const manrope = Manrope({
-  subsets: ['latin', 'latin-ext', 'cyrillic'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-manrope',
-  display: 'swap',
+const commissioner = Commissioner({
+  subsets: ["latin", 'latin-ext', "cyrillic"],
+  variable: "--font-commissioner",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const mulish = Mulish({
+  subsets: ["latin", 'latin-ext', "cyrillic"],
+  variable: "--font-mulish",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const ptSansCaption = PT_Sans_Caption({
+  subsets: ["latin", 'latin-ext', "cyrillic"],
+  weight: ["400", "700"],
+  variable: "--font-pt-caption",
 });
 
 type Props = {
@@ -64,9 +75,9 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html
       lang={lang}
-      className={`${manrope.variable} font-sans h-full antialiased`}
+      className="h-full antialiased"
     >
-      <body className="min-h-full flex flex-col">
+      <body className={`${commissioner.variable} ${mulish.variable} ${ptSansCaption.variable} font-sans min-h-full flex flex-col`}>
         <LenisProvider>
           <LangProvider lang={lang} dict={dict}>
             <Header/>
@@ -74,8 +85,7 @@ export default async function RootLayout({ children, params }: Props) {
                 {children}
               </main>
             <Footer/>
-          </LangProvider>
-          
+          </LangProvider>     
         </LenisProvider>
       </body>
     </html>

@@ -14,10 +14,10 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Badge and Title */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-4">
-            <span className="inline-flex items-center gap-2 text-xs md:text-base font-semibold uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full border border-brand/20">
+            <span className="inline-flex items-center gap-2 text-xs md:text-base font-semibold font-caption uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full border border-brand/20">
               {a.badge}
             </span>
-            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight tracking-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold font-heading leading-tight tracking-tight">
               {a.heading}
             </h2>
             <Separator className="w-full h-1 bg-linear-to-r from-brand to-transparent rounded-full mt-2 border-none"/>

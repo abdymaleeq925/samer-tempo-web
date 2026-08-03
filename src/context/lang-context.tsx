@@ -1,11 +1,9 @@
 'use client';
 
 import { createContext, useContext, ReactNode } from 'react';
+
+import type { Dictionary } from './dictionary';
 import { type Locale } from '@/config/locales';
-import enDict from '@/dict/en.json';
-
-type Dictionary = typeof enDict;
-
 interface LangContextType {
   lang: Locale;
   dict: Dictionary;

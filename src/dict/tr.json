@@ -5,6 +5,8 @@
   },
   "accessibility": {
     "selectLanguage": "Dil seçin",
+    "selectCategory": "Kategori seçin",
+    "goToSlide": "{slide}. slayta git",
     "toggleMenu": "Navigasyon menüsünü aç/kapat",
     "toggleSubmenu": "Alt menüyü aç/kapat",
     "mainNavLabel": "Ana Menü",
@@ -19,8 +21,8 @@
     "contacts": "İletişim",
     "sub": {
       "cables": "Elektrik Kabloları ve Fişler",
-      "couplings": "Pnömatik Bağlantılar ve Valfler",
-      "tankCaps": "Depo Kilitleri ve Yakıt Güvenlik Sistemleri",
+      "couplings": "Kaplinler ve Silindirler",
+      "tankCaps": "Depo Kapakları ve Mazot Koruma Sistemleri",
       "repairKits": "Tamir Takımları",
       "company": "Hakkımızda",
       "vision": "Vizyonumuz",
@@ -76,6 +78,65 @@
       "export": "Küresel İhracat Ağı",
       "certified": "TÜV ve ADR Sertifikalı"
     }
+  },
+  "categoryShowcase": {
+    "title": "Ürün Kategorileri",
+    "subtitle": "Yüksek performanslı yedek parça otomotiv bileşenlerimizi keşfedin.",
+    "exploreBtn": "Kategori Ürünlerini İncele",
+    "items": [
+      {
+        "id": "cables",
+        "name": "Elektrik Kabloları ve Fişler",
+        "tagline": "OEM Standardı",
+        "title": "Yüksek Dayanımlı Elektrik Kabloları ve Fişler",
+        "description": "Ticari araçlarda güvenilir sinyal ve güç iletimi sağlamak için tasarlanmış ağır hizmet tipi kablo tesisatları, spiral kablolar ve çoklu fişler.",
+        "highlights": [
+          "ISO 9001 Sertifikalı",
+          "Yağa ve Hava Şartlarına Dayanıklı",
+          "Yüksek İletkenlikli Bakır",
+          "Özel Pin Konfigürasyonları"
+        ]
+      },
+      {
+        "id": "couplings",
+        "name": "Kaplinler ve Silindirler",
+        "tagline": "Pnömatik Sistemler",
+        "title": "Endüstriyel Sınıf Kaplinler ve Silindirler",
+        "description": "Ağır hizmet fren ve hava süspansiyon sistemlerinde optimum basınç dengesini korumak için hassas bir şekilde üretilmiş kaplinler ve silindirler.",
+        "highlights": [
+          "Yüksek Basınç Toleransı",
+          "Korozyona Dayanıklı Kaplama",
+          "Sızdırmaz Conta Teknolojisi",
+          "Birebir OEM Uyumlu"
+        ]
+      },
+      {
+        "id": "tankCaps",
+        "name": "Depo Kapakları ve Mazot Koruma Sistemleri",
+        "tagline": "Yakıt Güvenliği ve Koruma",
+        "title": "Depo Kapakları ve Mazot Koruma Önleme Sistemleri",
+        "description": "Ticari araç depolarında yakıt çalınmasını, müdahaleyi ve kirlenmeyi önlemek için tasarlanmış sağlam depo kapakları ve mazot koruma sistemleri.",
+        "highlights": [
+          "Müdahaleye Karşı Korumalı",
+          "Subaplı ve Subapsız Seçenekler",
+          "Darbe Emici Dayanıklı Malzeme",
+          "Evrensel ve Özel Ölçülü Uyum"
+        ]
+      },
+      {
+        "id": "repairKits",
+        "name": "Tamir Takımları",
+        "tagline": "Bakım ve Servis",
+        "title": "Eksiksiz Tamir ve Bakım Takımları",
+        "description": "Hızlı, güvenilir ve maliyet etkin araç bakımı için yüksek kaliteli contalar, O-ringler ve bağlantı elemanları içeren eksiksiz tamir setleri.",
+        "highlights": [
+          "Birebir Parça Uyumluluğu",
+          "Birinci Sınıf Elastomer Malzeme",
+          "Minimum Servis Duruş Süresi",
+          "Sıkı Kalite Testleri"
+        ]
+      }
+    ]
   },
   "sections": {
     "featuredProducts": "Öne Çıkan Ürünler",

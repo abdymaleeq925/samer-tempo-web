@@ -7,7 +7,7 @@ export default function FeatureCards() {
   const { dict } = useLang();
 
   return (
-    <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 md:px-8 lg:px-20">
+    <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 md:px-8 lg:px-20 py-4 md:py-8 lg:py-12">
       {dict.features.map((feature, index) => {
         const Icon = FEATURES_ICONS[index];
         if (!Icon) return null;

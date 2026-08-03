@@ -5,6 +5,8 @@
   },
   "accessibility": {
     "selectLanguage": "Sprache auswählen",
+    "selectCategory": "Kategorie auswählen",
+    "goToSlide": "Zu Folie {slide} gehen",
     "toggleMenu": "Navigationsmenü umschalten",
     "toggleSubmenu": "Untermenü umschalten",
     "mainNavLabel": "Hauptnavigation",
@@ -76,6 +78,65 @@
       "export": "Globales Exportnetzwerk",
       "certified": "TÜV- & ADR-zertifiziert"
     }
+  },
+  "categoryShowcase": {
+    "title": "Produktkategorien",
+    "subtitle": "Entdecken Sie unsere hochwertigen OEM- und Nachrüst-Fahrzeugkomponenten.",
+    "exploreBtn": "Kategorieprodukte anzeigen",
+    "items": [
+      {
+        "id": "cables",
+        "name": "Elektrokabel und Stecker",
+        "tagline": "OEM-Standard",
+        "title": "Hochfeste Elektrokabel & Stecker",
+        "description": "Robuste Kabelbäume, Wendelkabel und mehrpolige Stecker für eine zuverlässige Signal- und Stromübertragung in Nutzfahrzeugen.",
+        "highlights": [
+          "ISO 9001 Zertifiziert",
+          "Öl- und witterungsbeständig",
+          "Hochleitfähiges Kupfer",
+          "Individuelle Pin-Konfigurationen"
+        ]
+      },
+      {
+        "id": "couplings",
+        "name": "Luftkupplungen und Ventile",
+        "tagline": "Pneumatiksysteme",
+        "title": "Pneumatikkupplungen & Ventile in Industriequalität",
+        "description": "Präzisionsgefertigte Pneumatikkupplungen und Steuerventile für konstanten Druck in Brems- und Luftfedersystemen.",
+        "highlights": [
+          "Hohe Druckbeständigkeit",
+          "Korrosionsgeschützte Beschichtung",
+          "Lecksichere Dichtungstechnik",
+          "Passgenauer OEM-Ersatz"
+        ]
+      },
+      {
+        "id": "tankCaps",
+        "name": "Tankdeckel und Diebstahlsicherungssysteme",
+        "tagline": "Kraftstoffsicherheit",
+        "title": "Tankdeckel & Anti-Siphon-Schutzsysteme",
+        "description": "Robust konstruierte Tankdeckel und Absaugsicherungen zum Schutz vor Kraftstoffdiebstahl und Verunreinigung.",
+        "highlights": [
+          "Manipulationssicheres Design",
+          "Mit und ohne Belüftung",
+          "Schlagfeste Materialien",
+          "Universelle & Passgenaue Sitz"
+        ]
+      },
+      {
+        "id": "repairKits",
+        "name": "Reparatursätze",
+        "tagline": "Wartung & Instandhaltung",
+        "title": "Komplette Reparatursätze in OEM-Qualität",
+        "description": "Komplettsets mit hochwertigen Dichtungen, O-Ringen und Kleinteilen für eine schnelle und kosteneffiziente Fahrzeugwartung.",
+        "highlights": [
+          "Vollständige Komponentenabstimmung",
+          "Hochwertige Elastomere",
+          "Minimierte Ausfallzeiten",
+          "Strenge Qualitätsprüfung"
+        ]
+      }
+    ]
   },
   "sections": {
     "featuredProducts": "Empfohlene Produkte",
