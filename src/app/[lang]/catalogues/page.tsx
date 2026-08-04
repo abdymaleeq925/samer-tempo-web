@@ -7,7 +7,7 @@ import { Download, ExternalLink, FileText, UserCheck } from "lucide-react";
 import Link from "next/link";
 
 export default function Catalog() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const n = dict.catalogues;
   return (
     <section className="py-12 bg-stone-100 min-h-[70vh] font-heading">
@@ -22,7 +22,7 @@ export default function Catalog() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {CATALOGUES_DATA.map((item) => {
-            const catalogTitle = (n as Record<string, string>)[item.id];
+            const catalogTitle = dict.catalogues?.[item.id] ?? item.id;
             return (
               <div
                 key={item.id}
@@ -43,6 +43,7 @@ export default function Catalog() {
                 </div>
                 <div className="flex items-center gap-3 pt-4 border-t border-black">
                   <Button
+                    nativeButton={false}
                     variant="outline"
                     className="flex-1 border-black bg-transparent hover:bg-black hover:text-white font-caption"
                     render={
@@ -58,6 +59,7 @@ export default function Catalog() {
                     }
                   />
                   <Button
+                    nativeButton={false}
                     className="flex-1 bg-transparent text-black border border-black hover:bg-black hover:text-white font-caption font-medium"
                     render={
                       <a
@@ -87,9 +89,10 @@ export default function Catalog() {
 
           <Button
             size="lg"
+            nativeButton={false}
             className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 shrink-0"
             render={
-              <Link href="/contacts" className="inline-flex items-center gap-2">
+              <Link href={`/${lang}/contacts`} className="inline-flex items-center gap-2">
                 <UserCheck className="w-4 h-4" />
                 {n.contactBtn}
               </Link>

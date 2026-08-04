@@ -1,6 +1,6 @@
 "use client"
 
-import { useParams } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import { ProductCard } from '@/components/catalog/product-card';
 import { MOCK_CATEGORIES, MOCK_PRODUCTS } from '@/data/mock-catalog';
 import { useLang } from '@/context/lang-context';
@@ -10,6 +10,9 @@ export default function ProductCategoryPage() {
   const { dict, lang } = useLang();
   const { category } = useParams();
   const currentCategoryData = MOCK_CATEGORIES.find((cat) => cat.id === `cat-${category}`);
+  if (!currentCategoryData) {
+    notFound();
+  }
   const categoryProducts = MOCK_PRODUCTS.filter((product) => product.categoryId === `cat-${category}`);
   return (
     <section className="py-10 min-h-screen">

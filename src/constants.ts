@@ -87,27 +87,28 @@ export const CATEGORY_META: Partial<Record<SubKey, CategoryShowcaseProps>> = {
   cables: {
     icon: Cable,
     imageSrc: ['/products/s182-245pur.jpg', '/products/r030-172.jpg', '/products/s186-115.jpg', '/products/r030-130.jpg'],
-    href: '/catalog/cables',
+    href: '/categories/cables',
   },
   couplings: {
     icon: Disc,
     imageSrc: ['/products/s010-01.jpg', '/products/s060-01.jpg', '/products/s130-01.jpg', '/products/s140.jpg'],
-    href: '/catalog/couplings',
+    href: '/categories/couplings',
   },
   tankCaps: {
     icon: ShieldCheck,
     imageSrc: ['/products/s280-02.jpg', '/products/s280-10.jpg', '/products/s270.jpg', '/products/s277.jpg'],
-    href: '/catalog/tank-caps',
+    href: '/categories/tank-caps',
   },
   repairKits: {
     icon: Wrench,
     imageSrc: ['/products/tmp1852.jpg', '/products/tmp5772.jpg', '/products/tmp9978.jpg'],
-    href: '/catalog/repair-kits',
+    href: '/categories/repair-kits',
   },
 } as const;
 
+export type CatalogueId = 'steelCables' | 'newProducts2026' | 'abs' | 'air' | 'cables' | 'fullCatalogue' | 'repairKits' | 'tankCaps';
 export interface CatalogItem {
-  id: string;
+  id: CatalogueId;
   fileSize: string;
   pdfUrl: string;
 }
@@ -144,12 +145,12 @@ export const CATALOGUES_DATA: CatalogItem[] = [
     pdfUrl: '/pdf/SMR-Catalogue.pdf',
   },
   {
-    id: 'repair-kits',
+    id: 'repairKits',
     fileSize: '7.5 MB',
     pdfUrl: '/pdf/SMR-RepairSet-2018.pdf',
   },
   {
-    id: 'tank-caps',
+    id: 'tankCaps',
     fileSize: '14.8 MB',
     pdfUrl: '/pdf/SMR-TankCap-2018.pdf',
   },

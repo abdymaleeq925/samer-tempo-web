@@ -111,7 +111,7 @@
         ]
       },
       {
-        "id": "tank-caps",
+        "id": "tankCaps",
         "name": "Fuel Tank Caps and Anti-Theft Systems",
         "tagline": "Fuel Security & Protection",
         "title": "Fuel Tank Caps & Anti-Siphon Security Systems",
@@ -124,7 +124,7 @@
         ]
       },
       {
-        "id": "repair-kits",
+        "id": "repairKits",
         "name": "Repair Kits",
         "tagline": "Maintenance & Service",
         "title": "Complete OEM Repair & Service Kits",
@@ -147,8 +147,8 @@
     "fullCatalogue": "Full Catalogue",
     "cables": "Electrical Cables & Plugs Catalogue",
     "air": "Pneumatic Couplings & Valves Catalogue",
-    "tank-caps": "Fuel Tank Caps & Anti-Siphon Systems Catalogue",
-    "repair-kits": "Repair Kits Catalogue",
+    "tankCaps": "Fuel Tank Caps & Anti-Siphon Systems Catalogue",
+    "repairKits": "Repair Kits Catalogue",
     "steelCables": "Steel Cables Catalogue",
     "newProducts2026": "New Products Catalogue",
     "abs": "RPM Sensors & Connection Cables Catalogue"

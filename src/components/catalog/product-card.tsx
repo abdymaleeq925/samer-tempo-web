@@ -11,7 +11,6 @@ interface ProductCardProps {
   product: Product;
 }
 
-
 export function ProductCard({ product }: ProductCardProps) {
   const { dict, lang } = useLang();
   const displayedOems = product.oemNumbers?.slice(0, 2) || [];
@@ -40,7 +39,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         {displayedOems.length > 0 && (
           <div className="mb-2 flex flex-wrap items-center gap-1.5 text-xs font-sans">
-            <span>OEM:</span>
+            <span>{dict.common.oemNumber}:</span>
             {displayedOems.map((oem) => (
               <span
                 key={oem}

@@ -27,7 +27,7 @@ const tabContentVariants = {
 } as const;
 
 export default function CategoryShowcase() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const showcaseDict = dict.categoryShowcase;
   const categories = showcaseDict?.items ?? [];
   const defaultTab = categories[0]?.id ?? 'cables';
@@ -115,9 +115,8 @@ export default function CategoryShowcase() {
           {categories.map((cat) => {
             const meta = CATEGORY_META[cat.id as keyof typeof CATEGORY_META];
             const imageSrc = meta?.imageSrc || ['/products/placeholder.png'];
-            const href = meta?.href || '/catalog';
+            const href = meta?.href;
             const isActive = activeTab === cat.id;
-
             return (
               <TabsContent
                 key={cat.id}
@@ -170,7 +169,7 @@ export default function CategoryShowcase() {
                           nativeButton={false}
                           className="w-full sm:w-auto gap-2 group"
                           render={
-                            <Link href={href}>
+                            <Link href={`/${lang}${href}`}>
                               <span>{showcaseDict?.exploreBtn}</span>
                               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </Link>

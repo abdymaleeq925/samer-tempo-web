@@ -281,7 +281,12 @@ export const MOCK_PRODUCTS: Product[] = [
           ru: 'Цветовая маркировка',
           de: 'Farbcode',
         },
-        value: 'Yellow / Sarı (Service)',
+        value: {
+          en: 'Yellow (Service)',
+          tr: 'Sarı (Servis)',
+          ru: 'Желтый (Голова)',
+          de: 'Gelb (Bremse)',
+        }
       },
       {
         label: {
