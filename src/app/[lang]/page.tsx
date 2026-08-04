@@ -6,11 +6,11 @@ import CategoryShowcase from '@/components/homepage/category-showcase';
 export default function HomePage() {
 
   return (
-    <div>
+    <>
       <HeroCollage/>
       <FeatureCards/> 
       <About/>
       <CategoryShowcase/>
-    </div>
+    </>
   );
 }

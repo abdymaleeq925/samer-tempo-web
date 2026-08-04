@@ -10,15 +10,17 @@ interface Props {
   lang: string;
   fallbackIcon: LucideIcon;
   getLabel: (key: SubKey) => string;
+  onClose: () => void;
 }
 
-export default function NavImageGrid({ items, lang, fallbackIcon: FallbackIcon, getLabel }: Props) {
+export default function NavImageGrid({ items, lang, fallbackIcon: FallbackIcon, getLabel, onClose }: Props) {
   return (
     <div className="relative grid grid-cols-2 gap-2">
       {items.map((child) => (
         <motion.div key={child.key} variants={itemVariants}>
           <Link
             href={`/${lang}${child.href}`}
+            onClick={onClose}
             className="group/item relative flex items-end aspect-4/3 overflow-hidden rounded-xl bg-zinc-100 ring-1 ring-zinc-200"
           >
             {child.image ? (

@@ -13,9 +13,10 @@ interface Props {
   fallbackIcon: LucideIcon;
   items: readonly SubNavItem[];
   getLabel: (key: SubKey) => string;
+  onClose: () => void;
 }
 
-export default function NavDropdownPanel({ panelId, triggerId, lang, fallbackIcon, items, getLabel }: Props) {
+export default function NavDropdownPanel({ panelId, triggerId, lang, fallbackIcon, items, getLabel, onClose }: Props) {
   const showImages = items.some((c) => c.image);
 
   return (
@@ -33,9 +34,9 @@ export default function NavDropdownPanel({ panelId, triggerId, lang, fallbackIco
     >
       <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-zinc-200/80" />
       {showImages ? (
-        <NavImageGrid items={items} lang={lang} fallbackIcon={fallbackIcon} getLabel={getLabel} />
+        <NavImageGrid items={items} lang={lang} fallbackIcon={fallbackIcon} getLabel={getLabel} onClose={onClose}/>
       ) : (
-        <NavTextList items={items} lang={lang} getLabel={getLabel}/>
+        <NavTextList items={items} lang={lang} getLabel={getLabel} onClose={onClose}/>
       )}
     </motion.div>
   );

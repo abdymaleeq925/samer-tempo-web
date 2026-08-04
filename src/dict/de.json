@@ -15,7 +15,7 @@
   },
   "navigation": {
     "home": "Startseite",
-    "catalog": "Katalog",
+    "catalogues": "Kataloge",
     "categories": "Kategorien",
     "about": "Über uns",
     "contacts": "Kontakt",
@@ -34,7 +34,7 @@
     "searchPlaceholder": "Suche nach Artikelnummer oder OEM (z. B. 441-032-8080, S010-01)...",
     "searchButton": "Suchen",
     "viewDetails": "Details anzeigen",
-    "downloadPdf": "PDF-Katalog herunterladen",
+    "noProducts": "Keine Produkte in dieser Kategorie gefunden",
     "oemNumber": "OEM-Nummer",
     "crossReferences": "Cross-Referenzen",
     "specifications": "Technische Daten",
@@ -111,7 +111,7 @@
         ]
       },
       {
-        "id": "tankCaps",
+        "id": "tank-caps",
         "name": "Tankdeckel und Diebstahlsicherungssysteme",
         "tagline": "Kraftstoffsicherheit",
         "title": "Tankdeckel & Anti-Siphon-Schutzsysteme",
@@ -124,7 +124,7 @@
         ]
       },
       {
-        "id": "repairKits",
+        "id": "repair-kits",
         "name": "Reparatursätze",
         "tagline": "Wartung & Instandhaltung",
         "title": "Komplette Reparatursätze in OEM-Qualität",
@@ -138,6 +138,21 @@
       }
     ]
   },
+  "catalogues": {
+    "title": "Samer Tempo Produktkataloge herunterladen",
+    "subtitle": "Entdecken Sie unser komplettes Sortiment an Ersatzteilen für LKW und Anhänger. Laden Sie die aktuellen PDF-Kataloge herunter.",
+    "downloadBtn": "PDF herunterladen",
+    "viewBtn": "Vorschau",
+    "contactBtn": "Verkaufsmanager kontaktieren",
+    "fullCatalogue": "Gesamtkatalog",
+    "cables": "Katalog für Elektrokabel & Stecker",
+    "air": "Katalog für Pneumatikkupplungen & Ventile",
+    "tank-caps": "Katalog für Tankdeckel & Diebstahlsicherungen",
+    "repair-kits": "Katalog für Reparatursätze",
+    "steelCables": "Katalog für Stahlseile",
+    "newProducts2026": "Katalog für Neuheiten 2026",
+    "abs": "Katalog für ABS/EBS-Sensoren & Verbindungskabel"
+  },
   "sections": {
     "featuredProducts": "Empfohlene Produkte",
     "topCategories": "Hauptkategorien",
@@ -146,9 +161,9 @@
   },
   "product": {
     "description": "Produktbeschreibung",
-    "application": "Passend für Fahrzeuge & Achsen",
+    "viewAll": "Alle anzeigen",
     "packaging": "Verpackung & Mindestbestellmenge",
-    "relatedProducts": "Ähnliche Artikel",
+    "relatedProducts": "Ähnliche Produkte",
     "watchOnYoutube": "Übersicht auf YouTube ansehen"
   },
   "contactForm": {

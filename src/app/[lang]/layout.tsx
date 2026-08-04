@@ -11,6 +11,7 @@ import LenisProvider from '@/components/providers/lenis-provider';
 
 import "./globals.css";
 import { LangProvider } from "@/context/lang-context";
+import { AppBreadcrumbs } from "@/components/layout/breadcrumbs";
 
 const getCachedDictionary = cache(getDictionary);
 
@@ -81,6 +82,7 @@ export default async function RootLayout({ children, params }: Props) {
         <LenisProvider>
           <LangProvider lang={lang} dict={dict}>
             <Header/>
+            <AppBreadcrumbs/>
               <main className="flex-1">
                 {children}
               </main>
