@@ -34,7 +34,7 @@ export function AppBreadcrumbs() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem className='font-heading text-lg md:text-2xl'>
-            <BreadcrumbLink href="/">
+            <BreadcrumbLink href={`/${lang}`}>
               {n.home}
             </BreadcrumbLink>
           </BreadcrumbItem>
