@@ -1,0 +1,103 @@
+"use client"
+
+import { Button } from "@/components/ui/button";
+import { CATALOGUES_DATA } from "@/constants";
+import { useLang } from "@/context/lang-context"
+import { Download, ExternalLink, FileText, UserCheck } from "lucide-react";
+import Link from "next/link";
+
+export default function Catalog() {
+  const { dict } = useLang();
+  const n = dict.catalogues;
+  return (
+    <section className="py-12 bg-stone-100 min-h-[70vh] font-heading">
+      <div className="container mx-auto px-4">
+        <div className="mb-12">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            {n.title}
+          </h1>
+          <p className="text-base md:text-lg">
+            {n.subtitle}
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {CATALOGUES_DATA.map((item) => {
+            const catalogTitle = (n as Record<string, string>)[item.id];
+            return (
+              <div
+                key={item.id}
+                className="flex flex-col justify-between rounded-xl border border-black bg-white px-4 py-6"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="p-2 rounded-lg border border-black">
+                      <FileText className="w-6 h-6"/>
+                    </div>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md  border border-black">
+                      PDF • {item.fileSize}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-sans font-semibold">
+                    {catalogTitle}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-3 pt-4 border-t border-black">
+                  <Button
+                    variant="outline"
+                    className="flex-1 border-black bg-transparent hover:bg-black hover:text-white font-caption"
+                    render={
+                      <a
+                        href={item.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {n.viewBtn}
+                      </a>
+                    }
+                  />
+                  <Button
+                    className="flex-1 bg-transparent text-black border border-black hover:bg-black hover:text-white font-caption font-medium"
+                    render={
+                      <a
+                        href={item.pdfUrl}
+                        download
+                        className="inline-flex items-center justify-center gap-2"
+                      >
+                        <Download className="w-4 h-4" />
+                        {n.downloadBtn}
+                      </a>
+                    }
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <h3 className="text-xl font-bold text-white">
+              Samer Tempo Sales
+            </h3>
+            <p className="text-sm text-zinc-400 max-w-xl">
+              {n.subtitle}
+            </p>
+          </div>
+
+          <Button
+            size="lg"
+            className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 shrink-0"
+            render={
+              <Link href="/contacts" className="inline-flex items-center gap-2">
+                <UserCheck className="w-4 h-4" />
+                {n.contactBtn}
+              </Link>
+            }
+          />
+        </div>
+
+      </div>
+    </section>
+  )
+}

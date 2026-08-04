@@ -29,7 +29,7 @@ export const PRODUCT_IMAGES = [
   '/products/tmp9978.jpg',
 ] as const;
 
-export type NavKey = 'home' | 'catalog' | 'categories' | 'about' | 'contacts';
+export type NavKey = 'home' | 'catalogues' | 'categories' | 'about' | 'contacts';
 export type SubKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits' | 'company' | 'vision' | 'mission' | 'certificates';
 export interface SubNavItem {
   readonly key: SubKey,
@@ -46,7 +46,7 @@ export interface NavItem {
 
 export const NAV_LINKS = [
   { key: 'home', href: '', icon: House, children: undefined },
-  { key: 'catalog', href: '/catalog', icon: Grid, children: undefined },
+  { key: 'catalogues', href: '/catalogues', icon: Grid, children: undefined },
   {
     key: 'categories', href: undefined, icon: FolderTree,
     children: [
@@ -105,3 +105,52 @@ export const CATEGORY_META: Partial<Record<SubKey, CategoryShowcaseProps>> = {
     href: '/catalog/repair-kits',
   },
 } as const;
+
+export interface CatalogItem {
+  id: string;
+  fileSize: string;
+  pdfUrl: string;
+}
+
+export const CATALOGUES_DATA: CatalogItem[] = [
+  {
+    id: 'steelCables',
+    fileSize: '2.1 MB',
+    pdfUrl: '/pdf/SMR-Steel-Cables.pdf',
+  },
+  {
+    id: 'newProducts2026',
+    fileSize: '920 KB',
+    pdfUrl: '/pdf/SMR-NewProducts-2026.pdf',
+  },
+  {
+    id: 'abs',
+    fileSize: '5.5 MB',
+    pdfUrl: '/pdf/SMR-ABS-2018.pdf',
+  },
+  {
+    id: 'air',
+    fileSize: '12.1 MB',
+    pdfUrl: '/pdf/SMR-Air-2018.pdf',
+  },
+  {
+    id: 'cables',
+    fileSize: '3.2 MB',
+    pdfUrl: '/pdf/SMR-Cable-2018.pdf',
+  },
+  {
+    id: 'fullCatalogue',
+    fileSize: '5.5 MB',
+    pdfUrl: '/pdf/SMR-Catalogue.pdf',
+  },
+  {
+    id: 'repair-kits',
+    fileSize: '7.5 MB',
+    pdfUrl: '/pdf/SMR-RepairSet-2018.pdf',
+  },
+  {
+    id: 'tank-caps',
+    fileSize: '14.8 MB',
+    pdfUrl: '/pdf/SMR-TankCap-2018.pdf',
+  },
+];

@@ -87,6 +87,7 @@ export default function NavBar({ link, lang, label, isOpen, onOpen, onClose, onT
               fallbackIcon={Icon}
               items={link.children!}
               getLabel={getSubLabel}
+              onClose={onClose}
             />
           )}
         </AnimatePresence>

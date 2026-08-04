@@ -8,9 +8,10 @@ interface Props {
   items: readonly SubNavItem[];
   lang: string;
   getLabel: (key: SubKey) => string;
+  onClose: () => void;
 }
 
-export default function NavTextList({ items, lang, getLabel }: Props) {
+export default function NavTextList({ items, lang, getLabel , onClose}: Props) {
   return (
     <div className="relative flex flex-col gap-1">
       {items.map((child) => {
@@ -19,6 +20,7 @@ export default function NavTextList({ items, lang, getLabel }: Props) {
           <motion.div key={child.key} variants={itemVariants}>
             <Link
               href={`/${lang}${child.href}`}
+              onClick={onClose}
               className="group/item relative flex items-center gap-3 overflow-hidden rounded-xl px-3 py-3 transition-colors hover:bg-zinc-50"
             >
               <span className="absolute left-0 top-1/2 h-0 w-0.5 -translate-y-1/2 bg-brand transition-all duration-200 group-hover/item:h-6" />

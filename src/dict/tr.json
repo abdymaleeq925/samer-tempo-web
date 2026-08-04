@@ -15,7 +15,7 @@
   },
   "navigation": {
     "home": "Anasayfa",
-    "catalog": "Katalog",
+    "catalogues": "Kataloglar",
     "categories": "Kategoriler",
     "about": "Hakkımızda",
     "contacts": "İletişim",
@@ -34,7 +34,7 @@
     "searchPlaceholder": "Parça kodu veya OEM ile ara (örn. 441-032-8080, S010-01)...",
     "searchButton": "Ara",
     "viewDetails": "Detayları Gör",
-    "downloadPdf": "PDF Kataloğu İndir",
+    "noProducts": "Bu kategoride ürün bulunamadı",
     "oemNumber": "OEM Numarası",
     "crossReferences": "Çapraz Referanslar (Cross)",
     "specifications": "Teknik Özellikler",
@@ -111,7 +111,7 @@
         ]
       },
       {
-        "id": "tankCaps",
+        "id": "tank-caps",
         "name": "Depo Kapakları ve Mazot Koruma Sistemleri",
         "tagline": "Yakıt Güvenliği ve Koruma",
         "title": "Depo Kapakları ve Mazot Koruma Önleme Sistemleri",
@@ -124,7 +124,7 @@
         ]
       },
       {
-        "id": "repairKits",
+        "id": "repair-kits",
         "name": "Tamir Takımları",
         "tagline": "Bakım ve Servis",
         "title": "Eksiksiz Tamir ve Bakım Takımları",
@@ -138,6 +138,21 @@
       }
     ]
   },
+  "catalogues": {
+    "title": "Samer Tempo Ürün Kataloglarını İndirin",
+    "subtitle": "Kamyon ve treyler yedek parça ürün yelpazemizi inceleyin. Güncel PDF kataloglarımızı hemen indirin.",
+    "downloadBtn": "PDF İndir",
+    "viewBtn": "İncele",
+    "contactBtn": "Satış Yöneticisi ile İletişime Geçin",
+    "fullCatalogue": "Genel Ürün Kataloğu",
+    "cables": "Elektrik Kabloları ve Fiş Kataloğu",
+    "air": "Pnömatik Kaplinler ve Silindirler Kataloğu",
+    "tank-caps": "Depo Kapakları ve Mazot Koruma Kataloğu",
+    "repair-kits": "Tamir Takımları Kataloğu",
+    "steelCables": "Çelik Halatlar Kataloğu",
+    "newProducts2026": "Yeni Ürünler Kataloğu 2026",
+    "abs": "ABS/EBS Sensörleri ve Bağlantı Kabloları Kataloğu"
+  },
   "sections": {
     "featuredProducts": "Öne Çıkan Ürünler",
     "topCategories": "Ana Ürün Kategorileri",
@@ -146,9 +161,9 @@
   },
   "product": {
     "description": "Ürün Açıklaması",
-    "application": "Uyumlu Araçlar ve Dingiller",
+    "viewAll": "Tümünü Gör",
     "packaging": "Ambalaj ve Minimum Sipariş",
-    "relatedProducts": "İlgili Yan Ürünler",
+    "relatedProducts": "Benzer Ürünler",
     "watchOnYoutube": "YouTube'da İncelemeyi İzle"
   },
   "contactForm": {

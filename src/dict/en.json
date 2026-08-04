@@ -15,7 +15,7 @@
   },
   "navigation": {
     "home": "Home",
-    "catalog": "Catalog",
+    "catalogues": "Catalogues",
     "categories": "Categories",
     "about": "About Us",
     "contacts": "Contacts",
@@ -34,7 +34,7 @@
     "searchPlaceholder": "Search by part number or OEM (e.g. 441-032-8080, S010-01)...",
     "searchButton": "Search",
     "viewDetails": "View Details",
-    "downloadPdf": "Download PDF Catalog",
+    "noProducts": "No products found in this category",
     "oemNumber": "OEM Number",
     "crossReferences": "Cross References",
     "specifications": "Technical Specifications",
@@ -111,7 +111,7 @@
         ]
       },
       {
-        "id": "tankCaps",
+        "id": "tank-caps",
         "name": "Fuel Tank Caps and Anti-Theft Systems",
         "tagline": "Fuel Security & Protection",
         "title": "Fuel Tank Caps & Anti-Siphon Security Systems",
@@ -124,7 +124,7 @@
         ]
       },
       {
-        "id": "repairKits",
+        "id": "repair-kits",
         "name": "Repair Kits",
         "tagline": "Maintenance & Service",
         "title": "Complete OEM Repair & Service Kits",
@@ -138,6 +138,21 @@
       }
     ]
   },
+  "catalogues": {
+    "title": "Download Samer Tempo Product Catalogues",
+    "subtitle": "Explore our full range of truck and trailer spare parts. Download the latest PDF catalogs for offline use.",
+    "downloadBtn": "Download PDF",
+    "viewBtn": "Preview",
+    "contactBtn": "Contact Sales Manager",
+    "fullCatalogue": "Full Catalogue",
+    "cables": "Electrical Cables & Plugs Catalogue",
+    "air": "Pneumatic Couplings & Valves Catalogue",
+    "tank-caps": "Fuel Tank Caps & Anti-Siphon Systems Catalogue",
+    "repair-kits": "Repair Kits Catalogue",
+    "steelCables": "Steel Cables Catalogue",
+    "newProducts2026": "New Products Catalogue",
+    "abs": "RPM Sensors & Connection Cables Catalogue"
+  },
   "sections": {
     "featuredProducts": "Featured Products",
     "topCategories": "Main Product Categories",
@@ -146,9 +161,9 @@
   },
   "product": {
     "description": "Product Description",
-    "application": "Compatible Vehicles & Axles",
+    "viewAll": "View All",
     "packaging": "Packaging & MOQ",
-    "relatedProducts": "Related Components",
+    "relatedProducts": "Related Products",
     "watchOnYoutube": "Watch Overview on YouTube"
   },
   "contactForm": {
