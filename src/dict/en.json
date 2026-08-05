@@ -36,6 +36,7 @@
     "viewDetails": "View Details",
     "noProducts": "No products found in this category",
     "oemNumber": "OEM Number",
+    "searchNotFound": "No results found for \"{query}\"",
     "crossReferences": "Cross References",
     "specifications": "Technical Specifications",
     "videoReview": "Video Review",
@@ -45,98 +46,128 @@
     "close": "Close",
     "allCategories": "All Categories"
   },
-  "hero": {
+  "homepage": {
+    "hero": {
     "title": "Automotive Spare Parts Search",
-    "subtitle": "Enter OEM number, code number, or part name"
-  },
-  "features": [
-    {
-      "title": "High Quality",
-      "description": "Strict spare part control"
+    "subtitle": "Enter OEM number, code number, or part name",
+    "imageAlt": "Auto part {index}"
+
     },
-    {
-      "title": "Certified Parts",
-      "description": "ISO 9001, IATF 16949, TÜV, ADR"
-    },
-    {
-      "title": "Import & Export",
-      "description": "Worldwide B2B delivery"
-    },
-    {
-      "title": "Fast Logistics",
-      "description": "Express dispatch options"
-    }
-  ],
-  "about": {
-    "badge": "About Samer Automotive",
-    "heading": "Your Trusted B2B Partner in Commercial Vehicle Components",
-    "lead": "Since 2001, Samer Automotive has been a leading manufacturer and exporter of high-precision spare parts for commercial vehicles, trucks, and trailers.",
-    "paragraph1": "Acting as the global sales and distribution division of Acar Metal, we combine advanced manufacturing capabilities with seamless international trade. From engineering to post-sales support, we supply premium components to distributors across Europe and worldwide.",
-    "paragraph2": "Our strategy is built on long-term partnerships rather than short-term gains. Every component strictly complies with global quality standards, verified by ISO 9001, TÜV, and ADR certifications.",
-    "stats": {
-      "experience": "25+ Years Experience",
-      "export": "Global Export Network",
-      "certified": "TÜV & ADR Certified"
-    }
-  },
-  "categoryShowcase": {
-    "title": "Product Categories",
-    "subtitle": "Explore our high-performance spare parts.",
-    "exploreBtn": "View Category Products",
-    "items": [
+    "features": [
       {
-        "id": "cables",
-        "name": "Electrical Cables and Plugs",
-        "tagline": "OEM Standard",
-        "title": "High-Durability Electrical Cables & Plugs",
-        "description": "Heavy-duty electrical harnesses, spiral cables, and multi-pin plugs designed for reliable signal and power transmission in commercial vehicles.",
-        "highlights": [
-          "ISO 9001 Certified",
-          "Weather & Oil Resistant Shell",
-          "High Conductivity Copper",
-          "Custom Pin Configurations"
-        ]
+        "title": "High Quality",
+        "description": "Strict spare part control"
       },
       {
-        "id": "couplings",
-        "name": "Air Couplings and Valves",
-        "tagline": "Pneumatic Systems",
-        "title": "Industrial-Grade Air Couplings & Pneumatic Valves",
-        "description": "Precision-engineered pneumatic couplings and control valves built to maintain optimal pressure stability in heavy-duty brake and air suspension systems.",
-        "highlights": [
-          "High Pressure Tolerance",
-          "Corrosion-Resistant Coating",
-          "Leak-Free Seal Technology",
-          "Direct OEM Replacement"
-        ]
+        "title": "Certified Parts",
+        "description": "ISO 9001, IATF 16949, TÜV, ADR"
       },
       {
-        "id": "tankCaps",
-        "name": "Fuel Tank Caps and Anti-Theft Systems",
-        "tagline": "Fuel Security & Protection",
-        "title": "Fuel Tank Caps & Anti-Siphon Security Systems",
-        "description": "Robust fuel tank caps and integrated anti-theft devices designed to prevent fuel loss, tampering, and contamination in commercial fleet tanks.",
-        "highlights": [
-          "Tamper-Proof Design",
-          "Vented & Non-Vented Options",
-          "High-Impact Materials",
-          "Universal & Custom Fitment"
-        ]
+        "title": "Import & Export",
+        "description": "Worldwide B2B delivery"
       },
       {
-        "id": "repairKits",
-        "name": "Repair Kits",
-        "tagline": "Maintenance & Service",
-        "title": "Complete OEM Repair & Service Kits",
-        "description": "All-in-one maintenance kits containing high-grade seals, gaskets, and hardware for fast, reliable, and cost-effective vehicle servicing.",
-        "highlights": [
-          "Complete Component Matching",
-          "Premium Grade Elastomers",
-          "Reduced Downtime",
-          "Rigorous Quality Testing"
-        ]
+        "title": "Fast Logistics",
+        "description": "Express dispatch options"
       }
-    ]
+    ],
+    "aboutus": {
+      "badge": "About Samer Automotive",
+      "heading": "Your Trusted B2B Partner in Commercial Vehicle Components",
+      "lead": "Since 2001, Samer Automotive has been a leading manufacturer and exporter of high-precision spare parts for commercial vehicles, trucks, and trailers.",
+      "paragraph1": "Acting as the global sales and distribution division of Acar Metal, we combine advanced manufacturing capabilities with seamless international trade. From engineering to post-sales support, we supply premium components to distributors across Europe and worldwide.",
+      "paragraph2": "Our strategy is built on long-term partnerships rather than short-term gains. Every component strictly complies with global quality standards, verified by ISO 9001, TÜV, and ADR certifications.",
+      "stats": {
+        "experience": "25+ Years Experience",
+        "export": "Global Export Network",
+        "certified": "TÜV & ADR Certified"
+      }
+    },
+    "categoryShowcase": {
+      "title": "Product Categories",
+      "subtitle": "Explore our high-performance spare parts.",
+      "exploreBtn": "View Category Products",
+      "items": [
+        {
+          "id": "cables",
+          "name": "Electrical Cables and Plugs",
+          "tagline": "OEM Standard",
+          "title": "High-Durability Electrical Cables & Plugs",
+          "description": "Heavy-duty electrical harnesses, spiral cables, and multi-pin plugs designed for reliable signal and power transmission in commercial vehicles.",
+          "highlights": [
+            "ISO 9001 Certified",
+            "Weather & Oil Resistant Shell",
+            "High Conductivity Copper",
+            "Custom Pin Configurations"
+          ]
+        },
+        {
+          "id": "couplings",
+          "name": "Air Couplings and Valves",
+          "tagline": "Pneumatic Systems",
+          "title": "Industrial-Grade Air Couplings & Pneumatic Valves",
+          "description": "Precision-engineered pneumatic couplings and control valves built to maintain optimal pressure stability in heavy-duty brake and air suspension systems.",
+          "highlights": [
+            "High Pressure Tolerance",
+            "Corrosion-Resistant Coating",
+            "Leak-Free Seal Technology",
+            "Direct OEM Replacement"
+          ]
+        },
+        {
+          "id": "tankCaps",
+          "name": "Fuel Tank Caps and Anti-Theft Systems",
+          "tagline": "Fuel Security & Protection",
+          "title": "Fuel Tank Caps & Anti-Siphon Security Systems",
+          "description": "Robust fuel tank caps and integrated anti-theft devices designed to prevent fuel loss, tampering, and contamination in commercial fleet tanks.",
+          "highlights": [
+            "Tamper-Proof Design",
+            "Vented & Non-Vented Options",
+            "High-Impact Materials",
+            "Universal & Custom Fitment"
+          ]
+        },
+        {
+          "id": "repairKits",
+          "name": "Repair Kits",
+          "tagline": "Maintenance & Service",
+          "title": "Complete OEM Repair & Service Kits",
+          "description": "All-in-one maintenance kits containing high-grade seals, gaskets, and hardware for fast, reliable, and cost-effective vehicle servicing.",
+          "highlights": [
+            "Complete Component Matching",
+            "Premium Grade Elastomers",
+            "Reduced Downtime",
+            "Rigorous Quality Testing"
+          ]
+        }
+      ]
+    }
+  },
+  "about": {
+    "company": {
+      "badge": "About Samer Otomotiv",
+      "heading": "Your Trusted B2B Partner in Commercial Vehicle Spare Parts",
+      "paragraph": "Our company was established in 2001 as an independent sales division of Acar Metal. Its primary goal was to consolidate domestic and international sales, as well as to provide full pre-sales and after-sales support based on market needs at the time. This enabled Acar Metal to focus entirely on manufacturing—prioritizing the three key goals of any manufacturer: developing new products, improving existing lines, and reducing production costs.\nSamer Otomotiv strives to market Acar Metal's certified, high-quality products to domestic and international wholesalers, while delivering comprehensive post-sales service.\nHaving participated in dozens of trade fairs and conducted face-to-face negotiations with hundreds of clients since its founding, our company successfully operates in both local and global markets. Throughout our journey, we have continuously renewed and evolved our operations."
+    },
+    "mission": {
+      "badge": "Our Mission",
+      "heading": "Driving reliable B2B partnerships with quality truck & trailer components.",
+      "paragraph": "To deliver the highest standard of service and products to our valued business partners through a principled, honest, and high-quality corporate identity.\nTo foster long-term, mutually beneficial partnerships and client satisfaction, encouraging all our employees to prioritize lasting cooperation over short-term commercial gains.\nTo adapt dynamically to evolving market conditions, constantly advancing our mission of leading through innovation within the sector."
+    },
+    "vision": {
+      "badge": "Our Vision",
+      "heading": "Setting global standards in commercial vehicle parts distribution.",
+      "paragraph": "With customer satisfaction as our core priority, our goal is to enhance our leadership and well-earned reputation. We achieve this by offering high-quality products at competitive prices, maintaining an extensive inventory, and delivering swift service while strictly adhering to professional business ethics."
+    },
+    "certificates": {
+      "badge": "Certificates & Quality",
+      "heading":"Internationally certified products manufactured to strict OEM standards.",
+      "stats": {
+        "experience": "25+ Years of Experience",
+        "export": "Global Export Network",
+        "certified": "TÜV & ADR Certified"
+      }
+    }
   },
   "catalogues": {
     "title": "Download Samer Tempo Product Catalogues",
@@ -153,27 +184,54 @@
     "newProducts2026": "New Products Catalogue",
     "abs": "RPM Sensors & Connection Cables Catalogue"
   },
-  "sections": {
-    "featuredProducts": "Featured Products",
-    "topCategories": "Main Product Categories",
-    "whyChooseUs": "Why Partner With Us",
-    "exportMarkets": "Global Export Reach"
-  },
   "product": {
     "description": "Product Description",
     "viewAll": "View All",
     "packaging": "Packaging & MOQ",
     "relatedProducts": "Related Products",
-    "watchOnYoutube": "Watch Overview on YouTube"
+    "watchOnYoutube": "Watch Overview on YouTube",
+    "imageAlt": "{title} — photo {index}",
+    "thumbnailAlt": "View photo {index}"
   },
-  "contactForm": {
-    "title": "Request B2B Quote",
-    "subtitle": "Fill out the form below to receive pricing and availability for wholesale orders.",
-    "name": "Full Name / Company",
-    "email": "Business Email",
-    "phone": "Phone Number (WhatsApp)",
-    "message": "Part numbers or list of items required...",
-    "submit": "Submit RFQ"
+  "contacts": {
+    "title": "Contact Us",
+    "subtitle": "Have questions about our commercial vehicle parts? Get in touch with our expert sales team.",
+    "infoTitle": "Get in Touch",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "workingHoursLabel": "Working Hours",
+    "formTitle": "Send Us a Message",
+    "fullNameLabel": "Full Name",
+    "companyLabel": "Company",
+    "messageLabel": "Message / Request",
+    "submitBtn": "Send Message",
+    "successTitle": "Message Sent!",
+    "formBadge": "B2B Export Request",
+    "formSubtitle": "Fill out the form to receive pricing and delivery estimates for auto parts.",
+    "fullNamePlaceholder": "John Smith",
+    "companyPlaceholder": "Trans Logistics Corp",
+    "emailPlaceholder": "export@company.com",
+    "phonePlaceholder": "+90 (212) 000-0000",
+    "oemLabel": "OEM Numbers / Part Codes",
+    "oemPlaceholder": "e.g. SAF 4200001, BPW 05.444.10.01.0",
+    "messagePlaceholder": "Specify quantities or part items...",
+    "successDesc": "Thank you for reaching out. Our export team will contact you shortly.",
+    "sendAnother": "Send another message",
+    "workingHours": "Mon - Fri: 08:00 - 18:00 (GMT+3)\nSat - Sun: Closed",
+    "mapConsent": {
+      "title": "Google Maps is disabled",
+      "description": "To view our interactive office map, please allow loading Google Maps external content.",
+      "acceptBtn": "Allow Map"
+    },
+    "validation": {
+      "fullNameMin": "Name must be at least 2 characters.",
+      "companyMin": "Please provide your company name.",
+      "emailInvalid": "Enter a valid work email.",
+      "phoneMin": "Please provide a contact phone number.",
+      "messageMin": "Message must be at least 10 characters."
+    }
+
   },
   "footer": {
     "description": "Premium manufacturing & export of commercial vehicle components, trailer equipment, and pneumatic systems since 2001.",

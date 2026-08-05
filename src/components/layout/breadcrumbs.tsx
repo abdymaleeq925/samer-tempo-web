@@ -19,15 +19,23 @@ export function AppBreadcrumbs() {
   const { lang, dict } = useLang();
   const n = dict.navigation;
 
-  if (pathname === '/' || pathname === `/${lang}`) {
-    return null;
-  }
+  if (pathname === '/' || pathname === `/${lang}`) return null;
 
   const rawSegments = pathname.split('/').filter(Boolean);
-  const VIRTUAL_SEGMENTS = new Set(['products', 'product', 'categories', 'about']);
+  const VIRTUAL_SEGMENTS = new Set(['products', 'product', 'categories']);
   const segments = rawSegments.filter((seg) => seg !== lang).filter((seg) => !VIRTUAL_SEGMENTS.has(seg));
   const lastSegment = segments[segments.length - 1];
   const currentProduct = MOCK_PRODUCTS.find( (p) => p.slug === lastSegment || p.id === lastSegment );
+
+  function resolveLabel(segment: string): string {
+    const navValue = n[segment as keyof typeof n];
+    if (typeof navValue === 'string') return navValue;
+
+    const subValue = n.sub?.[segment as keyof typeof n.sub];
+    if (typeof subValue === 'string') return subValue;
+
+    return segment.replace(/-/g, ' ');
+  }
 
   return (
     <div className="px-4 py-4 xl:px-24 border-b border-zinc-800/80 backdrop-blur-md">
@@ -42,8 +50,8 @@ export function AppBreadcrumbs() {
             const pathUntilSegment = segments.slice(0, index + 1).join('/');
             const href = `/${lang}/${pathUntilSegment}`;
             const isLast = index === segments.length - 1;
-            const translatedLabel =  n[segment as keyof typeof n] as string ||  n.sub?.[segment as keyof typeof n.sub] ||  segment.replace(/-/g, ' ');
-            const label = translatedLabel.charAt(0).toUpperCase() + translatedLabel.slice(1);
+            const rawLabel = resolveLabel(segment);
+            const label = rawLabel.charAt(0).toUpperCase() + rawLabel.slice(1);
             return (
               <React.Fragment key={href}>
                 <BreadcrumbSeparator />

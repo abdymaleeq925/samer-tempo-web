@@ -30,7 +30,7 @@ export const PRODUCT_IMAGES = [
 ] as const;
 
 export type NavKey = 'home' | 'catalogues' | 'categories' | 'about' | 'contacts';
-export type SubKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits' | 'company' | 'vision' | 'mission' | 'certificates';
+export type SubKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits';
 export interface SubNavItem {
   readonly key: SubKey,
   readonly href: string,
@@ -47,8 +47,7 @@ export interface NavItem {
 export const NAV_LINKS = [
   { key: 'home', href: '', icon: House, children: undefined },
   { key: 'catalogues', href: '/catalogues', icon: Grid, children: undefined },
-  {
-    key: 'categories', href: undefined, icon: FolderTree,
+  { key: 'categories', href: undefined, icon: FolderTree,
     children: [
       { key: 'cables', href: '/categories/cables', image: "/products/s182-245pur.jpg", icon: Cable },
       { key: 'couplings', href: '/categories/couplings', image: "/products/s010-01.jpg", icon: Disc },
@@ -56,15 +55,7 @@ export const NAV_LINKS = [
       { key: 'repairKits', href: '/categories/repair-kits', image: "/products/tmp1852.jpg", icon: Wrench },
     ],
   },
-  {
-    key: 'about', href: undefined, icon: Info,
-    children: [
-      { key: 'company', href: '/about/company', image: undefined, icon: Building2 },
-      { key: 'vision', href: '/about/vision', image: undefined, icon: Eye },
-      { key: 'mission', href: '/about/mission', image: undefined, icon: Target },
-      { key: 'certificates', href: '/about/certificates', image: undefined, icon: Award },
-    ],
-  },
+  { key: 'about', href: '/about', icon: Info, children: undefined },
   { key: 'contacts', href: '/contacts', icon: PhoneCall, children: undefined },
 ] as const satisfies readonly NavItem[];
 

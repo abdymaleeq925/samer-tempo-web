@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -13,6 +13,7 @@ import NavBar from './navigation-bar';
 export default function Header() {
   const { lang, dict } = useLang();
   const [openKey, setOpenKey] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const openTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -26,8 +27,19 @@ export default function Header() {
     closeTimer.current = setTimeout(() => setOpenKey(null), CLOSE_DELAY);
   }
 
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => {
+      document.documentElement.style.setProperty('--header-h', `${entry.contentRect.height}px`);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  
+
   return (
-    <header className="sticky top-0 z-50 text-heading bg-stone-100 backdrop-blur-md border-b border-zinc-800/80 px-4 sm:px-6 py-3">
+    <header className="sticky top-0 z-50 text-heading bg-stone-100 backdrop-blur-md border-b border-zinc-800/80 px-4 sm:px-6 py-3" ref={headerRef}>
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <Link href={`/${lang}`} className="flex items-center gap-3 group shrink-0 focus:outline-none">
           <Image

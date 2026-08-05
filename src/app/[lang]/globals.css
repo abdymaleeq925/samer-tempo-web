@@ -10,8 +10,24 @@
   --font-heading: var(--font-commissioner), system-ui, sans-serif;
   --font-caption: var(--font-pt-caption), system-ui, sans-serif;
   --font-sans: var(--font-mulish), system-ui, sans-serif;
-  --color-brand: #ed8e33;
-  --color-brand-dark: #d67a22;
+  /* Бренд */
+  --color-brand: #ed8e33;        /* основной акцент — CTA, активные состояния, иконки */
+  --color-brand-dark: #d67a22;   /* hover/active на brand-элементах, тени */
+  --color-brand-light: #fdf1e3;  /* очень светлый tint — фоны бейджей, hover-подложки */
+
+  /* База */
+  --color-ink: #0a0a0a;          /* не чистый #000 — мягче для больших плашек текста/фона */
+  --color-paper: #ffffff;
+
+  /* Нейтральная шкала — используйте готовую zinc/stone из Tailwind, она у вас уже в ходу */
+
+  /* Функциональные (нужны для форм, статусов наличия на складе и т.п.) */
+  --color-success: #1f9d55;      /* "в наличии", успешная отправка формы */
+  --color-success-light: #eafaf0;
+  --color-danger: #dc2626;       /* ошибки валидации — тот же red-600, что у вас уже используется */
+  --color-danger-light: #fef2f2;
+  --color-warning: #d97706;      /* "мало на складе" / "под заказ" — предупреждающий статус */
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Commissioner, PT_Sans_Caption, Mulish } from "next/font/google";
 
@@ -33,34 +34,41 @@ const ptSansCaption = PT_Sans_Caption({
   variable: "--font-pt-caption",
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://samer.com.tr";
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{ lang: Locale }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const lang = (await params).lang as Locale;
-  const dict = await getCachedDictionary(lang);
+function assertLocale(lang: string): asserts lang is Locale {
+  if (!(locales as readonly string[]).includes(lang)) notFound();
+}
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = (await params);
+  assertLocale(lang);
+  const dict = await getCachedDictionary(lang);
   return {
-    title: dict.meta.title,
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: dict.meta.title,
+      template: `%s — Samer Tempo`,
+    },
     description: dict.meta.description,
     // Explicitly set the favicon icon
     icons: {
-      icon: [
-        { url: '/icon.png', type: 'image/png' },
-      ],
+      icon: [{ url: '/icon.png', type: 'image/png' },],
       shortcut: '/icon.png',
       apple: '/icon.png',
     },
-    alternates: {
-      canonical: `https://samer.com.tr/${lang}`,
-      languages: {
-        'en-US': 'https://samer.com.tr/en',
-        'tr-TR': 'https://samer.com.tr/tr',
-        'ru-RU': 'https://samer.com.tr/ru',
-        'de-DE': 'https://samer.com.tr/de',
-      },
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      url: `${SITE_URL}/${lang}`,
+      siteName: 'Samer Tempo',
+      locale: lang,
+      type: 'website',
     },
   };
 };
@@ -70,22 +78,17 @@ export async function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }: Props) {
-
-  const { lang } = (await params) as { lang: Locale };
+  const { lang } = await params;
+  assertLocale(lang);
   const dict = await getCachedDictionary(lang);
   return (
-    <html
-      lang={lang}
-      className="h-full antialiased"
-    >
+    <html lang={lang} className="h-full antialiased">
       <body className={`${commissioner.variable} ${mulish.variable} ${ptSansCaption.variable} font-sans min-h-full flex flex-col`}>
         <LenisProvider>
           <LangProvider lang={lang} dict={dict}>
             <Header/>
             <AppBreadcrumbs/>
-              <main className="flex-1">
-                {children}
-              </main>
+              <main className="flex-1"> {children} </main>
             <Footer/>
           </LangProvider>     
         </LenisProvider>
