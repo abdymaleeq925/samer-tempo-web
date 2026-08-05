@@ -44,28 +44,28 @@ export default function HeroCollage() {
   }, []);
 
   return (
-    <section className="relative w-full h-[calc(100dvh-105px)] overflow-hidden bg-zinc-950 flex items-center justify-center">
+    <section className="relative w-full h-[calc(100dvh-var(--header-h,88px))] overflow-hidden bg-zinc-950 flex items-center justify-center">
       {/* BACKGROUND LAYER: Skewed 2x4 Image Collage Grid */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
-        <div className="w-full h-full transform skew-x-6 sm:skew-x-12 scale-110 grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-1 bg-brand-dark">
+        <div className="w-full h-full transform skew-x-6 sm:skew-x-12 scale-110 grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-1 bg-brand">
           {cellImages.map((imgIndex, cellIdx) => (
             <div
               key={cellIdx}
               className="relative w-full h-full overflow-hidden bg-zinc-900 border border-white/5"
             >
               <div className="absolute inset-0 transform -skew-x-6 sm:-skew-x-12 scale-125">
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   <motion.div
                     key={imgIndex}
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative w-full h-full"
+                    className="absolute inset-0"
                   >
                     <Image
                       src={PRODUCT_IMAGES[imgIndex]}
-                      alt={`Auto Part Feature ${imgIndex + 1}`}
+                      alt={(dict.homepage.hero.imageAlt ?? 'Auto part {index}').replace('{index}', String(imgIndex + 1))}
                       fill
                       sizes="(max-width: 640px) 50vw, 25vw"
                       priority={cellIdx < 4} // Priority load top row for LCP optimization
@@ -84,10 +84,10 @@ export default function HeroCollage() {
       <div className="relative z-20 w-full max-w-3xl px-4 text-center flex flex-col items-center gap-6 sm:gap-8">
         <div className="space-y-3">
           <h1 className="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight leading-tight drop-shadow-md">
-            {dict.hero.title}
+            {dict.homepage.hero.title}
           </h1>
           <p className="text-sm sm:text-base text-white font-heading max-w-lg mx-auto drop-shadow-sm font-normal">
-          {dict.hero.subtitle}
+          {dict.homepage.hero.subtitle}
           </p>
         </div>
         <div className="w-full max-w-md md:max-w-xl shadow-2xl rounded-2xl transition-transform hover:scale-[1.01]">

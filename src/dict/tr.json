@@ -36,6 +36,7 @@
     "viewDetails": "Detayları Gör",
     "noProducts": "Bu kategoride ürün bulunamadı",
     "oemNumber": "OEM Numarası",
+    "searchNotFound": "\"{query}\" için sonuç bulunamadı",
     "crossReferences": "Çapraz Referanslar (Cross)",
     "specifications": "Teknik Özellikler",
     "videoReview": "Video İnceleme",
@@ -45,98 +46,115 @@
     "close": "Kapat",
     "allCategories": "Tüm Kategoriler"
   },
-  "hero": {
-    "title": "Otomotiv Parça Arama",
-    "subtitle": "OEM numarası, parça kodu veya ürün adını girin"
-  },
-  "features": [
-    {
-      "title": "Yüksek Kalite",
-      "description": "Sıkı yedek parça kontrolü"
+  "homepage": {
+    "hero": {
+      "title": "Otomotiv Parça Arama",
+      "subtitle": "OEM numarası, parça kodu veya ürün adını girin",
+      "imageAlt": "Yedek parça {index}"
     },
-    {
-      "title": "Sertifikalı Parçalar",
-      "description": "ISO 9001, IATF 16949, TÜV ve ADR"
-    },
-    {
-      "title": "İthalat & İhracat",
-      "description": "Dünya çapında B2B teslimat"
-    },
-    {
-      "title": "Hızlı Lojistik",
-      "description": "Ekspres sevkiyat seçenekleri"
-    }
-  ],
-  "about": {
-    "badge": "Samer Otomotiv Hakkında",
-    "heading": "Ticari Araç Yedek Parçasında Güvenilir B2B Ortaklığınız",
-    "lead": "2001 yılından bu yana Samer Otomotiv, ticari araçlar, kamyonlar ve treylerler için yüksek kaliteli yedek parça üretimi ve ihracatında öncü konumdadır.",
-    "paragraph1": "Acar Metal Fabrikası'nın satış ve ihracat yapılanması olarak, gelişmiş imalat gücümüzü uluslararası satış ve satış sonrası hizmetlerle birleştiriyoruz. Avrupa başta olmak üzere dünya çapındaki toptancı ortaklarımıza kesintisiz tedarik sağlıyoruz.",
-    "paragraph2": "Odak noktamız kısa vadeli ticari beklentiler değil, karşılıklı memnuniyete dayalı uzun vadeli iş birlikleridir. Ürettiğimiz tüm ürünler ISO 9001, TÜV ve ADR sertifikaları ile uluslararası kalite standartlarına tam uyumludur.",
-    "stats": {
-      "experience": "25+ Yıllık Tecrübe",
-      "export": "Küresel İhracat Ağı",
-      "certified": "TÜV ve ADR Sertifikalı"
-    }
-  },
-  "categoryShowcase": {
-    "title": "Ürün Kategorileri",
-    "subtitle": "Yüksek performanslı yedek parça otomotiv bileşenlerimizi keşfedin.",
-    "exploreBtn": "Kategori Ürünlerini İncele",
-    "items": [
+    "features": [
       {
-        "id": "cables",
-        "name": "Elektrik Kabloları ve Fişler",
-        "tagline": "OEM Standardı",
-        "title": "Yüksek Dayanımlı Elektrik Kabloları ve Fişler",
-        "description": "Ticari araçlarda güvenilir sinyal ve güç iletimi sağlamak için tasarlanmış ağır hizmet tipi kablo tesisatları, spiral kablolar ve çoklu fişler.",
-        "highlights": [
-          "ISO 9001 Sertifikalı",
-          "Yağa ve Hava Şartlarına Dayanıklı",
-          "Yüksek İletkenlikli Bakır",
-          "Özel Pin Konfigürasyonları"
-        ]
+        "title": "Yüksek Kalite",
+        "description": "Sıkı yedek parça kontrolü"
       },
       {
-        "id": "couplings",
-        "name": "Kaplinler ve Silindirler",
-        "tagline": "Pnömatik Sistemler",
-        "title": "Endüstriyel Sınıf Kaplinler ve Silindirler",
-        "description": "Ağır hizmet fren ve hava süspansiyon sistemlerinde optimum basınç dengesini korumak için hassas bir şekilde üretilmiş kaplinler ve silindirler.",
-        "highlights": [
-          "Yüksek Basınç Toleransı",
-          "Korozyona Dayanıklı Kaplama",
-          "Sızdırmaz Conta Teknolojisi",
-          "Birebir OEM Uyumlu"
-        ]
+        "title": "Sertifikalı Parçalar",
+        "description": "ISO 9001, IATF 16949, TÜV ve ADR"
       },
       {
-        "id": "tank-caps",
-        "name": "Depo Kapakları ve Mazot Koruma Sistemleri",
-        "tagline": "Yakıt Güvenliği ve Koruma",
-        "title": "Depo Kapakları ve Mazot Koruma Önleme Sistemleri",
-        "description": "Ticari araç depolarında yakıt çalınmasını, müdahaleyi ve kirlenmeyi önlemek için tasarlanmış sağlam depo kapakları ve mazot koruma sistemleri.",
-        "highlights": [
-          "Müdahaleye Karşı Korumalı",
-          "Subaplı ve Subapsız Seçenekler",
-          "Darbe Emici Dayanıklı Malzeme",
-          "Evrensel ve Özel Ölçülü Uyum"
-        ]
+        "title": "İthalat & İhracat",
+        "description": "Dünya çapında B2B teslimat"
       },
       {
-        "id": "repair-kits",
-        "name": "Tamir Takımları",
-        "tagline": "Bakım ve Servis",
-        "title": "Eksiksiz Tamir ve Bakım Takımları",
-        "description": "Hızlı, güvenilir ve maliyet etkin araç bakımı için yüksek kaliteli contalar, O-ringler ve bağlantı elemanları içeren eksiksiz tamir setleri.",
-        "highlights": [
-          "Birebir Parça Uyumluluğu",
-          "Birinci Sınıf Elastomer Malzeme",
-          "Minimum Servis Duruş Süresi",
-          "Sıkı Kalite Testleri"
-        ]
+        "title": "Hızlı Lojistik",
+        "description": "Ekspres sevkiyat seçenekleri"
       }
-    ]
+    ],
+    "about": {
+      "about": {
+        "badge": "Samer Otomotiv Hakkında",
+        "heading": "Ticari Araç Yedek Parçasında Güvenilir B2B Ortaklığınız",
+        "paragraph": ""
+      },
+      "mission": {
+        "badge": "Misyonumuz",
+        "heading": "Kaliteli ticari araç yedek parçaları ile güvenilir B2B ortaklıkları sunmak.",
+        "paragraph": ""
+      },
+      "vision": {
+        "badge": "Vizyonumuz",
+        "heading": "Ağır vasıta yedek parça tedarikinde küresel standartları belirlemek.",
+        "paragraph": "Uluslararası standartlara ve OEM kalitesine uygun tescilli ürünler."
+      },
+      "certificates": {
+        "badge": "Sertifikalar ve Kalite",
+        "heading": "",
+        "stats": {
+          "experience": "25+ Yıllık Tecrübe",
+          "export": "Küresel İhracat Ağı",
+          "certified": "TÜV ve ADR Sertifikalı"
+        }
+      }
+    },
+    "categoryShowcase": {
+      "title": "Ürün Kategorileri",
+      "subtitle": "Yüksek performanslı yedek parça otomotiv bileşenlerimizi keşfedin.",
+      "exploreBtn": "Kategori Ürünlerini İncele",
+      "items": [
+        {
+          "id": "cables",
+          "name": "Elektrik Kabloları ve Fişler",
+          "tagline": "OEM Standardı",
+          "title": "Yüksek Dayanımlı Elektrik Kabloları ve Fişler",
+          "description": "Ticari araçlarda güvenilir sinyal ve güç iletimi sağlamak için tasarlanmış ağır hizmet tipi kablo tesisatları, spiral kablolar ve çoklu fişler.",
+          "highlights": [
+            "ISO 9001 Sertifikalı",
+            "Yağa ve Hava Şartlarına Dayanıklı",
+            "Yüksek İletkenlikli Bakır",
+            "Özel Pin Konfigürasyonları"
+          ]
+        },
+        {
+          "id": "couplings",
+          "name": "Kaplinler ve Silindirler",
+          "tagline": "Pnömatik Sistemler",
+          "title": "Endüstriyel Sınıf Kaplinler ve Silindirler",
+          "description": "Ağır hizmet fren ve hava süspansiyon sistemlerinde optimum basınç dengesini korumak için hassas bir şekilde üretilmiş kaplinler ve silindirler.",
+          "highlights": [
+            "Yüksek Basınç Toleransı",
+            "Korozyona Dayanıklı Kaplama",
+            "Sızdırmaz Conta Teknolojisi",
+            "Birebir OEM Uyumlu"
+          ]
+        },
+        {
+          "id": "tank-caps",
+          "name": "Depo Kapakları ve Mazot Koruma Sistemleri",
+          "tagline": "Yakıt Güvenliği ve Koruma",
+          "title": "Depo Kapakları ve Mazot Koruma Önleme Sistemleri",
+          "description": "Ticari araç depolarında yakıt çalınmasını, müdahaleyi ve kirlenmeyi önlemek için tasarlanmış sağlam depo kapakları ve mazot koruma sistemleri.",
+          "highlights": [
+            "Müdahaleye Karşı Korumalı",
+            "Subaplı ve Subapsız Seçenekler",
+            "Darbe Emici Dayanıklı Malzeme",
+            "Evrensel ve Özel Ölçülü Uyum"
+          ]
+        },
+        {
+          "id": "repair-kits",
+          "name": "Tamir Takımları",
+          "tagline": "Bakım ve Servis",
+          "title": "Eksiksiz Tamir ve Bakım Takımları",
+          "description": "Hızlı, güvenilir ve maliyet etkin araç bakımı için yüksek kaliteli contalar, O-ringler ve bağlantı elemanları içeren eksiksiz tamir setleri.",
+          "highlights": [
+            "Birebir Parça Uyumluluğu",
+            "Birinci Sınıf Elastomer Malzeme",
+            "Minimum Servis Duruş Süresi",
+            "Sıkı Kalite Testleri"
+          ]
+        }
+      ]
+    }
   },
   "catalogues": {
     "title": "Samer Tempo Ürün Kataloglarını İndirin",
@@ -164,16 +182,43 @@
     "viewAll": "Tümünü Gör",
     "packaging": "Ambalaj ve Minimum Sipariş",
     "relatedProducts": "Benzer Ürünler",
-    "watchOnYoutube": "YouTube'da İncelemeyi İzle"
+    "watchOnYoutube": "YouTube'da İncelemeyi İzle",
+    "imageAlt": "{title} — fotoğraf {index}",
+    "thumbnailAlt": "{index}. fotoğrafı görüntüle"
   },
-  "contactForm": {
-    "title": "B2B Fiyat Teklifi İsteyin",
-    "subtitle": "Toptan siparişleriniz için fiyat ve teslimat süresi almak üzere formu doldurun.",
-    "name": "Ad Soyad / Firma Adı",
-    "email": "E-posta Adresi",
-    "phone": "Telefon / WhatsApp",
-    "message": "Talep edilen OEM kodları veya parça listesi...",
-    "submit": "Teklifi Gönder"
+  "contacts": {
+    "title": "İletişim",
+    "subtitle": "Ticari araç yedek parçalarımız hakkında sorularınız mı var? Uzman satış ekibimizle iletişime geçin.",
+    "infoTitle": "Bize Ulaşın",
+    "addressLabel": "Adres",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-posta",
+    "workingHoursLabel": "Çalışma Saatleri",
+    "formTitle": "Bize Mesaj Gönderin",
+    "fullNameLabel": "Ad Soyad",
+    "companyLabel": "Firma Adı",
+    "messageLabel": "Mesajınız / Talebiniz",
+    "submitBtn": "Mesaj Gönder",
+    "successTitle": "Mesaj Gönderildi!",
+    "sendAnother": "Başka bir mesaj gönder",
+    "formBadge": "B2B İhracat Talebi",
+    "formSubtitle": "Fiyat teklifi ve teslimat süreleri için formu doldurun.",
+    "fullNamePlaceholder": "Ahmet Yılmaz",
+    "companyPlaceholder": "Trans Logistics Corp",
+    "emailPlaceholder": "export@company.com",
+    "phonePlaceholder": "+90 (212) 000-0000",
+    "oemLabel": "OEM Numaraları / Parça Kodları",
+    "oemPlaceholder": "Örn: SAF 4200001, BPW 05.444.10.01.0",
+    "messagePlaceholder": "Miktar veya parça kalemlerini belirtin...",
+    "successDesc": "İlginiz için teşekkür ederiz. İhracat ekibimiz en kısa sürede sizinle iletişime geçecektir.",
+    "workingHours": "Pzt - Cum: 08:00 - 18:00 (GMT+3)\nCmt - Paz: Kapalı",
+    "validation": {
+      "fullNameMin": "İsim en az 2 karakter olmalıdır.",
+      "companyMin": "Lütfen şirket adınızı belirtin.",
+      "emailInvalid": "Geçerli bir iş e-postası girin.",
+      "phoneMin": "Lütfen bir telefon numarası belirtin.",
+      "messageMin": "Mesaj en az 10 karakter olmalıdır."
+    }
   },
   "footer": {
     "description": "2001'den bu yana ticari araçlar, treylerler ve pnömatik sistemler için yüksek kaliteli yedek parça üretimi ve ihracatı.",

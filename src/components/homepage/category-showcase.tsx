@@ -86,7 +86,7 @@ export default function CategoryShowcase() {
             <TabsList
               className={cn(
                 "flex w-full h-12! overflow-x-auto scrollbar-none justify-start items-stretch",
-                "bg-brand-dark p-0 rounded-xl border border-zinc-800",
+                "bg-zinc-900 p-0 rounded-xl border border-zinc-800",
                 "snap-x snap-mandatory gap-1"
               )}
               aria-label={dict.accessibility?.selectCategory || "Select category"}
@@ -182,6 +182,8 @@ export default function CategoryShowcase() {
                         className="relative w-full aspect-16/10 sm:aspect-video lg:aspect-4/3 rounded-xl overflow-hidden bg-zinc-800/50 border border-zinc-700/50 order-1 lg:order-2 group"
                         onMouseEnter={() => setIsPaused(true)}
                         onMouseLeave={() => setIsPaused(false)}
+                        onFocus={() => setIsPaused(true)}
+                        onBlur={() => setIsPaused(false)}
                       >
                         {/* Лента со слайдами */}
                         <div

@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col space-y-4">
             <Link 
               href={`/${lang}`} 
-              className="inline-block text-2xl font-black text-brand tracking-tight focus:outline-none focus:ring-2 focus:ring-brand rounded-md w-max"
+              className="inline-block text-2xl font-black text-ink tracking-tight focus:outline-none focus:ring-2 focus:ring-brand rounded-md w-max"
             >
               SAMER TEMPO
             </Link>
@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <Link 
-                  href={`/${lang}/catalog`} 
+                  href={`/${lang}/catalogues`} 
                   className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   {f.nav.catalog}
@@ -44,23 +44,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link 
-                  href={`/${lang}/categories`} 
-                  className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
-                >
-                  {f.nav.categories}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href={`/${lang}/about`} 
-                  className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
-                >
-                  {f.nav.about}
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href={`/${lang}/contact`} 
+                  href={`/${lang}/contacts`} 
                   className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   {f.nav.contact}

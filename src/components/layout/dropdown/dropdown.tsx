@@ -4,7 +4,6 @@ import type { LucideIcon } from 'lucide-react';
 import { panelVariants } from '@/lib/category-nav-motion';
 import type { SubKey, SubNavItem } from '@/constants';
 import NavImageGrid from './category-dropdown';
-import NavTextList from './about-dropdown';
 
 interface Props {
   panelId: string;
@@ -33,10 +32,8 @@ export default function NavDropdownPanel({ panelId, triggerId, lang, fallbackIco
       }`}
     >
       <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-zinc-200/80" />
-      {showImages ? (
+      {showImages && (
         <NavImageGrid items={items} lang={lang} fallbackIcon={fallbackIcon} getLabel={getLabel} onClose={onClose}/>
-      ) : (
-        <NavTextList items={items} lang={lang} getLabel={getLabel} onClose={onClose}/>
       )}
     </motion.div>
   );

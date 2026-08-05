@@ -15,35 +15,30 @@ export function ProductCard({ product }: ProductCardProps) {
   const { dict, lang } = useLang();
   const displayedOems = product.oemNumbers?.slice(0, 2) || [];
   const hasMoreOems = (product.oemNumbers?.length || 0) > 2;
+  const productImg = product.images?.[0] || '/products/placeholder.png';
 
   return (
-    <div className="group flex flex-col justify-between rounded-xl border border-black p-4 transition-all duration-300">
+    <div className="group flex flex-col justify-between rounded-xl border border-black p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div>
         <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-transparent mb-4 border border-black">
-          {product.images.length > 0 ? (
-            <Image
-              src={product.images[0]}
-              alt={product.title[lang]}
-              fill
-              className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center">
-              <FileText className="h-12 w-12" />
-            </div>
-          )}
-          <span className="absolute top-2.5 left-2.5 rounded-md bg-black px-2 py-1 text-xs font-caption font-semibold text-brand border backdrop-blur-md">
+          <Image
+            src={productImg}
+            alt={product.title[lang]}
+            fill
+            className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
+          <span className="absolute top-2.5 left-2.5 rounded-md bg-ink/80 backdrop-blur-md px-2 py-1 text-xs font-caption font-semibold text-brand border border-white/10">
             {product.article}
           </span>
         </div>
         {displayedOems.length > 0 && (
-          <div className="mb-2 flex flex-wrap items-center gap-1.5 text-xs font-sans">
-            <span>{dict.common.oemNumber}:</span>
+          <div className="mb-2 flex h-14 flex-wrap items-center gap-1 overflow-hidden text-sm">
+            <span className='font-caption'>{dict.common.oemNumber}:</span>
             {displayedOems.map((oem) => (
               <span
                 key={oem}
-                className="bg-black px-1.5 py-0.5 rounded border text-brand"
+                className="px-1 py-0.5 rounded border border-black"
               >
                 {oem}
               </span>
@@ -64,7 +59,7 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.specs.map((spec, index) => {
               return (
                 <div key={index} className="grid grid-cols-2 gap-2 text-sm items-start">
-                  <span className="wrap-break-word leading-tight">
+                  <span className="font-caption wrap-break-word leading-tight">
                     {spec.label[lang]}:
                   </span>
                   <span className="font-medium text-right wrap-break-word leading-tight">
@@ -76,10 +71,10 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
       </div>
-      <div className="mt-4 pt-3 border-t border-zinc-800/80">
+      <div className="mt-4 pt-3 border-t border-black">
         <Button
           nativeButton={false}
-          className="w-full bg-black hover:bg-transparent text-brand font-medium text-sm h-9 transition-colors"
+          className="w-full border-black bg-transparent text-black font-medium text-base transition-colors hover:bg-black hover:text-white"
           render={
             <Link
               href={`/${lang}/product/${product.slug}`}

@@ -1,0 +1,241 @@
+"use client"
+
+import { useState } from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Controller, useForm } from "react-hook-form"
+import { z } from "zod"
+import { Send, CheckCircle2, Building2, User, Mail, Phone, FileText, Wrench } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Field, FieldLabel, FieldError } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { useLang } from "@/context/lang-context"
+
+function createFormSchema(v: {
+  fullNameMin: string;
+  companyMin: string;
+  emailInvalid: string;
+  phoneMin: string;
+  messageMin: string;
+}) {
+  return z.object({
+    fullName: z.string().min(2, { message: v.fullNameMin }),
+    company: z.string().min(2, { message: v.companyMin }),
+    email: z.string().email({ message: v.emailInvalid }),
+    phone: z.string().min(6, { message: v.phoneMin }),
+    oemOrDetails: z.string().optional(),
+    message: z.string().min(10, { message: v.messageMin }),
+  });
+}
+
+export function ContactForm() {
+  const { dict } = useLang();
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const formSchema = createFormSchema(dict.contacts.validation);
+  type FormValues = z.infer<typeof formSchema>
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      fullName: "",
+      company: "",
+      email: "",
+      phone: "",
+      oemOrDetails: "",
+      message: "",
+    },
+  })
+
+  function onSubmit(values: FormValues) {
+    console.log("Data is sent to server:", values)
+    setIsSubmitted(true)
+  }
+
+  if (isSubmitted) {
+    return (
+      <div className="bg-white rounded-2xl border-2 border-black p-8 sm:p-12 text-center space-y-6 shadow-xl">
+        <div className="w-16 h-16 bg-brand/15 text-brand rounded-2xl flex items-center justify-center mx-auto border border-brand/30">
+          <CheckCircle2 className="w-10 h-10 text-brand" />
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-2xl font-black text-black uppercase tracking-wide">
+            {dict.contacts?.successTitle ?? "Запрос успешно отправлен!"}
+          </h3>
+          <p className="text-zinc-600 text-sm max-w-md mx-auto leading-relaxed">
+            {dict.contacts?.successDesc ?? "Спасибо за обращение. Наш отдел экспорта свяжется с вами в ближайшее время."}
+          </p>
+        </div>
+        <Button
+          onClick={() => {
+            form.reset()
+            setIsSubmitted(false)
+          }}
+          className="bg-black hover:bg-zinc-800 text-white font-bold uppercase text-xs tracking-wider h-11 px-8 rounded-xl transition-all"
+        >
+          {dict.contacts?.sendAnother ?? "Отправить еще одно сообщение"}
+        </Button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-10 shadow-lg relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-brand" />
+
+      <div className="mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-xs font-mono font-bold text-ink uppercase mb-3">
+          <Wrench className="w-3.5 h-3.5 text-brand" />
+          {dict.contacts.formBadge}
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-black text-ink tracking-tight uppercase">
+          {dict.contacts.formTitle}
+        </h2>
+        <p className="text-zinc-500 text-sm mt-1">
+          {dict.contacts.formSubtitle}
+        </p>
+      </div>
+
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <Controller
+            control={form.control}
+            name="fullName"
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                  <User className="w-3.5 h-3.5 text-brand" />
+                  {dict.contacts.fullNameLabel} *
+                </FieldLabel>
+                <Input
+                  id={field.name}
+                  placeholder={dict.contacts.fullNamePlaceholder}
+                  {...field}
+                  aria-invalid={fieldState.invalid}
+                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                />
+                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+              </Field>
+            )}
+          />
+
+          <Controller
+            control={form.control}
+            name="company"
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                  <Building2 className="w-3.5 h-3.5 text-brand" />
+                  {dict.contacts.companyLabel} *
+                </FieldLabel>
+                <Input
+                  id={field.name}
+                  placeholder={dict.contacts.companyPlaceholder}
+                  {...field}
+                  aria-invalid={fieldState.invalid}
+                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                />
+                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+              </Field>
+            )}
+          />
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <Controller
+            control={form.control}
+            name="email"
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                  <Mail className="w-3.5 h-3.5 text-brand" />
+                  {dict.contacts.emailLabel} *
+                </FieldLabel>
+                <Input
+                  id={field.name}
+                  type="email"
+                  placeholder={dict.contacts.emailPlaceholder}
+                  {...field}
+                  aria-invalid={fieldState.invalid}
+                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                />
+                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+              </Field>
+            )}
+          />
+
+          <Controller
+            control={form.control}
+            name="phone"
+            render={({ field, fieldState }) => (
+              <Field data-invalid={fieldState.invalid}>
+                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-brand" />
+                  {dict.contacts.phoneLabel} *
+                </FieldLabel>
+                <Input
+                  id={field.name}
+                  type="tel"
+                  placeholder={dict.contacts.phonePlaceholder}
+                  {...field}
+                  aria-invalid={fieldState.invalid}
+                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                />
+                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+              </Field>
+            )}
+          />
+        </div>
+
+        <Controller
+          control={form.control}
+          name="oemOrDetails"
+          render={({ field }) => (
+            <Field>
+              <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-brand" />
+                {dict.contacts.oemLabel}
+              </FieldLabel>
+              <Input
+                id={field.name}
+                placeholder={dict.contacts.oemPlaceholder}
+                {...field}
+                className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+              />
+            </Field>
+          )}
+        />
+
+        <Controller
+          control={form.control}
+          name="message"
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                <FileText className="w-3.5 h-3.5 text-brand" />
+                {dict.contacts.messageLabel} *
+              </FieldLabel>
+              <Textarea
+                id={field.name}
+                rows={4}
+                placeholder={dict.contacts.messagePlaceholder}
+                {...field}
+                aria-invalid={fieldState.invalid}
+                className="rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand resize-none"
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+            </Field>
+          )}
+        />
+
+        <Button
+          type="submit"
+          disabled={form.formState.isSubmitting}
+          className="w-full h-12 bg-brand hover:bg-brand-dark text-ink font-extrabold uppercase tracking-wider text-sm rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-black/10 cursor-pointer"
+        >
+          <Send className="w-4 h-4 fill-current" />
+          <span>{dict.contacts.submitBtn}</span>
+        </Button>
+      </form>
+    </div>
+  )
+}

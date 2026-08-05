@@ -200,7 +200,7 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Стандартная пневматическая соединительная головка аварийной магистрали (красная) с резьбой M16x1.5.',
       de: 'Standard-Kupplungskopf Rot für die Vorratsleitung des Anhängers mit M16x1.5 Gewinde.',
     },
-    images: ['/products/s010-01.jpg'],
+    images: ['/products/s010-01.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
@@ -472,7 +472,7 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Усиленный тормозной пневмоцилиндр с диаметром поршня 28 мм и резьбовым креплением M8.',
       de: 'Robuster Bremszylinder mit 28mm Kolbendurchmesser und M8 Gewindeanschlüssen.',
     },
-    images: ['/products/s140.jpg'],
+    images: ['/products/s140.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
@@ -879,7 +879,7 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: '7-жильный (6x1.0 + 1x1.5 мм²) полиуретановый спиральный кабель 24V с литыми алюминиевыми вилками N-типа. Длина 4.5м.',
       de: '24V 7-adriges (6x1.0 + 1x1.5mm²) PUR-Spiralkabel mit Alu-Gusssteckern Typ-N. Max. Auszugslänge 4.5m.',
     },
-    images: ['/products/r030-101.jpg'],
+    images: ['/products/r030-101.jpg', '/products/r030-130.jpg'],
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
@@ -1290,7 +1290,7 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Крышка горловины бака AdBlue 60мм с замком для грузовиков Iveco Stralis и Eurocargo.',
       de: '60mm AdBlue-Tankdeckel mit Schlüsseln speziell für Iveco Stralis und Eurocargo.',
     },
-    images: ['/products/s280-11.jpg'],
+    images: ['/products/s280-11.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
@@ -1399,7 +1399,7 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Цельноалюминиевое антисифонное защитное устройство горловины бака Ø80мм для предотвращения кражи дизеля.',
       de: 'Massive Vollaluminium Anti-Siphon Diebstahlsicherung für Tankeinfüllstutzen Ø80mm gegen Treibstoffdiebstahl.',
     },
-    images: ['/products/s270.jpg'],
+    images: ['/products/s270.jpg', '/products/s270_2.jpg'],
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
@@ -1549,7 +1549,7 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Ремкомплект сайлентблоков/втулок подвески прицепа. Размеры: Внутренний Ø38мм, Внешний Ø60мм, Высота 55мм.',
       de: 'Präzisions-Buchsensatz für Anhängeraufhängung. Abmessungen: Innen Ø38mm, Außen Ø60mm, Höhe 55mm.',
     },
-    images: ['/products/tmp5772.jpg'],
+    images: ['/products/tmp5772.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
     youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {

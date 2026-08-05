@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 import { useEscapeKey } from '@/hooks/use-escape-key';
-import { NavItem, SubKey } from '@/constants';
+import type { NavItem, SubKey } from '@/constants';
 import NavDropdownPanel from './dropdown/dropdown';
 
 interface Props {

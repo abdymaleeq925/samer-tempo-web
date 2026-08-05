@@ -36,6 +36,7 @@
     "viewDetails": "Details anzeigen",
     "noProducts": "Keine Produkte in dieser Kategorie gefunden",
     "oemNumber": "OEM-Nummer",
+    "searchNotFound": "Keine Ergebnisse für \"{query}\" gefunden",
     "crossReferences": "Cross-Referenzen",
     "specifications": "Technische Daten",
     "videoReview": "Video-Review",
@@ -45,98 +46,115 @@
     "close": "Schließen",
     "allCategories": "Alle Kategorien"
   },
-  "hero": {
-    "title": "Suche nach Autoteilen",
-    "subtitle": "Geben Sie die OEM-Nummer, Artikelnummer oder Teilebezeichnung ein"
-  },
-  "features": [
-    {
-      "title": "Hohe Qualität",
-      "description": "Strenge Ersatzteilkontrolle"
+  "homepage": {
+    "hero": {
+      "title": "Suche nach Autoteilen",
+      "subtitle": "Geben Sie die OEM-Nummer, Artikelnummer oder Teilebezeichnung ein",
+      "imageAlt": "Ersatzteil {index}"
     },
-    {
-      "title": "Zertifizierte Teile",
-      "description": "ISO 9001, IATF 16949, TÜV, ADR"
-    },
-    {
-      "title": "Import & Export",
-      "description": "Weltweite B2B-Lieferung"
-    },
-    {
-      "title": "Schnelle Logistik",
-      "description": "Express-Versandoptionen"
-    }
-  ],
-  "about": {
-    "badge": "Über Samer Automotive",
-    "heading": "Ihr zuverlässiger B2B-Partner für Nutzfahrzeugkomponenten",
-    "lead": "Seit 2001 ist Samer Automotive ein führender Hersteller und Exporteur von hochpräzisen Ersatzteilen für Nutzfahrzeuge, LKW und Anhänger.",
-    "paragraph1": "Als globale Vertriebs- und Exportabteilung von Acar Metal verbinden wir fortschrittliche Fertigungskapazitäten mit nahtlosem internationalen Handel. Von der Produktentwicklung bis zum Kundendienst beliefern wir Großhändler in Europa und weltweit.",
-    "paragraph2": "Unsere Philosophie basiert auf langfristigen Partnerschaften statt kurzfristiger Gewinne. Jedes Bauteil entspricht strengsten weltweiten Qualitätsstandards, zertifiziert nach ISO 9001, TÜV und ADR.",
-    "stats": {
-      "experience": "25+ Jahre Erfahrung",
-      "export": "Globales Exportnetzwerk",
-      "certified": "TÜV- & ADR-zertifiziert"
-    }
-  },
-  "categoryShowcase": {
-    "title": "Produktkategorien",
-    "subtitle": "Entdecken Sie unsere hochwertigen OEM- und Nachrüst-Fahrzeugkomponenten.",
-    "exploreBtn": "Kategorieprodukte anzeigen",
-    "items": [
+    "features": [
       {
-        "id": "cables",
-        "name": "Elektrokabel und Stecker",
-        "tagline": "OEM-Standard",
-        "title": "Hochfeste Elektrokabel & Stecker",
-        "description": "Robuste Kabelbäume, Wendelkabel und mehrpolige Stecker für eine zuverlässige Signal- und Stromübertragung in Nutzfahrzeugen.",
-        "highlights": [
-          "ISO 9001 Zertifiziert",
-          "Öl- und witterungsbeständig",
-          "Hochleitfähiges Kupfer",
-          "Individuelle Pin-Konfigurationen"
-        ]
+        "title": "Hohe Qualität",
+        "description": "Strenge Ersatzteilkontrolle"
       },
       {
-        "id": "couplings",
-        "name": "Luftkupplungen und Ventile",
-        "tagline": "Pneumatiksysteme",
-        "title": "Pneumatikkupplungen & Ventile in Industriequalität",
-        "description": "Präzisionsgefertigte Pneumatikkupplungen und Steuerventile für konstanten Druck in Brems- und Luftfedersystemen.",
-        "highlights": [
-          "Hohe Druckbeständigkeit",
-          "Korrosionsgeschützte Beschichtung",
-          "Lecksichere Dichtungstechnik",
-          "Passgenauer OEM-Ersatz"
-        ]
+        "title": "Zertifizierte Teile",
+        "description": "ISO 9001, IATF 16949, TÜV, ADR"
       },
       {
-        "id": "tank-caps",
-        "name": "Tankdeckel und Diebstahlsicherungssysteme",
-        "tagline": "Kraftstoffsicherheit",
-        "title": "Tankdeckel & Anti-Siphon-Schutzsysteme",
-        "description": "Robust konstruierte Tankdeckel und Absaugsicherungen zum Schutz vor Kraftstoffdiebstahl und Verunreinigung.",
-        "highlights": [
-          "Manipulationssicheres Design",
-          "Mit und ohne Belüftung",
-          "Schlagfeste Materialien",
-          "Universelle & Passgenaue Sitz"
-        ]
+        "title": "Import & Export",
+        "description": "Weltweite B2B-Lieferung"
       },
       {
-        "id": "repair-kits",
-        "name": "Reparatursätze",
-        "tagline": "Wartung & Instandhaltung",
-        "title": "Komplette Reparatursätze in OEM-Qualität",
-        "description": "Komplettsets mit hochwertigen Dichtungen, O-Ringen und Kleinteilen für eine schnelle und kosteneffiziente Fahrzeugwartung.",
-        "highlights": [
-          "Vollständige Komponentenabstimmung",
-          "Hochwertige Elastomere",
-          "Minimierte Ausfallzeiten",
-          "Strenge Qualitätsprüfung"
-        ]
+        "title": "Schnelle Logistik",
+        "description": "Express-Versandoptionen"
       }
-    ]
+    ],
+    "about": {
+      "about": {
+        "badge": "Über Samer Otomotiv",
+        "heading": "Ihr zuverlässiger B2B-Partner für Nutzfahrzeug-Ersatzteile",
+        "paragraph": "Unser Unternehmen wurde 2001 als eigenständige Vertriebsabteilung der Fabrik Acar Metal gegründet, um den Inlands- und Auslandsvertrieb zu konsolidieren und umfassenden Service vor und nach dem Verkauf zu bieten. Dadurch konnte sich Acar Metal voll und ganz auf die Fertigung konzentrieren und die drei Hauptziele eines Herstellers verfolgen: Entwicklung neuer Produkte, Verbesserung bestehender Sortimente und Reduzierung der Produktionskosten.\nSamer Otomotiv setzt alles daran, die zertifizierten und hochwertigen Produkte der Fabrik an Großhändler im In- und Ausland zu vermarkten sowie einen zuverlässigen After-Sales-Support zu gewährleisten.\nDurch die Teilnahme an zahlreichen Messen und Hunderte von persönlichen Kundengesprächen ist unser Unternehmen seit seiner Gründung erfolgreich auf nationalen und internationalen Märkten tätig und entwickelt sich kontinuierlich weiter."
+      },
+      "mission": {
+        "badge": "Unsere Mission",
+        "heading": "Zuverlässige B2B-Partnerschaften durch hochwertige LKW- und Trailer-Ersatzteile.",
+        "paragraph": "Unseren geschätzten Geschäftspartnern durch eine prinzipientreue, ehrliche und qualitätsorientierte Unternehmensidentität stets die besten Lösungen zu bieten.\nAuf langfristige, partnerschaftliche Zusammenarbeit und Kundenzufriedenheit zu setzen, anstatt auf kurzfristige kommerzielle Gewinne, und alle Mitarbeiter in diesem Sinne zu fördern.\nUns flexibel an die Marktbedingungen anzupassen und unsere Mission als kontinuierlicher Innovationsführer in der Branche stets weiterzuentwickeln."
+      },
+      "vision": {
+        "badge": "Unsere Vision",
+        "heading": "Setzen globaler Standards im Vertrieb von Nutzfahrzeug-Ersatzteilen.",
+        "paragraph": "Die Kundenzufriedenheit als oberstes Ziel zu betrachten und unsere führende Marktposition sowie unseren hervorragenden Ruf weiter auszubauen. Dies erreichen wir durch qualitativ hochwertige Produkte zu fairen Preisen, ein breites Sortiment, hohe Lieferfähigkeit und schnellen Service – stets unter Einhaltung professioneller Wirtschaftsethik."
+      },
+      "certificates": {
+        "badge": "Zertifikate & Qualität",
+        "heading": "International zertifizierte Produkte nach strengen OEM-Standards.",
+        "stats": {
+          "experience": "25+ Jahre Erfahrung",
+          "export": "Globales Exportnetzwerk",
+          "certified": "TÜV & ADR Zertifiziert"
+        }
+      }
+    },
+    "categoryShowcase": {
+      "title": "Produktkategorien",
+      "subtitle": "Entdecken Sie unsere hochwertigen OEM- und Nachrüst-Fahrzeugkomponenten.",
+      "exploreBtn": "Kategorieprodukte anzeigen",
+      "items": [
+        {
+          "id": "cables",
+          "name": "Elektrokabel und Stecker",
+          "tagline": "OEM-Standard",
+          "title": "Hochfeste Elektrokabel & Stecker",
+          "description": "Robuste Kabelbäume, Wendelkabel und mehrpolige Stecker für eine zuverlässige Signal- und Stromübertragung in Nutzfahrzeugen.",
+          "highlights": [
+            "ISO 9001 Zertifiziert",
+            "Öl- und witterungsbeständig",
+            "Hochleitfähiges Kupfer",
+            "Individuelle Pin-Konfigurationen"
+          ]
+        },
+        {
+          "id": "couplings",
+          "name": "Luftkupplungen und Ventile",
+          "tagline": "Pneumatiksysteme",
+          "title": "Pneumatikkupplungen & Ventile in Industriequalität",
+          "description": "Präzisionsgefertigte Pneumatikkupplungen und Steuerventile für konstanten Druck in Brems- und Luftfedersystemen.",
+          "highlights": [
+            "Hohe Druckbeständigkeit",
+            "Korrosionsgeschützte Beschichtung",
+            "Lecksichere Dichtungstechnik",
+            "Passgenauer OEM-Ersatz"
+          ]
+        },
+        {
+          "id": "tank-caps",
+          "name": "Tankdeckel und Diebstahlsicherungssysteme",
+          "tagline": "Kraftstoffsicherheit",
+          "title": "Tankdeckel & Anti-Siphon-Schutzsysteme",
+          "description": "Robust konstruierte Tankdeckel und Absaugsicherungen zum Schutz vor Kraftstoffdiebstahl und Verunreinigung.",
+          "highlights": [
+            "Manipulationssicheres Design",
+            "Mit und ohne Belüftung",
+            "Schlagfeste Materialien",
+            "Universelle & Passgenaue Sitz"
+          ]
+        },
+        {
+          "id": "repair-kits",
+          "name": "Reparatursätze",
+          "tagline": "Wartung & Instandhaltung",
+          "title": "Komplette Reparatursätze in OEM-Qualität",
+          "description": "Komplettsets mit hochwertigen Dichtungen, O-Ringen und Kleinteilen für eine schnelle und kosteneffiziente Fahrzeugwartung.",
+          "highlights": [
+            "Vollständige Komponentenabstimmung",
+            "Hochwertige Elastomere",
+            "Minimierte Ausfallzeiten",
+            "Strenge Qualitätsprüfung"
+          ]
+        }
+      ]
+    }
   },
   "catalogues": {
     "title": "Samer Tempo Produktkataloge herunterladen",
@@ -153,27 +171,48 @@
     "newProducts2026": "Katalog für Neuheiten 2026",
     "abs": "Katalog für ABS/EBS-Sensoren & Verbindungskabel"
   },
-  "sections": {
-    "featuredProducts": "Empfohlene Produkte",
-    "topCategories": "Hauptkategorien",
-    "whyChooseUs": "Ihre Vorteile mit uns",
-    "exportMarkets": "Globale Liefernetze"
-  },
   "product": {
     "description": "Produktbeschreibung",
     "viewAll": "Alle anzeigen",
     "packaging": "Verpackung & Mindestbestellmenge",
     "relatedProducts": "Ähnliche Produkte",
-    "watchOnYoutube": "Übersicht auf YouTube ansehen"
+    "watchOnYoutube": "Übersicht auf YouTube ansehen",
+    "imageAlt": "{title} — Foto {index}",
+    "thumbnailAlt": "Foto {index} anzeigen"
   },
-  "contactForm": {
-    "title": "B2B-Angebot anfordern",
-    "subtitle": "Füllen Sie das Formular aus, um Großhandelspreise und Lieferzeiten zu erhalten.",
-    "name": "Vollständiger Name / Firma",
-    "email": "Geschäftliche E-Mail",
-    "phone": "Telefon / WhatsApp",
-    "message": "Benötigte OEM-Nummern oder Teileliste...",
-    "submit": "Anfrage absenden"
+  "contacts": {
+    "title": "Kontakt",
+    "subtitle": "Haben Sie Fragen zu unseren Nutzfahrzeugteilen? Kontaktieren Sie unser Vertriebsteam.",
+    "infoTitle": "Kontaktieren Sie uns",
+    "addressLabel": "Adresse",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-Mail",
+    "workingHoursLabel": "Öffnungszeiten",
+    "formTitle": "Senden Sie uns eine Nachricht",
+    "fullNameLabel": "Vollständiger Name",
+    "companyLabel": "Firma",
+    "messageLabel": "Nachricht / Anfrage",
+    "submitBtn": "Nachricht senden",
+    "successTitle": "Nachricht gesendet!",
+    "sendAnother": "Eine weitere Nachricht senden",
+    "formBadge": "B2B-Exportanfrage",
+    "formSubtitle": "Füllen Sie das Formular aus, um Preise und Lieferzeiten für Ersatzteile zu erhalten.",
+    "fullNamePlaceholder": "Max Mustermann",
+    "companyPlaceholder": "Trans Logistics Corp",
+    "emailPlaceholder": "export@company.com",
+    "phonePlaceholder": "+90 (212) 000-0000",
+    "oemLabel": "OEM-Nummern / Artikelnummern",
+    "oemPlaceholder": "z. B. SAF 4200001, BPW 05.444.10.01.0",
+    "messagePlaceholder": "Geben Sie Mengen oder Ersatzteile an...",
+    "successDesc": "Vielen Dank für Ihre Anfrage. Unser Exportteam wird sich in Kürze bei Ihnen melden.",
+    "workingHours": "Mo - Fr: 08:00 - 18:00 (GMT+3)\nSa - So: Geschlossen",
+    "validation": {
+      "fullNameMin": "Der Name muss mindestens 2 Zeichen lang sein.",
+      "companyMin": "Bitte geben Sie Ihren Firmennamen an.",
+      "emailInvalid": "Geben Sie eine gültige geschäftliche E-Mail-Adresse ein.",
+      "phoneMin": "Bitte geben Sie eine Telefonnummer an.",
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein."
+    }
   },
   "footer": {
     "description": "Herstellung und Export von Präzisionsersatzteilen für Nutzfahrzeuge, Anhänger und Pneumatiksysteme seit 2001.",

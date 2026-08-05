@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLang } from '@/context/lang-context';
 import { Product } from '@/data/mock-catalog';
+import { ProductCard } from './product-card';
+import { ChevronRight } from 'lucide-react';
 
 interface ProductDetailProps {
   product: Product;
@@ -17,42 +19,40 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
 
   const images = product.images?.length > 0 ? product.images : ['/products/placeholder.png'];
 
+  const mainImageAlt = (dict.product?.imageAlt ?? '{title} — photo {index}')
+    .replace('{title}', product.title[lang])
+    .replace('{index}', String(selectedImageIndex + 1));
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      {/* ДВУХКОЛОНОЧНЫЙ МАКЕТ ТОВАРА */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-        
-        {/* ЛЕВАЯ КОЛОНКА: ГАЛЕРЕЯ */}
+        {/* GALLERY */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="relative aspect-square w-full rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden">
+          <div className="relative aspect-square w-full rounded-2xl border border-black overflow-hidden">
             <Image
               src={images[selectedImageIndex] || images[0]}
-              alt={product.title[lang]}
+              alt={mainImageAlt}
               fill
               className="object-contain p-6 transition-all duration-300"
               priority
             />
-            {product.oemNumbers && (
-              <span className="absolute top-4 left-4 bg-gray-900/80 backdrop-blur-md text-white text-xs px-2.5 py-1 rounded-md font-mono">
-                {dict.common.oemNumber}: {Array.isArray(product.oemNumbers) ? product.oemNumbers.join(', ') : product.oemNumbers}
-              </span>
-            )}
           </div>
 
           {images.length > 1 && (
             <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
               {images.map((img, idx) => {
                 const isSelected = selectedImageIndex === idx;
+                const thumbnailLabel = (dict.product?.thumbnailAlt ?? 'View photo {index}').replace('{index}', String(idx + 1));
                 return (
                   <button
                     key={idx}
                     onClick={() => setSelectedImageIndex(idx)}
-                    aria-label={`View image ${idx + 1}`}
+                    aria-label={thumbnailLabel}
                     aria-pressed={isSelected}
-                    className={`relative w-20 h-20 shrink-0 rounded-lg bg-gray-50 border-2 overflow-hidden transition-all ${
+                    className={`relative w-20 h-20 shrink-0 rounded-lg border-2 overflow-hidden cursor-pointer transition-all ${
                       isSelected
-                        ? 'border-blue-600 ring-2 ring-blue-600/20'
-                        : 'border-gray-200 hover:border-gray-300'
+                        ? 'border-brand-dark bg-transparent'
+                        : 'border-zinc-200 hover:border-zinc-300'
                     }`}
                   >
                     <Image src={img} alt="" fill className="object-contain p-2" />
@@ -63,43 +63,53 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
           )}
         </div>
 
-        {/* ПРАВАЯ КОЛОНКА: ОПИСАНИЕ И ТТХ */}
+        {/* PRODUCT INFO */}
         <div className="lg:col-span-7 flex flex-col justify-between">
           <div className="space-y-6">
-            <div className="space-y-2 border-b border-gray-100 pb-4">
-              <span className="text-sm font-semibold text-blue-600 uppercase tracking-wider">
+            <div className="flex flex-col gap-4 border-b-2 border-zinc-400 pb-4">
+              <span className="text-base w-fit font-caption font-bold border rounded-xl p-2 border-black uppercase tracking-wider">
                 {product.article}
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 leading-tight">
                 {product.title[lang]}
               </h1>
             </div>
 
             {product.description && (
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+              <p className="leading-relaxed text-base sm:text-lg">
                 {product.description[lang]}
               </p>
             )}
 
             <div className="space-y-3">
-              <h2 className="text-lg font-bold text-gray-900">
+              <h2 className="text-xl font-bold font-heading">
                 {dict.common.specifications}
               </h2>
-              <div className="bg-gray-50 rounded-xl p-4 sm:p-5 border border-gray-200/80">
+              <div className="bg-zinc-100 rounded-xl p-4 sm:p-5 border border-zinc-200/80">
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                   {product.specs?.map((spec, index) => (
                     <div
                       key={index}
-                      className="flex flex-col justify-between py-2 border-b border-gray-200/60 last:border-b-0 sm:last:border-b border-solid"
+                      className="flex flex-col justify-between py-2 border-b border-zinc-200/60 last:border-b-0 sm:last:border-b border-solid"
                     >
-                      <dt className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                      <dt className="text-md font-caption font-medium text-zinc-500 uppercase tracking-wide">
                         {spec.label[lang]}
                       </dt>
-                      <dd className="text-sm font-semibold text-gray-900 mt-0.5 wrap-break-word">
+                      <dd className="text-md font-semibold text-zinc-900 mt-0.5 wrap-break-word">
                         {typeof spec.value === 'string' ? spec.value : spec.value[lang]}
                       </dd>
                     </div>
                   ))}
+                  {product.oemNumbers && (
+                    <div className="flex flex-col justify-between py-2 border-b border-zinc-200/60 last:border-b-0 sm:last:border-b border-solid">
+                      <dt className="text-md font-caption font-medium text-zinc-500 uppercase tracking-wide">
+                        {dict.common.oemNumber}
+                      </dt>
+                      <dd className="text-md font-semibold text-zinc-900 mt-0.5 wrap-break-word">
+                        {Array.isArray(product.oemNumbers) ? product.oemNumbers.join(', ') : product.oemNumbers}
+                      </dd>
+                    </div>
+                  )}
                 </dl>
               </div>
             </div>
@@ -108,82 +118,24 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
 
       </div>
 
-      {/* ПОХОЖИЕ ТОВАРЫ (ВЫНЕСЕНО ИЗ ЛЕВОЙ/ПРАВОЙ КОЛОНКИ НА ВСЮ ШИРИНУ) */}
+      {/* SIMILAR PRODUCTS */}
       {relatedProducts && relatedProducts.length > 0 && (
-        <div className="mt-16 pt-12 border-t border-gray-200">
+        <div className="mt-16 pt-12 border-t border-zinc-200">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+            <h2 className="text-xl sm:text-2xl font-bold text-zinc-900">
               {dict.product.relatedProducts}
             </h2>
 
             <Link
               href={`/${lang}/categories/${product.categoryId.replace(/^cat-/, '')}`}
-              className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+              className="flex items-center text-base font-semibold hover:text-brand-dark transition-colors"
             >
-              {dict.product.viewAll} →
+              {dict.product.viewAll} <ChevronRight/>
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedProducts.slice(0, 4).map((item) => {
-              const itemImg = item.images?.[0] || '/products/placeholder.png';
-
-              return (
-                <Link
-                  key={item.id}
-                  href={`/${lang}/product/${item.slug || item.id}`}
-                  className="group flex flex-col justify-between bg-white rounded-2xl border border-gray-200/80 hover:border-blue-500/50 p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                >
-                  <div className="relative aspect-square w-full rounded-xl bg-gray-50 border border-gray-100 overflow-hidden mb-4 group-hover:bg-blue-50/30 transition-colors">
-                    <Image
-                      src={itemImg}
-                      alt={item.title[lang]}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      fill
-                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                    />
-                    {item.oemNumbers && (
-                      <span className="absolute top-2 left-2 bg-gray-900/70 text-white text-[10px] px-2 py-0.5 rounded font-mono">
-                        {Array.isArray(item.oemNumbers) ? item.oemNumbers[0] : item.oemNumbers}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col grow justify-between space-y-3">
-                    <div>
-                      {item.article && (
-                        <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider block mb-1">
-                          {item.article}
-                        </span>
-                      )}
-
-                      <h3 className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
-                        {item.title[lang]}
-                      </h3>
-                    </div>
-
-                    {item.specs && item.specs.length > 0 && (
-                      <div className="pt-2 border-t border-gray-100 space-y-1">
-                        {item.specs.slice(0, 2).map((spec, idx) => (
-                          <div key={idx} className="flex justify-between text-xs text-gray-500">
-                            <span className="truncate pr-2">{spec.label[lang]}:</span>
-                            <span className="font-medium text-gray-800 truncate">
-                              {typeof spec.value === 'string' ? spec.value : spec.value[lang]}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    <div className="pt-2">
-                      <span className="w-full inline-flex items-center justify-center bg-gray-100 group-hover:bg-blue-600 text-gray-700 group-hover:text-white font-medium text-xs py-2 px-3 rounded-lg transition-colors">
-                        {dict.common.viewDetails}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+            {relatedProducts.slice(0, 4).map((item) => <ProductCard key={item.id} product={item}/>)}
           </div>
         </div>
       )}
