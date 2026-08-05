@@ -11,7 +11,7 @@ interface OemSearchInputProps {
   isHero?: boolean;
 }
 
-function normalizeCode(code: string): string {
+function normalizeCode(code: string) : string {
   return code.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
 }
 
@@ -32,6 +32,13 @@ export default function OemSearchInput({ isHero = false }: OemSearchInputProps) 
       if (normalizeCode(p.article) === normalizedQuery) return true;
       if (p.oemNumbers?.some((oem) => normalizeCode(oem) === normalizedQuery)) return true;
       if (normalizeCode(p.slug) === normalizedQuery) return true;
+      // Если p.title — объект LocalizedText, проверяем значения всех языков
+      if (typeof p.title === 'object' && p.title !== null) {
+        const titles = Object.values(p.title) as string[];
+        if (titles.some((t) => normalizeCode(t).includes(normalizedQuery))) return true;
+      } else if (typeof p.title === 'string') {
+        if (normalizeCode(p.title).includes(normalizedQuery)) return true;
+      }
       return false;
     });
 

@@ -123,7 +123,7 @@
             "Manipulationssicheres Design",
             "Mit und ohne Belüftung",
             "Schlagfeste Materialien",
-            "Universelle & Passgenaue Sitz"
+            "Universeller & passgenauer Sitz"
           ]
         },
         {
@@ -218,6 +218,11 @@
     "messagePlaceholder": "Geben Sie Mengen oder Ersatzteile an...",
     "successDesc": "Vielen Dank für Ihre Anfrage. Unser Exportteam wird sich in Kürze bei Ihnen melden.",
     "workingHours": "Mo - Fr: 08:00 - 18:00 (GMT+3)\nSa - So: Geschlossen",
+    "mapConsent": {
+      "title": "Google Maps ist deaktiviert",
+      "description": "Um unsere interaktive Karte zu sehen, stimmen Sie bitte dem Laden von Google Maps Inhalten zu.",
+      "acceptBtn": "Karte aktivieren"
+    },
     "validation": {
       "fullNameMin": "Der Name muss mindestens 2 Zeichen lang sein.",
       "companyMin": "Bitte geben Sie Ihren Firmennamen an.",

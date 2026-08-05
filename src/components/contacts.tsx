@@ -3,10 +3,11 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useLang } from '@/context/lang-context';
 import { ContactForm } from '@/components/layout/contact-form';
+import { GoogleMap } from './layout/google-map';
 
 export default function ContactsPage() {
   const { dict } = useLang();
-
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.21862133833227!2d29.180518880710313!3d40.99247328745507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cace1cd4b6194b%3A0x6868e26aee2e8465!2sAcar%20Metal%20Kalip%20Sanayi%20Ve%20Ticaret%20Limited%20%C5%9Eirketi!5e0!3m2!1sen!2str!4v1785917352893!5m2!1sen!2str";
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
       
@@ -109,14 +110,7 @@ export default function ContactsPage() {
       {/* НИЖНИЙ БЛОК: КАРТА ИЛИ ИНТЕРАКТИВНАЯ ЗАГЛУШКА */}
       <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-gray-200 relative bg-gray-100">
       
-        <iframe
-          title="Office Location Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.21862133833227!2d29.180518880710313!3d40.99247328745507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cace1cd4b6194b%3A0x6868e26aee2e8465!2sAcar%20Metal%20Kalip%20Sanayi%20Ve%20Ticaret%20Limited%20%C5%9Eirketi!5e0!3m2!1sen!2str!4v1785917352893!5m2!1sen!2str"
-          width="100%"
-          height="100%"    
-          className="border-0 filter grayscale hover:grayscale-0 transition-all duration-500"
-          loading="lazy"
-        />
+      <GoogleMap embedUrl={mapEmbedUrl} title="Samer Otomotiv Location" />
       </div>
 
     </div>

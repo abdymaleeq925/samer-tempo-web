@@ -24,14 +24,14 @@ export default function AboutPage() {
   if (!aboutDict) return null;
 
   const tabs = [
-    { id: 'company', label: aboutDict.about?.badge || 'Company', icon: Building2 },
+    { id: 'company', label: aboutDict.company?.badge || 'Company', icon: Building2 },
     { id: 'mission', label: aboutDict.mission?.badge || 'Mission', icon: Target },
     { id: 'vision', label: aboutDict.vision?.badge || 'Vision', icon: Eye },
     { id: 'certificates', label: aboutDict.certificates?.badge || 'Certificates', icon: ShieldCheck },
   ] as const;
 
   return (
-    <main className="min-h-screen bg-black text-zinc-100 py-12 lg:py-20">
+    <section aria-labelledby="about-heading" className="min-h-screen bg-black text-zinc-100 py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl space-y-8">
         
         {/* Шапка раздела */}
@@ -39,8 +39,8 @@ export default function AboutPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-semibold uppercase tracking-wider">
             Samer Otomotiv
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
-            {aboutDict.about?.heading}
+          <h1 id="about-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            {aboutDict.company?.heading}
           </h1>
         </div>
 
@@ -85,10 +85,10 @@ export default function AboutPage() {
                 className="space-y-6"
               >
                 <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                  {aboutDict.about?.heading}
+                  {aboutDict.company?.heading}
                 </h2>
                 <div className="space-y-4 text-zinc-300 leading-relaxed text-base sm:text-lg">
-                  {aboutDict.about?.paragraph?.split('\n').map((p, idx) => (
+                  {aboutDict.company?.paragraph?.split('\n').map((p, idx) => (
                     <p key={idx}>{p}</p>
                   ))}
                 </div>
@@ -194,6 +194,6 @@ export default function AboutPage() {
         </div>
 
       </div>
-    </main>
+    </section>
   );
 }

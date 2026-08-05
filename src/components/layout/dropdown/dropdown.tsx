@@ -15,8 +15,20 @@ interface Props {
   onClose: () => void;
 }
 
-export default function NavDropdownPanel({ panelId, triggerId, lang, fallbackIcon, items, getLabel, onClose }: Props) {
-  const showImages = items.some((c) => c.image);
+export default function NavDropdownPanel({ 
+  panelId, 
+  triggerId, 
+  lang, 
+  fallbackIcon, 
+  items, 
+  getLabel, 
+  onClose 
+}: Props) {
+  // Проверяем, есть ли хотя бы один элемент с картинкой
+  const hasImages = items.some((c) => Boolean(c.image));
+
+  // Если нет элемента с картинкой или массив пуст — панель не рендерим вообще
+  if (!items.length || !hasImages) return null;
 
   return (
     <motion.div
@@ -27,14 +39,17 @@ export default function NavDropdownPanel({ panelId, triggerId, lang, fallbackIco
       initial="hidden"
       animate="visible"
       exit="exit"
-      className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl border border-zinc-200/80 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/10 p-3 z-50 ${
-        showImages ? 'w-[min(90vw,26rem)] sm:w-120' : 'w-[min(90vw,20rem)] sm:w-80'
-      }`}
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl border border-zinc-200/80 bg-white/95 backdrop-blur-xl shadow-2xl shadow-black/10 p-3 z-50 w-[min(90vw,26rem)] sm:w-120"
     >
       <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-white border-l border-t border-zinc-200/80" />
-      {showImages && (
-        <NavImageGrid items={items} lang={lang} fallbackIcon={fallbackIcon} getLabel={getLabel} onClose={onClose}/>
-      )}
+      
+      <NavImageGrid 
+        items={items} 
+        lang={lang} 
+        fallbackIcon={fallbackIcon} 
+        getLabel={getLabel} 
+        onClose={onClose}
+      />
     </motion.div>
   );
 }

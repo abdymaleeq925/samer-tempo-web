@@ -160,7 +160,7 @@
       "paragraph": "With customer satisfaction as our core priority, our goal is to enhance our leadership and well-earned reputation. We achieve this by offering high-quality products at competitive prices, maintaining an extensive inventory, and delivering swift service while strictly adhering to professional business ethics."
     },
     "certificates": {
-      "badge": "Certificates & Qualit",
+      "badge": "Certificates & Quality",
       "heading":"Internationally certified products manufactured to strict OEM standards.",
       "stats": {
         "experience": "25+ Years of Experience",
@@ -219,6 +219,11 @@
     "successDesc": "Thank you for reaching out. Our export team will contact you shortly.",
     "sendAnother": "Send another message",
     "workingHours": "Mon - Fri: 08:00 - 18:00 (GMT+3)\nSat - Sun: Closed",
+    "mapConsent": {
+      "title": "Google Maps is disabled",
+      "description": "To view our interactive office map, please allow loading Google Maps external content.",
+      "acceptBtn": "Allow Map"
+    },
     "validation": {
       "fullNameMin": "Name must be at least 2 characters.",
       "companyMin": "Please provide your company name.",

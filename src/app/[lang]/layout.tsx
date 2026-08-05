@@ -58,21 +58,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: dict.meta.description,
     // Explicitly set the favicon icon
     icons: {
-      icon: [
-        { url: '/icon.png', type: 'image/png' },
-      ],
+      icon: [{ url: '/icon.png', type: 'image/png' },],
       shortcut: '/icon.png',
       apple: '/icon.png',
-    },
-    alternates: {
-      canonical: `${SITE_URL}/${lang}`,
-      languages: {
-        'en-US': `${SITE_URL}/en`,
-        'tr-TR': `${SITE_URL}/tr`,
-        'ru-RU': `${SITE_URL}/ru`,
-        'de-DE': `${SITE_URL}/de`,
-        'x-default': `${SITE_URL}/en`,
-      },
     },
     openGraph: {
       title: dict.meta.title,
