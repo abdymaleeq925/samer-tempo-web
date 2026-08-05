@@ -6,7 +6,7 @@ import { Award, CircleStar, Globe2 } from 'lucide-react';
 
 export default function About() {
   const { dict } = useLang();
-  const a = dict.homepage.about;
+  const a = dict.homepage.aboutus;
 
   return (
     <section className="w-full bg-stone-100 py-12 sm:py-20 lg:py-24">

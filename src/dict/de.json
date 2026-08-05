@@ -70,30 +70,16 @@
         "description": "Express-Versandoptionen"
       }
     ],
-    "about": {
-      "about": {
-        "badge": "Über Samer Otomotiv",
-        "heading": "Ihr zuverlässiger B2B-Partner für Nutzfahrzeug-Ersatzteile",
-        "paragraph": "Unser Unternehmen wurde 2001 als eigenständige Vertriebsabteilung der Fabrik Acar Metal gegründet, um den Inlands- und Auslandsvertrieb zu konsolidieren und umfassenden Service vor und nach dem Verkauf zu bieten. Dadurch konnte sich Acar Metal voll und ganz auf die Fertigung konzentrieren und die drei Hauptziele eines Herstellers verfolgen: Entwicklung neuer Produkte, Verbesserung bestehender Sortimente und Reduzierung der Produktionskosten.\nSamer Otomotiv setzt alles daran, die zertifizierten und hochwertigen Produkte der Fabrik an Großhändler im In- und Ausland zu vermarkten sowie einen zuverlässigen After-Sales-Support zu gewährleisten.\nDurch die Teilnahme an zahlreichen Messen und Hunderte von persönlichen Kundengesprächen ist unser Unternehmen seit seiner Gründung erfolgreich auf nationalen und internationalen Märkten tätig und entwickelt sich kontinuierlich weiter."
-      },
-      "mission": {
-        "badge": "Unsere Mission",
-        "heading": "Zuverlässige B2B-Partnerschaften durch hochwertige LKW- und Trailer-Ersatzteile.",
-        "paragraph": "Unseren geschätzten Geschäftspartnern durch eine prinzipientreue, ehrliche und qualitätsorientierte Unternehmensidentität stets die besten Lösungen zu bieten.\nAuf langfristige, partnerschaftliche Zusammenarbeit und Kundenzufriedenheit zu setzen, anstatt auf kurzfristige kommerzielle Gewinne, und alle Mitarbeiter in diesem Sinne zu fördern.\nUns flexibel an die Marktbedingungen anzupassen und unsere Mission als kontinuierlicher Innovationsführer in der Branche stets weiterzuentwickeln."
-      },
-      "vision": {
-        "badge": "Unsere Vision",
-        "heading": "Setzen globaler Standards im Vertrieb von Nutzfahrzeug-Ersatzteilen.",
-        "paragraph": "Die Kundenzufriedenheit als oberstes Ziel zu betrachten und unsere führende Marktposition sowie unseren hervorragenden Ruf weiter auszubauen. Dies erreichen wir durch qualitativ hochwertige Produkte zu fairen Preisen, ein breites Sortiment, hohe Lieferfähigkeit und schnellen Service – stets unter Einhaltung professioneller Wirtschaftsethik."
-      },
-      "certificates": {
-        "badge": "Zertifikate & Qualität",
-        "heading": "International zertifizierte Produkte nach strengen OEM-Standards.",
-        "stats": {
-          "experience": "25+ Jahre Erfahrung",
-          "export": "Globales Exportnetzwerk",
-          "certified": "TÜV & ADR Zertifiziert"
-        }
+    "aboutus": {
+      "badge": "Über Samer Automotive",
+      "heading": "Ihr zuverlässiger B2B-Partner für Nutzfahrzeugkomponenten",
+      "lead": "Seit 2001 ist Samer Automotive ein führender Hersteller und Exporteur von hochpräzisen Ersatzteilen für Nutzfahrzeuge, LKW und Anhänger.",
+      "paragraph1": "Als globale Vertriebs- und Exportabteilung von Acar Metal verbinden wir fortschrittliche Fertigungskapazitäten mit nahtlosem internationalen Handel. Von der Produktentwicklung bis zum Kundendienst beliefern wir Großhändler in Europa und weltweit.",
+      "paragraph2": "Unsere Philosophie basiert auf langfristigen Partnerschaften statt kurzfristiger Gewinne. Jedes Bauteil entspricht strengsten weltweiten Qualitätsstandards, zertifiziert nach ISO 9001, TÜV und ADR.",
+      "stats": {
+        "experience": "25+ Jahre Erfahrung",
+        "export": "Globales Exportnetzwerk",
+        "certified": "TÜV- & ADR-zertifiziert"
       }
     },
     "categoryShowcase": {
@@ -128,7 +114,7 @@
           ]
         },
         {
-          "id": "tank-caps",
+          "id": "tankCaps",
           "name": "Tankdeckel und Diebstahlsicherungssysteme",
           "tagline": "Kraftstoffsicherheit",
           "title": "Tankdeckel & Anti-Siphon-Schutzsysteme",
@@ -141,7 +127,7 @@
           ]
         },
         {
-          "id": "repair-kits",
+          "id": "repairKits",
           "name": "Reparatursätze",
           "tagline": "Wartung & Instandhaltung",
           "title": "Komplette Reparatursätze in OEM-Qualität",
@@ -154,6 +140,32 @@
           ]
         }
       ]
+    }
+  },
+  "about": {
+    "company": {
+      "badge": "Über Samer Otomotiv",
+      "heading": "Ihr zuverlässiger B2B-Partner für Nutzfahrzeug-Ersatzteile",
+      "paragraph": "Unser Unternehmen wurde 2001 als eigenständige Vertriebsabteilung der Fabrik Acar Metal gegründet, um den Inlands- und Auslandsvertrieb zu konsolidieren und umfassenden Service vor und nach dem Verkauf zu bieten. Dadurch konnte sich Acar Metal voll und ganz auf die Fertigung konzentrieren und die drei Hauptziele eines Herstellers verfolgen: Entwicklung neuer Produkte, Verbesserung bestehender Sortimente und Reduzierung der Produktionskosten.\nSamer Otomotiv setzt alles daran, die zertifizierten und hochwertigen Produkte der Fabrik an Großhändler im In- und Ausland zu vermarkten sowie einen zuverlässigen After-Sales-Support zu gewährleisten.\nDurch die Teilnahme an zahlreichen Messen und Hunderte von persönlichen Kundengesprächen ist unser Unternehmen seit seiner Gründung erfolgreich auf nationalen und internationalen Märkten tätig und entwickelt sich kontinuierlich weiter."
+    },
+    "mission": {
+      "badge": "Unsere Mission",
+      "heading": "Zuverlässige B2B-Partnerschaften durch hochwertige LKW- und Trailer-Ersatzteile.",
+      "paragraph": "Unseren geschätzten Geschäftspartnern durch eine prinzipientreue, ehrliche und qualitätsorientierte Unternehmensidentität stets die besten Lösungen zu bieten.\nAuf langfristige, partnerschaftliche Zusammenarbeit und Kundenzufriedenheit zu setzen, anstatt auf kurzfristige kommerzielle Gewinne, und alle Mitarbeiter in diesem Sinne zu fördern.\nUns flexibel an die Marktbedingungen anzupassen und unsere Mission als kontinuierlicher Innovationsführer in der Branche stets weiterzuentwickeln."
+    },
+    "vision": {
+      "badge": "Unsere Vision",
+      "heading": "Setzen globaler Standards im Vertrieb von Nutzfahrzeug-Ersatzteilen.",
+      "paragraph": "Die Kundenzufriedenheit als oberstes Ziel zu betrachten und unsere führende Marktposition sowie unseren hervorragenden Ruf weiter auszubauen. Dies erreichen wir durch qualitativ hochwertige Produkte zu fairen Preisen, ein breites Sortiment, hohe Lieferfähigkeit und schnellen Service – stets unter Einhaltung professioneller Wirtschaftsethik."
+    },
+    "certificates": {
+      "badge": "Zertifikate & Qualität",
+      "heading": "International zertifizierte Produkte nach strengen OEM-Standards.",
+      "stats": {
+        "experience": "25+ Jahre Erfahrung",
+        "export": "Globales Exportnetzwerk",
+        "certified": "TÜV & ADR Zertifiziert"
+      }
     }
   },
   "catalogues": {

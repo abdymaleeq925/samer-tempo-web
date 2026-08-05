@@ -63,7 +63,10 @@ export default function OemSearchInput({ isHero = false }: OemSearchInputProps) 
           <input
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setNotFoundQuery(null);
+            }}
             placeholder={dict.common?.searchPlaceholder}
             className={`flex-1 min-w-0 bg-transparent text-white placeholder:text-zinc-500 font-normal focus:outline-none truncate ${isHero ? 'text-xs sm:text-base' : 'text-xs sm:text-sm'
               }`}

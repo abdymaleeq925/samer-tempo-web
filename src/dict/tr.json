@@ -70,32 +70,18 @@
         "description": "Ekspres sevkiyat seçenekleri"
       }
     ],
-    "about": {
-      "about": {
-        "badge": "Samer Otomotiv Hakkında",
-        "heading": "Ticari Araç Yedek Parçasında Güvenilir B2B Ortaklığınız",
-        "paragraph": ""
-      },
-      "mission": {
-        "badge": "Misyonumuz",
-        "heading": "Kaliteli ticari araç yedek parçaları ile güvenilir B2B ortaklıkları sunmak.",
-        "paragraph": ""
-      },
-      "vision": {
-        "badge": "Vizyonumuz",
-        "heading": "Ağır vasıta yedek parça tedarikinde küresel standartları belirlemek.",
-        "paragraph": "Uluslararası standartlara ve OEM kalitesine uygun tescilli ürünler."
-      },
-      "certificates": {
-        "badge": "Sertifikalar ve Kalite",
-        "heading": "",
-        "stats": {
-          "experience": "25+ Yıllık Tecrübe",
-          "export": "Küresel İhracat Ağı",
-          "certified": "TÜV ve ADR Sertifikalı"
-        }
-      }
-    },
+    "aboutus": {
+    "badge": "Samer Otomotiv Hakkında",
+    "heading": "Ticari Araç Yedek Parçasında Güvenilir B2B Ortaklığınız",
+    "lead": "2001 yılından bu yana Samer Otomotiv, ticari araçlar, kamyonlar ve treylerler için yüksek kaliteli yedek parça üretimi ve ihracatında öncü konumdadır.",
+    "paragraph1": "Acar Metal Fabrikası'nın satış ve ihracat yapılanması olarak, gelişmiş imalat gücümüzü uluslararası satış ve satış sonrası hizmetlerle birleştiriyoruz. Avrupa başta olmak üzere dünya çapındaki toptancı ortaklarımıza kesintisiz tedarik sağlıyoruz.",
+    "paragraph2": "Odak noktamız kısa vadeli ticari beklentiler değil, karşılıklı memnuniyete dayalı uzun vadeli iş birlikleridir. Ürettiğimiz tüm ürünler ISO 9001, TÜV ve ADR sertifikaları ile uluslararası kalite standartlarına tam uyumludur.",
+    "stats": {
+      "experience": "25+ Yıllık Tecrübe",
+      "export": "Küresel İhracat Ağı",
+      "certified": "TÜV ve ADR Sertifikalı"
+    }
+  },
     "categoryShowcase": {
       "title": "Ürün Kategorileri",
       "subtitle": "Yüksek performanslı yedek parça otomotiv bileşenlerimizi keşfedin.",
@@ -128,7 +114,7 @@
           ]
         },
         {
-          "id": "tank-caps",
+          "id": "tankCaps",
           "name": "Depo Kapakları ve Mazot Koruma Sistemleri",
           "tagline": "Yakıt Güvenliği ve Koruma",
           "title": "Depo Kapakları ve Mazot Koruma Önleme Sistemleri",
@@ -141,7 +127,7 @@
           ]
         },
         {
-          "id": "repair-kits",
+          "id": "repairKits",
           "name": "Tamir Takımları",
           "tagline": "Bakım ve Servis",
           "title": "Eksiksiz Tamir ve Bakım Takımları",
@@ -156,6 +142,32 @@
       ]
     }
   },
+  "about": {
+      "company": {
+        "badge": "Samer Otomotiv Hakkında",
+        "heading": "Ticari Araç Yedek Parçasında Güvenilir B2B Ortaklığınız",
+        "paragraph": "Firmamız 2001 yılında o günkü şartlar doğrultusunda Acar Metal Fabrikadaki görev dağılımını tamamlamak amacıyla gerek yurtiçi, gerek ise yurtdışı satışlarını konsolide etmek ve satış-öncesi ve satış-sonrası tüm gereken hizmetleri verebilmek amacıyla Fabrikanın tamamen ayrı bir satış bölümü olarak kuruldu. Böylece Acar Metal imalata ağırlık vererek yeni ürün geliştirme, var olan ürünlerin iyileştirmesi ve ürün maliyetini azaltma gibi imalatçının asıl 3 hedeflerini önüne koydu.\nSamer Otomotiv ise Fabrikanın ürettiği kaliteli ve sertifikaları bulunan ürünlerini yurtdışı ve yurtiçi toptancılara pazarlamak ve satış sonrası destek vermek hedeflerine ulaşmak için gayret etmektedir.\nKurulduktan beri onlarca fuarlara katılan ve yüzlerce müşteriler ile yüz-yüze görüşme yapan firmamız kendi sektöründe yurt içi ve yurt dışı pazarlarında başarıyla faaliyet göstermektedir. Kurulduğundan beri de kendini sürekli yenilemiş ve geliştirmiştir."
+      },
+      "mission": {
+        "badge": "Misyonumuz",
+        "heading": "Kaliteli ticari araç yedek parçaları ile güvenilir B2B ortaklıkları sunmak.",
+        "paragraph": "Kaliteli bir hizmet anlayışı, prensipli ve dürüst bir kurumsal kimlik ile siz saygı değer ticari ortaklarımıza en iyiyi, en iyi şekilde sunmak.\nKısa vadeli ticari beklentiler yerine, uzun vadeli karşılıklı işbirliği ve memnuniyete dayalı oluşumları hedefleyerek tüm çalışanlarını buna teşvik etmek.\nOluşan piyasa şartlarında kendini en güzel şekliyle revize edip, sektörde süre gelen daima yenilikçi olmak misyonumuzu hep göz önünde tutarak bu bağlamda açılımlar yapmak."
+      },
+      "vision": {
+        "badge": "Vizyonumuz",
+        "heading": "Ağır vasıta yedek parça tedarikinde küresel standartları belirlemek.",
+        "paragraph": "Müşteri memnuniyetini asıl hedef kabul edip, ürettiğimiz kaliteli ürünleri en uygun fiyatlar, en geniş çeşit ve stoklama ile en hızlı hizmet anlayışı içinde profesyonel ticari etik değerlerine sadık kalarak haklı itibarımızı ve liderliğimizi daha da ileriye taşımak olacaktır."
+      },
+      "certificates": {
+        "badge": "Sertifikalar ve Kalite",
+        "heading": "Uluslararası standartlara ve OEM kalitesine uygun tescilli ürünler.",
+        "stats": {
+          "experience": "25+ Yıllık Tecrübe",
+          "export": "Küresel İhracat Ağı",
+          "certified": "TÜV ve ADR Sertifikalı"
+        }
+      }
+    },
   "catalogues": {
     "title": "Samer Tempo Ürün Kataloglarını İndirin",
     "subtitle": "Kamyon ve treyler yedek parça ürün yelpazemizi inceleyin. Güncel PDF kataloglarımızı hemen indirin.",

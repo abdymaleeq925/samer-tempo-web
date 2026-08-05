@@ -56,7 +56,7 @@ export default function ContactsPage() {
                   {dict.contacts?.phoneLabel ?? 'Phone'}
                 </h3>
                 <a 
-                  href="tel:+902120000000" 
+                  href="tel:+902163647319" 
                   className="text-sm font-medium text-gray-900 hover:text-brand transition-colors block mt-1"
                 >
                   +90 (216) 364 73 19-20
@@ -74,7 +74,7 @@ export default function ContactsPage() {
                   {dict.contacts?.emailLabel ?? 'Email'}
                 </h3>
                 <a 
-                  href="mailto:info@samertech.com" 
+                  href="mailto:info@samer.com.tr" 
                   className="text-sm font-medium text-gray-900 hover:text-brand transition-colors block mt-1"
                 >
                   info@samer.com.tr
