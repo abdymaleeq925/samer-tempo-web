@@ -7,6 +7,8 @@
     "selectLanguage": "Dil seçin",
     "selectCategory": "Kategori seçin",
     "goToSlide": "{slide}. slayta git",
+    "homeAriaLabel": "Samer Tempo Ana Sayfa",
+    "searchSubmit": "Arama yap",
     "toggleMenu": "Navigasyon menüsünü aç/kapat",
     "toggleSubmenu": "Alt menüyü aç/kapat",
     "mainNavLabel": "Ana Menü",
@@ -44,7 +46,27 @@
     "inquireNow": "Fiyat Sor",
     "sendRequest": "Talep Gönder",
     "close": "Kapat",
-    "allCategories": "Tüm Kategoriler"
+    "allCategories": "Tüm Kategoriler",
+    "error": {
+      "title": "Bir şeyler yanlış gitti!",
+      "description": "İsteğiniz işlenirken beklenmeyen bir hata oluştu.",
+      "retryBtn": "Tekrar Dene",
+      "homeBtn": "Ana Sayfaya Dön"
+    },
+    "notFound": {
+      "title": "Sayfa Bulunamadı",
+      "description": "Aradığınız sayfa veya yedek parça mevcut değil.",
+      "homeBtn": "Ana Sayfaya Dön",
+      "catalogBtn": "Kataloğu İncele"
+    },
+    "search": {
+      "title": "Katalogda Ara",
+      "resultsFor": "\"{query}\" için arama sonuçları",
+      "allProducts": "Tüm Ürünler",
+      "filterCategory": "Kategoriler",
+      "resetFilters": "Filtreleri Sıfırla",
+      "foundCount": "{count} ürün bulundu"
+    }
   },
   "homepage": {
     "hero": {
@@ -177,8 +199,8 @@
     "fullCatalogue": "Genel Ürün Kataloğu",
     "cables": "Elektrik Kabloları ve Fiş Kataloğu",
     "air": "Pnömatik Kaplinler ve Silindirler Kataloğu",
-    "tank-caps": "Depo Kapakları ve Mazot Koruma Kataloğu",
-    "repair-kits": "Tamir Takımları Kataloğu",
+    "tankCaps": "Depo Kapakları ve Mazot Koruma Kataloğu",
+    "repairKits": "Tamir Takımları Kataloğu",
     "steelCables": "Çelik Halatlar Kataloğu",
     "newProducts2026": "Yeni Ürünler Kataloğu 2026",
     "abs": "ABS/EBS Sensörleri ve Bağlantı Kabloları Kataloğu"
@@ -196,7 +218,10 @@
     "relatedProducts": "Benzer Ürünler",
     "watchOnYoutube": "YouTube'da İncelemeyi İzle",
     "imageAlt": "{title} — fotoğraf {index}",
-    "thumbnailAlt": "{index}. fotoğrafı görüntüle"
+    "thumbnailAlt": "{index}. fotoğrafı görüntüle",
+    "hoverToZoom": "Yakınlaştırmak için üzerine gelin",
+    "clickToPlayVideo": "Video incelemesini izlemek için tıklayın",
+    "videoTab": "Video İnceleme"
   },
   "contacts": {
     "title": "İletişim",
@@ -224,6 +249,11 @@
     "messagePlaceholder": "Miktar veya parça kalemlerini belirtin...",
     "successDesc": "İlginiz için teşekkür ederiz. İhracat ekibimiz en kısa sürede sizinle iletişime geçecektir.",
     "workingHours": "Pzt - Cum: 08:00 - 18:00 (GMT+3)\nCmt - Paz: Kapalı",
+    "mapConsent": {
+      "title": "Google Haritalar devre dışı",
+      "description": "Etkileşimli haritamızı görüntülemek için Google Haritalar içerik yüklemesini kabul edin.",
+      "acceptBtn": "Haritayı Etkinleştir"
+    },
     "validation": {
       "fullNameMin": "İsim en az 2 karakter olmalıdır.",
       "companyMin": "Lütfen şirket adınızı belirtin.",

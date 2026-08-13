@@ -1,21 +1,19 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, SearchX } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { Search, SearchX } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { useLang } from '@/context/lang-context';
-import { MOCK_PRODUCTS } from '@/data/mock-catalog';
+import { formatString } from '@/lib/utils';
 
 interface OemSearchInputProps {
   isHero?: boolean;
+  onSearchSuccess?: () => void;
 }
 
-function normalizeCode(code: string) : string {
-  return code.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-}
-
-export default function OemSearchInput({ isHero = false }: OemSearchInputProps) {
+export default function OemSearchInput({ isHero = false, onSearchSuccess }: OemSearchInputProps) {
   const [query, setQuery] = useState('');
   const [notFoundQuery, setNotFoundQuery] = useState<string | null>(null);
   const router = useRouter();
@@ -26,41 +24,22 @@ export default function OemSearchInput({ isHero = false }: OemSearchInputProps) 
     const trimmed = query.trim();
     if (!trimmed) return;
 
-    const normalizedQuery = normalizeCode(trimmed);
+    if(onSearchSuccess) onSearchSuccess()
 
-    const match = MOCK_PRODUCTS.find((p) => {
-      if (normalizeCode(p.article) === normalizedQuery) return true;
-      if (p.oemNumbers?.some((oem) => normalizeCode(oem) === normalizedQuery)) return true;
-      if (normalizeCode(p.slug) === normalizedQuery) return true;
-      // Если p.title — объект LocalizedText, проверяем значения всех языков
-      if (typeof p.title === 'object' && p.title !== null) {
-        const titles = Object.values(p.title) as string[];
-        if (titles.some((t) => normalizeCode(t).includes(normalizedQuery))) return true;
-      } else if (typeof p.title === 'string') {
-        if (normalizeCode(p.title).includes(normalizedQuery)) return true;
-      }
-      return false;
-    });
-
-    if (match) {
-      setNotFoundQuery(null);
-      router.push(`/${lang}/product/${match.slug}`);
-    } else {
-      setNotFoundQuery(trimmed);
-    }
+    router.push(`/${lang}/search?q=${encodeURIComponent(trimmed)}`);
   };
 
   const notFoundMessage = notFoundQuery
-    ? (dict.common?.searchNotFound ?? 'No results found for "{query}"').replace('{query}', notFoundQuery)
+    ? formatString(dict.common?.searchNotFound ?? 'No results found for "{query}"', { query: notFoundQuery })
     : null;
 
   return (
-    <>
-      <form onSubmit={handleSearch} className="w-full min-w-0">
+    <div className="w-full">
+      <form onSubmit={handleSearch} role="search" className={`min-w-0 ${isHero ? 'w-full' : 'w-full max-w-sm'}`}>
         <div
-          className={`w-full min-w-0 flex items-center gap-2 bg-zinc-900/90 border border-zinc-700/80 focus-within:border-white focus-within:ring-1 focus-within:ring-white transition-all backdrop-blur-md shadow-2xl ${isHero
-              ? 'h-12 sm:h-14 p-1.5 pl-3 sm:pl-4 rounded-2xl border-white/20'
-              : 'h-10 sm:h-11 p-1 pl-2.5 sm:pl-3 rounded-xl'
+          className={`w-full min-w-0 flex items-center gap-2 border border-zinc-700/80 focus-within:border-brand focus-within:ring-1 focus-within:ring-brand transition-all backdrop-blur-md shadow-2xl ${isHero
+              ? 'h-12 sm:h-14 p-1.5 pl-3 sm:pl-4 rounded-2xl bg-zinc-900/90 border-white/20'
+              : 'bg-white/90 h-10 sm:h-11 p-1 px-2.5 sm:px-3 rounded-xl'
             }`}
         >
           <Search
@@ -68,36 +47,40 @@ export default function OemSearchInput({ isHero = false }: OemSearchInputProps) 
               }`}
           />
           <input
-            type="text"
+            type="search"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
               setNotFoundQuery(null);
             }}
             placeholder={dict.common?.searchPlaceholder}
-            className={`flex-1 min-w-0 bg-transparent text-white placeholder:text-zinc-500 font-normal focus:outline-none truncate ${isHero ? 'text-xs sm:text-base' : 'text-xs sm:text-sm'
+            aria-label={dict.common?.searchPlaceholder || 'Search products'}
+            className={`flex-1 min-w-0 placeholder:text-zinc-500 font-normal focus:outline-none truncate bg-transparent text-zinc-900 ${isHero ? 'text-xs sm:text-base' : 'text-xs sm:text-sm'
               }`}
           />
           <Button
             type="submit"
-            className={`shrink-0 bg-white hover:bg-brand text-black hover:text-white font-bold transition-all cursor-pointer ${isHero
-                ? 'h-9 sm:h-11 px-3 sm:px-6 rounded-xl text-xs sm:text-sm'
-                : 'h-8 sm:h-9 px-2.5 sm:px-4 rounded-lg text-xs'
+            aria-label={dict.accessibility?.searchSubmit || 'Submit search'}
+            className={`shrink-0 hover:bg-brand text-black hover:text-white font-bold transition-all cursor-pointer ${isHero
+                ? 'h-9 sm:h-11 px-3 sm:px-6 rounded-xl bg-white text-xs sm:text-sm'
+                : 'h-8 sm:h-9 px-2.5 rounded-lg bg-zinc-900 text-white hover:bg-brand text-xs'
               }`}
           >
-            <span className="hidden xs:inline sm:inline font-heading">
-              {dict.common?.searchButton}
-            </span>
-            <Search className="w-4 h-4 xs:hidden sm:hidden" />
+            {isHero && (
+              <span className="hidden xs:inline sm:inline font-heading">
+                {dict.common?.searchButton}
+              </span>
+            )}
+            <Search className={isHero ? 'w-4 h-4 xs:hidden sm:hidden' : 'w-3.5 h-3.5'} />
           </Button>
         </div>
       </form>
       {notFoundMessage && (
-        <p className="mt-2 flex items-center gap-1.5 text-xs text-white/80" role="status">
+        <p className="mt-2 flex items-center gap-1.5 text-xs text-red-500 font-medium" role="status">
           <SearchX className="w-3.5 h-3.5 shrink-0" />
           {notFoundMessage}
         </p>
       )}
-    </>
+    </div>
   );
 }

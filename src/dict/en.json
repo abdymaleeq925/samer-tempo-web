@@ -7,6 +7,8 @@
     "selectLanguage": "Select language",
     "selectCategory": "Select category",
     "goToSlide": "Go to slide {slide}",
+    "homeAriaLabel": "Samer Tempo Homepage",
+    "searchSubmit": "Submit search",
     "toggleMenu": "Toggle navigation menu",
     "toggleSubmenu": "Toggle sub-menu",
     "footerNavAria": "Footer Navigation",
@@ -44,7 +46,27 @@
     "inquireNow": "Inquire Now",
     "sendRequest": "Send Request",
     "close": "Close",
-    "allCategories": "All Categories"
+    "allCategories": "All Categories",
+    "error": {
+    "title": "Something went wrong!",
+    "description": "An unexpected error occurred while processing your request.",
+    "retryBtn": "Try Again",
+    "homeBtn": "Back to Home"
+    },
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "The page or spare part you are looking for does not exist or has been moved.",
+      "homeBtn": "Back to Home",
+      "catalogBtn": "Browse Catalog"
+    },
+    "search": {
+      "title": "Search Catalog",
+      "resultsFor": "Search results for \"{query}\"",
+      "allProducts": "All Products",
+      "filterCategory": "Categories",
+      "resetFilters": "Reset Filters",
+      "foundCount": "Found {count} products"
+    }
   },
   "homepage": {
     "hero": {
@@ -191,7 +213,10 @@
     "relatedProducts": "Related Products",
     "watchOnYoutube": "Watch Overview on YouTube",
     "imageAlt": "{title} — photo {index}",
-    "thumbnailAlt": "View photo {index}"
+    "thumbnailAlt": "View photo {index}",
+    "hoverToZoom": "Hover over image to zoom",
+    "clickToPlayVideo": "Click to watch video overview",
+    "videoTab": "Video Review"
   },
   "contacts": {
     "title": "Contact Us",

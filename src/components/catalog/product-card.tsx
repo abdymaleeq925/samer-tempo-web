@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FileText, View } from 'lucide-react';
+import { View } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { useLang } from '@/context/lang-context';
@@ -19,19 +19,21 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="group flex flex-col justify-between rounded-xl border border-black p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div>
-        <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-transparent mb-4 border border-black">
-          <Image
-            src={productImg}
-            alt={product.title[lang]}
-            fill
-            className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          />
-          <span className="absolute top-2.5 left-2.5 rounded-md bg-ink/80 backdrop-blur-md px-2 py-1 text-xs font-caption font-semibold text-brand border border-white/10">
-            {product.article}
-          </span>
-        </div>
+      <>
+        <Link href={`/${lang}/product/${product.slug}`} className="block group/image">
+          <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-transparent mb-4 border border-black">
+            <Image
+              src={productImg}
+              alt={product.title[lang]}
+              fill
+              className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+            <span className="absolute top-2.5 left-2.5 rounded-md bg-ink/80 backdrop-blur-md px-2 py-1 text-xs font-caption font-semibold text-brand border border-white/10">
+              {product.article}
+            </span>
+          </div>
+        </Link>
         {displayedOems.length > 0 && (
           <div className="mb-2 flex h-14 flex-wrap items-center gap-1 overflow-hidden text-sm">
             <span className='font-caption'>{dict.common.oemNumber}:</span>
@@ -49,9 +51,11 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
         <div className="h-12 mb-3 flex items-start">
-          <h3 className="text-base font-semibold line-clamp-2 leading-snug">
-            {product.title[lang]}
-          </h3>
+          <Link href={`/${lang}/product/${product.slug}`} className="hover:text-brand transition-colors">
+            <h3 className="text-base font-semibold line-clamp-2 leading-snug">
+              {product.title[lang]}
+            </h3>
+          </Link>
         </div>
 
         {product.specs && product.specs.length > 0 && (
@@ -70,7 +74,7 @@ export function ProductCard({ product }: ProductCardProps) {
             })}
           </div>
         )}
-      </div>
+      </>
       <div className="mt-4 pt-3 border-t border-black">
         <Button
           nativeButton={false}

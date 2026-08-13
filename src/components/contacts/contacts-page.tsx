@@ -3,7 +3,7 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useLang } from '@/context/lang-context';
 import { ContactForm } from '@/components/layout/contact-form';
-import { GoogleMap } from './layout/google-map';
+import { GoogleMap } from '../layout/google-map';
 
 export default function ContactsPage() {
   const { dict } = useLang();

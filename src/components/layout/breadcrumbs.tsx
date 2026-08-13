@@ -23,9 +23,10 @@ export function AppBreadcrumbs() {
 
   const rawSegments = pathname.split('/').filter(Boolean);
   const VIRTUAL_SEGMENTS = new Set(['products', 'product', 'categories']);
-  const segments = rawSegments.filter((seg) => seg !== lang).filter((seg) => !VIRTUAL_SEGMENTS.has(seg));
-  const lastSegment = segments[segments.length - 1];
-  const currentProduct = MOCK_PRODUCTS.find( (p) => p.slug === lastSegment || p.id === lastSegment );
+
+  const displaySegments = rawSegments.filter((seg) => !VIRTUAL_SEGMENTS.has(seg));
+  const lastSegment = displaySegments[displaySegments.length - 1];
+  const currentProduct = MOCK_PRODUCTS.find((p) => p.slug === lastSegment || p.id === lastSegment);
 
   function resolveLabel(segment: string): string {
     const navValue = n[segment as keyof typeof n];
@@ -46,10 +47,13 @@ export function AppBreadcrumbs() {
               {n.home}
             </BreadcrumbLink>
           </BreadcrumbItem>
-          {segments.map((segment, index) => {
-            const pathUntilSegment = segments.slice(0, index + 1).join('/');
-            const href = `/${lang}/${pathUntilSegment}`;
-            const isLast = index === segments.length - 1;
+          {displaySegments.map((segment, index) => {
+            const isLast = index === displaySegments.length - 1;
+            
+            const rawIndex = rawSegments.indexOf(segment);
+            const realPath = rawSegments.slice(0, rawIndex + 1).join('/');
+            const href = `/${lang}/${realPath}`;
+
             const rawLabel = resolveLabel(segment);
             const label = rawLabel.charAt(0).toUpperCase() + rawLabel.slice(1);
             return (

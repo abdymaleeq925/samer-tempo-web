@@ -7,6 +7,8 @@
     "selectLanguage": "Sprache auswählen",
     "selectCategory": "Kategorie auswählen",
     "goToSlide": "Zu Folie {slide} gehen",
+    "homeAriaLabel": "Samer Tempo Startseite",
+    "searchSubmit": "Suche absenden",
     "toggleMenu": "Navigationsmenü umschalten",
     "toggleSubmenu": "Untermenü umschalten",
     "mainNavLabel": "Hauptnavigation",
@@ -44,7 +46,27 @@
     "inquireNow": "Jetzt anfragen",
     "sendRequest": "Anfrage senden",
     "close": "Schließen",
-    "allCategories": "Alle Kategorien"
+    "allCategories": "Alle Kategorien",
+    "error": {
+      "title": "Etwas ist schief gelaufen!",
+      "description": "Beim Verarbeiten Ihrer Anfrage ist ein unerwarteter Fehler aufgetreten.",
+      "retryBtn": "Erneut versuchen",
+      "homeBtn": "Zur Startseite"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die gesuchte Seite oder das Ersatzteil existiert nicht.",
+      "homeBtn": "Zur Startseite",
+      "catalogBtn": "Katalog durchsuchen"
+    },
+    "search": {
+      "title": "Katalog durchsuchen",
+      "resultsFor": "Suchergebnisse für \"{query}\"",
+      "allProducts": "Alle Produkte",
+      "filterCategory": "Kategorien",
+      "resetFilters": "Filter zurücksetzen",
+      "foundCount": "{count} Produkte gefunden"
+    }
   },
   "homepage": {
     "hero": {
@@ -177,8 +199,8 @@
     "fullCatalogue": "Gesamtkatalog",
     "cables": "Katalog für Elektrokabel & Stecker",
     "air": "Katalog für Pneumatikkupplungen & Ventile",
-    "tank-caps": "Katalog für Tankdeckel & Diebstahlsicherungen",
-    "repair-kits": "Katalog für Reparatursätze",
+    "tankCaps": "Katalog für Tankdeckel & Diebstahlsicherungen",
+    "repairKits": "Katalog für Reparatursätze",
     "steelCables": "Katalog für Stahlseile",
     "newProducts2026": "Katalog für Neuheiten 2026",
     "abs": "Katalog für ABS/EBS-Sensoren & Verbindungskabel"
@@ -190,7 +212,10 @@
     "relatedProducts": "Ähnliche Produkte",
     "watchOnYoutube": "Übersicht auf YouTube ansehen",
     "imageAlt": "{title} — Foto {index}",
-    "thumbnailAlt": "Foto {index} anzeigen"
+    "thumbnailAlt": "Foto {index} anzeigen",
+    "hoverToZoom": "Zum Vergrößern mit der Maus drüberfahren",
+    "clickToPlayVideo": "Klicken zum Ansehen der Videoübersicht",
+    "videoTab": "Videoübersicht"
   },
   "contacts": {
     "title": "Kontakt",

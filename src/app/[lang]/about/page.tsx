@@ -1,4 +1,4 @@
-import AboutPage from "@/components/about-page";
+import AboutPage from "@/components/about/about-page";
 
 import type { Metadata } from 'next';
 import { getDictionary } from '@/lib/get-dictionary';

@@ -46,7 +46,7 @@ export default function HeroCollage() {
   return (
     <section 
       className="relative w-full overflow-hidden bg-zinc-950 flex items-center justify-center"
-      style={{ height: "calc(100dvh - var(--header-h, 88px))" }}
+      style={{ minHeight: "calc(100dvh - var(--header-h, 88px))" }}
       >
       {/* BACKGROUND LAYER: Skewed 2x4 Image Collage Grid */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">

@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, Menu } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ChevronDown, Menu } from 'lucide-react';
 
 import {
   Sheet,
@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/button';
 import { NAV_LINKS, type NavKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
 import { itemVariants } from '@/lib/category-nav-motion';
+import OemSearchInput from './oem-search-bar';
 
 const accordionVariants = {
   hidden: { height: 0, opacity: 0 },
@@ -28,7 +29,11 @@ const accordionVariants = {
   exit: { height: 0, opacity: 0, transition: { duration: 0.15, ease: 'easeIn' } },
 } as const;
 
-export default function MobileNavbar() {
+interface MobileNavbarProps {
+  isHomePage?: boolean;
+}
+
+export default function MobileNavbar({ isHomePage = false }: MobileNavbarProps) {
   const { lang, dict } = useLang();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [expandedKey, setExpandedKey] = useState<NavKey | null>(null);
@@ -63,6 +68,12 @@ export default function MobileNavbar() {
                 Samer Tempo
               </SheetTitle>
             </SheetHeader>
+
+            {!isHomePage && (
+              <div className="p-4 border-b border-zinc-200 bg-stone-200/50">
+                <OemSearchInput onSearchSuccess={handleLinkClick} />
+              </div>
+            )}
 
             <nav
               aria-label={dict.accessibility.mainNavLabel}

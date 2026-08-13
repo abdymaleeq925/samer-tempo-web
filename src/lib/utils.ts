@@ -24,3 +24,11 @@ export function getLanguageAlternates(lang: Locale, path: string = '') {
     languages,
   };
 }
+
+export function normalizeCode(code: string): string {
+  return code.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+}
+
+export function formatString(template: string, params: Record<string, string | number>): string {
+  return template.replace(/\{(\w+)\}/g, (_, key) => (key in params ? String(params[key]) : `{${key}}`));
+}
