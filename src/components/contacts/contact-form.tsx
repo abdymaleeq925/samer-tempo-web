@@ -4,13 +4,14 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { z } from "zod"
-import { Send, CheckCircle2, Building2, User, Mail, Phone, FileText, Wrench } from "lucide-react"
+import { Send, CheckCircle2, Building2, User, Mail, Phone, FileText, Wrench, Loader2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Field, FieldLabel, FieldError } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useLang } from "@/context/lang-context"
+import { toast } from "sonner"
 
 function createFormSchema(v: {
   fullNameMin: string;
@@ -31,7 +32,7 @@ function createFormSchema(v: {
 
 export function ContactForm() {
   const { dict } = useLang();
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const formSchema = createFormSchema(dict.contacts.validation);
   type FormValues = z.infer<typeof formSchema>
   const form = useForm<FormValues>({
@@ -46,23 +47,37 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(values: FormValues) {
-    console.log("Data is sent to server:", values)
-    setIsSubmitted(true)
+  async function onSubmit(values: FormValues) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values)
+      });
+
+      if(!response.ok) throw new Error("Failed to send message")
+      setIsSubmitted(true);
+      console.log("Data is sent to server:", values)
+      form.reset();
+      toast.success(dict.contacts.successTitle ?? "Message sent successfully!")
+    } catch (error) {
+      console.error("Failed to submit form: ", error);
+      toast.error(dict.contacts.errorTitle ?? "Something went wrong. Please try again.");
+    }
   }
 
   if (isSubmitted) {
     return (
-      <div className="bg-white rounded-2xl border-2 border-black p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <div className="font-heading bg-white rounded-2xl border-2 border-ink p-8 sm:p-12 text-center space-y-6 shadow-xl">
         <div className="w-16 h-16 bg-brand/15 text-brand rounded-2xl flex items-center justify-center mx-auto border border-brand/30">
           <CheckCircle2 className="w-10 h-10 text-brand" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-2xl font-black text-black uppercase tracking-wide">
-            {dict.contacts?.successTitle ?? "Запрос успешно отправлен!"}
+          <h3 className="text-2xl font-bold text-ink uppercase tracking-wide">
+            {dict.contacts?.successTitle ?? "Message Sent!"}
           </h3>
-          <p className="text-zinc-600 text-sm max-w-md mx-auto leading-relaxed">
-            {dict.contacts?.successDesc ?? "Спасибо за обращение. Наш отдел экспорта свяжется с вами в ближайшее время."}
+          <p className="text-zinc-800 text-base max-w-md mx-auto leading-relaxed">
+            {dict.contacts?.successDesc ?? "Thank you for reaching out. Our export team will contact you shortly."}
           </p>
         </div>
         <Button
@@ -70,31 +85,29 @@ export function ContactForm() {
             form.reset()
             setIsSubmitted(false)
           }}
-          className="bg-black hover:bg-zinc-800 text-white font-bold uppercase text-xs tracking-wider h-11 px-8 rounded-xl transition-all"
+          className="bg-brand hover:bg-brand-dark text-ink font-bold uppercase text-xs tracking-wider h-11 px-8 rounded-xl transition-all cursor-pointer"
         >
-          {dict.contacts?.sendAnother ?? "Отправить еще одно сообщение"}
+          {dict.contacts?.sendAnother ?? "Send another message"}
         </Button>
       </div>
     )
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-zinc-200 p-6 sm:p-10 shadow-lg relative overflow-hidden">
+    <div className="font-heading bg-white rounded-2xl border border-zinc-200 p-6 sm:p-10 shadow-lg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-brand" />
-
       <div className="mb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-xs font-mono font-bold text-ink uppercase mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-sm font-caption font-bold text-ink uppercase mb-3">
           <Wrench className="w-3.5 h-3.5 text-brand" />
           {dict.contacts.formBadge}
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-ink tracking-tight uppercase">
+        <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight uppercase">
           {dict.contacts.formTitle}
         </h2>
-        <p className="text-zinc-500 text-sm mt-1">
+        <p className="text-zinc-700">
           {dict.contacts.formSubtitle}
         </p>
       </div>
-
       <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <Controller
@@ -117,7 +130,6 @@ export function ContactForm() {
               </Field>
             )}
           />
-
           <Controller
             control={form.control}
             name="company"
@@ -139,7 +151,6 @@ export function ContactForm() {
             )}
           />
         </div>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <Controller
             control={form.control}
@@ -162,7 +173,6 @@ export function ContactForm() {
               </Field>
             )}
           />
-
           <Controller
             control={form.control}
             name="phone"
@@ -185,7 +195,6 @@ export function ContactForm() {
             )}
           />
         </div>
-
         <Controller
           control={form.control}
           name="oemOrDetails"
@@ -204,7 +213,6 @@ export function ContactForm() {
             </Field>
           )}
         />
-
         <Controller
           control={form.control}
           name="message"
@@ -226,14 +234,22 @@ export function ContactForm() {
             </Field>
           )}
         />
-
         <Button
           type="submit"
           disabled={form.formState.isSubmitting}
-          className="w-full h-12 bg-brand hover:bg-brand-dark text-ink font-extrabold uppercase tracking-wider text-sm rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-black/10 cursor-pointer"
+          className="w-full h-12 bg-brand hover:bg-brand-dark text-ink font-bold uppercase tracking-wider text-sm rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-black/10 cursor-pointer"
         >
-          <Send className="w-4 h-4 fill-current" />
-          <span>{dict.contacts.submitBtn}</span>
+          {form.formState.isSubmitting ? (
+            <>
+              <Loader2 className="w-4 h-4 animate-spin" />
+              <span>{dict.contacts.sending ?? "Sending..."}</span>
+            </>
+          ) : (
+            <>
+              <Send className="w-4 h-4 fill-current" />
+              <span>{dict.contacts.submitBtn}</span>
+            </>
+          )}
         </Button>
       </form>
     </div>

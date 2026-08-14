@@ -33,20 +33,14 @@
     }
   },
   "common": {
-    "searchPlaceholder": "Suche nach Artikelnummer oder OEM (z. B. 441-032-8080, S010-01)...",
-    "searchButton": "Suchen",
     "viewDetails": "Details anzeigen",
-    "noProducts": "Keine Produkte in dieser Kategorie gefunden",
     "oemNumber": "OEM-Nummer",
-    "searchNotFound": "Keine Ergebnisse für \"{query}\" gefunden",
     "crossReferences": "Cross-Referenzen",
     "specifications": "Technische Daten",
-    "videoReview": "Video-Review",
-    "inStock": "Auf Lager",
-    "inquireNow": "Jetzt anfragen",
     "sendRequest": "Anfrage senden",
     "close": "Schließen",
     "allCategories": "Alle Kategorien",
+    "noProducts": "Keine Produkte in dieser Kategorie gefunden",
     "error": {
       "title": "Etwas ist schief gelaufen!",
       "description": "Beim Verarbeiten Ihrer Anfrage ist ein unerwarteter Fehler aufgetreten.",
@@ -65,7 +59,10 @@
       "allProducts": "Alle Produkte",
       "filterCategory": "Kategorien",
       "resetFilters": "Filter zurücksetzen",
-      "foundCount": "{count} Produkte gefunden"
+      "foundCount": "{count} Produkte gefunden",
+      "searchPlaceholder": "Suche nach Artikelnummer oder OEM (z. B. 441-032-8080, S010-01)...",
+      "searchButton": "Suchen",
+      "searchNotFound": "Keine Ergebnisse für \"{query}\" gefunden"
     }
   },
   "homepage": {
@@ -231,6 +228,7 @@
     "messageLabel": "Nachricht / Anfrage",
     "submitBtn": "Nachricht senden",
     "successTitle": "Nachricht gesendet!",
+    "errorTitle": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     "sendAnother": "Eine weitere Nachricht senden",
     "formBadge": "B2B-Exportanfrage",
     "formSubtitle": "Füllen Sie das Formular aus, um Preise und Lieferzeiten für Ersatzteile zu erhalten.",
@@ -243,6 +241,7 @@
     "messagePlaceholder": "Geben Sie Mengen oder Ersatzteile an...",
     "successDesc": "Vielen Dank für Ihre Anfrage. Unser Exportteam wird sich in Kürze bei Ihnen melden.",
     "workingHours": "Mo - Fr: 08:00 - 18:00 (GMT+3)\nSa - So: Geschlossen",
+    "sending": "Wird gesendet...",
     "mapConsent": {
       "title": "Google Maps ist deaktiviert",
       "description": "Um unsere interaktive Karte zu sehen, stimmen Sie bitte dem Laden von Google Maps Inhalten zu.",

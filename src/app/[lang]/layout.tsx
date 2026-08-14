@@ -6,13 +6,14 @@ import { Commissioner, PT_Sans_Caption, Mulish } from "next/font/google";
 import { getDictionary } from '@/lib/get-dictionary';
 import { locales, type Locale } from '@/config/locales';
 
-import Header from "@/components/layout/header";
-import Footer from "@/components/layout/footer";
-import LenisProvider from '@/components/providers/lenis-provider';
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
+import LenisProvider from '@/providers/lenis-provider';
 
 import "./globals.css";
 import { LangProvider } from "@/context/lang-context";
-import { AppBreadcrumbs } from "@/components/layout/breadcrumbs";
+import { AppBreadcrumbs } from "@/components/header/breadcrumbs";
+import { Toaster } from "@/components/ui/sonner";
 
 const getCachedDictionary = cache(getDictionary);
 
@@ -89,6 +90,7 @@ export default async function RootLayout({ children, params }: Props) {
             <Header/>
             <AppBreadcrumbs/>
               <main className="flex-1"> {children} </main>
+              <Toaster/>
             <Footer/>
           </LangProvider>     
         </LenisProvider>

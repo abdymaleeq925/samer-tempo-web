@@ -39,11 +39,11 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
   return (
     <div className="shrink-0">
       {/* Mobile Version */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger
             type="button"
-            className="flex items-center gap-1.5 bg-zinc-900/90 border border-zinc-800 hover:border-zinc-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-colors outline-none focus:ring-1 focus:ring-brand shrink-0"
+            className="flex items-center gap-1.5 bg-ink border border-zinc-800 hover:border-zinc-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-bold font-caption transition-colors outline-none focus:ring-1 focus:ring-brand shrink-0"
             aria-label={dict.accessibility.selectLanguage}
           >
             <Globe className="w-3.5 h-3.5 shrink-0" />
@@ -54,7 +54,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
           <DropdownMenuContent
             align="end"
             sideOffset={6}
-            className="w-28 bg-zinc-900/95 border text-zinc-100 border-zinc-800 shadow-2xl rounded-xl p-1 backdrop-blur-lg z-50 min-w-0"
+            className="w-19 bg-ink text-zinc-200 z-50 min-w-0"
           >
             {LANGUAGES.map((lang) => {
               const isActive = currentLang === lang.code;
@@ -62,9 +62,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                 <DropdownMenuItem
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`flex items-center justify-between px-2.5 py-1.5 text-xs font-medium font-heading rounded-lg cursor-pointer transition-colors ${isActive
-                      ? 'bg-brand/10 text-brand font-bold'
-                      : 'hover:bg-zinc-800 hover:text-white'
+                  className={`flex items-center justify-between px-2.5 py-1.5 text-xs font-bold font-caption rounded-lg cursor-pointer transition-colors ${isActive
+                    ? 'bg-brand/30 text-brand'
+                    : ''
                     }`}
                 >
                   <span>{lang.label}</span>
@@ -75,9 +75,8 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-
       {/* Desktop Version */}
-      <div className="hidden md:flex items-center gap-2 bg-zinc-900/80 border border-zinc-800 rounded-full px-3 py-1.5 text-sm">
+      <div className="hidden lg:flex items-center bg-ink border border-zinc-800 rounded-full px-3 py-1.5">
         <Globe className="w-4 h-4 text-white shrink-0" />
         <div className="flex gap-1" role="radiogroup" aria-label={dict.accessibility.selectLanguage}>
           {LANGUAGES.map((lang) => {
@@ -89,9 +88,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                 onClick={() => handleLanguageChange(lang.code)}
                 aria-checked={isActive}
                 role="radio"
-                className={`px-2.5 py-0.5 rounded-full text-xs font-semibold font-heading transition-all cursor-pointer ${isActive
-                    ? 'bg-white text-black shadow-sm'
-                    : 'text-zinc-100 hover:text-white hover:bg-white/5'
+                className={`px-2.5 py-0.5 rounded-full text-xs font-bold font-caption transition-all cursor-pointer ${isActive
+                  ? 'bg-white text-black'
+                  : 'text-zinc-200 hover:text-brand'
                   }`}
               >
                 {lang.label}

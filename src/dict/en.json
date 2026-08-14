@@ -33,25 +33,19 @@
     }
   },
   "common": {
-    "searchPlaceholder": "Search by part number or OEM (e.g. 441-032-8080, S010-01)...",
-    "searchButton": "Search",
     "viewDetails": "View Details",
-    "noProducts": "No products found in this category",
     "oemNumber": "OEM Number",
-    "searchNotFound": "No results found for \"{query}\"",
     "crossReferences": "Cross References",
     "specifications": "Technical Specifications",
-    "videoReview": "Video Review",
-    "inStock": "In Stock",
-    "inquireNow": "Inquire Now",
     "sendRequest": "Send Request",
     "close": "Close",
     "allCategories": "All Categories",
+    "noProducts": "No products found in this category",
     "error": {
-    "title": "Something went wrong!",
-    "description": "An unexpected error occurred while processing your request.",
-    "retryBtn": "Try Again",
-    "homeBtn": "Back to Home"
+      "title": "Something went wrong!",
+      "description": "An unexpected error occurred while processing your request.",
+      "retryBtn": "Try Again",
+      "homeBtn": "Back to Home"
     },
     "notFound": {
       "title": "Page Not Found",
@@ -65,7 +59,10 @@
       "allProducts": "All Products",
       "filterCategory": "Categories",
       "resetFilters": "Reset Filters",
-      "foundCount": "Found {count} products"
+      "foundCount": "Found {count} products",
+      "searchPlaceholder": "Search by part number or OEM (e.g. 441-032-8080, S010-01)...",
+      "searchButton": "Search",
+      "searchNotFound": "No results found for \"{query}\""
     }
   },
   "homepage": {
@@ -73,7 +70,6 @@
     "title": "Automotive Spare Parts Search",
     "subtitle": "Enter OEM number, code number, or part name",
     "imageAlt": "Auto part {index}"
-
     },
     "features": [
       {
@@ -232,6 +228,7 @@
     "messageLabel": "Message / Request",
     "submitBtn": "Send Message",
     "successTitle": "Message Sent!",
+    "errorTitle": "Something went wrong. Please try again.",
     "formBadge": "B2B Export Request",
     "formSubtitle": "Fill out the form to receive pricing and delivery estimates for auto parts.",
     "fullNamePlaceholder": "John Smith",
@@ -244,6 +241,7 @@
     "successDesc": "Thank you for reaching out. Our export team will contact you shortly.",
     "sendAnother": "Send another message",
     "workingHours": "Mon - Fri: 08:00 - 18:00 (GMT+3)\nSat - Sun: Closed",
+    "sending": "Sending...",
     "mapConsent": {
       "title": "Google Maps is disabled",
       "description": "To view our interactive office map, please allow loading Google Maps external content.",
