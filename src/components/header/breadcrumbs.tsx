@@ -24,7 +24,7 @@ export function AppBreadcrumbs() {
   const rawSegments = pathname.split('/').filter(Boolean);
   const VIRTUAL_SEGMENTS = new Set(['products', 'product', 'categories']);
 
-  const displaySegments = rawSegments.filter((seg) => seg !== lang);
+  const displaySegments = rawSegments[0] === lang ? rawSegments.slice(1) : rawSegments;
   const lastSegment = displaySegments[displaySegments.length - 1];
   const currentProduct = MOCK_PRODUCTS.find((p) => p.slug === lastSegment || p.id === lastSegment);
 

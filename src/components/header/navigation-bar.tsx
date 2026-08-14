@@ -54,7 +54,7 @@ export default function Navbar({ link, lang, label, isOpen, onOpen, onClose, onT
             aria-controls={panelId}
             onClick={onToggle}
             onFocus={onOpen}
-            className="group flex flex-col items-center justify-center gap-1 outline-none transition-colors h-12 shrink-0"
+            className="group flex flex-col items-center justify-center gap-1 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-colors h-12 shrink-0"
           >
             <div className="flex items-center justify-center gap-1 h-6">
               <Icon className="w-6 h-6 group-hover:text-brand transition-colors shrink-0" />
@@ -81,7 +81,7 @@ export default function Navbar({ link, lang, label, isOpen, onOpen, onClose, onT
       ) : (
         <Link
           href={`/${lang}${link.href}`}
-          className="group flex flex-col items-center justify-center gap-1 outline-none transition-colors h-12 shrink-0"
+          className="group flex flex-col items-center justify-center gap-1 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-colors h-12 shrink-0"
         >
           <Icon className="w-6 h-6 group-hover:text-brand transition-colors shrink-0"/> 
           <span className="group-hover:text-brand transition-colors leading-none text-sm lg:text-base font-medium font-heading">
