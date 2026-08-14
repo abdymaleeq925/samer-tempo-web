@@ -33,17 +33,11 @@
     }
   },
   "common": {
-    "searchPlaceholder": "Parça kodu veya OEM ile ara (örn. 441-032-8080, S010-01)...",
-    "searchButton": "Ara",
     "viewDetails": "Detayları Gör",
     "noProducts": "Bu kategoride ürün bulunamadı",
     "oemNumber": "OEM Numarası",
-    "searchNotFound": "\"{query}\" için sonuç bulunamadı",
     "crossReferences": "Çapraz Referanslar (Cross)",
     "specifications": "Teknik Özellikler",
-    "videoReview": "Video İnceleme",
-    "inStock": "Stokta Var",
-    "inquireNow": "Fiyat Sor",
     "sendRequest": "Talep Gönder",
     "close": "Kapat",
     "allCategories": "Tüm Kategoriler",
@@ -65,7 +59,10 @@
       "allProducts": "Tüm Ürünler",
       "filterCategory": "Kategoriler",
       "resetFilters": "Filtreleri Sıfırla",
-      "foundCount": "{count} ürün bulundu"
+      "foundCount": "{count} ürün bulundu",
+      "searchPlaceholder": "Parça kodu veya OEM ile ara (örn. 441-032-8080, S010-01)...",
+      "searchButton": "Ara",
+      "searchNotFound": "\"{query}\" için sonuç bulunamadı"
     }
   },
   "homepage": {
@@ -237,6 +234,7 @@
     "messageLabel": "Mesajınız / Talebiniz",
     "submitBtn": "Mesaj Gönder",
     "successTitle": "Mesaj Gönderildi!",
+    "errorTitle": "Bir şeyler ters gitti. Lütfen tekrar deneyin.",
     "sendAnother": "Başka bir mesaj gönder",
     "formBadge": "B2B İhracat Talebi",
     "formSubtitle": "Fiyat teklifi ve teslimat süreleri için formu doldurun.",
@@ -249,6 +247,7 @@
     "messagePlaceholder": "Miktar veya parça kalemlerini belirtin...",
     "successDesc": "İlginiz için teşekkür ederiz. İhracat ekibimiz en kısa sürede sizinle iletişime geçecektir.",
     "workingHours": "Pzt - Cum: 08:00 - 18:00 (GMT+3)\nCmt - Paz: Kapalı",
+    "sending": "Gönderiliyor...",
     "mapConsent": {
       "title": "Google Haritalar devre dışı",
       "description": "Etkileşimli haritamızı görüntülemek için Google Haritalar içerik yüklemesini kabul edin.",

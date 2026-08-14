@@ -33,17 +33,11 @@
     }
   },
   "common": {
-    "searchPlaceholder": "Поиск по артикулу или OEM (напр. 441-032-8080, S010-01)...",
-    "searchButton": "Найти",
     "viewDetails": "Подробнее",
     "noProducts": "Товары в этой категории отсутствуют",
     "oemNumber": "OEM номер",
-    "searchNotFound": "Ничего не найдено по запросу «{query}»",
     "crossReferences": "Кросс-номера",
     "specifications": "Технические характеристики",
-    "videoReview": "Видеообзор",
-    "inStock": "В наличии",
-    "inquireNow": "Запросить цену",
     "sendRequest": "Отправить запрос",
     "close": "Закрыть",
     "allCategories": "Все категории",
@@ -65,7 +59,10 @@
       "allProducts": "Все товары",
       "filterCategory": "Категории",
       "resetFilters": "Сбросить фильтры",
-      "foundCount": "Найдено товаров: {count}"
+      "foundCount": "Найдено товаров: {count}",
+      "searchPlaceholder": "Поиск по артикулу или OEM (напр. 441-032-8080, S010-01)...",
+      "searchButton": "Найти",
+      "searchNotFound": "Ничего не найдено по запросу «{query}»"
     }
   },
   "homepage": {
@@ -231,6 +228,7 @@
     "messageLabel": "Сообщение / Запрос",
     "submitBtn": "Отправить сообщение",
     "successTitle": "Сообщение отправлено!",
+    "errorTitle": "Что-то пошло не так. Пожалуйста, попробуйте снова.",
     "formBadge": "Заявка для B2B",
     "formSubtitle": "Заполните форму для получения расчётов стоимости и сроков поставки автозапчастей.",
     "fullNamePlaceholder": "Иван Иванов",
@@ -243,6 +241,7 @@
     "successDesc": "Спасибо за обращение. Наш отдел экспорта свяжется с вами в ближайшее время.",
     "sendAnother": "Отправить ещё одно сообщение",
     "workingHours": "Пн - Пт: 08:00 - 18:00 (GMT+3)\nСб - Вс: Выходной",
+    "sending": "Отправка...",
     "mapConsent": {
       "title": "Google Карты отключены",
       "description": "Чтобы просмотреть интерактивную карту нашего офиса, разрешите загрузку содержимого Google Maps.",

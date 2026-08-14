@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { ProductCategoryPage } from '@/components/product-category';
+import { ProductCategoryPage } from '@/components/categories/product-category';
 import type { Locale } from '@/config/locales';
 import { MOCK_CATEGORIES } from '@/data/mock-catalog';
 import { getLanguageAlternates } from '@/lib/utils';

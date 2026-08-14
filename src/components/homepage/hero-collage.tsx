@@ -5,8 +5,9 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { GRID_CELLS_COUNT, PRODUCT_IMAGES, SWAP_INTERVAL_MS } from '@/constants';
-import OemSearchInput from '../layout/oem-search-bar';
 import { useLang } from '@/context/lang-context';
+import OemSearchInput from '../header/oem-search-bar';
+
 
 export default function HeroCollage() {
   const [cellImages, setCellImages] = useState<number[]>(() =>
@@ -14,6 +15,7 @@ export default function HeroCollage() {
   );
 
   const { dict } = useLang();
+  const hero = dict.homepage.hero;
 
   /* Periodically selects a random grid cell and swaps its image with an unrendered one. */
   useEffect(() => {
@@ -68,7 +70,7 @@ export default function HeroCollage() {
                   >
                     <Image
                       src={PRODUCT_IMAGES[imgIndex]}
-                      alt={(dict.homepage.hero.imageAlt ?? 'Auto part {index}').replace('{index}', String(imgIndex + 1))}
+                      alt={(hero.imageAlt ?? 'Auto part {index}').replace('{index}', String(imgIndex + 1))}
                       fill
                       sizes="(max-width: 640px) 50vw, 25vw"
                       priority={cellIdx < 4} // Priority load top row for LCP optimization
@@ -81,16 +83,15 @@ export default function HeroCollage() {
           ))}
         </div>
       </div>
-
       <div className="absolute inset-0 bg-linear-to-b from-zinc-950/50 via-zinc-950/30 to-zinc-950/70 pointer-events-none z-10" />
       {/* Centralized OEM Search and Titles */}
-      <div className="relative z-20 w-full max-w-3xl px-4 text-center flex flex-col items-center gap-6 sm:gap-8">
+      <div className="relative z-20 w-full max-w-3xl px-4 font-heading text-center text-white flex flex-col items-center gap-6 sm:gap-8">
         <div className="space-y-3">
-          <h1 className="text-3xl sm:text-5xl font-black text-white font-heading tracking-tight leading-tight drop-shadow-md">
-            {dict.homepage.hero.title}
+          <h1 className="text-3xl md:text-5xl font-black leading-tight drop-shadow-md">
+            {hero.title}
           </h1>
-          <p className="text-sm sm:text-base text-white font-heading max-w-lg mx-auto drop-shadow-sm font-normal">
-          {dict.homepage.hero.subtitle}
+          <p className="text-base md:text-lg max-w-lg mx-auto drop-shadow-sm font-normal">
+          {hero.subtitle}
           </p>
         </div>
         <div className="w-full max-w-md md:max-w-xl shadow-2xl rounded-2xl transition-transform hover:scale-[1.01]">

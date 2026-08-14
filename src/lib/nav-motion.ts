@@ -15,3 +15,14 @@ export const itemVariants = {
   hidden: { opacity: 0, x: -6 },
   visible: { opacity: 1, x: 0 },
 } satisfies Variants;
+
+export const accordionVariants = {
+  hidden: { height: 0, opacity: 0 },
+  visible: {
+    height: 'auto',
+    opacity: 1,
+    transition: { duration: 0.2, ease: [0.16, 1, 0.3, 1], staggerChildren: 0.03 },
+  },
+  exit: { height: 0, opacity: 0, transition: { duration: 0.15, ease: 'easeIn' } },
+} as const;
+

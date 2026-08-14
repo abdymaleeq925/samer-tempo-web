@@ -24,7 +24,7 @@ export function AppBreadcrumbs() {
   const rawSegments = pathname.split('/').filter(Boolean);
   const VIRTUAL_SEGMENTS = new Set(['products', 'product', 'categories']);
 
-  const displaySegments = rawSegments.filter((seg) => !VIRTUAL_SEGMENTS.has(seg));
+  const displaySegments = rawSegments.filter((seg) => seg !== lang);
   const lastSegment = displaySegments[displaySegments.length - 1];
   const currentProduct = MOCK_PRODUCTS.find((p) => p.slug === lastSegment || p.id === lastSegment);
 
@@ -39,19 +39,18 @@ export function AppBreadcrumbs() {
   }
 
   return (
-    <div className="px-4 py-4 xl:px-24 border-b border-zinc-800/80 backdrop-blur-md">
+    <div className="px-4 py-4 lg:px-8 xl:px-24 border-b border-ink">
       <Breadcrumb>
         <BreadcrumbList>
-          <BreadcrumbItem className='font-heading text-lg md:text-2xl'>
+          <BreadcrumbItem className='font-heading font-medium text-lg md:text-2xl'>
             <BreadcrumbLink href={`/${lang}`}>
               {n.home}
             </BreadcrumbLink>
           </BreadcrumbItem>
           {displaySegments.map((segment, index) => {
             const isLast = index === displaySegments.length - 1;
-            
-            const rawIndex = rawSegments.indexOf(segment);
-            const realPath = rawSegments.slice(0, rawIndex + 1).join('/');
+            const isNonClickable = VIRTUAL_SEGMENTS.has(segment);
+            const realPath = displaySegments.slice(0, index + 1).join('/');
             const href = `/${lang}/${realPath}`;
 
             const rawLabel = resolveLabel(segment);
@@ -59,11 +58,11 @@ export function AppBreadcrumbs() {
             return (
               <React.Fragment key={href}>
                 <BreadcrumbSeparator />
-                <BreadcrumbItem className='font-heading text-lg md:text-2xl'>
+                <BreadcrumbItem className='font-heading font-medium text-lg md:text-2xl'>
                   {isLast && currentProduct ? (
                     <BreadcrumbPage>{currentProduct.title[lang]}</BreadcrumbPage>
-                  ) : isLast ? (
-                        <BreadcrumbPage>{label}</BreadcrumbPage>
+                  ) : isLast || isNonClickable ? (
+                    <BreadcrumbPage>{label}</BreadcrumbPage>
                   ) : (
                     <BreadcrumbLink href={href}>
                       {label}

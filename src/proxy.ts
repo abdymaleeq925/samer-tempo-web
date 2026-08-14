@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
+
 import { locales, defaultLocale } from '@/config/locales';
 
 const countryToLocaleMap: Record<string, string> = {
@@ -10,7 +10,7 @@ const countryToLocaleMap: Record<string, string> = {
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-
+  
   // Ignore images, favicons, static files, and API routes
   if (
     pathname.startsWith('/_next') ||

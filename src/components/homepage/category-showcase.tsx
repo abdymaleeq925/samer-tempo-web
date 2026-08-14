@@ -10,33 +10,33 @@ import { useLang } from '@/context/lang-context';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { CATEGORY_META } from '@/constants';
+import { SHOWCASE_CATEGORY_DATA } from '@/constants';
 
 const tabContentVariants = {
   hidden: { opacity: 0, y: 12 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] }
   },
-  exit: { 
-    opacity: 0, 
-    y: -8, 
-    transition: { duration: 0.3, ease: [0.4, 0, 1, 1] } 
+  exit: {
+    opacity: 0,
+    y: -8,
+    transition: { duration: 0.3, ease: [0.4, 0, 1, 1] }
   },
 } as const;
 
 export default function CategoryShowcase() {
   const { dict, lang } = useLang();
-  const showcaseDict = dict.categoryShowcase;
-  const categories = showcaseDict?.items ?? [];
+  const showcase = dict.homepage.categoryShowcase;
+  const categories = showcase?.items ?? [];
   const defaultTab = categories[0]?.id ?? 'cables';
 
   const [activeTab, setActiveTab] = useState<string>(defaultTab);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  const activeMeta = CATEGORY_META[activeTab as keyof typeof CATEGORY_META];
+  const activeMeta = SHOWCASE_CATEGORY_DATA[activeTab as keyof typeof SHOWCASE_CATEGORY_DATA];
   const activeImages = activeMeta?.imageSrc && activeMeta.imageSrc.length > 0
     ? activeMeta.imageSrc
     : ['/products/placeholder.png'];
@@ -59,20 +59,17 @@ export default function CategoryShowcase() {
   if (!categories.length) return null;
 
   return (
-    <section
-      aria-labelledby="category-showcase-heading"
-      className="w-full py-12 lg:py-20"
-    >
+    <section aria-labelledby="category-showcase-heading" className="w-full py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col items-start gap-2 max-w-2xl">
           <h2
             id="category-showcase-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading tracking-tight"
           >
-            {showcaseDict?.title}
+            {showcase?.title}
           </h2>
-          <p className="text-md sm:text-lg text-zinc-600 font-heading">
-            {showcaseDict?.subtitle}
+          <p className="text-md sm:text-lg text-zinc-700 font-heading">
+            {showcase?.subtitle}
           </p>
         </div>
 
@@ -84,24 +81,18 @@ export default function CategoryShowcase() {
           {/* Horizontal scroll tab bar*/}
           <div className="relative w-full overflow-hidden">
             <TabsList
-              className={cn(
-                "flex w-full h-12! overflow-x-auto scrollbar-none justify-start items-stretch",
-                "bg-zinc-900 p-0 rounded-xl border border-zinc-800",
-                "snap-x snap-mandatory gap-1"
-              )}
+              className="flex w-full h-12! overflow-x-auto scrollbar-none justify-start items-stretch bg-stone-100 p-0 rounded-xl border border-ink snap-x snap-mandatory gap-1"
               aria-label={dict.accessibility?.selectCategory || "Select category"}
             >
               {categories.map((cat) => {
-                const meta = CATEGORY_META[cat.id as keyof typeof CATEGORY_META];
+                const meta = SHOWCASE_CATEGORY_DATA[cat.id as keyof typeof SHOWCASE_CATEGORY_DATA];
                 const Icon = meta?.icon;
 
                 return (
                   <TabsTrigger
                     key={cat.id}
                     value={cat.id}
-                    className={cn(
-                      "snap-start shrink-0 h-full flex items-center gap-2.5 px-4 rounded-lg text-md font-medium font-heading transition-all duration-200 select-none cursor-pointer",
-                    )}
+                    className="snap-start shrink-0 h-full flex items-center gap-2.5 px-4 text-base md:text-lg font-medium font-heading transition-all duration-200 select-none cursor-pointer hover:bg-brand"
                   >
                     {Icon && <Icon className="w-4 h-4 shrink-0" aria-hidden="true" />}
                     <span>{cat.name}</span>
@@ -110,10 +101,9 @@ export default function CategoryShowcase() {
               })}
             </TabsList>
           </div>
-
           {/* Selected category content */}
           {categories.map((cat) => {
-            const meta = CATEGORY_META[cat.id as keyof typeof CATEGORY_META];
+            const meta = SHOWCASE_CATEGORY_DATA[cat.id as keyof typeof SHOWCASE_CATEGORY_DATA];
             const imageSrc = meta?.imageSrc || ['/products/placeholder.png'];
             const href = meta?.href;
             const isActive = activeTab === cat.id;
@@ -121,10 +111,7 @@ export default function CategoryShowcase() {
               <TabsContent
                 key={cat.id}
                 value={cat.id}
-                className={cn(
-                  "mt-0 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-2xl",
-                  "data-[state=inactive]:hidden"
-                )}
+                className="mt-0 outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-2xl data-[state=inactive]:hidden"
               >
                 <AnimatePresence mode="wait">
                   {isActive && (
@@ -134,28 +121,25 @@ export default function CategoryShowcase() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-zinc-900 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 lg:p-10"
+                      className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-ink border border-zinc-800/80 rounded-2xl p-6 sm:p-8 lg:p-10"
                     >
                       {/* Text content */}
                       <div className="flex flex-col items-start justify-between space-y-6 order-2 lg:order-1">
                         <div className="space-y-4">
-                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs font-semibold font-heading uppercase tracking-wider">
+                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-semibold font-caption uppercase tracking-wider">
                             {cat.tagline}
                           </div>
-
-                          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight">
+                          <h3 className="text-xl sm:text-2xl lg:text-4xl font-heading font-bold text-white leading-tight">
                             {cat.title}
                           </h3>
-
-                          <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+                          <p className="text-sm sm:text-lg text-zinc-300 leading-relaxed">
                             {cat.description}
                           </p>
-
                           {/* Specifications and category advantages */}
                           {cat.highlights && cat.highlights.length > 0 && (
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                               {cat.highlights.map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-400">
+                                <li key={idx} className="flex items-center gap-2 text-sm sm:text-base text-zinc-300">
                                   <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" aria-hidden="true" />
                                   <span>{item}</span>
                                 </li>
@@ -163,20 +147,18 @@ export default function CategoryShowcase() {
                             </ul>
                           )}
                         </div>
-
                         <Button
                           size="lg"
                           nativeButton={false}
-                          className="w-full sm:w-auto gap-2 group"
+                          className="w-full sm:w-auto gap-2 hover:bg-brand hover:text-black group"
                           render={
                             <Link href={`/${lang}${href}`}>
-                              <span>{showcaseDict?.exploreBtn}</span>
+                              <span>{showcase?.exploreBtn}</span>
                               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                           }
                         />
                       </div>
-
                       {/* Image section */}
                       <div
                         className="relative w-full aspect-16/10 sm:aspect-video lg:aspect-4/3 rounded-xl overflow-hidden bg-zinc-800/50 border border-zinc-700/50 order-1 lg:order-2 group"
@@ -185,7 +167,7 @@ export default function CategoryShowcase() {
                         onFocus={() => setIsPaused(true)}
                         onBlur={() => setIsPaused(false)}
                       >
-                        {/* Лента со слайдами */}
+                        {/* Autoslider */}
                         <div
                           className="flex h-full w-full transition-transform duration-700 ease-out"
                           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -203,11 +185,9 @@ export default function CategoryShowcase() {
                             </div>
                           ))}
                         </div>
-
-                        {/* Градиентный оверлей */}
-                        <div className="absolute inset-0 bg-linear-to-t from-zinc-950/60 via-transparent to-transparent pointer-events-none" />
-
-                        {/* Точки-индикаторы слайдов */}
+                        {/* Gradient overlay */}
+                        <div className="absolute inset-0 bg-linear-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
+                        {/* Slide dot-indicators */}
                         {imageSrc.length > 1 && (
                           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
                             {imageSrc.map((_, idx) => (
@@ -221,7 +201,7 @@ export default function CategoryShowcase() {
                                     ? "w-6 bg-brand"
                                     : "w-1.5 bg-white/50 hover:bg-white/80"
                                 )}
-                                aria-label={ dict.accessibility?.goToSlide?.replace('{slide}', String(idx + 1)) }
+                                aria-label={dict.accessibility?.goToSlide?.replace('{slide}', String(idx + 1))}
                               />
                             ))}
                           </div>
