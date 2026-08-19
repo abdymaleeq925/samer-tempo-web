@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, 
   Target, 
@@ -10,7 +11,7 @@ import {
   Award, 
   Globe2 
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { useLang } from '@/context/lang-context';
 import { cn } from '@/lib/utils';
 
@@ -42,7 +43,7 @@ export default function AboutPage() {
         </div>
 
         {/* Tabs */}
-        <div className="flex items-center justify-between pb-2 scrollbar-none border-b border-zinc-800/80">
+        <div className="flex items-center justify-between pb-2 scrollbar-none">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;

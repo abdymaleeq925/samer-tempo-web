@@ -41,6 +41,7 @@
     "sendRequest": "Talep Gönder",
     "close": "Kapat",
     "allCategories": "Tüm Kategoriler",
+    "productsCarouselLabel": "Ürün karuseli",
     "error": {
       "title": "Bir şeyler yanlış gitti!",
       "description": "İsteğiniz işlenirken beklenmeyen bir hata oluştu.",

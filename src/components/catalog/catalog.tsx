@@ -45,7 +45,7 @@ export function Catalog() {
                   <Button
                     nativeButton={false}
                     variant="outline"
-                    className="flex-1 border-ink bg-transparent hover:bg-ink hover:text-white font-caption"
+                    className="flex-1 border-ink bg-transparent hover:bg-brand hover:scale-105 transition-all font-caption"
                     render={
                       <a
                         href={item.pdfUrl}
@@ -60,7 +60,7 @@ export function Catalog() {
                   />
                   <Button
                     nativeButton={false}
-                    className="flex-1 bg-transparent text-ink border border-ink hover:bg-ink hover:text-paper font-caption font-medium"
+                    className="flex-1 bg-transparent text-ink border border-ink hover:bg-brand hover:scale-105 transition-all font-caption font-medium"
                     render={
                       <a
                         href={item.pdfUrl}

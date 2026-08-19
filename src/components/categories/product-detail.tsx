@@ -3,10 +3,18 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ChevronRight, Play, ZoomIn } from 'lucide-react';
+
 import { useLang } from '@/context/lang-context';
 import { Product } from '@/data/mock-catalog';
-import { ProductCard } from './product-card';
-import { ChevronRight, Play, ZoomIn } from 'lucide-react';
+import { ProductCard } from '../categories/product-card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface ProductDetailProps {
   product: Product;
@@ -18,6 +26,7 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const [zoomPos, setZoomPos] = useState({ x: 0, y: 0, show: false });
+  const [videoIsShown, setVideoIsShown] = useState(false);
   const imgContainerRef = useRef<HTMLDivElement>(null);
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -50,7 +59,7 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
   const embedUrl = getEmbedYoutubeUrl(product.youtubeUrl);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 ">
       {/* MAIN PRODUCT GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         {/* GALLERY (5 cols) */}
@@ -101,11 +110,10 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
                     onClick={() => setSelectedImageIndex(idx)}
                     aria-label={thumbnailLabel}
                     aria-pressed={isSelected}
-                    className={`relative w-20 h-20 shrink-0 rounded-lg border-2 overflow-hidden cursor-pointer transition-all ${
-                      isSelected
+                    className={`relative w-20 h-20 shrink-0 rounded-lg border-2 overflow-hidden cursor-pointer transition-all ${isSelected
                         ? 'border-brand-dark bg-transparent'
                         : 'border-zinc-200 hover:border-zinc-300'
-                    }`}
+                      }`}
                   >
                     <Image src={img} alt="" fill className="object-contain p-2" />
                   </button>
@@ -165,14 +173,12 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
                 </dl>
               </div>
             </div>
-
-            {embedUrl && (
-              <div className="pt-4 border-t border-zinc-200 space-y-3">
-                <h3 className="text-lg font-bold flex items-center gap-2">
-                  <Play className="w-5 h-5 text-brand fill-current" />
-                  {dict.product?.videoTab ?? 'Video Review'}
-                </h3>
-
+            <div className="pt-4 border-t border-zinc-200 space-y-3">
+              <button className="text-lg font-bold flex items-center gap-2 cursor-pointer hover:-translate-y-1 transition-all" onClick={() => setVideoIsShown(!videoIsShown)}>
+                <Play className={`w-5 h-5 text-brand fill-current ${videoIsShown && "rotate-90"}`} />
+                {dict.product?.videoTab ?? 'Video Review'}
+              </button>
+              {(embedUrl && videoIsShown) && (
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
                   {isVideoLoaded ? (
                     <iframe
@@ -196,8 +202,8 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
                     </button>
                   )}
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -209,7 +215,6 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
             <h2 className="text-xl sm:text-2xl font-bold text-zinc-900">
               {dict.product.relatedProducts}
             </h2>
-
             <Link
               href={`/${lang}/categories/${product.categoryId.replace(/^cat-/, '')}`}
               className="flex items-center text-base font-semibold hover:text-brand-dark transition-colors"
@@ -217,14 +222,29 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
               {dict.product.viewAll} <ChevronRight />
             </Link>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedProducts.slice(0, 4).map((item) => (
-              <ProductCard key={item.id} product={item} />
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: false,
+            }}
+            className="w-full"
+            aria-label={dict.common.productsCarouselLabel ?? "Products carousel"}
+          >
+            <CarouselContent className="-ml-4">
+              {relatedProducts.map((product) => (
+                <CarouselItem
+                  key={product.id}
+                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/6"
+                >
+                  <ProductCard product={product} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex -left-4 lg:-left-6" />
+            <CarouselNext className="hidden sm:flex -right-4 lg:-right-6" />
+          </Carousel>
         </div>
       )}
-    </div>
+      </div>
   );
 }

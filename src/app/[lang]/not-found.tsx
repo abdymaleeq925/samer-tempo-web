@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { FileQuestion, Home, Grid } from 'lucide-react';
+
 import { useLang } from '@/context/lang-context';
 import { Button } from '@/components/ui/button';
 
@@ -15,18 +16,19 @@ export default function NotFound() {
       </div>
 
       <div className="space-y-2 max-w-md">
-        <span className="text-5xl font-black text-black">404</span>
-        <h1 className="text-2xl font-bold text-zinc-900">
+        <span className="text-7xl font-black text-ink">404</span>
+        <h1 className="text-4xl font-bold text-ink">
           {dict.common.notFound?.title ?? 'Page Not Found'}
         </h1>
-        <p className="text-zinc-600 text-sm leading-relaxed">
+        <p className="text-zinc-600 text-lg leading-relaxed">
           {dict.common.notFound?.description ?? 'The page or spare part you are looking for does not exist.'}
         </p>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Button
-          className="bg-black text-white hover:bg-zinc-800 font-bold gap-2"
+          nativeButton={false}
+          className="bg-transparent border border-ink text-ink hover:bg-brand font-bold gap-2"
           render={<Link href={`/${lang}`} />}
         >
           <Home className="w-4 h-4" />
@@ -34,8 +36,9 @@ export default function NotFound() {
         </Button>
 
         <Button
+          nativeButton={false}
           variant="outline"
-          className="border-black gap-2"
+          className="bg-transparent border border-ink text-ink hover:bg-brand font-bold gap-2"
           render={<Link href={`/${lang}/catalogues`} />}
         >
           <Grid className="w-4 h-4" />

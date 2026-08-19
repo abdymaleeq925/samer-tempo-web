@@ -76,7 +76,7 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         </DropdownMenu>
       </div>
       {/* Desktop Version */}
-      <div className="hidden lg:flex items-center bg-ink border border-zinc-800 rounded-full px-3 py-1.5">
+      <div className="hidden lg:flex items-center gap-2 bg-ink border border-zinc-800 rounded-full px-3 py-1.5">
         <Globe className="w-4 h-4 text-white shrink-0" />
         <div className="flex gap-1" role="radiogroup" aria-label={dict.accessibility.selectLanguage}>
           {LANGUAGES.map((lang) => {
