@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
-import ProductDetail from '@/components/catalog/product-detail';
+import ProductDetail from '@/components/categories/product-detail';
 import type { Locale } from '@/config/locales';
 import { getLanguageAlternates } from '@/lib/utils';
 import { MOCK_PRODUCTS } from '@/data/mock-catalog';

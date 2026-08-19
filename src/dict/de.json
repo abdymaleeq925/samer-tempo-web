@@ -41,6 +41,7 @@
     "close": "Schließen",
     "allCategories": "Alle Kategorien",
     "noProducts": "Keine Produkte in dieser Kategorie gefunden",
+    "productsCarouselLabel": "Produktkarussell",
     "error": {
       "title": "Etwas ist schief gelaufen!",
       "description": "Beim Verarbeiten Ihrer Anfrage ist ein unerwarteter Fehler aufgetreten.",

@@ -40,6 +40,7 @@
     "sendRequest": "Send Request",
     "close": "Close",
     "allCategories": "All Categories",
+    "productsCarouselLabel": "Products carousel",
     "noProducts": "No products found in this category",
     "error": {
       "title": "Something went wrong!",

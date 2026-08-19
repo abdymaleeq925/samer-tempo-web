@@ -6,12 +6,13 @@ import { Search, FilterX, SlidersHorizontal } from 'lucide-react';
 
 import { useLang } from '@/context/lang-context';
 import { MOCK_CATEGORIES, MOCK_PRODUCTS } from '@/data/mock-catalog';
-import { ProductCard } from '@/components/catalog/product-card';
+import { ProductCard } from '@/components/categories/product-card';
 import { normalizeCode, formatString } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 export default function SearchResultsPage() {
   const { dict, lang } = useLang();
+  const search = dict.common.search;
   const searchParams = useSearchParams();
   const initialQuery = searchParams.get('q') || '';
 
@@ -63,9 +64,9 @@ export default function SearchResultsPage() {
         {/* Heading */}
         <div className="mb-8 border-b border-zinc-200 pb-6">
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
-            {dict.common.search?.title ?? 'Search Catalog'}
+            {search?.title ?? 'Search Catalog'}
           </h1>
-          <p className="text-zinc-600 text-sm md:text-base">{resultsTitle}</p>
+          <p className="text-zinc-600 text-sm md:text-lg">{resultsTitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -82,10 +83,10 @@ export default function SearchResultsPage() {
                     setQuery('');
                     setSelectedCategory('all');
                   }}
-                  className="text-xs text-red-600 font-semibold hover:underline flex items-center gap-1"
+                  className="text-xs text-red-600 font-semibold hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <FilterX className="w-3.5 h-3.5" />
-                  {dict.common.search?.resetFilters ?? 'Reset'}
+                  {search.resetFilters ?? 'Reset'}
                 </button>
               )}
             </div>
@@ -93,7 +94,7 @@ export default function SearchResultsPage() {
             {/* Text Filter */}
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-wider text-zinc-500">
-                {dict.common?.searchButton ?? 'Search'}
+                {search.searchButton ?? 'Search'}
               </label>
               <div className="relative">
                 <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />
@@ -101,7 +102,7 @@ export default function SearchResultsPage() {
                   type="text"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder={dict.common?.searchPlaceholder}
+                  placeholder={search.searchPlaceholder}
                   className="w-full pl-9 pr-3 py-2 rounded-xl border border-zinc-300 text-sm bg-white focus:outline-none focus:border-brand"
                 />
               </div>
@@ -110,18 +111,18 @@ export default function SearchResultsPage() {
             {/* Category Filter */}
             <div className="space-y-2">
               <label className="text-xs font-bold uppercase tracking-wider text-zinc-500">
-                {dict.common.search?.filterCategory ?? 'Categories'}
+                {search.filterCategory ?? 'Categories'}
               </label>
               <div className="space-y-1">
                 <button
                   onClick={() => setSelectedCategory('all')}
-                  className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
+                  className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
                     selectedCategory === 'all'
                       ? 'bg-brand text-black font-bold'
                       : 'hover:bg-zinc-200 text-zinc-700'
                   }`}
                 >
-                  {dict.common.search?.allProducts ?? 'All Categories'}
+                  {search.allProducts ?? 'All Categories'}
                 </button>
                 {MOCK_CATEGORIES.map((cat) => {
                   const isActive = selectedCategory === cat.id;
@@ -129,7 +130,7 @@ export default function SearchResultsPage() {
                     <button
                       key={cat.id}
                       onClick={() => setSelectedCategory(cat.id)}
-                      className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
+                      className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
                         isActive
                           ? 'bg-brand text-black font-bold'
                           : 'hover:bg-zinc-200 text-zinc-700'
@@ -145,7 +146,7 @@ export default function SearchResultsPage() {
 
           {/* Search Result */}
           <main className="lg:col-span-9 space-y-6">
-            <div className="flex items-center justify-between text-sm font-medium text-zinc-500">
+            <div className="flex items-center justify-between text-base font-medium text-zinc-500">
               <span>{foundCountText}</span>
             </div>
 
@@ -168,7 +169,7 @@ export default function SearchResultsPage() {
                   variant="outline"
                   className="border-black"
                 >
-                  {dict.common.search?.resetFilters ?? 'Clear Search'}
+                  {search.resetFilters ?? 'Clear Search'}
                 </Button>
               </div>
             )}

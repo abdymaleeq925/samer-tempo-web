@@ -39,7 +39,7 @@ export function AppBreadcrumbs() {
   }
 
   return (
-    <div className="px-4 py-4 lg:px-8 xl:px-24 border-b border-ink">
+    <div className="p-4 lg:px-8 xl:px-18 border-b border-ink">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem className='font-heading font-medium text-lg md:text-2xl'>
