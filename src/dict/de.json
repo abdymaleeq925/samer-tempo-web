@@ -21,6 +21,8 @@
     "categories": "Kategorien",
     "about": "Über uns",
     "contacts": "Kontakt",
+    "product": "Produkt",
+    "search": "Suche",
     "sub": {
       "cables": "Elektrokabel & Stecker",
       "couplings": "Pneumatik-Kupplungen & Ventile",
@@ -61,7 +63,7 @@
       "filterCategory": "Kategorien",
       "resetFilters": "Filter zurücksetzen",
       "foundCount": "{count} Produkte gefunden",
-      "searchPlaceholder": "Suche nach Artikelnummer oder OEM (z. B. 441-032-8080, S010-01)...",
+      "searchPlaceholder": "Suche nach Artikelnummer oder OEM",
       "searchButton": "Suchen",
       "searchNotFound": "Keine Ergebnisse für \"{query}\" gefunden"
     }
@@ -253,7 +255,8 @@
       "companyMin": "Bitte geben Sie Ihren Firmennamen an.",
       "emailInvalid": "Geben Sie eine gültige geschäftliche E-Mail-Adresse ein.",
       "phoneMin": "Bitte geben Sie eine Telefonnummer an.",
-      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein."
+      "messageMin": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+      "honeypot": "Bot erkannt"
     }
   },
   "footer": {

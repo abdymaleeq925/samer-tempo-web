@@ -19,8 +19,11 @@ export function ProductCard({ product }: ProductCardProps) {
   const productImg = product.images?.[0] || '/products/placeholder.png';
 
   return (
-    <div className="group flex flex-col h-full rounded-xl border border-black p-4 transition-all duration-300 hover:scale-99 hover:shadow-xl">
-      <Link href={`/${lang}/product/${product.slug}`} className="block group/image">
+    <div className="group flex flex-col h-full rounded-xl border border-black dark:border-zinc-700 p-4 transition-all duration-300 hover:scale-99 hover:shadow-xl">
+      <Link
+        href={`/${lang}/product/${product.slug}`}
+        className="block group/image"
+      >
         <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-transparent mb-4 border border-black">
           <Image
             src={productImg}
@@ -36,22 +39,20 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
       {displayedOems.length > 0 && (
         <div className="mb-2 flex h-12 flex-wrap items-start xl:items-center gap-1 overflow-hidden text-sm">
-          <span className='font-caption'>{dict.common.oemNumber}:</span>
+          <span className="font-caption">{dict.common.oemNumber}:</span>
           {displayedOems.map((oem) => (
-            <span
-              key={oem}
-              className="px-1 rounded border border-black"
-            >
+            <span key={oem} className="px-1 rounded border border-black">
               {oem}
             </span>
           ))}
-          {hasMoreOems && (
-            <span>+{product.oemNumbers!.length - 2}</span>
-          )}
+          {hasMoreOems && <span>+{product.oemNumbers!.length - 2}</span>}
         </div>
       )}
       <div className="h-12 mb-3 flex items-start">
-        <Link href={`/${lang}/product/${product.slug}`} className="hover:text-brand transition-colors">
+        <Link
+          href={`/${lang}/product/${product.slug}`}
+          className="hover:text-brand transition-colors"
+        >
           <h3 className="text-base font-semibold line-clamp-2 leading-snug">
             {product.title[lang]}
           </h3>
@@ -61,12 +62,17 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="mb-4 space-y-1.5 border-t border-black pt-3">
           {product.specs.map((spec, index) => {
             return (
-              <div key={index} className="grid grid-cols-2 gap-2 text-sm items-start">
+              <div
+                key={index}
+                className="grid grid-cols-2 gap-2 text-sm items-start"
+              >
                 <span className="font-caption wrap-break-word leading-tight">
                   {spec.label[lang]}:
                 </span>
                 <span className="font-medium text-right wrap-break-word leading-tight">
-                  {typeof spec.value === "string" ? spec.value : spec.value[lang]}
+                  {typeof spec.value === 'string'
+                    ? spec.value
+                    : spec.value[lang]}
                 </span>
               </div>
             );

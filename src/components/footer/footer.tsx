@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
 
 import { useLang } from '@/context/lang-context';
 
@@ -10,12 +10,12 @@ export default function Footer() {
   const f = dict.footer;
 
   return (
-    <footer className="w-full bg-stone-100 border-t border-ink font-heading px-4 lg:px-8 py-8 lg:py-12">
+    <footer className="w-full bg-stone-100 dark:bg-zinc-950 border-t border-zinc-800/80 dark:border-zinc-800 font-heading px-4 lg:px-8 py-8 lg:py-12">
       <div className="max-w-8xl mx-auto 2xl:mx-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-5 flex flex-col space-y-4">
-            <Link 
-              href={`/${lang}`} 
+            <Link
+              href={`/${lang}`}
               className="inline-block text-2xl font-black text-ink tracking-tight focus:outline-none focus:ring-2 focus:ring-brand rounded-md w-max"
             >
               SAMER TEMPO
@@ -28,31 +28,34 @@ export default function Footer() {
               <span>{f.certifiedBadge}</span>
             </div>
           </div>
-          <nav className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start" aria-label={dict.accessibility.footerNavAria}>
+          <nav
+            className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start"
+            aria-label={dict.accessibility.footerNavAria}
+          >
             <h3 className="text-base font-bold uppercase tracking-wider">
               {f.navigationTitle}
             </h3>
-            
+
             <ul className="space-y-2.5 text-sm sm:text-base">
               <li>
-                <Link 
-                  href={`/${lang}/catalogues`} 
+                <Link
+                  href={`/${lang}/catalogues`}
                   className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   {f.nav.catalog}
                 </Link>
               </li>
               <li>
-                <Link 
-                  href={`/${lang}/contacts`} 
+                <Link
+                  href={`/${lang}/contacts`}
                   className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   {f.nav.contact}
                 </Link>
               </li>
               <li>
-                <Link 
-                  href={`/${lang}/about`} 
+                <Link
+                  href={`/${lang}/about`}
                   className="hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   {f.nav.about}
@@ -70,8 +73,8 @@ export default function Footer() {
                 <span>{f.address}</span>
               </li>
               <li>
-                <a 
-                  href="mailto:info@samer.com.tr" 
+                <a
+                  href="mailto:info@samer.com.tr"
                   className="inline-flex items-center gap-2.5 hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   <Mail className="w-6 h-6 text-brand shrink-0" />
@@ -79,8 +82,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="tel:+902163647319" 
+                <a
+                  href="tel:+902163647319"
                   className="inline-flex items-center gap-2.5 hover:text-brand transition-colors focus:outline-none focus:text-brand"
                 >
                   <Phone className="w-6 h-6 text-brand shrink-0" />
@@ -91,12 +94,11 @@ export default function Footer() {
           </address>
         </div>
         <div className="border-t border-zinc-900 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p>© {new Date().getFullYear()} SAMER TEMPO. {f.rights}</p>
           <p>
-            {f.companyDivision}
+            © {new Date().getFullYear()} SAMER TEMPO. {f.rights}
           </p>
+          <p>{f.companyDivision}</p>
         </div>
-
       </div>
     </footer>
   );

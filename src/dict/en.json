@@ -21,6 +21,8 @@
     "categories": "Categories",
     "about": "About Us",
     "contacts": "Contacts",
+    "product": "Product",
+    "search": "Search",
     "sub": {
       "cables": "Electrical Cables & Plugs",
       "couplings": "Pneumatic Couplings & Valves",
@@ -61,16 +63,16 @@
       "filterCategory": "Categories",
       "resetFilters": "Reset Filters",
       "foundCount": "Found {count} products",
-      "searchPlaceholder": "Search by part number or OEM (e.g. 441-032-8080, S010-01)...",
+      "searchPlaceholder": "Search by part number or OEM",
       "searchButton": "Search",
       "searchNotFound": "No results found for \"{query}\""
     }
   },
   "homepage": {
     "hero": {
-    "title": "Automotive Spare Parts Search",
-    "subtitle": "Enter OEM number, code number, or part name",
-    "imageAlt": "Auto part {index}"
+      "title": "Automotive Spare Parts Search",
+      "subtitle": "Enter OEM number, code number, or part name",
+      "imageAlt": "Auto part {index}"
     },
     "features": [
       {
@@ -180,7 +182,7 @@
     },
     "certificates": {
       "badge": "Certificates & Quality",
-      "heading":"Internationally certified products manufactured to strict OEM standards.",
+      "heading": "Internationally certified products manufactured to strict OEM standards.",
       "stats": {
         "experience": "25+ Years of Experience",
         "export": "Global Export Network",
@@ -253,9 +255,9 @@
       "companyMin": "Please provide your company name.",
       "emailInvalid": "Enter a valid work email.",
       "phoneMin": "Please provide a contact phone number.",
-      "messageMin": "Message must be at least 10 characters."
+      "messageMin": "Message must be at least 10 characters.",
+      "honeypot": "Bot detected"
     }
-
   },
   "footer": {
     "description": "Premium manufacturing & export of commercial vehicle components, trailer equipment, and pneumatic systems since 2001.",

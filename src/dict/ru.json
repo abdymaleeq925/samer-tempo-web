@@ -21,6 +21,8 @@
     "categories": "Категории",
     "about": "О компании",
     "contacts": "Контакты",
+    "product": "Продукт",
+    "search": "Поиск",
     "sub": {
       "cables": "Электрические кабели и вилки",
       "couplings": "Пневмосоединения и клапаны",
@@ -61,7 +63,7 @@
       "filterCategory": "Категории",
       "resetFilters": "Сбросить фильтры",
       "foundCount": "Найдено товаров: {count}",
-      "searchPlaceholder": "Поиск по артикулу или OEM (напр. 441-032-8080, S010-01)...",
+      "searchPlaceholder": "Поиск по артикулу или OEM",
       "searchButton": "Найти",
       "searchNotFound": "Ничего не найдено по запросу «{query}»"
     }
@@ -253,7 +255,8 @@
       "companyMin": "Укажите название вашей компании.",
       "emailInvalid": "Введите корректный рабочий email.",
       "phoneMin": "Укажите контактный номер телефона.",
-      "messageMin": "Сообщение должно содержать минимум 10 символов."
+      "messageMin": "Сообщение должно содержать минимум 10 символов.",
+      "honeypot": "Bot detected"
     }
   },
   "footer": {

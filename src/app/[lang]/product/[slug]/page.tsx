@@ -1,21 +1,23 @@
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import ProductDetail from '@/components/categories/product-detail';
 import type { Locale } from '@/config/locales';
-import { getLanguageAlternates } from '@/lib/utils';
 import { MOCK_PRODUCTS } from '@/data/mock-catalog';
+import { getLanguageAlternates } from '@/lib/utils';
 
 interface PageProps {
-  params: Promise<{ lang: Locale; slug: string;}>;
+  params: Promise<{ lang: Locale; slug: string }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { lang, slug } = await params;
   const product = MOCK_PRODUCTS.find((p) => p.slug === slug || p.id === slug);
   if (!product) return {};
 
-  const title = `${product.title[lang]} — ${product.article}`;
+  const title = `${product.article} - ${product.title[lang]}`;
   const description = product.description?.[lang]?.slice(0, 160);
 
   return {
@@ -31,13 +33,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function Page ({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { slug, lang } = await params;
   const product = MOCK_PRODUCTS.find((p) => p.slug === slug || p.id === slug);
 
   if (!product) notFound();
 
-  const relatedProducts = MOCK_PRODUCTS.filter( (p) => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4);
+  const relatedProducts = MOCK_PRODUCTS.filter(
+    (p) => p.categoryId === product.categoryId && p.id !== product.id,
+  ).slice(0, 4);
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -62,4 +66,4 @@ export default async function Page ({ params }: PageProps) {
       <ProductDetail product={product} relatedProducts={relatedProducts} />
     </>
   );
-};
+}

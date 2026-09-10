@@ -1,17 +1,27 @@
-"use client"
+'use client';
 
-import { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller, useForm } from "react-hook-form"
-import { z } from "zod"
-import { Send, CheckCircle2, Building2, User, Mail, Phone, FileText, Wrench, Loader2 } from "lucide-react"
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  Building2,
+  CheckCircle2,
+  FileText,
+  Loader2,
+  Mail,
+  Phone,
+  Send,
+  User,
+  Wrench,
+} from 'lucide-react';
+import { useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { z } from 'zod';
 
-import { Button } from "@/components/ui/button"
-import { Field, FieldLabel, FieldError } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useLang } from "@/context/lang-context"
-import { toast } from "sonner"
+import { Button } from '@/components/ui/button';
+import { Field, FieldError, FieldLabel } from '@/components/ui/field';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useLang } from '@/context/lang-context';
+import { toast } from 'sonner';
 
 function createFormSchema(v: {
   fullNameMin: string;
@@ -27,6 +37,7 @@ function createFormSchema(v: {
     phone: z.string().min(6, { message: v.phoneMin }),
     oemOrDetails: z.string().optional(),
     message: z.string().min(10, { message: v.messageMin }),
+    honeypot: z.string().max(0, 'Bot detected').optional(),
   });
 }
 
@@ -34,63 +45,67 @@ export function ContactForm() {
   const { dict } = useLang();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const formSchema = createFormSchema(dict.contacts.validation);
-  type FormValues = z.infer<typeof formSchema>
+  type FormValues = z.infer<typeof formSchema>;
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: "",
-      company: "",
-      email: "",
-      phone: "",
-      oemOrDetails: "",
-      message: "",
+      fullName: '',
+      company: '',
+      email: '',
+      phone: '',
+      oemOrDetails: '',
+      message: '',
+      honeypot: '',
     },
-  })
+  });
 
   async function onSubmit(values: FormValues) {
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
       });
 
-      if(!response.ok) throw new Error("Failed to send message")
+      if (!response.ok) throw new Error('Failed to send message');
       setIsSubmitted(true);
-      console.log("Data is sent to server:", values)
+      console.log('Data is sent to server:', values);
       form.reset();
-      toast.success(dict.contacts.successTitle ?? "Message sent successfully!")
+      toast.success(dict.contacts.successTitle ?? 'Message sent successfully!');
     } catch (error) {
-      console.error("Failed to submit form: ", error);
-      toast.error(dict.contacts.errorTitle ?? "Something went wrong. Please try again.");
+      console.error('Failed to submit form: ', error);
+      toast.error(
+        dict.contacts.errorTitle ?? 'Something went wrong. Please try again.',
+      );
     }
   }
 
   if (isSubmitted) {
     return (
-      <div className="font-heading bg-white rounded-2xl border-2 border-ink p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <div className="font-heading bg-white dark:bg-zinc-900 rounded-2xl border-2 border-zinc-200 dark:border-zinc-800 p-8 sm:p-12 text-center space-y-6 shadow-xl">
         <div className="w-16 h-16 bg-brand/15 text-brand rounded-2xl flex items-center justify-center mx-auto border border-brand/30">
           <CheckCircle2 className="w-10 h-10 text-brand" />
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-bold text-ink uppercase tracking-wide">
-            {dict.contacts?.successTitle ?? "Message Sent!"}
+            {dict.contacts?.successTitle ?? 'Message Sent!'}
           </h3>
           <p className="text-zinc-800 text-base max-w-md mx-auto leading-relaxed">
-            {dict.contacts?.successDesc ?? "Thank you for reaching out. Our export team will contact you shortly."}
+            {dict.contacts?.successDesc ??
+              'Thank you for reaching out. Our export team will contact you shortly.'}
           </p>
         </div>
         <Button
           onClick={() => {
-            form.reset()
-            setIsSubmitted(false)
+            form.reset();
+            setIsSubmitted(false);
           }}
           className="bg-brand hover:bg-brand-dark text-ink font-bold uppercase text-xs tracking-wider h-11 px-8 rounded-xl transition-all cursor-pointer"
         >
-          {dict.contacts?.sendAnother ?? "Send another message"}
+          {dict.contacts?.sendAnother ?? 'Send another message'}
         </Button>
       </div>
-    )
+    );
   }
 
   return (
@@ -104,18 +119,33 @@ export function ContactForm() {
         <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight uppercase">
           {dict.contacts.formTitle}
         </h2>
-        <p className="text-zinc-700">
-          {dict.contacts.formSubtitle}
-        </p>
+        <p className="text-zinc-700">{dict.contacts.formSubtitle}</p>
       </div>
-      <form noValidate onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form
+        noValidate
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-6"
+      >
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            {...form.register('honeypot')}
+          />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <Controller
             control={form.control}
             name="fullName"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                <FieldLabel
+                  htmlFor={field.name}
+                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                >
                   <User className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.fullNameLabel} *
                 </FieldLabel>
@@ -126,7 +156,12 @@ export function ContactForm() {
                   aria-invalid={fieldState.invalid}
                   className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+                {fieldState.invalid && (
+                  <FieldError
+                    errors={[fieldState.error]}
+                    className="text-xs font-medium text-red-500"
+                  />
+                )}
               </Field>
             )}
           />
@@ -135,7 +170,10 @@ export function ContactForm() {
             name="company"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                <FieldLabel
+                  htmlFor={field.name}
+                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                >
                   <Building2 className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.companyLabel} *
                 </FieldLabel>
@@ -146,7 +184,12 @@ export function ContactForm() {
                   aria-invalid={fieldState.invalid}
                   className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+                {fieldState.invalid && (
+                  <FieldError
+                    errors={[fieldState.error]}
+                    className="text-xs font-medium text-red-500"
+                  />
+                )}
               </Field>
             )}
           />
@@ -157,7 +200,10 @@ export function ContactForm() {
             name="email"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                <FieldLabel
+                  htmlFor={field.name}
+                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                >
                   <Mail className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.emailLabel} *
                 </FieldLabel>
@@ -169,7 +215,12 @@ export function ContactForm() {
                   aria-invalid={fieldState.invalid}
                   className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+                {fieldState.invalid && (
+                  <FieldError
+                    errors={[fieldState.error]}
+                    className="text-xs font-medium text-red-500"
+                  />
+                )}
               </Field>
             )}
           />
@@ -178,7 +229,10 @@ export function ContactForm() {
             name="phone"
             render={({ field, fieldState }) => (
               <Field data-invalid={fieldState.invalid}>
-                <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+                <FieldLabel
+                  htmlFor={field.name}
+                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                >
                   <Phone className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.phoneLabel} *
                 </FieldLabel>
@@ -190,7 +244,12 @@ export function ContactForm() {
                   aria-invalid={fieldState.invalid}
                   className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
                 />
-                {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+                {fieldState.invalid && (
+                  <FieldError
+                    errors={[fieldState.error]}
+                    className="text-xs font-medium text-red-500"
+                  />
+                )}
               </Field>
             )}
           />
@@ -200,7 +259,10 @@ export function ContactForm() {
           name="oemOrDetails"
           render={({ field }) => (
             <Field>
-              <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+              <FieldLabel
+                htmlFor={field.name}
+                className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+              >
                 <FileText className="w-3.5 h-3.5 text-brand" />
                 {dict.contacts.oemLabel}
               </FieldLabel>
@@ -218,7 +280,10 @@ export function ContactForm() {
           name="message"
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name} className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5">
+              <FieldLabel
+                htmlFor={field.name}
+                className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+              >
                 <FileText className="w-3.5 h-3.5 text-brand" />
                 {dict.contacts.messageLabel} *
               </FieldLabel>
@@ -230,7 +295,12 @@ export function ContactForm() {
                 aria-invalid={fieldState.invalid}
                 className="rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand resize-none"
               />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} className="text-xs font-medium text-red-500" />}
+              {fieldState.invalid && (
+                <FieldError
+                  errors={[fieldState.error]}
+                  className="text-xs font-medium text-red-500"
+                />
+              )}
             </Field>
           )}
         />
@@ -242,7 +312,7 @@ export function ContactForm() {
           {form.formState.isSubmitting ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
-              <span>{dict.contacts.sending ?? "Sending..."}</span>
+              <span>{dict.contacts.sending ?? 'Sending...'}</span>
             </>
           ) : (
             <>
@@ -253,5 +323,5 @@ export function ContactForm() {
         </Button>
       </form>
     </div>
-  )
+  );
 }

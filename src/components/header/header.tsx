@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
 
 import { CLOSE_DELAY, NAV_LINKS, OPEN_DELAY, type SubKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
@@ -33,7 +33,10 @@ export default function Header() {
     const el = headerRef.current;
     if (!el) return;
     const ro = new ResizeObserver(([entry]) => {
-      document.documentElement.style.setProperty('--header-h', `${entry.contentRect.height}px`);
+      document.documentElement.style.setProperty(
+        '--header-h',
+        `${entry.contentRect.height}px`,
+      );
     });
     ro.observe(el);
     return () => {
@@ -41,13 +44,16 @@ export default function Header() {
       document.documentElement.style.removeProperty('--header-h');
       if (openTimer.current) clearTimeout(openTimer.current);
       if (closeTimer.current) clearTimeout(closeTimer.current);
-    }
+    };
   }, []);
-  
+
   return (
-    <header className="sticky top-0 z-50 font-heading bg-stone-100 border-b border-ink px-4 lg:px-8 py-2.5 text-heading transition-colors" ref={headerRef}>
+    <header
+      className="sticky top-0 z-50 font-heading bg-stone-100 dark:bg-zinc-950 backdrop-blur-md border-b border-zinc-800/80 dark:border-zinc-800 px-4 lg:px-8 py-2.5 text-heading transition-colors"
+      ref={headerRef}
+    >
       <div className="max-w-8xl mx-auto xl:mx-8 flex items-center justify-between gap-3 lg:gap-6">
-        <Link 
+        <Link
           href={`/${lang}`}
           className="flex items-center gap-3 shrink-0"
           aria-label={dict.accessibility.homeAriaLabel}
@@ -61,7 +67,10 @@ export default function Header() {
             className="w-14 h-14 lg:w-20 lg:h-20 object-contain transition-transform duration-200 hover:scale-105"
           />
         </Link>
-        <nav aria-label={dict.accessibility.mainNavLabel} className="hidden md:block">
+        <nav
+          aria-label={dict.accessibility.mainNavLabel}
+          className="hidden md:block"
+        >
           <ul className="flex gap-4 md:gap-10">
             {NAV_LINKS.map((link) => (
               <Navbar
@@ -72,7 +81,9 @@ export default function Header() {
                 isOpen={openKey === link.key}
                 onOpen={() => openWithDelay(link.key)}
                 onClose={closeWithDelay}
-                onToggle={() => setOpenKey((prev) => (prev === link.key ? null : link.key))}
+                onToggle={() =>
+                  setOpenKey((prev) => (prev === link.key ? null : link.key))
+                }
                 getSubLabel={(key: SubKey) => dict.navigation.sub?.[key] ?? key}
               />
             ))}
@@ -83,7 +94,7 @@ export default function Header() {
         </div>
         <div className="flex items-center sm:gap-4 shrink-0">
           <LanguageSwitcher currentLang={lang} />
-          <MobileNavbar/>
+          <MobileNavbar />
         </div>
       </div>
     </header>

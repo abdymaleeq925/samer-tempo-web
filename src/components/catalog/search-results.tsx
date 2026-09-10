@@ -1,30 +1,50 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { FilterX, Search, SlidersHorizontal } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
-import { Search, FilterX, SlidersHorizontal } from 'lucide-react';
+import { useMemo, useState } from 'react';
 
+import { ProductCard } from '@/components/categories/product-card';
+import { Button } from '@/components/ui/button';
 import { useLang } from '@/context/lang-context';
 import { MOCK_CATEGORIES, MOCK_PRODUCTS } from '@/data/mock-catalog';
-import { ProductCard } from '@/components/categories/product-card';
-import { normalizeCode, formatString } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { formatString, normalizeCode } from '@/lib/utils';
 
 export default function SearchResultsPage() {
   const { dict, lang } = useLang();
   const search = dict.common.search;
-  const searchParams = useSearchParams();
-  const initialQuery = searchParams.get('q') || '';
 
-  const [query, setQuery] = useState(initialQuery);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const searchParams = useSearchParams();
+  const urlQuery = searchParams.get('q') || '';
+
+  const [query, setQuery] = useState(urlQuery);
+  const [selectedCategory, setSelectedCategory] = useState<string>(
+    query.length > 0 ? '' : 'all',
+  );
+  const [lastUrlQuery, setLastUrlQuery] = useState(urlQuery);
+
+  if (urlQuery !== lastUrlQuery) {
+    setLastUrlQuery(urlQuery);
+    setQuery(urlQuery);
+    setSelectedCategory(urlQuery.length > 0 ? '' : 'all');
+  }
+
+  function handleQueryChange(value: string) {
+    setQuery(value);
+    setSelectedCategory((prev) => {
+      if (value.trim().length > 0) return prev === 'all' ? '' : prev;
+      return prev === '' ? 'all' : prev;
+    });
+  }
 
   const filteredProducts = useMemo(() => {
     const normalizedSearch = normalizeCode(query);
+    const hasActiveCategory =
+      selectedCategory !== 'all' && selectedCategory !== '';
 
     return MOCK_PRODUCTS.filter((product) => {
       // Filter by category
-      if (selectedCategory !== 'all' && product.categoryId !== selectedCategory) {
+      if (hasActiveCategory && product.categoryId !== selectedCategory) {
         return false;
       }
 
@@ -32,18 +52,30 @@ export default function SearchResultsPage() {
       if (!normalizedSearch) return true;
 
       // Search by article
-      if (normalizeCode(product.article).includes(normalizedSearch)) return true;
+      if (normalizeCode(product.article).includes(normalizedSearch))
+        return true;
 
       // Search by OEM
-      if (product.oemNumbers?.some((oem) => normalizeCode(oem).includes(normalizedSearch))) return true;
+      if (
+        product.oemNumbers?.some((oem) =>
+          normalizeCode(oem).includes(normalizedSearch),
+        )
+      )
+        return true;
 
       // Search by Cross-numbers
-      if (product.crossReferences?.some((cross) => normalizeCode(cross).includes(normalizedSearch))) return true;
+      if (
+        product.crossReferences?.some((cross) =>
+          normalizeCode(cross).includes(normalizedSearch),
+        )
+      )
+        return true;
 
       // Search by title
       if (typeof product.title === 'object') {
         const titles = Object.values(product.title) as string[];
-        if (titles.some((t) => normalizeCode(t).includes(normalizedSearch))) return true;
+        if (titles.some((t) => normalizeCode(t).includes(normalizedSearch)))
+          return true;
       }
 
       return false;
@@ -51,12 +83,17 @@ export default function SearchResultsPage() {
   }, [query, selectedCategory]);
 
   const resultsTitle = query
-    ? formatString(dict.common.search?.resultsFor ?? 'Results for "{query}"', { query })
-    : dict.common.search?.allProducts ?? 'All Products';
+    ? formatString(dict.common.search?.resultsFor ?? 'Results for "{query}"', {
+        query,
+      })
+    : (dict.common.search?.allProducts ?? 'All Products');
 
-  const foundCountText = formatString(dict.common.search?.foundCount ?? 'Found {count} products', {
-    count: filteredProducts.length,
-  });
+  const foundCountText = formatString(
+    dict.common.search?.foundCount ?? 'Found {count} products',
+    {
+      count: filteredProducts.length,
+    },
+  );
 
   return (
     <section className="py-10 min-h-screen font-heading">
@@ -72,9 +109,9 @@ export default function SearchResultsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Filter Sidebar */}
           <aside className="lg:col-span-3 bg-stone-100 rounded-2xl border border-zinc-300 p-6 space-y-6">
-            <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
-              <span className="font-bold text-lg flex items-center gap-2">
-                <SlidersHorizontal className="w-5 h-5 text-brand" />
+            <div className="flex items-center gap-2 border-b border-zinc-200 pb-3">
+              <span className="font-bold text-lg flex items-center gap-2 whitespace-nowrap shrink-0">
+                <SlidersHorizontal className="w-5 h-5 text-brand shrink-0" />
                 {dict.common?.allCategories ?? 'Filters'}
               </span>
               {(query || selectedCategory !== 'all') && (
@@ -83,9 +120,9 @@ export default function SearchResultsPage() {
                     setQuery('');
                     setSelectedCategory('all');
                   }}
-                  className="text-xs text-red-600 font-semibold hover:underline flex items-center gap-1 cursor-pointer"
+                  className="text-xs text-red-600 font-semibold hover:underline flex items-center ml-auto gap-1 cursor-pointer"
                 >
-                  <FilterX className="w-3.5 h-3.5" />
+                  <FilterX className="w-3.5 h-3.5 shrink-0" />
                   {search.resetFilters ?? 'Reset'}
                 </button>
               )}
@@ -101,7 +138,7 @@ export default function SearchResultsPage() {
                 <input
                   type="text"
                   value={query}
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => handleQueryChange(e.target.value)}
                   placeholder={search.searchPlaceholder}
                   className="w-full pl-9 pr-3 py-2 rounded-xl border border-zinc-300 text-sm bg-white focus:outline-none focus:border-brand"
                 />
@@ -167,7 +204,7 @@ export default function SearchResultsPage() {
                     setSelectedCategory('all');
                   }}
                   variant="outline"
-                  className="border-black"
+                  className="border-black cursor-pointer"
                 >
                   {search.resetFilters ?? 'Clear Search'}
                 </Button>
