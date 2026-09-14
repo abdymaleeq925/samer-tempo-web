@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-import Link from 'next/link';
-import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
-import { useLang } from '@/context/lang-context';
 import { Button } from '@/components/ui/button';
+import { useLang } from '@/context/lang-context';
+import { AlertTriangle, Home, RefreshCw } from 'lucide-react';
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Error({
   error,
@@ -26,24 +26,29 @@ export default function Error({
       </div>
 
       <div className="space-y-2 max-w-md">
-        <h1 className="text-3xl font-extrabold text-zinc-900">
+        <h1 className="text-3xl font-extrabold text-ink">
           {dict.common.error?.title ?? 'Something went wrong!'}
         </h1>
-        <p className="text-zinc-600 text-sm leading-relaxed">
-          {dict.common.error?.description ?? 'An unexpected error occurred while processing your request.'}
+        <p className="text-muted-ink text-sm leading-relaxed">
+          {dict.common.error?.description ??
+            'An unexpected error occurred while processing your request.'}
         </p>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Button
           onClick={() => reset()}
-          className="bg-brand text-black hover:bg-brand-dark font-bold gap-2"
+          className="bg-brand text-ink hover:bg-brand-dark font-bold gap-2"
         >
           <RefreshCw className="w-4 h-4" />
           {dict.common.error?.retryBtn ?? 'Try Again'}
         </Button>
 
-        <Button variant="outline" className="border-black gap-2" render={<Link href={`/${lang}`} />}>
+        <Button
+          variant="outline"
+          className="border-border-strong gap-2"
+          render={<Link href={`/${lang}`} />}
+        >
           <Home className="w-4 h-4" />
           {dict.common.error?.homeBtn ?? 'Back to Home'}
         </Button>

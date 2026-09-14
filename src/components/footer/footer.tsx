@@ -10,20 +10,20 @@ export default function Footer() {
   const f = dict.footer;
 
   return (
-    <footer className="w-full bg-stone-100 dark:bg-zinc-950 border-t border-zinc-800/80 dark:border-zinc-800 font-heading px-4 lg:px-8 py-8 lg:py-12">
+    <footer className="w-full border-t border-border-subtle font-heading px-4 lg:px-8 py-8 lg:py-12">
       <div className="max-w-8xl mx-auto 2xl:mx-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-5 flex flex-col space-y-4">
             <Link
               href={`/${lang}`}
-              className="inline-block text-2xl font-black text-ink tracking-tight focus:outline-none focus:ring-2 focus:ring-brand rounded-md w-max"
+              className="inline-block text-2xl font-black tracking-tight focus:outline-none focus:ring-2 focus:ring-brand rounded-md w-max"
             >
               SAMER TEMPO
             </Link>
             <p className="text-xs sm:text-base leading-relaxed max-w-sm">
               {f.description}
             </p>
-            <div className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 bg-ink px-3 py-1.5 rounded-lg w-max mt-2">
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 bg-ink p-0 sm:px-3 py-1.5 rounded-lg w-max">
               <ShieldCheck className="w-4 h-4 text-brand shrink-0" />
               <span>{f.certifiedBadge}</span>
             </div>
@@ -93,7 +93,7 @@ export default function Footer() {
             </ul>
           </address>
         </div>
-        <div className="border-t border-zinc-900 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+        <div className="border-t border-border-subtle mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <p>
             © {new Date().getFullYear()} SAMER TEMPO. {f.rights}
           </p>

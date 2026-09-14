@@ -1,27 +1,30 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { ChevronRight, Play, ZoomIn } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, Play, ZoomIn } from 'lucide-react';
+import { useRef, useState } from 'react';
 
-import { useLang } from '@/context/lang-context';
-import { Product } from '@/data/mock-catalog';
-import { ProductCard } from '../categories/product-card';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from '@/components/ui/carousel';
+import { useLang } from '@/context/lang-context';
+import { Product } from '@/data/mock-catalog';
+import { ProductCard } from '../categories/product-card';
 
 interface ProductDetailProps {
   product: Product;
   relatedProducts: Product[];
 }
 
-export default function ProductDetail({ product, relatedProducts }: ProductDetailProps) {
+export default function ProductDetail({
+  product,
+  relatedProducts,
+}: ProductDetailProps) {
   const { dict, lang } = useLang();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
@@ -31,7 +34,8 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  const images = product.images?.length > 0 ? product.images : ['/products/placeholder.png'];
+  const images =
+    product.images?.length > 0 ? product.images : ['/products/placeholder.png'];
 
   const mainImageAlt = (dict.product?.imageAlt ?? '{title} — photo {index}')
     .replace('{title}', product.title[lang])
@@ -40,7 +44,8 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
   // Pointer position calculation for loop
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!imgContainerRef.current) return;
-    const { left, top, width, height } = imgContainerRef.current.getBoundingClientRect();
+    const { left, top, width, height } =
+      imgContainerRef.current.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientY - top) / height) * 100;
     setZoomPos({ x, y, show: true });
@@ -49,7 +54,8 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
   // Converting YouTube URL to Embed URL
   const getEmbedYoutubeUrl = (url?: string) => {
     if (!url) return null;
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
     return match && match[2].length === 11
       ? `https://www.youtube-nocookie.com/embed/${match[2]}?autoplay=1`
@@ -68,8 +74,10 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
             ref={imgContainerRef}
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setZoomPos((prev) => ({ ...prev, show: true }))}
-            onMouseLeave={() => setZoomPos((prev) => ({ ...prev, show: false }))}
-            className="relative aspect-square w-full rounded-2xl border border-black overflow-hidden bg-white cursor-crosshair group"
+            onMouseLeave={() =>
+              setZoomPos((prev) => ({ ...prev, show: false }))
+            }
+            className="relative aspect-square w-full rounded-2xl border border-border-strong overflow-hidden bg-surface cursor-crosshair group"
           >
             <Image
               src={images[selectedImageIndex] || images[0]}
@@ -88,7 +96,7 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
             {/* Hoisting loop container */}
             {zoomPos.show && (
               <div
-                className="absolute inset-0 z-20 pointer-events-none bg-white bg-no-repeat rounded-2xl"
+                className="absolute inset-0 z-20 pointer-events-none bg-surface bg-no-repeat rounded-2xl"
                 style={{
                   backgroundImage: `url(${images[selectedImageIndex] || images[0]})`,
                   backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`,
@@ -103,19 +111,27 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
             <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
               {images.map((img, idx) => {
                 const isSelected = selectedImageIndex === idx;
-                const thumbnailLabel = (dict.product?.thumbnailAlt ?? 'View photo {index}').replace('{index}', String(idx + 1));
+                const thumbnailLabel = (
+                  dict.product?.thumbnailAlt ?? 'View photo {index}'
+                ).replace('{index}', String(idx + 1));
                 return (
                   <button
                     key={idx}
                     onClick={() => setSelectedImageIndex(idx)}
                     aria-label={thumbnailLabel}
                     aria-pressed={isSelected}
-                    className={`relative w-20 h-20 shrink-0 rounded-lg border-2 overflow-hidden cursor-pointer transition-all ${isSelected
+                    className={`relative w-20 h-20 shrink-0 rounded-lg border-2 overflow-hidden cursor-pointer transition-all ${
+                      isSelected
                         ? 'border-brand-dark bg-transparent'
-                        : 'border-zinc-200 hover:border-zinc-300'
-                      }`}
+                        : 'border-border-subtle hover:border-border-subtle'
+                    }`}
                   >
-                    <Image src={img} alt="" fill className="object-contain p-2" />
+                    <Image
+                      src={img}
+                      alt=""
+                      fill
+                      className="object-contain p-2"
+                    />
                   </button>
                 );
               })}
@@ -126,11 +142,11 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
         {/* PRODUCT INFO (7 cols) */}
         <div className="lg:col-span-7 flex flex-col justify-between">
           <div className="space-y-6">
-            <div className="flex flex-col gap-4 border-b-2 border-zinc-400 pb-4">
-              <span className="text-base w-fit font-caption font-bold border rounded-xl p-2 border-black uppercase tracking-wider">
+            <div className="flex flex-col gap-4 border-b-2 border-border-subtle pb-4">
+              <span className="text-base w-fit font-caption font-bold border rounded-xl p-2 border-border-strong uppercase tracking-wider">
                 {product.article}
               </span>
-              <h1 className="text-2xl sm:text-3xl font-bold text-zinc-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl font-bold text-ink leading-tight">
                 {product.title[lang]}
               </h1>
             </div>
@@ -145,41 +161,50 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
               <h2 className="text-xl font-bold font-heading">
                 {dict.common.specifications}
               </h2>
-              <div className="bg-zinc-100 rounded-xl p-4 sm:p-5 border border-zinc-200/80">
+              <div className="bg-surface-sunken rounded-xl p-4 sm:p-5 border border-border-subtle">
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                   {product.specs?.map((spec, index) => (
                     <div
                       key={index}
-                      className="flex flex-col py-2 border-b border-zinc-200/60 last:border-b-0 sm:last:border-b border-solid"
+                      className="flex flex-col py-2 border-b border-border-subtle last:border-b-0 sm:last:border-b border-solid"
                     >
-                      <dt className="text-md font-caption font-medium text-zinc-500 uppercase tracking-wide">
+                      <dt className="text-md font-caption font-medium text-muted-ink uppercase tracking-wide">
                         {spec.label[lang]}
                       </dt>
-                      <dd className="text-md font-semibold text-zinc-900 mt-0.5 wrap-break-word">
-                        {typeof spec.value === 'string' ? spec.value : spec.value[lang]}
+                      <dd className="text-md font-semibold text-ink mt-0.5 wrap-break-word">
+                        {typeof spec.value === 'string'
+                          ? spec.value
+                          : spec.value[lang]}
                       </dd>
                     </div>
                   ))}
                   {product.oemNumbers && (
-                    <div className="flex flex-col justify-between py-2 border-b border-zinc-200/60 last:border-b-0 sm:last:border-b border-solid">
-                      <dt className="text-md font-caption font-medium text-zinc-500 uppercase tracking-wide">
+                    <div className="flex flex-col justify-between py-2 border-b border-border-subtle last:border-b-0 sm:last:border-b border-solid">
+                      <dt className="text-md font-caption font-medium text-muted-ink uppercase tracking-wide">
                         {dict.common.oemNumber}
                       </dt>
-                      <dd className="text-md font-semibold text-zinc-900 mt-0.5 wrap-break-word">
-                        {Array.isArray(product.oemNumbers) ? product.oemNumbers.join(', ') : product.oemNumbers}
+                      <dd className="text-md font-semibold text-ink mt-0.5 wrap-break-word">
+                        {Array.isArray(product.oemNumbers)
+                          ? product.oemNumbers.join(', ')
+                          : product.oemNumbers}
                       </dd>
                     </div>
                   )}
                 </dl>
               </div>
             </div>
-            <div className="pt-4 border-t border-zinc-200 space-y-3">
-              <button className="text-lg font-bold flex items-center gap-2 cursor-pointer hover:-translate-y-1 transition-all" onClick={() => setVideoIsShown(!videoIsShown)}>
-                <Play className={`w-5 h-5 text-brand fill-current ${videoIsShown && "rotate-90"}`} />
+            <div className="pt-4 border-t border-border-subtle space-y-3">
+              <button
+                className="text-lg font-bold flex items-center gap-2 cursor-pointer hover:-translate-y-1 transition-all"
+                onClick={() => setVideoIsShown(!videoIsShown)}
+              >
+                <Play
+                  className={`w-5 h-5 text-brand fill-current ${videoIsShown && 'rotate-90'}`}
+                />
                 {dict.product?.videoTab ?? 'Video Review'}
               </button>
-              {(embedUrl && videoIsShown) && (
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
+              {embedUrl && videoIsShown && (
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-ink border border-border-subtle">
                   {isVideoLoaded ? (
                     <iframe
                       src={embedUrl}
@@ -191,13 +216,14 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
                   ) : (
                     <button
                       onClick={() => setIsVideoLoaded(true)}
-                      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-zinc-900 hover:bg-zinc-800 text-white transition-colors group cursor-pointer"
+                      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-ink hover:bg-surface-sunken text-white transition-colors group cursor-pointer"
                     >
-                      <div className="w-16 h-16 rounded-full bg-brand text-black flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                      <div className="w-16 h-16 rounded-full bg-brand text-ink flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                         <Play className="w-8 h-8 fill-current translate-x-0.5" />
                       </div>
                       <span className="text-sm font-semibold text-zinc-300">
-                        {dict.product?.clickToPlayVideo ?? 'Click to watch video overview'}
+                        {dict.product?.clickToPlayVideo ??
+                          'Click to watch video overview'}
                       </span>
                     </button>
                   )}
@@ -210,9 +236,9 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
 
       {/* SIMILAR PRODUCTS */}
       {relatedProducts && relatedProducts.length > 0 && (
-        <div className="mt-16 pt-12 border-t border-zinc-200">
+        <div className="mt-16 pt-12 border-t border-border-subtle">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-zinc-900">
+            <h2 className="text-xl sm:text-2xl font-bold text-ink">
               {dict.product.relatedProducts}
             </h2>
             <Link
@@ -224,11 +250,13 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
           </div>
           <Carousel
             opts={{
-              align: "start",
+              align: 'start',
               loop: false,
             }}
             className="w-full"
-            aria-label={dict.common.productsCarouselLabel ?? "Products carousel"}
+            aria-label={
+              dict.common.productsCarouselLabel ?? 'Products carousel'
+            }
           >
             <CarouselContent className="-ml-4">
               {relatedProducts.map((product) => (
@@ -245,6 +273,6 @@ export default function ProductDetail({ product, relatedProducts }: ProductDetai
           </Carousel>
         </div>
       )}
-      </div>
+    </div>
   );
 }

@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 font-heading bg-stone-100 dark:bg-zinc-950 backdrop-blur-md border-b border-zinc-800/80 dark:border-zinc-800 px-4 lg:px-8 py-2.5 text-heading transition-colors"
+      className="sticky top-0 z-50 font-heading backdrop-blur-md border-b border-border-subtle px-4 lg:px-8 py-2.5 text-heading transition-colors"
       ref={headerRef}
     >
       <div className="max-w-8xl mx-auto xl:mx-8 flex items-center justify-between gap-3 lg:gap-6">
@@ -71,7 +71,7 @@ export default function Header() {
           aria-label={dict.accessibility.mainNavLabel}
           className="hidden md:block"
         >
-          <ul className="flex gap-4 md:gap-10">
+          <ul className="flex gap-5 xl:gap-10">
             {NAV_LINKS.map((link) => (
               <Navbar
                 key={link.key}
@@ -92,7 +92,7 @@ export default function Header() {
         <div className="flex flex-1 max-w-xs min-w-0">
           <OemSearchInput />
         </div>
-        <div className="flex items-center sm:gap-4 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           <LanguageSwitcher currentLang={lang} />
           <MobileNavbar />
         </div>

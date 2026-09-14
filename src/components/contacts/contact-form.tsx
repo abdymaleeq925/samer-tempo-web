@@ -82,15 +82,15 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="font-heading bg-white dark:bg-zinc-900 rounded-2xl border-2 border-zinc-200 dark:border-zinc-800 p-8 sm:p-12 text-center space-y-6 shadow-xl">
+      <div className="font-heading rounded-2xl border-2 border-border-subtle p-8 sm:p-12 text-center space-y-6 shadow-xl">
         <div className="w-16 h-16 bg-brand/15 text-brand rounded-2xl flex items-center justify-center mx-auto border border-brand/30">
           <CheckCircle2 className="w-10 h-10 text-brand" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-ink uppercase tracking-wide">
+          <h3 className="text-2xl font-bold uppercase tracking-wide">
             {dict.contacts?.successTitle ?? 'Message Sent!'}
           </h3>
-          <p className="text-zinc-800 text-base max-w-md mx-auto leading-relaxed">
+          <p className="text-base max-w-md mx-auto leading-relaxed">
             {dict.contacts?.successDesc ??
               'Thank you for reaching out. Our export team will contact you shortly.'}
           </p>
@@ -100,7 +100,7 @@ export function ContactForm() {
             form.reset();
             setIsSubmitted(false);
           }}
-          className="bg-brand hover:bg-brand-dark text-ink font-bold uppercase text-xs tracking-wider h-11 px-8 rounded-xl transition-all cursor-pointer"
+          className="bg-brand hover:bg-brand-dark font-bold uppercase text-xs tracking-wider h-11 px-8 rounded-xl transition-all cursor-pointer"
         >
           {dict.contacts?.sendAnother ?? 'Send another message'}
         </Button>
@@ -109,17 +109,17 @@ export function ContactForm() {
   }
 
   return (
-    <div className="font-heading bg-white rounded-2xl border border-zinc-200 p-6 sm:p-10 shadow-lg relative overflow-hidden">
+    <div className="font-heading rounded-2xl border border-border-subtle p-6 sm:p-10 shadow-lg relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-brand" />
       <div className="mb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-sm font-caption font-bold text-ink uppercase mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border-subtle text-sm font-caption font-bold uppercase mb-3">
           <Wrench className="w-3.5 h-3.5 text-brand" />
           {dict.contacts.formBadge}
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-ink tracking-tight uppercase">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight uppercase">
           {dict.contacts.formTitle}
         </h2>
-        <p className="text-zinc-700">{dict.contacts.formSubtitle}</p>
+        <p>{dict.contacts.formSubtitle}</p>
       </div>
       <form
         noValidate
@@ -144,7 +144,7 @@ export function ContactForm() {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
                   htmlFor={field.name}
-                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                  className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
                 >
                   <User className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.fullNameLabel} *
@@ -154,7 +154,7 @@ export function ContactForm() {
                   placeholder={dict.contacts.fullNamePlaceholder}
                   {...field}
                   aria-invalid={fieldState.invalid}
-                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                  className="h-11 rounded-xl border-border-subtle focus-visible:ring-brand focus-visible:border-brand"
                 />
                 {fieldState.invalid && (
                   <FieldError
@@ -172,7 +172,7 @@ export function ContactForm() {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
                   htmlFor={field.name}
-                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                  className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
                 >
                   <Building2 className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.companyLabel} *
@@ -182,7 +182,7 @@ export function ContactForm() {
                   placeholder={dict.contacts.companyPlaceholder}
                   {...field}
                   aria-invalid={fieldState.invalid}
-                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                  className="h-11 rounded-xl border-border-subtle focus-visible:ring-brand focus-visible:border-brand"
                 />
                 {fieldState.invalid && (
                   <FieldError
@@ -202,7 +202,7 @@ export function ContactForm() {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
                   htmlFor={field.name}
-                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                  className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.emailLabel} *
@@ -213,7 +213,7 @@ export function ContactForm() {
                   placeholder={dict.contacts.emailPlaceholder}
                   {...field}
                   aria-invalid={fieldState.invalid}
-                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                  className="h-11 rounded-xl border-border-subtle focus-visible:ring-brand focus-visible:border-brand"
                 />
                 {fieldState.invalid && (
                   <FieldError
@@ -231,7 +231,7 @@ export function ContactForm() {
               <Field data-invalid={fieldState.invalid}>
                 <FieldLabel
                   htmlFor={field.name}
-                  className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                  className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
                 >
                   <Phone className="w-3.5 h-3.5 text-brand" />
                   {dict.contacts.phoneLabel} *
@@ -242,7 +242,7 @@ export function ContactForm() {
                   placeholder={dict.contacts.phonePlaceholder}
                   {...field}
                   aria-invalid={fieldState.invalid}
-                  className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                  className="h-11 rounded-xl border-border-subtle focus-visible:ring-brand focus-visible:border-brand"
                 />
                 {fieldState.invalid && (
                   <FieldError
@@ -261,7 +261,7 @@ export function ContactForm() {
             <Field>
               <FieldLabel
                 htmlFor={field.name}
-                className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
               >
                 <FileText className="w-3.5 h-3.5 text-brand" />
                 {dict.contacts.oemLabel}
@@ -270,7 +270,7 @@ export function ContactForm() {
                 id={field.name}
                 placeholder={dict.contacts.oemPlaceholder}
                 {...field}
-                className="h-11 rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand"
+                className="h-11 rounded-xl border-border-subtle focus-visible:ring-brand focus-visible:border-brand"
               />
             </Field>
           )}
@@ -282,7 +282,7 @@ export function ContactForm() {
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel
                 htmlFor={field.name}
-                className="text-xs font-bold uppercase tracking-wider text-ink flex items-center gap-1.5"
+                className="text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
               >
                 <FileText className="w-3.5 h-3.5 text-brand" />
                 {dict.contacts.messageLabel} *
@@ -293,7 +293,7 @@ export function ContactForm() {
                 placeholder={dict.contacts.messagePlaceholder}
                 {...field}
                 aria-invalid={fieldState.invalid}
-                className="rounded-xl border-zinc-300 focus-visible:ring-brand focus-visible:border-brand resize-none"
+                className="rounded-xl border-border-subtle focus-visible:ring-brand focus-visible:border-brand resize-none"
               />
               {fieldState.invalid && (
                 <FieldError
@@ -307,7 +307,7 @@ export function ContactForm() {
         <Button
           type="submit"
           disabled={form.formState.isSubmitting}
-          className="w-full h-12 bg-brand hover:bg-brand-dark text-ink font-bold uppercase tracking-wider text-sm rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-black/10 cursor-pointer"
+          className="w-full h-12 bg-brand hover:bg-brand-dark font-bold uppercase tracking-wider text-sm rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-border-strong/10 cursor-pointer"
         >
           {form.formState.isSubmitting ? (
             <>

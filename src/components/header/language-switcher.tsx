@@ -1,7 +1,7 @@
 'use client';
 
+import { Check, ChevronDown, Globe } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
-import { Globe, ChevronDown, Check } from 'lucide-react';
 
 import {
   DropdownMenu,
@@ -22,15 +22,19 @@ interface LanguageSwitcherProps {
   currentLang: string;
 }
 
-export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({
+  currentLang,
+}: LanguageSwitcherProps) {
   const pathname = usePathname();
   const router = useRouter();
   const { dict } = useLang();
 
-  const currentLangLabel = LANGUAGES.find((lang) => lang.code === currentLang)?.label ?? currentLang.toUpperCase();
+  const currentLangLabel =
+    LANGUAGES.find((lang) => lang.code === currentLang)?.label ??
+    currentLang.toUpperCase();
 
   const handleLanguageChange = (newLang: string) => {
-    if (!pathname || newLang === currentLang) return
+    if (!pathname || newLang === currentLang) return;
     const segments = pathname.split('/');
     segments[1] = newLang;
     router.push(segments.join('/'));
@@ -43,12 +47,12 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         <DropdownMenu>
           <DropdownMenuTrigger
             type="button"
-            className="flex items-center gap-1.5 bg-ink border border-zinc-800 hover:border-zinc-700 text-white px-2.5 py-1.5 rounded-xl text-xs font-bold font-caption transition-colors outline-none focus:ring-1 focus:ring-brand shrink-0"
+            className="flex items-center gap-1 border border-border-subtle p-1.5 sm:px-2.5 sm:py-1.5 rounded-xl text-xs font-bold font-caption transition-colors outline-none shrink-0"
             aria-label={dict.accessibility.selectLanguage}
           >
             <Globe className="w-3.5 h-3.5 shrink-0" />
             <span>{currentLangLabel}</span>
-            <ChevronDown className="w-3 h-3 text-zinc-400 shrink-0" />
+            <ChevronDown className="w-3 h-3 shrink-0" />
           </DropdownMenuTrigger>
 
           <DropdownMenuContent
@@ -62,10 +66,9 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                 <DropdownMenuItem
                   key={lang.code}
                   onClick={() => handleLanguageChange(lang.code)}
-                  className={`flex items-center justify-between px-2.5 py-1.5 text-xs font-bold font-caption rounded-lg cursor-pointer transition-colors ${isActive
-                    ? 'bg-brand/30 text-brand'
-                    : ''
-                    }`}
+                  className={`flex items-center justify-between px-2.5 py-1.5 text-xs font-bold font-caption rounded-lg cursor-pointer transition-colors ${
+                    isActive ? 'bg-brand/30 text-brand' : ''
+                  }`}
                 >
                   <span>{lang.label}</span>
                   {isActive && <Check className="w-3.5 h-3.5 text-brand" />}
@@ -76,9 +79,13 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
         </DropdownMenu>
       </div>
       {/* Desktop Version */}
-      <div className="hidden lg:flex items-center gap-2 bg-ink border border-zinc-800 rounded-full px-3 py-1.5">
+      <div className="hidden lg:flex items-center gap-2 bg-ink border border-border-subtle rounded-full px-3 py-1.5">
         <Globe className="w-4 h-4 text-white shrink-0" />
-        <div className="flex gap-1" role="radiogroup" aria-label={dict.accessibility.selectLanguage}>
+        <div
+          className="flex gap-1"
+          role="radiogroup"
+          aria-label={dict.accessibility.selectLanguage}
+        >
           {LANGUAGES.map((lang) => {
             const isActive = currentLang === lang.code;
             return (
@@ -88,10 +95,11 @@ export default function LanguageSwitcher({ currentLang }: LanguageSwitcherProps)
                 onClick={() => handleLanguageChange(lang.code)}
                 aria-checked={isActive}
                 role="radio"
-                className={`px-2.5 py-0.5 rounded-full text-xs font-bold font-caption transition-all cursor-pointer ${isActive
-                  ? 'bg-white text-black'
-                  : 'text-zinc-200 hover:text-brand'
-                  }`}
+                className={`px-2.5 py-0.5 rounded-full text-xs font-bold font-caption transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-surface text-ink'
+                    : 'text-zinc-200 hover:text-brand'
+                }`}
               >
                 {lang.label}
               </button>
