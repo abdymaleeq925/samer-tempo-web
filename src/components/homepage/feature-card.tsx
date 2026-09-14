@@ -12,8 +12,11 @@ export default function FeatureCards() {
         const Icon = FEATURES_ICONS[index];
         if (!Icon) return null;
         return (
-          <div key={feature.title || index} className="flex items-start gap-3 md:gap-4 bg-transparent select-none min-w-0">
-            <Icon 
+          <div
+            key={feature.title || index}
+            className="flex items-start gap-3 md:gap-4 bg-transparent select-none min-w-0"
+          >
+            <Icon
               className="w-8 h-8 md:w-12 md:h-12 text-brand shrink-0"
               strokeWidth={1.75}
             />
@@ -21,7 +24,7 @@ export default function FeatureCards() {
               <h4 className="text-base md:text-xl font-semibold leading-tight wrap-break-word line-clamp-2 w-full">
                 {feature.title}
               </h4>
-              <p className="text-sm md:text-lg text-zinc-500 leading-snug">
+              <p className="text-sm md:text-lg text-muted-ink leading-snug">
                 {feature.description}
               </p>
             </div>

@@ -10,7 +10,7 @@ export function Catalog() {
   const { dict, lang } = useLang();
   const n = dict.catalogues;
   return (
-    <section className="py-12 bg-stone-100 dark:bg-zinc-950 min-h-[70vh] font-heading">
+    <section className="py-12 min-h-[70vh] font-heading">
       <div className="container mx-auto px-4">
         <div className="mb-12">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
@@ -24,24 +24,24 @@ export function Catalog() {
             return (
               <div
                 key={item.id}
-                className="flex flex-col justify-between rounded-xl border border-ink dark:border-zinc-700 bg-white px-4 py-6"
+                className="flex flex-col justify-between rounded-xl border border-border-strong px-4 py-6"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-2 rounded-lg border border-ink">
+                    <div className="p-2 rounded-lg border border-border-strong">
                       <FileText className="w-6 h-6" />
                     </div>
-                    <span className="text-xs font-caption px-2.5 py-1 rounded-md border border-ink">
+                    <span className="text-xs font-caption px-2.5 py-1 rounded-md border border-border-strong">
                       PDF • {item.fileSize}
                     </span>
                   </div>
                   <h3 className="text-lg font-semibold">{catalogTitle}</h3>
                 </div>
-                <div className="flex items-center gap-3 pt-4 border-t border-ink">
+                <div className="flex items-center gap-3 pt-4 border-t border-border-strong">
                   <Button
                     nativeButton={false}
                     variant="outline"
-                    className="flex-1 border-ink bg-transparent hover:bg-brand hover:scale-105 transition-all font-caption"
+                    className="flex-1 bg-transparent hover:bg-brand hover:scale-105 transition-all font-caption"
                     render={
                       <a
                         href={item.pdfUrl}
@@ -56,7 +56,8 @@ export function Catalog() {
                   />
                   <Button
                     nativeButton={false}
-                    className="flex-1 bg-transparent text-ink border border-ink hover:bg-brand hover:scale-105 transition-all font-caption font-medium"
+                    variant="outline"
+                    className="flex-1 bg-transparent hover:bg-brand hover:scale-105 transition-all font-caption"
                     render={
                       <a
                         href={item.pdfUrl}
@@ -73,7 +74,7 @@ export function Catalog() {
             );
           })}
         </div>
-        <div className="rounded-2xl border border-ink bg-transparent p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="rounded-2xl border border-border-strong bg-transparent p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="text-2xl font-bold">Samer Tempo</h3>
             <p className="text-lg">{n.subtitle}</p>
@@ -81,7 +82,7 @@ export function Catalog() {
           <Button
             size="lg"
             nativeButton={false}
-            className="bg-transparent border-2 border-ink text-ink transition-colors hover:bg-brand hover:border-0 px-6 shrink-0"
+            className="bg-transparent border-2 border-border-strong text-ink transition-colors hover:bg-brand hover:border-0 px-6 shrink-0"
             render={
               <Link
                 href={`/${lang}/contacts`}

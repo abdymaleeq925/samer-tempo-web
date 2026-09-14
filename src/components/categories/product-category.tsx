@@ -27,13 +27,13 @@ export function ProductCategoryPage({
   return (
     <section className="py-10 min-h-screen">
       <div className="mx-auto px-4 lg:px-8 xl:px-18">
-        <div className="mb-12 border-b border-zinc-800 pb-12">
+        <div className="mb-12 border-b border-border-subtle pb-12">
           <h1 className="text-3xl md:text-4xl font-bold capitalize mb-6">
             {category?.title[lang]}
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 items-center">
             {category && (
-              <div className="relative w-full aspect-4/3 rounded-lg overflow-hidden border border-black">
+              <div className="relative w-full aspect-4/3 rounded-lg overflow-hidden border border-border-strong">
                 <Image
                   src={category.image}
                   alt={category.slug}

@@ -1,8 +1,8 @@
 'use client';
 
+import { View } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { View } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { useLang } from '@/context/lang-context';
@@ -19,12 +19,12 @@ export function ProductCard({ product }: ProductCardProps) {
   const productImg = product.images?.[0] || '/products/placeholder.png';
 
   return (
-    <div className="group flex flex-col h-full rounded-xl border border-black dark:border-zinc-700 p-4 transition-all duration-300 hover:scale-99 hover:shadow-xl">
+    <div className="group flex flex-col h-full rounded-xl border border-border-subtle p-4 transition-all duration-300 hover:scale-99 hover:shadow-xl">
       <Link
         href={`/${lang}/product/${product.slug}`}
         className="block group/image"
       >
-        <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-transparent mb-4 border border-black">
+        <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-4 border border-border-strong">
           <Image
             src={productImg}
             alt={product.title[lang]}
@@ -41,7 +41,10 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="mb-2 flex h-12 flex-wrap items-start xl:items-center gap-1 overflow-hidden text-sm">
           <span className="font-caption">{dict.common.oemNumber}:</span>
           {displayedOems.map((oem) => (
-            <span key={oem} className="px-1 rounded border border-black">
+            <span
+              key={oem}
+              className="px-1 rounded border border-border-strong"
+            >
               {oem}
             </span>
           ))}
@@ -59,7 +62,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </Link>
       </div>
       {product.specs && product.specs.length > 0 && (
-        <div className="mb-4 space-y-1.5 border-t border-black pt-3">
+        <div className="mb-4 space-y-1.5 border-t border-border-strong pt-3">
           {product.specs.map((spec, index) => {
             return (
               <div
@@ -79,10 +82,11 @@ export function ProductCard({ product }: ProductCardProps) {
           })}
         </div>
       )}
-      <div className="mt-auto pt-3 border-t border-black">
+      <div className="mt-auto pt-3 border-t border-border-strong">
         <Button
           nativeButton={false}
-          className="w-full border-black bg-transparent text-black font-medium text-base transition-colors hover:bg-black hover:text-white"
+          variant="outline"
+          className="w-full border-border-strong bg-transparent font-medium text-base transition-colors"
           render={
             <Link
               href={`/${lang}/product/${product.slug}`}

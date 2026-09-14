@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
 import { ChevronDown, Menu } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
@@ -13,7 +14,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
 import { NAV_LINKS, type NavKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
 import { accordionVariants, itemVariants } from '@/lib/nav-motion';
@@ -29,7 +29,7 @@ export default function MobileNavbar() {
   const handleLinkClick = () => setMobileMenuOpen(false);
 
   return (
-    <div className="md:hidden">
+    <div className="md:hidden border rounded-md">
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetTrigger
           render={
@@ -45,9 +45,9 @@ export default function MobileNavbar() {
         <SheetContent
           side="right"
           closeLabel={accessibility.close}
-          className="bg-stone-100 border-l border-white/30 flex flex-col"
+          className="border-l border-white/30 flex flex-col"
         >
-          <SheetHeader className="p-6 border-b border-ink text-left">
+          <SheetHeader className="p-6 border-b border-border-strong text-left">
             <SheetTitle className="text-xl font-bold flex items-center gap-2">
               <Image src="/icon.png" alt="logo" width={32} height={32} />
               Samer Tempo
@@ -74,15 +74,16 @@ export default function MobileNavbar() {
                       aria-expanded={isExpanded}
                       aria-controls={panelId}
                       onClick={() => toggleSubMenu(link.key)}
-                      className="flex w-full items-center justify-between gap-3 p-3 font-medium hover:bg-white/5 hover:text-brand transition-colors"
+                      className="flex w-full items-center justify-between gap-3 p-3 font-medium hover:bg-surface/5 hover:text-brand transition-colors"
                     >
                       <span className="flex items-center gap-3">
                         <Icon className="w-5 h-5 text-brand" />
-                        <span className='text-base'>{linkLabel}</span>
+                        <span className="text-base">{linkLabel}</span>
                       </span>
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''
-                          }`}
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          isExpanded ? 'rotate-180' : ''
+                        }`}
                       />
                     </button>
                     <AnimatePresence initial={false}>
@@ -101,18 +102,24 @@ export default function MobileNavbar() {
                             {link.children?.map((child) => {
                               const ChildIcon = child.icon;
                               return (
-                                <motion.div key={child.key} variants={itemVariants}>
+                                <motion.div
+                                  key={child.key}
+                                  variants={itemVariants}
+                                >
                                   <Link
                                     href={`/${lang}${child.href}`}
                                     onClick={handleLinkClick}
-                                    className="flex items-center gap-3 py-2 px-3 text-sm rounded-lg hover:bg-white/50 hover:text-brand transition-colors"
+                                    className="flex items-center gap-3 py-2 px-3 text-sm rounded-lg hover:bg-surface/50 hover:text-brand transition-colors"
                                   >
                                     {ChildIcon ? (
                                       <ChildIcon className="w-4 h-4 shrink-0" />
                                     ) : (
-                                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 shrink-0 ml-1.5 mr-1.5" />
+                                      <span className="w-1.5 h-1.5 rounded-full bg-surface-sunken shrink-0 ml-1.5 mr-1.5" />
                                     )}
-                                    <span>{dict.navigation.sub?.[child.key] ?? child.key}</span>
+                                    <span>
+                                      {dict.navigation.sub?.[child.key] ??
+                                        child.key}
+                                    </span>
                                   </Link>
                                 </motion.div>
                               );
@@ -129,7 +136,7 @@ export default function MobileNavbar() {
                   key={link.key}
                   href={`/${lang}${link.href}`}
                   onClick={handleLinkClick}
-                  className="flex items-center gap-3 p-3 text-base font-medium hover:bg-white/5 hover:text-brand transition-colors"
+                  className="flex items-center gap-3 p-3 text-base font-medium hover:bg-surface/5 hover:text-brand transition-colors"
                 >
                   <Icon className="w-5 h-5 text-brand" />
                   <span>{linkLabel}</span>

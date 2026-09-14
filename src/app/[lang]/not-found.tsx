@@ -1,10 +1,10 @@
 'use client';
 
+import { FileQuestion, Grid, Home } from 'lucide-react';
 import Link from 'next/link';
-import { FileQuestion, Home, Grid } from 'lucide-react';
 
-import { useLang } from '@/context/lang-context';
 import { Button } from '@/components/ui/button';
+import { useLang } from '@/context/lang-context';
 
 export default function NotFound() {
   const { dict, lang } = useLang();
@@ -20,15 +20,16 @@ export default function NotFound() {
         <h1 className="text-4xl font-bold text-ink">
           {dict.common.notFound?.title ?? 'Page Not Found'}
         </h1>
-        <p className="text-zinc-600 text-lg leading-relaxed">
-          {dict.common.notFound?.description ?? 'The page or spare part you are looking for does not exist.'}
+        <p className="text-muted-ink text-lg leading-relaxed">
+          {dict.common.notFound?.description ??
+            'The page or spare part you are looking for does not exist.'}
         </p>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Button
           nativeButton={false}
-          className="bg-transparent border border-ink text-ink hover:bg-brand font-bold gap-2"
+          className="bg-transparent border border-border-strong text-ink hover:bg-brand font-bold gap-2"
           render={<Link href={`/${lang}`} />}
         >
           <Home className="w-4 h-4" />
@@ -38,7 +39,7 @@ export default function NotFound() {
         <Button
           nativeButton={false}
           variant="outline"
-          className="bg-transparent border border-ink text-ink hover:bg-brand font-bold gap-2"
+          className="bg-transparent border border-border-strong text-ink hover:bg-brand font-bold gap-2"
           render={<Link href={`/${lang}/catalogues`} />}
         >
           <Grid className="w-4 h-4" />

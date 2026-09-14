@@ -10,7 +10,7 @@ export default function About() {
   const about = dict.homepage.aboutus;
 
   return (
-    <section className="w-full bg-stone-100 dark:bg-zinc-950 py-12 sm:py-20 lg:py-24">
+    <section className="w-full py-6 sm:py-14 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Badge and Title */}
@@ -35,7 +35,7 @@ export default function About() {
               {about.paragraph2}
             </p>
             {/* Metrics */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-800/80">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-border-subtle/80">
               <div className="flex items-center gap-3">
                 <CircleStar className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-brand shrink-0" />
                 <span className="text-sm sm:text-base font-semibold">

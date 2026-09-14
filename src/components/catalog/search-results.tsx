@@ -99,17 +99,17 @@ export default function SearchResultsPage() {
     <section className="py-10 min-h-screen font-heading">
       <div className="container mx-auto px-4">
         {/* Heading */}
-        <div className="mb-8 border-b border-zinc-200 pb-6">
+        <div className="mb-8 border-b border-border-subtle pb-6">
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
             {search?.title ?? 'Search Catalog'}
           </h1>
-          <p className="text-zinc-600 text-sm md:text-lg">{resultsTitle}</p>
+          <p className="text-muted-ink text-sm md:text-lg">{resultsTitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Filter Sidebar */}
-          <aside className="lg:col-span-3 bg-stone-100 rounded-2xl border border-zinc-300 p-6 space-y-6">
-            <div className="flex items-center gap-2 border-b border-zinc-200 pb-3">
+          <aside className="lg:col-span-3 rounded-2xl border border-border-subtle p-6 space-y-6">
+            <div className="flex items-center gap-2 border-b border-border-subtle pb-3">
               <span className="font-bold text-lg flex items-center gap-2 whitespace-nowrap shrink-0">
                 <SlidersHorizontal className="w-5 h-5 text-brand shrink-0" />
                 {dict.common?.allCategories ?? 'Filters'}
@@ -120,7 +120,7 @@ export default function SearchResultsPage() {
                     setQuery('');
                     setSelectedCategory('all');
                   }}
-                  className="text-xs text-red-600 font-semibold hover:underline flex items-center ml-auto gap-1 cursor-pointer"
+                  className="text-xs text-red-500 font-semibold hover:underline flex items-center ml-auto gap-1 cursor-pointer"
                 >
                   <FilterX className="w-3.5 h-3.5 shrink-0" />
                   {search.resetFilters ?? 'Reset'}
@@ -130,7 +130,7 @@ export default function SearchResultsPage() {
 
             {/* Text Filter */}
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+              <label className="text-xs font-bold uppercase tracking-wider text-muted-ink">
                 {search.searchButton ?? 'Search'}
               </label>
               <div className="relative">
@@ -140,14 +140,14 @@ export default function SearchResultsPage() {
                   value={query}
                   onChange={(e) => handleQueryChange(e.target.value)}
                   placeholder={search.searchPlaceholder}
-                  className="w-full pl-9 pr-3 py-2 rounded-xl border border-zinc-300 text-sm bg-white focus:outline-none focus:border-brand"
+                  className="w-full pl-9 pr-3 py-2 rounded-xl border border-border-subtle text-sm focus:outline-none focus:border-brand"
                 />
               </div>
             </div>
 
             {/* Category Filter */}
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-zinc-500">
+              <label className="text-xs font-bold uppercase tracking-wider text-muted-ink">
                 {search.filterCategory ?? 'Categories'}
               </label>
               <div className="space-y-1">
@@ -155,8 +155,8 @@ export default function SearchResultsPage() {
                   onClick={() => setSelectedCategory('all')}
                   className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
                     selectedCategory === 'all'
-                      ? 'bg-brand text-black font-bold'
-                      : 'hover:bg-zinc-200 text-zinc-700'
+                      ? 'bg-brand text-ink font-bold'
+                      : 'hover:bg-surface-sunken text-muted-ink'
                   }`}
                 >
                   {search.allProducts ?? 'All Categories'}
@@ -169,8 +169,8 @@ export default function SearchResultsPage() {
                       onClick={() => setSelectedCategory(cat.id)}
                       className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
                         isActive
-                          ? 'bg-brand text-black font-bold'
-                          : 'hover:bg-zinc-200 text-zinc-700'
+                          ? 'bg-brand text-ink font-bold'
+                          : 'hover:bg-surface-sunken text-muted-ink'
                       }`}
                     >
                       {cat.title[lang]}
@@ -183,7 +183,7 @@ export default function SearchResultsPage() {
 
           {/* Search Result */}
           <main className="lg:col-span-9 space-y-6">
-            <div className="flex items-center justify-between text-base font-medium text-zinc-500">
+            <div className="flex items-center justify-between text-base font-medium text-muted-ink">
               <span>{foundCountText}</span>
             </div>
 
@@ -194,8 +194,8 @@ export default function SearchResultsPage() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-20 bg-stone-50 rounded-2xl border border-dashed border-zinc-300 space-y-4">
-                <p className="text-lg font-semibold text-zinc-600">
+              <div className="text-center py-20 rounded-2xl border border-dashed border-border-subtle space-y-4">
+                <p className="text-lg font-semibold text-muted-ink">
                   {dict.common?.noProducts ?? 'No products found'}
                 </p>
                 <Button
@@ -204,7 +204,7 @@ export default function SearchResultsPage() {
                     setSelectedCategory('all');
                   }}
                   variant="outline"
-                  className="border-black cursor-pointer"
+                  className="border-border-strong cursor-pointer"
                 >
                   {search.resetFilters ?? 'Clear Search'}
                 </Button>

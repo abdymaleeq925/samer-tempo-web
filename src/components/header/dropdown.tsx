@@ -1,12 +1,12 @@
-"use client"
+'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { panelVariants, itemVariants } from '@/lib/nav-motion';
 import type { SubKey, SubNavItem } from '@/constants';
+import { itemVariants, panelVariants } from '@/lib/nav-motion';
 
 interface NavDropdownPanelProps {
   panelId: string;
@@ -25,7 +25,7 @@ export default function NavDropdownPanel({
   fallbackIcon: FallbackIcon,
   items,
   getLabel,
-  onClose
+  onClose,
 }: NavDropdownPanelProps) {
   // Checking if there is at least 1 picture
   const hasImages = items.some((c) => Boolean(c.image));
@@ -41,7 +41,7 @@ export default function NavDropdownPanel({
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl border border-zinc-200/80 bg-stone-100 shadow-2xl shadow-black/10 p-3 z-50 w-[min(90vw,26rem)] sm:w-120"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 rounded-2xl border border-border-subtle bg-surface-sunken shadow-2xl shadow-black/10 p-3 z-50 w-[min(90vw,26rem)] sm:w-120"
     >
       <div className="relative grid grid-cols-2 gap-2">
         {items.map((child) => (
@@ -49,7 +49,7 @@ export default function NavDropdownPanel({
             <Link
               href={`/${lang}${child.href}`}
               onClick={onClose}
-              className="group/item relative flex items-end aspect-4/3 overflow-hidden rounded-xl bg-zinc-100 ring-1 ring-zinc-200"
+              className="group/item relative flex items-end aspect-4/3 overflow-hidden rounded-xl bg-surface-sunken ring-1 ring-zinc-200"
             >
               {child.image ? (
                 <Image

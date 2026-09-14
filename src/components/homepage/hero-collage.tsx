@@ -1,17 +1,23 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
-import { GRID_CELLS_COUNT, PRODUCT_IMAGES, SWAP_INTERVAL_MS } from '@/constants';
+import {
+  GRID_CELLS_COUNT,
+  PRODUCT_IMAGES,
+  SWAP_INTERVAL_MS,
+} from '@/constants';
 import { useLang } from '@/context/lang-context';
 import OemSearchInput from '../header/oem-search-bar';
 
-
 export default function HeroCollage() {
   const [cellImages, setCellImages] = useState<number[]>(() =>
-    Array.from({ length: GRID_CELLS_COUNT }, (_, i) => i % PRODUCT_IMAGES.length)
+    Array.from(
+      { length: GRID_CELLS_COUNT },
+      (_, i) => i % PRODUCT_IMAGES.length,
+    ),
   );
 
   const { dict } = useLang();
@@ -29,7 +35,7 @@ export default function HeroCollage() {
         const randomCellIndex = Math.floor(Math.random() * GRID_CELLS_COUNT);
 
         const availableIndices = PRODUCT_IMAGES.map((_, idx) => idx).filter(
-          (idx) => !next.includes(idx)
+          (idx) => !next.includes(idx),
         );
 
         if (availableIndices.length === 0) return prev;
@@ -46,17 +52,20 @@ export default function HeroCollage() {
   }, []);
 
   return (
-    <section 
+    <section
       className="relative w-full overflow-hidden bg-zinc-950 flex items-center justify-center"
-      style={{ minHeight: "calc(100dvh - var(--header-h, 88px))" }}
-      >
+      style={{ minHeight: 'calc(100dvh - var(--header-h, 88px))' }}
+    >
       {/* BACKGROUND LAYER: Skewed 2x4 Image Collage Grid */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" aria-hidden="true">
+      <div
+        className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
+        aria-hidden="true"
+      >
         <div className="w-full h-full transform skew-x-6 sm:skew-x-12 scale-110 grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-1 bg-brand">
           {cellImages.map((imgIndex, cellIdx) => (
             <div
               key={cellIdx}
-              className="relative w-full h-full overflow-hidden bg-zinc-900 border border-white/5"
+              className="relative w-full h-full overflow-hidden bg-ink border border-white/5"
             >
               <div className="absolute inset-0 transform -skew-x-6 sm:-skew-x-12 scale-125">
                 <AnimatePresence>
@@ -70,7 +79,10 @@ export default function HeroCollage() {
                   >
                     <Image
                       src={PRODUCT_IMAGES[imgIndex]}
-                      alt={(hero.imageAlt ?? 'Auto part {index}').replace('{index}', String(imgIndex + 1))}
+                      alt={(hero.imageAlt ?? 'Auto part {index}').replace(
+                        '{index}',
+                        String(imgIndex + 1),
+                      )}
                       fill
                       sizes="(max-width: 640px) 50vw, 25vw"
                       priority={cellIdx < 4} // Priority load top row for LCP optimization
@@ -91,7 +103,7 @@ export default function HeroCollage() {
             {hero.title}
           </h1>
           <p className="text-base md:text-lg max-w-lg mx-auto drop-shadow-sm font-normal">
-          {hero.subtitle}
+            {hero.subtitle}
           </p>
         </div>
         <div className="w-full max-w-md md:max-w-xl shadow-2xl rounded-2xl transition-transform hover:scale-[1.01]">
