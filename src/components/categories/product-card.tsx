@@ -33,7 +33,7 @@ export function ProductCard({ product }: ProductCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
           <span className="absolute top-2.5 left-2.5 rounded-md bg-ink/80 backdrop-blur-md px-2 py-1 text-xs font-caption font-semibold text-brand border border-white/10">
-            {product.article}
+            {product.smrCode}
           </span>
         </div>
       </Link>
@@ -56,6 +56,10 @@ export function ProductCard({ product }: ProductCardProps) {
           href={`/${lang}/product/${product.slug}`}
           className="hover:text-brand transition-colors"
         >
+          <span className="text-xs text-brand font-caption uppercase tracking-wide mb-1 block">
+            {dict.navigation.category.subcategories?.[product.subcategoryId] ??
+              product.subcategoryId}
+          </span>
           <h3 className="text-base font-semibold line-clamp-2 leading-snug">
             {product.title[lang]}
           </h3>

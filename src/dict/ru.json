@@ -23,7 +23,7 @@
     "contacts": "Контакты",
     "product": "Продукт",
     "search": "Поиск",
-    "sub": {
+    "category": {
       "cables": "Электрические кабели и вилки",
       "couplings": "Пневмосоединения и клапаны",
       "tankCaps": "Крышки топливных баков и антисливные системы",
@@ -31,8 +31,36 @@
       "company": "О компании",
       "vision": "Наше видение",
       "mission": "Наша миссия",
-      "certificates": "Сертификаты"
-    }
+      "certificates": "Сертификаты",
+      "subcategories": {
+        "subcat-spiral-cable": "Спиральные кабели",
+        "subcat-abs-ebs-cable": "Кабели ABS/EBS",
+        "subcat-plugs-sockets": "Вилки и розетки",
+        "subcat-abs-sensor": "Датчики ABS",
+        "subcat-rpm-sensor": "Датчики оборотов (RPM)",
+        "subcat-wear-sensor": "Датчики износа колодок",
+        "subcat-tir-cable": "Трос TIR (тентовой шторки)",
+        "subcat-reinforcement-cable": "Пусковые (прикуривающие) кабели",
+        "subcat-coupling": "Соединительные головки",
+        "subcat-gladhand": "Гладхенды",
+        "subcat-coupling-accessories": "Аксессуары для головок",
+        "subcat-valve": "Клапаны",
+        "subcat-cylinder": "Пневмоцилиндры",
+        "subcat-air-hose": "Воздушные шланги",
+        "subcat-tire-inflator": "Комплекты для подкачки шин",
+        "subcat-fuel-cap": "Крышки топливного бака",
+        "subcat-radiator-cap": "Крышки радиатора",
+        "subcat-anti-theft": "Устройства защиты от слива топлива",
+        "subcat-anti-theft-lock": "Замки защиты бака",
+        "subcat-camshaft-kit": "Ремкомплекты распредвала",
+        "subcat-brake-shoe-kit": "Ремкомплекты тормозных колодок",
+        "subcat-hub-cap": "Колпаки ступицы",
+        "subcat-axle-lock-nut": "Стопорные гайки оси",
+        "subcat-bush-bearing": "Втулки и подшипники",
+        "subcat-door-lock": "Замки дверей"
+      }
+    },
+    "subcategory": "Субкатегория"
   },
   "common": {
     "viewDetails": "Подробнее",
@@ -43,6 +71,7 @@
     "sendRequest": "Отправить запрос",
     "close": "Закрыть",
     "allCategories": "Все категории",
+    "allSubcategories": "Все субкатегории",
     "productsCarouselLabel": "Карусель товаров",
     "error": {
       "title": "Что-то пошло не так!",

@@ -23,7 +23,7 @@
     "contacts": "Kontakt",
     "product": "Produkt",
     "search": "Suche",
-    "sub": {
+    "category": {
       "cables": "Elektrokabel & Stecker",
       "couplings": "Pneumatik-Kupplungen & Ventile",
       "tankCaps": "Tankdeckel & Diebstahlsicherungssysteme",
@@ -31,8 +31,36 @@
       "company": "Über uns",
       "vision": "Unsere Vision",
       "mission": "Unsere Mission",
-      "certificates": "Zertifikate"
-    }
+      "certificates": "Zertifikate",
+      "subcategories": {
+        "subcat-spiral-cable": "Spiralkabel",
+        "subcat-abs-ebs-cable": "ABS/EBS-Kabel",
+        "subcat-plugs-sockets": "Stecker & Steckdosen",
+        "subcat-abs-sensor": "ABS-Sensoren",
+        "subcat-rpm-sensor": "Drehzahlsensoren",
+        "subcat-wear-sensor": "Bremsbelag-Verschleißsensoren",
+        "subcat-tir-cable": "TIR-Seil (Planenverschluss)",
+        "subcat-reinforcement-cable": "Starthilfekabel",
+        "subcat-coupling": "Kupplungsköpfe",
+        "subcat-gladhand": "Gladhands",
+        "subcat-coupling-accessories": "Kupplungszubehör",
+        "subcat-valve": "Luftventile",
+        "subcat-cylinder": "Luftzylinder",
+        "subcat-air-hose": "Luftschläuche",
+        "subcat-tire-inflator": "Reifenfüllschlauch-Sets",
+        "subcat-fuel-cap": "Kraftstofftankdeckel",
+        "subcat-radiator-cap": "Kühlerverschlüsse",
+        "subcat-anti-theft": "Diebstahlschutzvorrichtungen",
+        "subcat-anti-theft-lock": "Tankschloss-Sicherungen",
+        "subcat-camshaft-kit": "Nockenwellen-Reparatursätze",
+        "subcat-brake-shoe-kit": "Bremsbacken-Reparatursätze",
+        "subcat-hub-cap": "Nabenkappen",
+        "subcat-axle-lock-nut": "Achs-Sicherungsmuttern",
+        "subcat-bush-bearing": "Buchsen & Lager",
+        "subcat-door-lock": "Türschlösser"
+      }
+    },
+    "subcategory": "Subcategorie"
   },
   "common": {
     "viewDetails": "Details anzeigen",
@@ -42,6 +70,7 @@
     "sendRequest": "Anfrage senden",
     "close": "Schließen",
     "allCategories": "Alle Kategorien",
+    "allSubcategories": "Alle Kategorien",
     "noProducts": "Keine Produkte in dieser Kategorie gefunden",
     "productsCarouselLabel": "Produktkarussell",
     "error": {

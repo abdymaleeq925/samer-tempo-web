@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
-import { CLOSE_DELAY, NAV_LINKS, OPEN_DELAY, type SubKey } from '@/constants';
+import { CLOSE_DELAY, NAV_LINKS, OPEN_DELAY, type CatKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
 import LanguageSwitcher from './language-switcher';
 import MobileNavbar from './mobile-navbar';
@@ -84,7 +84,9 @@ export default function Header() {
                 onToggle={() =>
                   setOpenKey((prev) => (prev === link.key ? null : link.key))
                 }
-                getSubLabel={(key: SubKey) => dict.navigation.sub?.[key] ?? key}
+                getSubLabel={(key: CatKey) =>
+                  dict.navigation.category?.[key] ?? key
+                }
               />
             ))}
           </ul>

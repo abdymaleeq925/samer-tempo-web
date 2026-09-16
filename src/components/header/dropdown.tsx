@@ -5,7 +5,7 @@ import type { LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { SubKey, SubNavItem } from '@/constants';
+import type { CatKey, SubNavItem } from '@/constants';
 import { itemVariants, panelVariants } from '@/lib/nav-motion';
 
 interface NavDropdownPanelProps {
@@ -14,7 +14,7 @@ interface NavDropdownPanelProps {
   lang: string;
   fallbackIcon: LucideIcon;
   items: readonly SubNavItem[];
-  getLabel: (key: SubKey) => string;
+  getLabel: (key: CatKey) => string;
   onClose: () => void;
 }
 

@@ -117,7 +117,7 @@ export default function MobileNavbar() {
                                       <span className="w-1.5 h-1.5 rounded-full bg-surface-sunken shrink-0 ml-1.5 mr-1.5" />
                                     )}
                                     <span>
-                                      {dict.navigation.sub?.[child.key] ??
+                                      {dict.navigation.category?.[child.key] ??
                                         child.key}
                                     </span>
                                   </Link>
