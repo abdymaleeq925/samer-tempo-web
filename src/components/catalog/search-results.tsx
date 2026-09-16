@@ -6,14 +6,17 @@ import { useMemo, useState } from 'react';
 
 import { ProductCard } from '@/components/categories/product-card';
 import { Button } from '@/components/ui/button';
+import { SUBCATEGORIES, type CatKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
 import { MOCK_CATEGORIES, MOCK_PRODUCTS } from '@/data/mock-catalog';
 import { formatString, normalizeCode } from '@/lib/utils';
 
+const ALL_CATEGORIES = 'all';
+const ALL_SUBCATEGORIES = 'all';
+
 export default function SearchResultsPage() {
   const { dict, lang } = useLang();
   const search = dict.common.search;
-
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get('q') || '';
 
@@ -21,38 +24,61 @@ export default function SearchResultsPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>(
     query.length > 0 ? '' : 'all',
   );
+  const [selectedSubcategory, setSelectedSubcategory] =
+    useState<string>(ALL_SUBCATEGORIES);
   const [lastUrlQuery, setLastUrlQuery] = useState(urlQuery);
 
   if (urlQuery !== lastUrlQuery) {
     setLastUrlQuery(urlQuery);
     setQuery(urlQuery);
-    setSelectedCategory(urlQuery.length > 0 ? '' : 'all');
+    setSelectedCategory(urlQuery.length > 0 ? '' : ALL_CATEGORIES);
+    setSelectedSubcategory(ALL_SUBCATEGORIES);
   }
 
   function handleQueryChange(value: string) {
     setQuery(value);
     setSelectedCategory((prev) => {
-      if (value.trim().length > 0) return prev === 'all' ? '' : prev;
-      return prev === '' ? 'all' : prev;
+      if (value.trim().length > 0) return prev === ALL_CATEGORIES ? '' : prev;
+      return prev === '' ? ALL_CATEGORIES : prev;
     });
   }
+
+  function handleCategorySelect(categoryId: string) {
+    setSelectedCategory(categoryId);
+    setSelectedSubcategory(ALL_SUBCATEGORIES);
+  }
+
+  function resetAll() {
+    setQuery('');
+    setSelectedCategory(ALL_CATEGORIES);
+    setSelectedSubcategory(ALL_SUBCATEGORIES);
+  }
+
+  const availableSubcategories = useMemo(() => {
+    if (selectedCategory === ALL_CATEGORIES || selectedCategory === '')
+      return [];
+    const categoryKey = selectedCategory.replace(/^cat-/, '') as CatKey;
+    return SUBCATEGORIES.filter((s) => s.categoryKey === categoryKey);
+  }, [selectedCategory]);
 
   const filteredProducts = useMemo(() => {
     const normalizedSearch = normalizeCode(query);
     const hasActiveCategory =
-      selectedCategory !== 'all' && selectedCategory !== '';
+      selectedCategory !== ALL_CATEGORIES && selectedCategory !== '';
+    const hasActiveSubcategory = selectedSubcategory !== ALL_SUBCATEGORIES;
 
     return MOCK_PRODUCTS.filter((product) => {
       // Filter by category
-      if (hasActiveCategory && product.categoryId !== selectedCategory) {
+      if (hasActiveCategory && product.categoryId !== selectedCategory)
         return false;
-      }
+      if (hasActiveSubcategory && product.subcategoryId !== selectedSubcategory)
+        return false;
 
       // Shows all products if search bar is empty
       if (!normalizedSearch) return true;
 
-      // Search by article
-      if (normalizeCode(product.article).includes(normalizedSearch))
+      // Search by smrCode
+      if (normalizeCode(product.smrCode).includes(normalizedSearch))
         return true;
 
       // Search by OEM
@@ -80,7 +106,7 @@ export default function SearchResultsPage() {
 
       return false;
     });
-  }, [query, selectedCategory]);
+  }, [query, selectedCategory, selectedSubcategory]);
 
   const resultsTitle = query
     ? formatString(dict.common.search?.resultsFor ?? 'Results for "{query}"', {
@@ -114,13 +140,10 @@ export default function SearchResultsPage() {
                 <SlidersHorizontal className="w-5 h-5 text-brand shrink-0" />
                 {dict.common?.allCategories ?? 'Filters'}
               </span>
-              {(query || selectedCategory !== 'all') && (
+              {(query || selectedCategory !== ALL_CATEGORIES) && (
                 <button
-                  onClick={() => {
-                    setQuery('');
-                    setSelectedCategory('all');
-                  }}
-                  className="text-xs text-red-500 font-semibold hover:underline flex items-center ml-auto gap-1 cursor-pointer"
+                  onClick={resetAll}
+                  className="ml-auto shrink-0 whitespace-nowrap text-xs text-red-600 font-semibold hover:underline flex items-center gap-1 cursor-pointer"
                 >
                   <FilterX className="w-3.5 h-3.5 shrink-0" />
                   {search.resetFilters ?? 'Reset'}
@@ -152,9 +175,9 @@ export default function SearchResultsPage() {
               </label>
               <div className="space-y-1">
                 <button
-                  onClick={() => setSelectedCategory('all')}
+                  onClick={() => setSelectedCategory(ALL_CATEGORIES)}
                   className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
-                    selectedCategory === 'all'
+                    selectedCategory === ALL_CATEGORIES
                       ? 'bg-brand text-ink font-bold'
                       : 'hover:bg-surface-sunken text-muted-ink'
                   }`}
@@ -179,6 +202,43 @@ export default function SearchResultsPage() {
                 })}
               </div>
             </div>
+
+            {availableSubcategories.length > 0 && (
+              <div className="space-y-2 border-t border-border-subtle pt-4">
+                <label className="text-xs font-bold uppercase tracking-wider">
+                  {dict.navigation?.subcategory ?? 'Subcategory'}
+                </label>
+                <div className="space-y-1">
+                  <button
+                    onClick={() => setSelectedSubcategory(ALL_SUBCATEGORIES)}
+                    className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
+                      selectedSubcategory === ALL_SUBCATEGORIES
+                        ? 'bg-brand/20 text-brand-dark font-bold'
+                        : 'hover:bg-border-subtle'
+                    }`}
+                  >
+                    {dict.common?.allSubcategories ?? 'All'}
+                  </button>
+                  {availableSubcategories.map((sub) => {
+                    const isActive = selectedSubcategory === sub.id;
+                    return (
+                      <button
+                        key={sub.id}
+                        onClick={() => setSelectedSubcategory(sub.id)}
+                        className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
+                          isActive
+                            ? 'bg-brand/20 text-brand-dark font-bold'
+                            : 'hover:bg-border-subtle'
+                        }`}
+                      >
+                        {dict.navigation.category.subcategories?.[sub.id] ??
+                          sub.id}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </aside>
 
           {/* Search Result */}

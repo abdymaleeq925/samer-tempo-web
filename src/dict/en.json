@@ -10,7 +10,7 @@
     "homeAriaLabel": "Samer Tempo Homepage",
     "searchSubmit": "Submit search",
     "toggleMenu": "Toggle navigation menu",
-    "toggleSubmenu": "Toggle sub-menu",
+    "toggleSubmenu": "Toggle category-menu",
     "footerNavAria": "Footer Navigation",
     "mainNavLabel": "Main Navigation",
     "close": "Close"
@@ -23,7 +23,7 @@
     "contacts": "Contacts",
     "product": "Product",
     "search": "Search",
-    "sub": {
+    "category": {
       "cables": "Electrical Cables & Plugs",
       "couplings": "Pneumatic Couplings & Valves",
       "tankCaps": "Fuel Tank Caps & Anti-Siphon Systems",
@@ -31,8 +31,36 @@
       "company": "About Us",
       "vision": "Our Vision",
       "mission": "Our Mission",
-      "certificates": "Certificates"
-    }
+      "certificates": "Certificates",
+      "subcategories": {
+        "subcat-spiral-cable": "Spiral Cables",
+        "subcat-abs-ebs-cable": "ABS/EBS Cables",
+        "subcat-plugs-sockets": "Plugs & Sockets",
+        "subcat-abs-sensor": "ABS Sensors",
+        "subcat-rpm-sensor": "RPM Sensors",
+        "subcat-wear-sensor": "Brake Pad Wear Sensors",
+        "subcat-tir-cable": "TIR Cable (Curtain Trailer)",
+        "subcat-reinforcement-cable": "Reinforcement (Jump Start) Cables",
+        "subcat-coupling": "Air Couplings",
+        "subcat-gladhand": "Gladhands",
+        "subcat-coupling-accessories": "Coupling Accessories",
+        "subcat-valve": "Air Valves",
+        "subcat-cylinder": "Air Cylinders",
+        "subcat-air-hose": "Air Hoses",
+        "subcat-tire-inflator": "Tire Inflator Hose Sets",
+        "subcat-fuel-cap": "Fuel Tank Caps",
+        "subcat-radiator-cap": "Radiator Caps",
+        "subcat-anti-theft": "Anti-Theft Devices",
+        "subcat-anti-theft-lock": "Anti-Theft Locks",
+        "subcat-camshaft-kit": "Camshaft Repair Kits",
+        "subcat-brake-shoe-kit": "Brake Shoe Repair Kits",
+        "subcat-hub-cap": "Hub Caps",
+        "subcat-axle-lock-nut": "Axle Lock Nuts",
+        "subcat-bush-bearing": "Bushes & Bearings",
+        "subcat-door-lock": "Door Locks"
+      }
+    },
+    "subcategory": "Subcategory"
   },
   "common": {
     "viewDetails": "View Details",
@@ -42,6 +70,7 @@
     "sendRequest": "Send Request",
     "close": "Close",
     "allCategories": "All Categories",
+    "allSubcategories": "All Subcategories",
     "productsCarouselLabel": "Products carousel",
     "noProducts": "No products found in this category",
     "error": {

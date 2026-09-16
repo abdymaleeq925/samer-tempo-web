@@ -1,3 +1,5 @@
+import { SubcategoryId } from '@/constants';
+
 export interface LocalizedText {
   en: string;
   tr: string;
@@ -16,15 +18,15 @@ export interface Category {
 export interface Product {
   id: string;
   slug: string;
-  article: string;
+  smrCode: string;
   oemNumbers?: string[];
   crossReferences: string[];
-  subcategoryId: string;
+  subcategoryId: SubcategoryId;
   categoryId: string;
   title: LocalizedText;
   description: LocalizedText;
   images: string[];
-  youtubeUrl?: string;
+  videoUrl?: string;
   specs: {
     label: LocalizedText;
     value: LocalizedText | string;
@@ -183,7 +185,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s010-01',
     slug: 's010-01-standard-coupling-red-m16',
-    article: 'S010-01',
+    smrCode: 'S010-01',
     oemNumbers: ['452 200 021 0', '952 200 021 0', '000 429 763 0'],
     crossReferences: ['WABCO 4522000210', 'KNORR K004212', 'DT 2.30210'],
     categoryId: 'cat-couplings',
@@ -200,8 +202,12 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Стандартная пневматическая соединительная головка аварийной магистрали (красная) с резьбой M16x1.5.',
       de: 'Standard-Kupplungskopf Rot für die Vorratsleitung des Anhängers mit M16x1.5 Gewinde.',
     },
-    images: ['/products/s010-01.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    images: [
+      '/products/s010-01.jpg',
+      '/products/r030-101.jpg',
+      '/products/r030-130.jpg',
+    ],
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -224,7 +230,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Kırmızı (İmdat)',
           ru: 'Красная (Аварийная)',
           de: 'Rot (Vorratsleitung)',
-        }
+        },
       },
       {
         label: {
@@ -238,14 +244,14 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '10 bar',
           ru: '10 бар',
           de: '10 bar',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s010-02',
     slug: 's010-02-standard-coupling-yellow-m16',
-    article: 'S010-02',
+    smrCode: 'S010-02',
     oemNumbers: ['452 200 022 0', '952 200 022 0', '000 429 38 30'],
     crossReferences: ['WABCO 4522000220', 'KNORR K004213', 'DT 2.30211'],
     categoryId: 'cat-couplings',
@@ -263,7 +269,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Standard-Kupplungskopf Gelb für die Bremsleitung des Anhängers mit M16x1.5 Gewinde.',
     },
     images: ['/products/s010-02.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -286,7 +292,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Sarı (Servis)',
           ru: 'Желтый (Голова)',
           de: 'Gelb (Bremse)',
-        }
+        },
       },
       {
         label: {
@@ -300,14 +306,14 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '10 bar',
           ru: '10 бар',
           de: '10 bar',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s060-01',
     slug: 's060-01-short-valve-m12',
-    article: 'S060-01',
+    smrCode: 'S060-01',
     oemNumbers: ['000 429 23 01', '463 013 110 0', '463 013 116 0'],
     crossReferences: ['WABCO 4630131100', 'COJALI 2202100', 'DT 4.61200'],
     categoryId: 'cat-couplings',
@@ -325,7 +331,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Kompaktes 3/2-Wege-Pneumatikventil mit M12x1.5 Anschlüssen und 46.9mm Gehäuselänge.',
     },
     images: ['/products/s060-01.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -348,7 +354,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '46.9 mm',
           ru: '46.9 мм',
           de: '46.9 mm',
-        }
+        },
       },
       {
         label: {
@@ -362,14 +368,14 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '3/2 Yollu Pnömatik',
           ru: '3/2-ходовой пневматический',
           de: '3/2-Wege Pneumatik',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s130-01',
     slug: 's130-01-pneumatic-cylinder-m6',
-    article: 'S130-01',
+    smrCode: 'S130-01',
     oemNumbers: ['000 429 01 02', '421 350 000 0', '131 452 0'],
     crossReferences: ['WABCO 4213500000', 'DT 2.40101'],
     categoryId: 'cat-couplings',
@@ -387,7 +393,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Kompakter Pneumatikzylinder (24mm Kolben) mit M6 Anschlussgewinde für LKW-Steuerungssysteme.',
     },
     images: ['/products/s130-01.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -412,7 +418,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s130-02',
     slug: 's130-02-pneumatic-cylinder-m8',
-    article: 'S130-02',
+    smrCode: 'S130-02',
     oemNumbers: ['000 072 15 12', '000 072 18 12', '000 072 19 12'],
     crossReferences: ['MERCEDES 0000721812', 'DT 4.61502'],
     categoryId: 'cat-couplings',
@@ -430,7 +436,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Pneumatikzylinder mit 24mm Kolben und M8 Gewindestange für Getriebe- und Motorbremssteuerung.',
     },
     images: ['/products/s130-02.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -455,7 +461,7 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s140',
     slug: 's140-brake-cylinder-28mm-m8',
-    article: 'S140',
+    smrCode: 'S140',
     oemNumbers: ['000 430 79 26', '000 429 000 0', '000 430 49 26'],
     crossReferences: ['KNORR II32100', 'DT 4.62001'],
     categoryId: 'cat-couplings',
@@ -472,8 +478,12 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Усиленный тормозной пневмоцилиндр с диаметром поршня 28 мм и резьбовым креплением M8.',
       de: 'Robuster Bremszylinder mit 28mm Kolbendurchmesser und M8 Gewindeanschlüssen.',
     },
-    images: ['/products/s140.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    images: [
+      '/products/s140.jpg',
+      '/products/r030-101.jpg',
+      '/products/r030-130.jpg',
+    ],
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -487,7 +497,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '28 mm',
           ru: '28 мм',
           de: '28 mm',
-        }
+        },
       },
       {
         label: {
@@ -503,11 +513,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s182-245pur',
     slug: 's182-245pur-air-hose-black-yellow-5m-m16',
-    article: 'S182-245 PUR',
+    smrCode: 'S182-245 PUR',
     oemNumbers: ['000 429 41 85', '133 348 2', '81512106001'],
     crossReferences: ['COJALI 2211010', 'DT 2.30100'],
     categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-hose',
+    subcategoryId: 'subcat-air-hose',
     title: {
       en: 'Coiled Air Hose PUR Black/Yellow 5.0m M16',
       tr: 'HAVA HORTUMU SİYAH/SARI 5,00m M16 PUR',
@@ -521,7 +531,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Polyurethan (PUR) Wendelschlauch in Schwarz/Gelb. 5.0m max. Arbeitslänge mit M16 Anschlüssen.',
     },
     images: ['/products/s182-245pur.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -535,7 +545,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '5 m',
           ru: '5 м',
           de: '5 m',
-        }
+        },
       },
       {
         label: {
@@ -560,11 +570,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s185-111pur',
     slug: 's185-111pur-cabin-cleaning-hose-actros-4m',
-    article: 'S185-111 PUR',
+    smrCode: 'S185-111 PUR',
     oemNumbers: ['000 584 02 38', 'A0005840238'],
     crossReferences: ['MERCEDES A0005840238', 'DT 4.80302'],
     categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-hose',
+    subcategoryId: 'subcat-air-hose',
     title: {
       en: 'Cabin Air Cleaning Hose Kit PUR 4.0m for Mercedes Actros',
       tr: 'PLASTİK TABANCALI KABİN TEMİZLEME HORTUMU PUR 4,00m ACTROS',
@@ -578,7 +588,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Blauer PUR-Spiralen-Schlauch mit Blaspistole für die Kabinenreinigung in Mercedes-Benz Actros LKW.',
     },
     images: ['/products/s185-111pur.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -592,7 +602,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '4 m',
           ru: '4 м',
           de: '4 m',
-        }
+        },
       },
       {
         label: {
@@ -617,11 +627,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s186-115',
     slug: 's186-115-braided-tyre-inflation-hose-15m',
-    article: 'S186-115',
+    smrCode: 'S186-115',
     oemNumbers: ['000 583 07 10', '81512206010', '133 348 5'],
     crossReferences: ['DT 2.30120', 'COJALI 2211020'],
     categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-hose',
+    subcategoryId: 'subcat-air-hose',
     title: {
       en: 'Braided Reinforced Tyre Inflation Hose 15m',
       tr: 'LASTİK ŞİŞİRME HORTUMU İÇTEN ÖRGÜLÜ 15m',
@@ -635,7 +645,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Hochdruck-Reifeneinfüllschlauch mit gewebeverstärkter Innenseite für LKW und Auflieger. Länge 15m.',
     },
     images: ['/products/s186-115.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: { en: 'Length', tr: 'Uzunluk', ru: 'Длина', de: 'Länge' },
@@ -644,7 +654,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '15 m',
           ru: '15 м',
           de: '15 m',
-        }
+        },
       },
       {
         label: {
@@ -667,7 +677,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '20 bar',
           ru: '20 бар',
           de: '20 bar',
-        }
+        },
       },
     ],
   },
@@ -676,11 +686,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-r020-01a',
     slug: 'r020-01a-24v-7pin-plastic-plug-n-type',
-    article: 'R020-01A',
+    smrCode: 'R020-01A',
     oemNumbers: ['111008', '111009', '51305287', '000 545 62 14'],
     crossReferences: ['HELLA 8JB001933011', 'DT 4.80250'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-plug',
+    subcategoryId: 'subcat-plugs-sockets',
     title: {
       en: '24V 7-Pin Plastic Plug Black N-Type (Pinned Terminals)',
       tr: '24V PLASTİK SOKET SİYAH N TİPİ AYAKLAR PİMLİ',
@@ -694,7 +704,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '24V 7-polige N-Typ Steckdose aus schlagfestem Kunststoff mit Stiftkontakten nach ISO 1185.',
     },
     images: ['/products/r020-01a.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -708,7 +718,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '24V / 7 Pinli',
           ru: '24V / 7-контактный',
           de: '24V / 7-Polig',
-        }
+        },
       },
       {
         label: {
@@ -722,7 +732,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'ISO 1185 (N Tipi)',
           ru: 'ISO 1185 (Тип N)',
           de: 'ISO 1185 (N-Typ)',
-        }
+        },
       },
       {
         label: {
@@ -736,18 +746,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'PA6 Plastik (Siyah)',
           ru: 'Пластик PA6 (Черный)',
           de: 'PA6 Kunststoff (Schwarz)',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-r010-02',
     slug: 'r010-02-24v-7pin-green-plug-s-type',
-    article: 'R010-02',
+    smrCode: 'R010-02',
     oemNumbers: ['111030', '000 545 78 14', '81254320002'],
     crossReferences: ['HELLA 8JA001930001', 'DT 4.80252'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-plug',
+    subcategoryId: 'subcat-plugs-sockets',
     title: {
       en: '24V 7-Pin Plastic Green Plug S-Type',
       tr: '24V PLASTİK YEŞİL FİŞ S TİPİ',
@@ -761,7 +771,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '24V 7-poliger S-Typ Zusatzstecker im grünen Kunststoffgehäuse nach ISO 3731.',
     },
     images: ['/products/r010-02.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -775,7 +785,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '24V / 7 Pinli',
           ru: '24V / 7-контактный',
           de: '24V / 7-Polig',
-        }
+        },
       },
       {
         label: {
@@ -789,7 +799,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'ISO 3731 (S Tipi)',
           ru: 'ISO 3731 (Тип S)',
           de: 'ISO 3731 (S-Typ)',
-        }
+        },
       },
       {
         label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
@@ -798,18 +808,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Yeşil',
           ru: 'Зеленый',
           de: 'Grün',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-r010-04',
     slug: 'r010-04-ebs-7pin-plug-crimp-terminals',
-    article: 'R010-04',
+    smrCode: 'R010-04',
     oemNumbers: ['441 035 001 0', '000 545 80 14', '150 493 8'],
     crossReferences: ['WABCO 4410350010', 'COJALI 2210001', 'DT 2.30200'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-plug',
+    subcategoryId: 'subcat-plugs-sockets',
     title: {
       en: 'EBS 7-Pin Trailer Plug with Crimp Contacts',
       tr: 'EBS 7 Lİ FİŞ AYAKLAR SIKMALI',
@@ -823,7 +833,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '7-poliger EBS-Bremsstecker mit Crimp-Kontakten nach ISO 7638-1 Norm.',
     },
     images: ['/products/r010-04.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: { en: 'Standard', tr: 'Standard', ru: 'Стандарт', de: 'Norm' },
@@ -841,7 +851,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Sıkmalı',
           ru: 'Обжимной',
           de: 'Crimpanschluss',
-        }
+        },
       },
       {
         label: {
@@ -855,18 +865,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '7 Pinli',
           ru: '7 контактов',
           de: '7 Polig',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-r030-101',
     slug: 'r030-101-24v-metal-plug-spiral-cable-n-type-4-5m',
-    article: 'R030-101',
+    smrCode: 'R030-101',
     oemNumbers: ['000 540 83 07', '81254116020', '139 217 8'],
     crossReferences: ['HELLA 8KA007123021', 'DT 2.30150'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-cable',
+    subcategoryId: 'subcat-spiral-cable',
     title: {
       en: '24V Coiled Cable Aluminum Plugs N-Type 4.5m',
       tr: '24V ALÜMİNYUM METAL FİŞLİ KABLO N TİPİ 4,5m',
@@ -880,7 +890,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '24V 7-adriges (6x1.0 + 1x1.5mm²) PUR-Spiralkabel mit Alu-Gusssteckern Typ-N. Max. Auszugslänge 4.5m.',
     },
     images: ['/products/r030-101.jpg', '/products/r030-130.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -894,7 +904,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '4.5 m',
           ru: '4.5 м',
           de: '4.5 m',
-        }
+        },
       },
       {
         label: {
@@ -908,7 +918,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '6 x 1.0 mm² + 1 x 1.5 mm²',
           ru: '6 x 1.0 мм² + 1 x 1.5 мм²',
           de: '6 x 1.0 mm² + 1 x 1.5 mm²',
-        }
+        },
       },
       {
         label: {
@@ -922,18 +932,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Alüminyum Alaşım',
           ru: 'Алюминиевый сплав',
           de: 'Aluminiumlegierung',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-r030-130',
     slug: 'r030-130-24v-plastic-green-plug-cable-s-type-4m',
-    article: 'R030-130',
+    smrCode: 'R030-130',
     oemNumbers: ['000 540 84 07', '81254116021', '139 217 9'],
     crossReferences: ['HELLA 8KA007123031', 'DT 2.30151'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-cable',
+    subcategoryId: 'subcat-spiral-cable',
     title: {
       en: '24V Coiled Cable Plastic Green Plugs S-Type 4.0m',
       tr: '24V PLASTİK YEŞİL FİŞLİ KABLO S TİPİ 4m',
@@ -947,7 +957,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '24V 7-adriges S-Typ Spiralkabel mit grünen Kunststoffsteckern. Max. Arbeitslänge 4.0m.',
     },
     images: ['/products/r030-130.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -961,7 +971,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '4 m',
           ru: '4 м',
           de: '4 m',
-        }
+        },
       },
       {
         label: {
@@ -979,18 +989,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'ISO 3731 (S Tipi)',
           ru: 'ISO 3731 (Тип S)',
           de: 'ISO 3731 (S-Typ)',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-r030-172',
     slug: 'r030-172-ebs-7-pin-spiral-cable-5m',
-    article: 'R030-172',
+    smrCode: 'R030-172',
     oemNumbers: ['446 008 240 0', '20803584', '000 540 00 80'],
     crossReferences: ['WABCO 4460082400', 'COJALI 2210100', 'DT 2.30210'],
     categoryId: 'cat-cables',
-    subcategoryId: 'subcat-cable',
+    subcategoryId: 'subcat-spiral-cable',
     title: {
       en: '7-Pin EBS Coiled Cable 24V 5.0m',
       tr: '7 Lİ EBS SPİRAL KABLO 5m',
@@ -1004,7 +1014,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'EBS/ABS Spiralkabel (5x1.5 + 2x2.5mm²) für elektronische Bremssysteme. 5m Max. Arbeitslänge.',
     },
     images: ['/products/r030-172.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1018,7 +1028,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '5 m',
           ru: '5 м',
           de: '5 m',
-        }
+        },
       },
       {
         label: {
@@ -1032,7 +1042,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '5 x 1.50 mm² + 2 x 2.50 mm²',
           ru: '5 x 1.50 мм² + 2 x 2.50 мм²',
           de: '5 x 1.50 mm² + 2 x 2.50 mm²',
-        }
+        },
       },
       {
         label: { en: 'Standard', tr: 'Standard', ru: 'Стандарт', de: 'Norm' },
@@ -1045,11 +1055,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s280-02',
     slug: 's280-02-b60-galvanized-fuel-cap-with-key',
-    article: 'S280-02',
+    smrCode: 'S280-02',
     oemNumbers: ['000 470 00 05', '81122100010', '133 348 9'],
     crossReferences: ['FEBI 12150', 'DT 4.62600'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-caps',
+    subcategoryId: 'subcat-fuel-cap',
     title: {
       en: 'B60 Galvanized Fuel Tank Cap Locking with Keys (Universal)',
       tr: 'B60 GALVANİZ DEPO KAPAĞI ANAHTARLI',
@@ -1063,7 +1073,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Universal verzinkter Tankdeckel Ø60mm mit Schließzylinder und 2 Schlüsseln.',
     },
     images: ['/products/s280-02.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1086,7 +1096,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Galvaniz Çelik',
           ru: 'Оцинкованная сталь',
           de: 'Verzinkter Stahl',
-        }
+        },
       },
       {
         label: {
@@ -1100,18 +1110,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Anahtarlı Kilitli',
           ru: 'С замком и ключами',
           de: 'Abschließbar mit Schlüsseln',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s280-15z',
     slug: 's280-15z-b80a-plastic-fuel-cap-chain-axor',
-    article: 'S280-15Z',
+    smrCode: 'S280-15Z',
     oemNumbers: ['000 470 04 05', 'A0004700405', '81122100030'],
     crossReferences: ['FEBI 17220', 'DT 4.62605'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-caps',
+    subcategoryId: 'subcat-fuel-cap',
     title: {
       en: 'B80A Plastic Locking Fuel Tank Cap with Chain (Axor Type)',
       tr: 'B80A PLASTİK DEPO KAPAĞI ANAHTARLI + ZİNCİRLİ',
@@ -1125,7 +1135,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '80mm Kunststoff-Tankdeckel mit Zylinderschloss und Haltekette für Mercedes Axor/Actros.',
     },
     images: ['/products/s280-15z.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1157,18 +1167,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Anahtarlı + Zincirli',
           ru: 'С замком и цепочкой',
           de: 'Mit Schloss & Kette',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s280-17',
     slug: 's280-17-b80a-side-lock-fuel-cap-daf-volvo-rvi',
-    article: 'S280-17',
+    smrCode: 'S280-17',
     oemNumbers: ['1428471', '20398322', '7420398322', '000 470 07 05'],
     crossReferences: ['FEBI 27240', 'DT 2.12050'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-caps',
+    subcategoryId: 'subcat-fuel-cap',
     title: {
       en: 'B80A Plastic Side-Lock Fuel Cap (DAF / Volvo / Renault)',
       tr: 'B80A PLASTİK YANDAN KİLİTLİ DEPO KAPAĞI',
@@ -1182,7 +1192,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: '80mm Tankdeckel mit seitlichem Schließzylinder und Haltekette für DAF, Volvo und Renault Trucks.',
     },
     images: ['/products/s280-17.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1214,18 +1224,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Yandan Kilitli Silindir',
           ru: 'Замковый цилиндр с боковым запиранием',
           de: 'Seitlich schließender Zylinder',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s280-10',
     slug: 's280-10-adblue-cap-60mm-scania-volvo-renault',
-    article: 'S280-10',
+    smrCode: 'S280-10',
     oemNumbers: ['1925363', '20926022', '7420926022'],
     crossReferences: ['FEBI 39420', 'DT 1.22250'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-adblue',
+    subcategoryId: 'subcat-fuel-cap',
     title: {
       en: 'AdBlue Tank Cap Ø60mm Locking (Scania / Volvo / Renault)',
       tr: 'ADBLUE SCANIA DEPO KAPAĞI 60mm ANAHTARLI',
@@ -1239,7 +1249,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Blauer 60mm AdBlue-Deckel mit Schloss und Adapter passend für Scania, Volvo und Renault LKW.',
     },
     images: ['/products/s280-10.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1273,11 +1283,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s280-11',
     slug: 's280-11-adblue-cap-60mm-iveco',
-    article: 'S280-11',
+    smrCode: 'S280-11',
     oemNumbers: ['504197301', '500054341'],
     crossReferences: ['IVECO 504197301', 'DT 2.12061'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-adblue',
+    subcategoryId: 'subcat-fuel-cap',
     title: {
       en: 'AdBlue Tank Cap Ø60mm Locking for Iveco',
       tr: 'ADBLUE IVECO DEPO KAPAĞI 60mm ANAHTARLI',
@@ -1290,8 +1300,12 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Крышка горловины бака AdBlue 60мм с замком для грузовиков Iveco Stralis и Eurocargo.',
       de: '60mm AdBlue-Tankdeckel mit Schlüsseln speziell für Iveco Stralis und Eurocargo.',
     },
-    images: ['/products/s280-11.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    images: [
+      '/products/s280-11.jpg',
+      '/products/r030-101.jpg',
+      '/products/r030-130.jpg',
+    ],
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1325,11 +1339,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-s280-18',
     slug: 's280-18-adblue-cap-40mm-non-locking-universal',
-    article: 'S280-18',
+    smrCode: 'S280-18',
     oemNumbers: ['21584844', '1784666', '81154020000', '1747043'],
     crossReferences: ['FEBI 44645', 'DT 5.61010'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-adblue',
+    subcategoryId: 'subcat-fuel-cap',
     title: {
       en: 'AdBlue Tank Cap Ø40mm Non-Locking with Strap (Universal)',
       tr: 'ADBLUE DEPO KAPAĞI 40mm KİLİTSİZ KUYRUKLU',
@@ -1343,7 +1357,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Universal 40mm AdBlue-Deckel ohne Schloss mit Fangband für DAF, MAN, MB, Scania, Volvo, Iveco.',
     },
     images: ['/products/s280-18.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1375,18 +1389,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Kuyruklu',
           ru: 'С резиновым ремешком (поводком)',
           de: 'Mit Halteband',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s270',
     slug: 's270-aluminum-fuel-anti-theft-device-80mm',
-    article: 'S270',
+    smrCode: 'S270',
     oemNumbers: ['20510123', '1439854', 'A0004700305', '81122120010'],
     crossReferences: ['GSI 80012', 'KAPITAN AT-80', 'DT 2.12100'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-antitheft',
+    subcategoryId: 'subcat-anti-theft',
     title: {
       en: 'Fuel Anti-Theft Device Full Aluminum Ø80mm (Universal)',
       tr: '80mm KOMPLE ALÜMİNYUM DEPO MAZOT KORUMASI',
@@ -1400,7 +1414,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Massive Vollaluminium Anti-Siphon Diebstahlsicherung für Tankeinfüllstutzen Ø80mm gegen Treibstoffdiebstahl.',
     },
     images: ['/products/s270.jpg', '/products/s270_2.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1423,7 +1437,7 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '%100 Alüminyum Döküm Alaşım',
           ru: '100% литой алюминиевый сплав',
           de: '100% Aluminium-Gusslegierung',
-        }
+        },
       },
       {
         label: {
@@ -1437,18 +1451,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: '120 L/dk (Hızlı Dolum)',
           ru: '120 л/мин (Быстрая заправка)',
           de: '120 L/min (Schnellbefüllung)',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-s277',
     slug: 's277-fuel-anti-theft-cap-80mm',
-    article: 'S277',
+    smrCode: 'S277',
     oemNumbers: ['20510125', 'A0004700805'],
     crossReferences: ['KAPITAN AT-80C', 'DT 4.62620'],
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-antitheft',
+    subcategoryId: 'subcat-anti-theft',
     title: {
       en: 'Fuel Anti-Theft Protection Safety Cap Ø80mm',
       tr: '80mm DEPO MAZOT KORUMA KAPAĞI',
@@ -1462,7 +1476,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Sicherheits-Einsatzkappe gegen Treibstoffdiebstahl zur Festmontage an Ø80mm Tankstutzen.',
     },
     images: ['/products/s277.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1489,11 +1503,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-tmp-9978',
     slug: 'tmp-9978-bpw-kingpin-repair-kit-42mm',
-    article: 'TMP9978',
+    smrCode: 'TMP9978',
     oemNumbers: ['09.801.06.09.0', '0980106090', '05.801.06.09.0'],
     crossReferences: ['BPW 0980106090', 'FEBI 11612', 'DT 10.13005'],
     categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-bpw',
+    subcategoryId: 'subcat-camshaft-kit',
     title: {
       en: 'BPW Axle Brake Caliper & Pivot Repair Kit Ø42mm',
       tr: 'BPW TAMİR TAKIMI Ø42',
@@ -1507,7 +1521,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Kompletter Reparatursatz für BPW-Anhängerachsen mit Ø42mm Bolzendurchmesser.',
     },
     images: ['/products/tmp9978.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1532,11 +1546,11 @@ export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'prod-tmp-5772',
     slug: 'tmp-5772-trailer-bushing-repair-kit-38x60x55',
-    article: 'TMP5772',
+    smrCode: 'TMP5772',
     oemNumbers: ['A4003300018', '1501234'],
     crossReferences: ['SAF 4.177.3012.00', 'DT 3.67010'],
     categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-trailer',
+    subcategoryId: 'subcat-bush-bearing',
     title: {
       en: 'Trailer Axle Bushing Repair Kit Ø38xØ60x55mm',
       tr: 'TREYLER TAMİR TAKIMI Ø38xØ60x55',
@@ -1549,8 +1563,12 @@ export const MOCK_PRODUCTS: Product[] = [
       ru: 'Ремкомплект сайлентблоков/втулок подвески прицепа. Размеры: Внутренний Ø38мм, Внешний Ø60мм, Высота 55мм.',
       de: 'Präzisions-Buchsensatz für Anhängeraufhängung. Abmessungen: Innen Ø38mm, Außen Ø60mm, Höhe 55mm.',
     },
-    images: ['/products/tmp5772.jpg', '/products/r030-101.jpg', '/products/r030-130.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    images: [
+      '/products/tmp5772.jpg',
+      '/products/r030-101.jpg',
+      '/products/r030-130.jpg',
+    ],
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1573,18 +1591,18 @@ export const MOCK_PRODUCTS: Product[] = [
           tr: 'Evrensel Treyler Süspansiyonları / SAF / BPW',
           ru: 'Универсальные подвески полуприцепов / SAF / BPW',
           de: 'Universelle Auflieger-Federungen / SAF / BPW',
-        }
+        },
       },
     ],
   },
   {
     id: 'prod-tmp-1852',
     slug: 'tmp-1852-ror-axle-pivot-repair-kit-42mm',
-    article: 'TMP1852',
+    smrCode: 'TMP1852',
     oemNumbers: ['21224172', '21222442'],
     crossReferences: ['ROR 21224172', 'MERITOR M6010', 'DT 10.13020'],
     categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-ror',
+    subcategoryId: 'subcat-axle-lock-nut',
     title: {
       en: 'ROR / Meritor Axle Repair Kit Ø42mm',
       tr: 'ROR TAMİR TAKIMI Ø42',
@@ -1598,7 +1616,7 @@ export const MOCK_PRODUCTS: Product[] = [
       de: 'Reparatursatz für ROR (Rubery Owen Rockwell) Anhängerachsen mit Ø42mm Wellendurchmesser.',
     },
     images: ['/products/tmp1852.jpg'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
@@ -1621,3 +1639,267 @@ export const MOCK_PRODUCTS: Product[] = [
     ],
   },
 ];
+
+// export const MOCK_PRODUCTS: Product[] = [
+//   {
+//     id: 'prod-s010-02',
+//     slug: 's010-02-standard-coupling-yellow-m16',
+//     smrCode: 'S010-02',
+//     oemNumbers: [],
+//     crossReferences: [],
+//     categoryId: 'cat-couplings',
+//     subcategoryId: 'subcat-coupling',
+//     title: {
+//       en: 'Standard Yellow Air Coupling M16x1.5 (Service Line)',
+//       tr: 'Standart Sarı Kaplin M16x1.5 (Servis Hattı)',
+//       ru: 'Головка соединительная стандартная (Жёлтая) M16x1.5, рабочая магистраль',
+//       de: 'Kupplungskopf Standard Gelb M16x1.5 (Betriebsleitung)',
+//     },
+//     description: {
+//       en: 'Standard service line yellow air coupling with M16x1.5 connection, ISO 1728 / DIN 74342 compliant, aluminium body with Cr3 coating.',
+//       tr: 'ISO 1728 / DIN 74342 uyumlu, M16x1,5 bağlantılı, Cr3 kaplamalı alüminyum gövdeli standart sarı servis kaplini.',
+//       ru: 'Стандартная жёлтая пневматическая головка рабочей магистрали, резьба M16x1.5, соответствует ISO 1728 / DIN 74342, корпус — алюминий с покрытием Cr3.',
+//       de: 'Standard-Kupplungskopf Gelb für die Betriebsleitung mit M16x1.5 Gewinde, konform mit ISO 1728 / DIN 74342, Aluminiumgehäuse mit Cr3-Beschichtung.',
+//     },
+//     images: ['/products/s010-02.jpg'],
+//     specs: [
+//       {
+//         label: {
+//           en: 'Thread Size',
+//           tr: 'Diş Ölçüsü',
+//           ru: 'Резьба',
+//           de: 'Gewinde',
+//         },
+//         value: 'M16 x 1.5',
+//       },
+//       {
+//         label: {
+//           en: 'Color Code',
+//           tr: 'Renk Kodu',
+//           ru: 'Цветовая маркировка',
+//           de: 'Farbcode',
+//         },
+//         value: {
+//           en: 'Yellow (Service Line)',
+//           tr: 'Sarı (Servis Hattı)',
+//           ru: 'Жёлтая (рабочая магистраль)',
+//           de: 'Gelb (Betriebsleitung)',
+//         },
+//       },
+//       {
+//         label: {
+//           en: 'Body Material',
+//           tr: 'Gövde Malzemesi',
+//           ru: 'Материал корпуса',
+//           de: 'Gehäusematerial',
+//         },
+//         value: {
+//           en: 'Aluminium with Cr3 coating',
+//           tr: 'Cr3 kaplamalı alüminyum',
+//           ru: 'Алюминий с покрытием Cr3',
+//           de: 'Aluminium mit Cr3-Beschichtung',
+//         },
+//       },
+//       {
+//         label: { en: 'Standard', tr: 'Standart', ru: 'Стандарт', de: 'Norm' },
+//         value: 'ISO 1728 / DIN 74342',
+//       },
+//       {
+//         label: {
+//           en: 'Packaging',
+//           tr: 'Paketleme',
+//           ru: 'Упаковка',
+//           de: 'Verpackung',
+//         },
+//         value: '10 pcs/Box — 2340 pcs/Pallet',
+//       },
+//     ],
+//   },
+//   {
+//     id: 'prod-r030-100',
+//     slug: 'r030-100-spiral-cable-7p-24v-n-type-3m',
+//     smrCode: 'R030-100',
+//     oemNumbers: [],
+//     crossReferences: [],
+//     categoryId: 'cat-cables',
+//     subcategoryId: 'subcat-spiral-cable',
+//     title: {
+//       en: 'Spiral Cable with Plugs 7P/24V N-Type, 3.0m',
+//       tr: 'Fişli Spiral Kablo 7P/24V N-Tipi, 3.0m',
+//       ru: 'Спиральный кабель с вилками 7P/24V, тип N, 3.0м',
+//       de: 'Spiralkabel mit Steckern 7P/24V N-Typ, 3,0m',
+//     },
+//     description: {
+//       en: 'ISO 1185 / ISO 4141-3 compliant 7-pole 24V spiral cable with aluminium plugs, N-type, working length 3.0m, max extension 4.0m.',
+//       tr: 'ISO 1185 / ISO 4141-3 uyumlu, alüminyum fişli 7 kutuplu 24V spiral kablo, N-tipi, çalışma uzunluğu 3.0m, maksimum uzama 4.0m.',
+//       ru: 'Спиральный 7-полюсный кабель 24В по стандарту ISO 1185 / ISO 4141-3 с алюминиевыми вилками, тип N, рабочая длина 3.0м, макс. растяжение 4.0м.',
+//       de: 'Spiralkabel 7-polig 24V nach ISO 1185 / ISO 4141-3 mit Aluminiumsteckern, N-Typ, Arbeitslänge 3,0m, maximale Dehnung 4,0m.',
+//     },
+//     images: ['/products/r030-100.jpg'],
+//     specs: [
+//       {
+//         label: {
+//           en: 'Working Length',
+//           tr: 'Çalışma Uzunluğu',
+//           ru: 'Рабочая длина',
+//           de: 'Arbeitslänge',
+//         },
+//         value: '3.0 m',
+//       },
+//       {
+//         label: {
+//           en: 'Maximum Extension',
+//           tr: 'Maksimum Uzama',
+//           ru: 'Макс. растяжение',
+//           de: 'Maximale Dehnung',
+//         },
+//         value: '4.0 m',
+//       },
+//       {
+//         label: {
+//           en: 'Plug Type',
+//           tr: 'Fiş Tipi',
+//           ru: 'Тип вилки',
+//           de: 'Stecker-Typ',
+//         },
+//         value: '7P / 24V — N Type',
+//       },
+//       {
+//         label: {
+//           en: 'Coil Material',
+//           tr: 'Sarma Malzemesi',
+//           ru: 'Материал спирали',
+//           de: 'Spiralmaterial',
+//         },
+//         value: 'Polyurethane',
+//       },
+//       {
+//         label: {
+//           en: 'Plug Material',
+//           tr: 'Fiş Malzemesi',
+//           ru: 'Материал вилки',
+//           de: 'Steckermaterial',
+//         },
+//         value: 'Aluminium',
+//       },
+//       {
+//         label: {
+//           en: 'Wire Thickness',
+//           tr: 'Tel Kalınlığı',
+//           ru: 'Сечение проводов',
+//           de: 'Drahtstärke',
+//         },
+//         value: '6x1.0mm + 1x1.5mm',
+//       },
+//       {
+//         label: { en: 'Standard', tr: 'Standart', ru: 'Стандарт', de: 'Norm' },
+//         value: 'ISO 1185 / ISO 4141-3',
+//       },
+//     ],
+//   },
+//   {
+//     id: 'prod-s280-16v',
+//     slug: 's280-16v-plastic-tank-cap-vented-locking-80mm',
+//     smrCode: 'S280-16V',
+//     oemNumbers: [
+//       '5000787148',
+//       '5001856142',
+//       '5001864551',
+//       '5000439032', // Renault
+//       'A0004705205', // Mercedes-Benz ACTROS
+//       '81122106027', // MAN
+//       '20392751',
+//       '3198271',
+//       '1189577',
+//       '8152630', // Volvo
+//       '1599007', // Scania
+//       '500302656', // Iveco
+//       '2993918',
+//       '2534687', // STARLIS/EUROSTAR/EUROTECH
+//       '1697734', // DAF
+//     ],
+//     crossReferences: [],
+//     categoryId: 'cat-tankCaps',
+//     subcategoryId: 'subcat-fuel-cap',
+//     title: {
+//       en: 'Plastic Fuel Tank Cap Vented Locking Ø80mm',
+//       tr: 'Plastik Depo Kapağı Ventilli Kilitli Ø80mm',
+//       ru: 'Пластиковая крышка топливного бака вентилируемая с замком Ø80мм',
+//       de: 'Plastik-Tankdeckel belüftet abschließbar Ø80mm',
+//     },
+//     description: {
+//       en: 'New 2026 product — vented locking plastic fuel tank cap, Ø80mm, compatible with Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH and DAF.',
+//       tr: '2026 yeni ürünü — ventilli kilitli plastik depo kapağı, Ø80mm, Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH ve DAF ile uyumlu.',
+//       ru: 'Новинка 2026 года — вентилируемая пластиковая крышка топливного бака с замком, Ø80мм, совместима с Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH и DAF.',
+//       de: 'Neuheit 2026 — belüfteter, abschließbarer Plastik-Tankdeckel, Ø80mm, kompatibel mit Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH und DAF.',
+//     },
+//     images: ['/products/s280-16v.jpg'],
+//     specs: [
+//       {
+//         label: {
+//           en: 'Filler Neck Size',
+//           tr: 'Depo Ağzı Ölçüsü',
+//           ru: 'Диаметр горловины',
+//           de: 'Einfüllstutzengröße',
+//         },
+//         value: 'Ø80mm',
+//       },
+//       {
+//         label: { en: 'Locking', tr: 'Kilit', ru: 'Замок', de: 'Verriegelung' },
+//         value: {
+//           en: 'Vented, Locking',
+//           tr: 'Ventilli, Kilitli',
+//           ru: 'Вентилируемая, с замком',
+//           de: 'Belüftet, abschließbar',
+//         },
+//       },
+//       {
+//         label: {
+//           en: 'Suitable For',
+//           tr: 'Uygunluk',
+//           ru: 'Совместимость',
+//           de: 'Geeignet für',
+//         },
+//         value:
+//           'Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH, DAF',
+//       },
+//     ],
+//   },
+//   {
+//     id: 'prod-tmp-9978',
+//     slug: 'tmp-9978-camshaft-repair-kit-bpw-42mm',
+//     smrCode: 'TMP 9978',
+//     oemNumbers: [],
+//     crossReferences: [],
+//     categoryId: 'cat-repairKits',
+//     subcategoryId: 'subcat-camshaft-kit',
+//     title: {
+//       en: 'Repair Kit for Camshaft 42mm — BPW',
+//       tr: 'Kam Mili Tamir Takımı 42mm — BPW',
+//       ru: 'Ремкомплект распредвала 42мм — BPW',
+//       de: 'Reparatursatz für Nockenwelle 42mm — BPW',
+//     },
+//     description: {
+//       en: 'Complete camshaft repair kit for BPW axles, 42mm, includes bushings, seals, retaining rings and mounting hardware.',
+//       tr: 'BPW aksları için komple kam mili tamir takımı, 42mm, burç, keçe, seger ve montaj malzemelerini içerir.',
+//       ru: 'Полный ремкомплект распредвала для осей BPW, 42мм, включает втулки, сальники, стопорные кольца и крепёж.',
+//       de: 'Kompletter Nockenwellen-Reparatursatz für BPW-Achsen, 42mm, inkl. Buchsen, Dichtungen, Sicherungsringen und Montagematerial.',
+//     },
+//     images: ['/products/tmp-9978.jpg'],
+//     specs: [
+//       {
+//         label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
+//         value: '42mm',
+//       },
+//       {
+//         label: {
+//           en: 'Axle Type',
+//           tr: 'Aks Tipi',
+//           ru: 'Тип оси',
+//           de: 'Achstyp',
+//         },
+//         value: 'BPW',
+//       },
+//     ],
+//   },
+// ];

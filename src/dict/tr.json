@@ -23,7 +23,7 @@
     "contacts": "İletişim",
     "product": "Ürün",
     "search": "Arama",
-    "sub": {
+    "category": {
       "cables": "Elektrik Kabloları ve Fişler",
       "couplings": "Kaplinler ve Silindirler",
       "tankCaps": "Depo Kapakları ve Mazot Koruma Sistemleri",
@@ -31,8 +31,36 @@
       "company": "Hakkımızda",
       "vision": "Vizyonumuz",
       "mission": "Misyonumuz",
-      "certificates": "Sertifikalarımız"
-    }
+      "certificates": "Sertifikalarımız",
+      "subcategories": {
+        "subcat-spiral-cable": "Spiral Kablolar",
+        "subcat-abs-ebs-cable": "ABS/EBS Kabloları",
+        "subcat-plugs-sockets": "Fişler ve Prizler",
+        "subcat-abs-sensor": "ABS Sensörleri",
+        "subcat-rpm-sensor": "Devir (RPM) Sensörleri",
+        "subcat-wear-sensor": "Balata Aşınma Sensörleri",
+        "subcat-tir-cable": "TIR Halatı (Branda İpi)",
+        "subcat-reinforcement-cable": "Takviye Kabloları",
+        "subcat-coupling": "Hava Kaplinleri",
+        "subcat-gladhand": "Gladhandler",
+        "subcat-coupling-accessories": "Kaplin Aksesuarları",
+        "subcat-valve": "Hava Valfleri",
+        "subcat-cylinder": "Hava Silindirleri",
+        "subcat-air-hose": "Hava Hortumları",
+        "subcat-tire-inflator": "Lastik Şişirme Hortum Setleri",
+        "subcat-fuel-cap": "Yakıt Depo Kapakları",
+        "subcat-radiator-cap": "Radyatör Kapakları",
+        "subcat-anti-theft": "Hırsızlık Önleyici Cihazlar",
+        "subcat-anti-theft-lock": "Depo Koruma Kilitleri",
+        "subcat-camshaft-kit": "Kam Mili Tamir Takımları",
+        "subcat-brake-shoe-kit": "Balata Tamir Takımları",
+        "subcat-hub-cap": "Göbek Kapakları",
+        "subcat-axle-lock-nut": "Aks Kilit Somunları",
+        "subcat-bush-bearing": "Burç ve Rulmanlar",
+        "subcat-door-lock": "Kapı Kilitleri"
+      }
+    },
+    "subcategory": "Subkategori"
   },
   "common": {
     "viewDetails": "Detayları Gör",
@@ -43,6 +71,7 @@
     "sendRequest": "Talep Gönder",
     "close": "Kapat",
     "allCategories": "Tüm Kategoriler",
+    "allSubcategories": "Tüm Subkategoriler",
     "productsCarouselLabel": "Ürün karuseli",
     "error": {
       "title": "Bir şeyler yanlış gitti!",

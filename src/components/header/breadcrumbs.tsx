@@ -35,7 +35,7 @@ export function AppBreadcrumbs() {
     const navValue = n[segment as keyof typeof n];
     if (typeof navValue === 'string') return navValue;
 
-    const subValue = n.sub?.[segment as keyof typeof n.sub];
+    const subValue = n.category?.[segment as keyof typeof n.category];
     if (typeof subValue === 'string') return subValue;
 
     return segment.replace(/-/g, ' ');

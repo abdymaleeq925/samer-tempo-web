@@ -17,7 +17,7 @@ export async function generateMetadata({
   const product = MOCK_PRODUCTS.find((p) => p.slug === slug || p.id === slug);
   if (!product) return {};
 
-  const title = `${product.article} - ${product.title[lang]}`;
+  const title = `${product.smrCode} - ${product.title[lang]}`;
   const description = product.description?.[lang]?.slice(0, 160);
 
   return {
@@ -49,8 +49,8 @@ export default async function Page({ params }: PageProps) {
     name: product.title[lang],
     image: product.images,
     description: product.description?.[lang],
-    sku: product.article,
-    mpn: product.article,
+    sku: product.smrCode,
+    mpn: product.smrCode,
     brand: {
       '@type': 'Brand',
       name: 'Samer Tempo',

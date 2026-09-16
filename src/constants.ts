@@ -1,40 +1,133 @@
-import { House, Grid, FolderTree, Info, PhoneCall, ShieldCheck, Award, Globe, Truck, Cable, Disc, Wrench, LucideIcon } from "lucide-react";
+import {
+  Award,
+  Cable,
+  Disc,
+  FolderTree,
+  Globe,
+  Grid,
+  House,
+  Info,
+  LucideIcon,
+  PhoneCall,
+  ShieldCheck,
+  Truck,
+  Wrench,
+} from 'lucide-react';
 
-export type NavKey = 'home' | 'catalogues' | 'categories' | 'about' | 'contacts';
-export type SubKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits';
-export type CatalogueId = 'steelCables' | 'newProducts2026' | 'abs' | 'air' | 'cables' | 'fullCatalogue' | 'repairKits' | 'tankCaps';
+export type NavKey =
+  | 'home'
+  | 'catalogues'
+  | 'categories'
+  | 'about'
+  | 'contacts';
+export type CatKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits';
+export type CatalogueId =
+  | 'steelCables'
+  | 'newProducts2026'
+  | 'abs'
+  | 'air'
+  | 'cables'
+  | 'fullCatalogue'
+  | 'repairKits'
+  | 'tankCaps';
+
 export interface SubNavItem {
-  readonly key: SubKey,
-  readonly href: string,
-  readonly image?: string,
+  readonly key: CatKey;
+  readonly href: string;
+  readonly image?: string;
   readonly icon?: LucideIcon;
 }
 export interface NavItem {
-  readonly key: NavKey,
-  readonly href?: string,
-  readonly icon: LucideIcon,
-  readonly children?: readonly SubNavItem[]
+  readonly key: NavKey;
+  readonly href?: string;
+  readonly icon: LucideIcon;
+  readonly children?: readonly SubNavItem[];
 }
 export interface CatalogItem {
   id: CatalogueId;
   fileSize: string;
   pdfUrl: string;
 }
+export interface SubCatMeta {
+  readonly id: string;
+  readonly categoryKey: CatKey;
+}
+
 interface CategoryShowcaseProps {
   readonly icon: LucideIcon;
   readonly imageSrc: string[];
   readonly href: string;
 }
 
+export const SUBCATEGORIES = [
+  // cat-cables
+  { id: 'subcat-spiral-cable', categoryKey: 'cables' },
+  { id: 'subcat-abs-ebs-cable', categoryKey: 'cables' },
+  { id: 'subcat-plugs-sockets', categoryKey: 'cables' },
+  { id: 'subcat-abs-sensor', categoryKey: 'cables' },
+  { id: 'subcat-rpm-sensor', categoryKey: 'cables' },
+  { id: 'subcat-wear-sensor', categoryKey: 'cables' },
+  { id: 'subcat-tir-cable', categoryKey: 'cables' },
+  { id: 'subcat-reinforcement-cable', categoryKey: 'cables' },
+
+  // cat-couplings
+  { id: 'subcat-coupling', categoryKey: 'couplings' },
+  { id: 'subcat-gladhand', categoryKey: 'couplings' },
+  { id: 'subcat-coupling-accessories', categoryKey: 'couplings' },
+  { id: 'subcat-valve', categoryKey: 'couplings' },
+  { id: 'subcat-cylinder', categoryKey: 'couplings' },
+  { id: 'subcat-air-hose', categoryKey: 'couplings' },
+  { id: 'subcat-tire-inflator', categoryKey: 'couplings' },
+
+  // cat-tankCaps
+  { id: 'subcat-fuel-cap', categoryKey: 'tankCaps' },
+  { id: 'subcat-radiator-cap', categoryKey: 'tankCaps' },
+  { id: 'subcat-anti-theft', categoryKey: 'tankCaps' },
+  { id: 'subcat-anti-theft-lock', categoryKey: 'tankCaps' },
+
+  // cat-repairKits
+  { id: 'subcat-camshaft-kit', categoryKey: 'repairKits' },
+  { id: 'subcat-brake-shoe-kit', categoryKey: 'repairKits' },
+  { id: 'subcat-hub-cap', categoryKey: 'repairKits' },
+  { id: 'subcat-axle-lock-nut', categoryKey: 'repairKits' },
+  { id: 'subcat-bush-bearing', categoryKey: 'repairKits' },
+  { id: 'subcat-door-lock', categoryKey: 'repairKits' },
+] as const satisfies readonly SubCatMeta[];
+
+export type SubcategoryId = (typeof SUBCATEGORIES)[number]['id'];
+
 export const NAV_LINKS = [
   { key: 'home', href: '', icon: House, children: undefined },
   { key: 'catalogues', href: '/catalogues', icon: Grid, children: undefined },
-  { key: 'categories', href: undefined, icon: FolderTree,
+  {
+    key: 'categories',
+    href: undefined,
+    icon: FolderTree,
     children: [
-      { key: 'cables', href: '/categories/cables', image: "/products/s182-245pur.jpg", icon: Cable },
-      { key: 'couplings', href: '/categories/couplings', image: "/products/s010-01.jpg", icon: Disc },
-      { key: 'tankCaps', href: '/categories/tank-caps', image: "/products/s280-02.jpg", icon: ShieldCheck },
-      { key: 'repairKits', href: '/categories/repair-kits', image: "/products/tmp1852.jpg", icon: Wrench },
+      {
+        key: 'cables',
+        href: '/categories/cables',
+        image: '/products/s182-245pur.jpg',
+        icon: Cable,
+      },
+      {
+        key: 'couplings',
+        href: '/categories/couplings',
+        image: '/products/s010-01.jpg',
+        icon: Disc,
+      },
+      {
+        key: 'tankCaps',
+        href: '/categories/tank-caps',
+        image: '/products/s280-02.jpg',
+        icon: ShieldCheck,
+      },
+      {
+        key: 'repairKits',
+        href: '/categories/repair-kits',
+        image: '/products/tmp1852.jpg',
+        icon: Wrench,
+      },
     ],
   },
   { key: 'about', href: '/about', icon: Info, children: undefined },
@@ -70,25 +163,46 @@ export const PRODUCT_IMAGES = [
   '/products/tmp9978.jpg',
 ] as const;
 
-export const SHOWCASE_CATEGORY_DATA: Partial<Record<SubKey, CategoryShowcaseProps>> = {
+export const SHOWCASE_CATEGORY_DATA: Partial<
+  Record<CatKey, CategoryShowcaseProps>
+> = {
   cables: {
     icon: Cable,
-    imageSrc: ['/products/s182-245pur.jpg', '/products/r030-172.jpg', '/products/s186-115.jpg', '/products/r030-130.jpg'],
+    imageSrc: [
+      '/products/s182-245pur.jpg',
+      '/products/r030-172.jpg',
+      '/products/s186-115.jpg',
+      '/products/r030-130.jpg',
+    ],
     href: '/categories/cables',
   },
   couplings: {
     icon: Disc,
-    imageSrc: ['/products/s010-01.jpg', '/products/s060-01.jpg', '/products/s130-01.jpg', '/products/s140.jpg'],
+    imageSrc: [
+      '/products/s010-01.jpg',
+      '/products/s060-01.jpg',
+      '/products/s130-01.jpg',
+      '/products/s140.jpg',
+    ],
     href: '/categories/couplings',
   },
   tankCaps: {
     icon: ShieldCheck,
-    imageSrc: ['/products/s280-02.jpg', '/products/s280-10.jpg', '/products/s270.jpg', '/products/s277.jpg'],
+    imageSrc: [
+      '/products/s280-02.jpg',
+      '/products/s280-10.jpg',
+      '/products/s270.jpg',
+      '/products/s277.jpg',
+    ],
     href: '/categories/tank-caps',
   },
   repairKits: {
     icon: Wrench,
-    imageSrc: ['/products/tmp1852.jpg', '/products/tmp5772.jpg', '/products/tmp9978.jpg'],
+    imageSrc: [
+      '/products/tmp1852.jpg',
+      '/products/tmp5772.jpg',
+      '/products/tmp9978.jpg',
+    ],
     href: '/categories/repair-kits',
   },
 } as const;
@@ -136,9 +250,17 @@ export const CATALOGUES_DATA: CatalogItem[] = [
   },
 ];
 
+export const PLACEHOLDER_VIDEOS = [
+  'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+  'https://www.youtube.com/watch?v=jNQXAC9IVRw',
+  'https://www.youtube.com/watch?v=9bZkp7q19f0',
+  'https://vimeo.com/76979871',
+] as const;
+
 export const GRID_CELLS_COUNT = 8;
 export const SWAP_INTERVAL_MS = 3000;
 export const FEATURES_ICONS = [ShieldCheck, Award, Globe, Truck];
 export const OPEN_DELAY = 60;
 export const CLOSE_DELAY = 150;
-export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.21862133833227!2d29.180518880710313!3d40.99247328745507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cace1cd4b6194b%3A0x6868e26aee2e8465!2sAcar%20Metal%20Kalip%20Sanayi%20Ve%20Ticaret%20Limited%20%C5%9Eirketi!5e0!3m2!1sen!2str!4v1785917352893!5m2!1sen!2str";
+export const MAP_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.21862133833227!2d29.180518880710313!3d40.99247328745507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cace1cd4b6194b%3A0x6868e26aee2e8465!2sAcar%20Metal%20Kalip%20Sanayi%20Ve%20Ticaret%20Limited%20%C5%9Eirketi!5e0!3m2!1sen!2str!4v1785917352893!5m2!1sen!2str';

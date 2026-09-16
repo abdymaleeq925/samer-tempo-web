@@ -52,7 +52,7 @@ export default function ProductDetail({
   };
 
   // Converting YouTube URL to Embed URL
-  const getEmbedYoutubeUrl = (url?: string) => {
+  const getEmbedVidoeUrl = (url?: string) => {
     if (!url) return null;
     const regExp =
       /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -62,7 +62,7 @@ export default function ProductDetail({
       : null;
   };
 
-  const embedUrl = getEmbedYoutubeUrl(product.youtubeUrl);
+  const embedUrl = getEmbedVidoeUrl(product.videoUrl);
 
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 ">
@@ -144,7 +144,12 @@ export default function ProductDetail({
           <div className="space-y-6">
             <div className="flex flex-col gap-4 border-b-2 border-border-subtle pb-4">
               <span className="text-base w-fit font-caption font-bold border rounded-xl p-2 border-border-strong uppercase tracking-wider">
-                {product.article}
+                {product.smrCode}
+              </span>
+              <span className="text-sm font-caption">
+                {dict.navigation.category.subcategories?.[
+                  product.subcategoryId
+                ] ?? product.subcategoryId}
               </span>
               <h1 className="text-2xl sm:text-3xl font-bold text-ink leading-tight">
                 {product.title[lang]}

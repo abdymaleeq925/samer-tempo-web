@@ -1,13 +1,13 @@
 'use client';
 
-import { useRef } from 'react';
-import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { useRef } from 'react';
 
-import { useOutsideClick } from '@/hooks/use-outside-click';
+import type { CatKey, NavItem } from '@/constants';
 import { useEscapeKey } from '@/hooks/use-escape-key';
-import type { NavItem, SubKey } from '@/constants';
+import { useOutsideClick } from '@/hooks/use-outside-click';
 import NavDropdownPanel from './dropdown';
 
 interface NavBarProps {
@@ -18,10 +18,19 @@ interface NavBarProps {
   onOpen: () => void;
   onClose: () => void;
   onToggle: () => void;
-  getSubLabel: (key: SubKey) => string;
+  getSubLabel: (key: CatKey) => string;
 }
 
-export default function Navbar({ link, lang, label, isOpen, onOpen, onClose, onToggle, getSubLabel }: NavBarProps) {
+export default function Navbar({
+  link,
+  lang,
+  label,
+  isOpen,
+  onOpen,
+  onClose,
+  onToggle,
+  getSubLabel,
+}: NavBarProps) {
   const itemRef = useRef<HTMLLIElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
@@ -42,7 +51,10 @@ export default function Navbar({ link, lang, label, isOpen, onOpen, onClose, onT
       className="relative"
       onMouseEnter={hasChildren ? onOpen : undefined}
       onMouseLeave={hasChildren ? onClose : undefined}
-      onBlur={(e) => { if (hasChildren && !e.currentTarget.contains(e.relatedTarget as Node)) onClose() }}
+      onBlur={(e) => {
+        if (hasChildren && !e.currentTarget.contains(e.relatedTarget as Node))
+          onClose();
+      }}
     >
       {hasChildren ? (
         <>
@@ -58,7 +70,9 @@ export default function Navbar({ link, lang, label, isOpen, onOpen, onClose, onT
           >
             <div className="flex items-center justify-center gap-1 h-6">
               <Icon className="w-6 h-6 group-hover:text-brand transition-colors shrink-0" />
-              <ChevronDown className={`w-4.5 h-4.5 transition-transform duration-200 shrink-0 group-hover:text-brand ${isOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown
+                className={`w-4.5 h-4.5 transition-transform duration-200 shrink-0 group-hover:text-brand ${isOpen ? 'rotate-180' : ''}`}
+              />
             </div>
             <span className="group-hover:text-brand transition-colors leading-none text-sm lg:text-base font-medium font-heading">
               {label}
@@ -83,7 +97,7 @@ export default function Navbar({ link, lang, label, isOpen, onOpen, onClose, onT
           href={`/${lang}${link.href}`}
           className="group flex flex-col items-center justify-center gap-1 focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 transition-colors h-12 shrink-0"
         >
-          <Icon className="w-6 h-6 group-hover:text-brand transition-colors shrink-0"/> 
+          <Icon className="w-6 h-6 group-hover:text-brand transition-colors shrink-0" />
           <span className="group-hover:text-brand transition-colors leading-none text-sm lg:text-base font-medium font-heading">
             {label}
           </span>
