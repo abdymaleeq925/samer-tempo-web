@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {hasMoreOems && <span>+{product.oemNumbers!.length - 2}</span>}
         </div>
       )}
-      <div className="h-12 mb-3 flex items-start">
+      <div className="h-14 mb-3 flex items-start">
         <Link
           href={`/${lang}/product/${product.slug}`}
           className="hover:text-brand transition-colors"

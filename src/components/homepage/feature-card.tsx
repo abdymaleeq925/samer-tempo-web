@@ -21,9 +21,9 @@ export default function FeatureCards() {
               strokeWidth={1.75}
             />
             <div className="flex flex-col items-start justify-center min-w-0 w-full">
-              <h4 className="text-base md:text-xl font-semibold leading-tight wrap-break-word line-clamp-2 w-full">
+              <h3 className="text-base md:text-xl font-semibold leading-tight wrap-break-word line-clamp-2 w-full">
                 {feature.title}
-              </h4>
+              </h3>
               <p className="text-sm md:text-lg text-muted-ink leading-snug">
                 {feature.description}
               </p>

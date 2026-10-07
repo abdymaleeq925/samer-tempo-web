@@ -141,7 +141,11 @@ export default function CategoryShowcase() {
                       {/* Text content */}
                       <div className="flex flex-col items-start justify-between space-y-6 order-2 lg:order-1">
                         <div className="space-y-4">
-                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-brand text-xs md:text-sm font-semibold font-caption uppercase tracking-wider">
+                          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 border border-brand/20 text-ink text-xs md:text-sm font-semibold font-caption uppercase tracking-wider">
+                            <span
+                              className="w-1.5 h-1.5 rounded-full bg-brand"
+                              aria-hidden="true"
+                            />
                             {cat.tagline}
                           </div>
                           <h3 className="text-xl sm:text-2xl lg:text-4xl font-heading font-bold leading-tight">
