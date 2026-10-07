@@ -15,7 +15,11 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Badge and Title */}
           <div className="lg:col-span-5 flex flex-col items-start space-y-4">
-            <span className="inline-flex items-center gap-2 text-xs md:text-base font-semibold font-caption uppercase tracking-wider text-brand bg-brand/10 px-3 py-1 rounded-full border border-brand/20">
+            <span className="inline-flex items-center gap-2 text-xs md:text-base font-semibold font-caption uppercase tracking-wider text-ink bg-brand/10 px-3 py-1 rounded-full border border-brand/20">
+              <span
+                className="w-1.5 h-1.5 rounded-full bg-brand"
+                aria-hidden="true"
+              />
               {about.badge}
             </span>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold font-heading leading-tight tracking-tight">

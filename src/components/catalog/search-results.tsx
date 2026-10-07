@@ -43,7 +43,7 @@ export default function SearchResultsPage() {
     });
   }
 
-  function handleCategorySelect(categoryId: string) {
+  function handleCategoryChange(categoryId: string) {
     setSelectedCategory(categoryId);
     setSelectedSubcategory(ALL_SUBCATEGORIES);
   }
