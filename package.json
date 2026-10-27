@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "check:assets": "node scripts/check-assets.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "verify": "npm run typecheck && npm run lint && npm run check:i18n && npm run check:assets && npm run build"
+  },
+  "engines": {
+    "node": ">=20.9"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

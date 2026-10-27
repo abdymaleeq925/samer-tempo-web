@@ -2,12 +2,21 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import ProductDetail from '@/components/categories/product-detail';
-import type { Locale } from '@/config/locales';
-import { MOCK_PRODUCTS } from '@/data/mock-catalog';
+import { ProductBreadcrumbs } from '@/components/header/product-breadcrumbs';
+import { locales, type Locale } from '@/config/locales';
+import { MOCK_CATEGORIES, MOCK_PRODUCTS } from '@/data/mock-catalog';
+import { getDictionary } from '@/lib/get-dictionary';
+import { toCardData } from '@/lib/product-card-data';
 import { getLanguageAlternates } from '@/lib/utils';
 
 interface PageProps {
   params: Promise<{ lang: Locale; slug: string }>;
+}
+
+export function generateStaticParams() {
+  return locales.flatMap((lang) =>
+    MOCK_PRODUCTS.map((p) => ({ lang, slug: p.slug })),
+  );
 }
 
 export async function generateMetadata({
@@ -39,9 +48,13 @@ export default async function Page({ params }: PageProps) {
 
   if (!product) notFound();
 
-  const relatedProducts = MOCK_PRODUCTS.filter(
+  const dict = await getDictionary(lang);
+  const category = MOCK_CATEGORIES.find((c) => c.id === product.categoryId);
+  const relatedCards = MOCK_PRODUCTS.filter(
     (p) => p.categoryId === product.categoryId && p.id !== product.id,
-  ).slice(0, 4);
+  )
+    .slice(0, 8)
+    .map((p) => toCardData(p, lang, dict));
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -63,7 +76,18 @@ export default async function Page({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProductDetail product={product} relatedProducts={relatedProducts} />
+      <ProductBreadcrumbs
+        lang={lang}
+        homeLabel={dict.navigation.home}
+        categoryLabel={category?.title[lang]}
+        categoryHref={
+          category
+            ? `/${lang}/categories/${category.id.replace(/^cat-/, '')}`
+            : undefined
+        }
+        productTitle={product.title[lang]}
+      />
+      <ProductDetail product={product} relatedCards={relatedCards} />
     </>
   );
 }

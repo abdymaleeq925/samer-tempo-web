@@ -1,46 +1,40 @@
-'use client';
-
 import { View } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-import { useLang } from '@/context/lang-context';
-import { Product } from '@/data/mock-catalog';
+import type { ProductCardData } from '@/lib/product-card-data';
 
 interface ProductCardProps {
-  product: Product;
+  card: ProductCardData;
+  lang: string;
+  labels: { oem: string; viewDetails: string };
 }
 
-export function ProductCard({ product }: ProductCardProps) {
-  const { dict, lang } = useLang();
-  const displayedOems = product.oemNumbers?.slice(0, 2) || [];
-  const hasMoreOems = (product.oemNumbers?.length || 0) > 2;
-  const productImg = product.images?.[0] || '/products/placeholder.png';
+export function ProductCard({ card, lang, labels }: ProductCardProps) {
+  const href = `/${lang}/product/${card.slug}`;
 
   return (
     <div className="group flex flex-col h-full rounded-xl border border-border-subtle p-4 transition-all duration-300 hover:scale-99 hover:shadow-xl">
-      <Link
-        href={`/${lang}/product/${product.slug}`}
-        className="block group/image"
-      >
+      <Link href={href} prefetch={false} className="block group/image">
         <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-4 border border-border-strong">
           <Image
-            src={productImg}
-            alt={product.title[lang]}
+            src={card.image}
+            alt={card.title}
             fill
             className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           />
-          <span className="absolute top-2.5 left-2.5 rounded-md bg-ink/80 backdrop-blur-md px-2 py-1 text-xs font-caption font-semibold text-brand border border-white/10">
-            {product.smrCode}
+          <span className="absolute top-2.5 left-2.5 rounded-md bg-ink/80 backdrop-blur-md px-2 py-1 text-xs font-caption font-semibold text-brand-text border border-white/10">
+            {card.smrCode}
           </span>
         </div>
       </Link>
-      {displayedOems.length > 0 && (
+
+      {card.oems.length > 0 && (
         <div className="mb-2 flex h-12 flex-wrap items-start xl:items-center gap-1 overflow-hidden text-sm">
-          <span className="font-caption">{dict.common.oemNumber}:</span>
-          {displayedOems.map((oem) => (
+          <span className="font-caption">{labels.oem}:</span>
+          {card.oems.map((oem) => (
             <span
               key={oem}
               className="px-1 rounded border border-border-strong"
@@ -48,44 +42,43 @@ export function ProductCard({ product }: ProductCardProps) {
               {oem}
             </span>
           ))}
-          {hasMoreOems && <span>+{product.oemNumbers!.length - 2}</span>}
+          {card.oemMore > 0 && <span>+{card.oemMore}</span>}
         </div>
       )}
+
       <div className="h-14 mb-3 flex items-start">
         <Link
-          href={`/${lang}/product/${product.slug}`}
+          href={href}
+          prefetch={false}
           className="hover:text-brand transition-colors"
         >
-          <span className="text-xs text-brand font-caption uppercase tracking-wide mb-1 block">
-            {dict.navigation.category.subcategories?.[product.subcategoryId] ??
-              product.subcategoryId}
+          <span className="text-xs text-brand-text font-caption uppercase tracking-wide mb-1 block">
+            {card.subcategory}
           </span>
-          <h3 className="text-base font-semibold line-clamp-2 leading-snug">
-            {product.title[lang]}
-          </h3>
+          <h2 className="text-base font-semibold line-clamp-2 leading-snug">
+            {card.title}
+          </h2>
         </Link>
       </div>
-      {product.specs && product.specs.length > 0 && (
+
+      {card.specs.length > 0 && (
         <div className="mb-4 space-y-1.5 border-t border-border-strong pt-3">
-          {product.specs.map((spec, index) => {
-            return (
-              <div
-                key={index}
-                className="grid grid-cols-2 gap-2 text-sm items-start"
-              >
-                <span className="font-caption wrap-break-word leading-tight">
-                  {spec.label[lang]}:
-                </span>
-                <span className="font-medium text-right wrap-break-word leading-tight">
-                  {typeof spec.value === 'string'
-                    ? spec.value
-                    : spec.value[lang]}
-                </span>
-              </div>
-            );
-          })}
+          {card.specs.map((spec, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-2 gap-2 text-sm items-start"
+            >
+              <span className="font-caption wrap-break-word leading-tight">
+                {spec.label}:
+              </span>
+              <span className="font-medium text-right wrap-break-word leading-tight">
+                {spec.value}
+              </span>
+            </div>
+          ))}
         </div>
       )}
+
       <div className="mt-auto pt-3 border-t border-border-strong">
         <Button
           nativeButton={false}
@@ -93,11 +86,12 @@ export function ProductCard({ product }: ProductCardProps) {
           className="w-full border-border-strong bg-transparent font-medium text-base transition-colors"
           render={
             <Link
-              href={`/${lang}/product/${product.slug}`}
+              href={href}
+              prefetch={false}
               className="inline-flex items-center justify-center gap-2"
             >
               <View className="w-3.5 h-3.5" />
-              {dict.common.viewDetails}
+              {labels.viewDetails}
             </Link>
           }
         />

@@ -5,105 +5,89 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
+import { ProductCard } from '@/components/categories/product-card';
+
 import { useLang } from '@/context/lang-context';
-import { Product } from '@/data/mock-catalog';
-import { ProductCard } from '../categories/product-card';
+import type { Product } from '@/data/mock-catalog';
+import type { ProductCardData } from '@/lib/product-card-data';
 
 interface ProductDetailProps {
   product: Product;
-  relatedProducts: Product[];
+  relatedCards: ProductCardData[];
+}
+
+// Превращает ссылку YouTube в embed-ссылку. Если ссылки нет или она неверная, вернёт null.
+function getEmbedVideoUrl(url?: string) {
+  if (!url) return null;
+  const regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11
+    ? `https://www.youtube-nocookie.com/embed/${match[2]}?autoplay=1`
+    : null;
 }
 
 export default function ProductDetail({
   product,
-  relatedProducts,
+  relatedCards,
 }: ProductDetailProps) {
   const { dict, lang } = useLang();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-
-  const [zoomPos, setZoomPos] = useState({ x: 0, y: 0, show: false });
   const [videoIsShown, setVideoIsShown] = useState(false);
-  const imgContainerRef = useRef<HTMLDivElement>(null);
-
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const zoomRef = useRef<HTMLDivElement>(null);
 
-  const images =
-    product.images?.length > 0 ? product.images : ['/products/placeholder.png'];
+  const images = product.images?.length
+    ? product.images
+    : ['/products/placeholder.png'];
+  const mainImage = images[selectedImageIndex] ?? images[0];
 
   const mainImageAlt = (dict.product?.imageAlt ?? '{title} — photo {index}')
     .replace('{title}', product.title[lang])
     .replace('{index}', String(selectedImageIndex + 1));
 
-  // Pointer position calculation for loop
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!imgContainerRef.current) return;
-    const { left, top, width, height } =
-      imgContainerRef.current.getBoundingClientRect();
-    const x = ((e.clientX - left) / width) * 100;
-    const y = ((e.clientY - top) / height) * 100;
-    setZoomPos({ x, y, show: true });
-  };
+  const embedUrl = getEmbedVideoUrl(product.videoUrl);
 
-  // Converting YouTube URL to Embed URL
-  const getEmbedVidoeUrl = (url?: string) => {
-    if (!url) return null;
-    const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    const match = url.match(regExp);
-    return match && match[2].length === 11
-      ? `https://www.youtube-nocookie.com/embed/${match[2]}?autoplay=1`
-      : null;
+  // Зум: двигаем точку, вокруг которой увеличивается картинка
+  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    if (zoomRef.current) {
+      zoomRef.current.style.transformOrigin = `${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`;
+    }
   };
-
-  const embedUrl = getEmbedVidoeUrl(product.videoUrl);
 
   return (
-    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 ">
+    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       {/* MAIN PRODUCT GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         {/* GALLERY (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
           <div
-            ref={imgContainerRef}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => setZoomPos((prev) => ({ ...prev, show: true }))}
-            onMouseLeave={() =>
-              setZoomPos((prev) => ({ ...prev, show: false }))
-            }
-            className="relative aspect-square w-full rounded-2xl border border-border-strong overflow-hidden bg-surface cursor-crosshair group"
+            className="group relative aspect-square overflow-hidden rounded-xl border border-border-subtle bg-surface lg:cursor-zoom-in"
+            onMouseMove={onMove}
           >
-            <Image
-              src={images[selectedImageIndex] || images[0]}
-              alt={mainImageAlt}
-              fill
-              className="object-contain p-6 transition-all duration-300"
-              priority
-            />
+            <div
+              ref={zoomRef}
+              className="absolute inset-0 transition-transform duration-200 ease-out lg:group-hover:scale-[2.2]"
+            >
+              <Image
+                src={mainImage}
+                alt={mainImageAlt}
+                fill
+                sizes="(min-width:1024px) 40vw, 100vw"
+                className="object-contain p-6"
+                quality={55}
+                preload
+                loading="eager"
+                fetchPriority="high"
+              />
+            </div>
 
-            {/* Loop hint */}
-            <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5 opacity-80 group-hover:opacity-0 transition-opacity pointer-events-none">
+            {/* Подсказка про зум */}
+            <div className="absolute top-3 right-3 z-10 bg-black/70 text-white text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5 opacity-80 group-hover:opacity-0 transition-opacity pointer-events-none">
               <ZoomIn className="w-3.5 h-3.5 text-brand" />
               <span>{dict.product?.hoverToZoom ?? 'Hover to zoom'}</span>
             </div>
-
-            {/* Hoisting loop container */}
-            {zoomPos.show && (
-              <div
-                className="absolute inset-0 z-20 pointer-events-none bg-surface bg-no-repeat rounded-2xl"
-                style={{
-                  backgroundImage: `url(${images[selectedImageIndex] || images[0]})`,
-                  backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`,
-                  backgroundSize: '250%',
-                }}
-              />
-            )}
           </div>
 
           {/* Thumbnails */}
@@ -130,6 +114,7 @@ export default function ProductDetail({
                       src={img}
                       alt=""
                       fill
+                      sizes="80px"
                       className="object-contain p-2"
                     />
                   </button>
@@ -148,7 +133,8 @@ export default function ProductDetail({
               </span>
               <span className="text-sm font-caption">
                 {dict.navigation.category.subcategories?.[
-                  product.subcategoryId
+                  (product.subcategoryId as keyof typeof dict.navigation.category.subcategories) ??
+                    ''
                 ] ?? product.subcategoryId}
               </span>
               <h1 className="text-2xl sm:text-3xl font-bold text-ink leading-tight">
@@ -198,49 +184,56 @@ export default function ProductDetail({
                 </dl>
               </div>
             </div>
-            <div className="pt-4 border-t border-border-subtle space-y-3">
-              <button
-                className="text-lg font-bold flex items-center gap-2 cursor-pointer hover:-translate-y-1 transition-all"
-                onClick={() => setVideoIsShown(!videoIsShown)}
-              >
-                <Play
-                  className={`w-5 h-5 text-brand fill-current ${videoIsShown && 'rotate-90'}`}
-                />
-                {dict.product?.videoTab ?? 'Video Review'}
-              </button>
-              {embedUrl && videoIsShown && (
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-ink border border-border-subtle">
-                  {isVideoLoaded ? (
-                    <iframe
-                      src={embedUrl}
-                      title={`${product.title[lang]} - Video Review`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full border-0"
-                    />
-                  ) : (
-                    <button
-                      onClick={() => setIsVideoLoaded(true)}
-                      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-ink hover:bg-surface-sunken text-white transition-colors group cursor-pointer"
-                    >
-                      <div className="w-16 h-16 rounded-full bg-brand text-ink flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
-                        <Play className="w-8 h-8 fill-current translate-x-0.5" />
-                      </div>
-                      <span className="text-sm font-semibold text-zinc-300">
-                        {dict.product?.clickToPlayVideo ??
-                          'Click to watch video overview'}
-                      </span>
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
+
+            {/* ВИДЕО: весь блок показываем только если есть рабочая ссылка */}
+            {embedUrl && (
+              <div className="pt-4 border-t border-border-subtle space-y-3">
+                <button
+                  className="text-lg font-bold flex items-center gap-2 cursor-pointer hover:-translate-y-1 transition-all"
+                  onClick={() => setVideoIsShown(!videoIsShown)}
+                  aria-expanded={videoIsShown}
+                >
+                  <Play
+                    className={`w-5 h-5 text-brand fill-current ${
+                      videoIsShown ? 'rotate-90' : ''
+                    }`}
+                  />
+                  {dict.product?.videoTab ?? 'Video Review'}
+                </button>
+                {videoIsShown && (
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-ink border border-border-subtle">
+                    {isVideoLoaded ? (
+                      <iframe
+                        src={embedUrl}
+                        title={`${product.title[lang]} - Video Review`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full border-0"
+                      />
+                    ) : (
+                      <button
+                        onClick={() => setIsVideoLoaded(true)}
+                        className="w-full h-full flex flex-col items-center justify-center gap-3 bg-ink hover:bg-surface-sunken text-white transition-colors group cursor-pointer"
+                      >
+                        <div className="w-16 h-16 rounded-full bg-brand text-ink flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                          <Play className="w-8 h-8 fill-current translate-x-0.5" />
+                        </div>
+                        <span className="text-sm font-semibold text-zinc-300">
+                          {dict.product?.clickToPlayVideo ??
+                            'Click to watch video overview'}
+                        </span>
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
 
       {/* SIMILAR PRODUCTS */}
-      {relatedProducts && relatedProducts.length > 0 && (
+      {relatedCards.length > 0 && (
         <div className="mt-16 pt-12 border-t border-border-subtle">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-ink">
@@ -253,29 +246,24 @@ export default function ProductDetail({
               {dict.product.viewAll} <ChevronRight />
             </Link>
           </div>
-          <Carousel
-            opts={{
-              align: 'start',
-              loop: false,
-            }}
-            className="w-full"
-            aria-label={
-              dict.common.productsCarouselLabel ?? 'Products carousel'
-            }
+          <ul
+            tabIndex={0}
+            aria-label={dict.common.productsCarouselLabel ?? 'Products'}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-none"
           >
-            <CarouselContent className="-ml-4">
-              {relatedProducts.map((product) => (
-                <CarouselItem
-                  key={product.id}
-                  className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/6"
-                >
-                  <ProductCard product={product} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden sm:flex -left-4 lg:-left-6" />
-            <CarouselNext className="hidden sm:flex -right-4 lg:-right-6" />
-          </Carousel>
+            {relatedCards.map((card) => (
+              <li key={card.id} className="snap-start shrink-0 w-64 sm:w-72">
+                <ProductCard
+                  card={card}
+                  lang={lang}
+                  labels={{
+                    oem: dict.common.oemNumber,
+                    viewDetails: dict.common.viewDetails,
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

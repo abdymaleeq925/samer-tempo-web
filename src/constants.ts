@@ -20,7 +20,7 @@ export type NavKey =
   | 'categories'
   | 'about'
   | 'contacts';
-export type CatKey = 'cables' | 'couplings' | 'tankCaps' | 'repairKits';
+export type CatKey = 'cables' | 'couplings' | 'tankCaps' | 'hubCaps';
 export type CatalogueId =
   | 'steelCables'
   | 'newProducts2026'
@@ -28,7 +28,7 @@ export type CatalogueId =
   | 'air'
   | 'cables'
   | 'fullCatalogue'
-  | 'repairKits'
+  | 'hubCaps'
   | 'tankCaps';
 
 export interface SubNavItem {
@@ -81,17 +81,11 @@ export const SUBCATEGORIES = [
 
   // cat-tankCaps
   { id: 'subcat-fuel-cap', categoryKey: 'tankCaps' },
+  { id: 'subcat-adblue-fuel-cap', categoryKey: 'tankCaps' },
   { id: 'subcat-radiator-cap', categoryKey: 'tankCaps' },
+  { id: 'subcat-accessories', categoryKey: 'tankCaps' },
   { id: 'subcat-anti-theft', categoryKey: 'tankCaps' },
   { id: 'subcat-anti-theft-lock', categoryKey: 'tankCaps' },
-
-  // cat-repairKits
-  { id: 'subcat-camshaft-kit', categoryKey: 'repairKits' },
-  { id: 'subcat-brake-shoe-kit', categoryKey: 'repairKits' },
-  { id: 'subcat-hub-cap', categoryKey: 'repairKits' },
-  { id: 'subcat-axle-lock-nut', categoryKey: 'repairKits' },
-  { id: 'subcat-bush-bearing', categoryKey: 'repairKits' },
-  { id: 'subcat-door-lock', categoryKey: 'repairKits' },
 ] as const satisfies readonly SubCatMeta[];
 
 export type SubcategoryId = (typeof SUBCATEGORIES)[number]['id'];
@@ -107,25 +101,25 @@ export const NAV_LINKS = [
       {
         key: 'cables',
         href: '/categories/cables',
-        image: '/products/s182-245pur.jpg',
+        image: '/products/cables/R030-190PM.jpg',
         icon: Cable,
       },
       {
         key: 'couplings',
         href: '/categories/couplings',
-        image: '/products/s010-01.jpg',
+        image: '/products/couplings/S010-01.jpg',
         icon: Disc,
       },
       {
         key: 'tankCaps',
         href: '/categories/tank-caps',
-        image: '/products/s280-02.jpg',
+        image: '/products/tank-caps/S280-02.jpg',
         icon: ShieldCheck,
       },
       {
-        key: 'repairKits',
-        href: '/categories/repair-kits',
-        image: '/products/tmp1852.jpg',
+        key: 'hubCaps',
+        href: '/categories/hub-caps',
+        image: '/products/hub-caps/TMP9652.jpg',
         icon: Wrench,
       },
     ],
@@ -135,32 +129,21 @@ export const NAV_LINKS = [
 ] as const satisfies readonly NavItem[];
 
 export const PRODUCT_IMAGES = [
-  '/products/r010-02.jpg',
-  '/products/r010-04.jpg',
-  '/products/r020-01a.jpg',
-  '/products/r030-101.jpg',
-  '/products/r030-130.jpg',
-  '/products/r030-172.jpg',
-  '/products/s010-01.jpg',
-  '/products/s010-02.jpg',
-  '/products/s060-01.jpg',
-  '/products/s130-01.jpg',
-  '/products/s130-02.jpg',
-  '/products/s140.jpg',
-  '/products/s182-245pur.jpg',
-  '/products/s185-111pur.jpg',
-  '/products/s186-115.jpg',
-  '/products/s270.jpg',
-  '/products/s277.jpg',
-  '/products/s280-02.jpg',
-  '/products/s280-10.jpg',
-  '/products/s280-11.jpg',
-  '/products/s280-15z.jpg',
-  '/products/s280-17.jpg',
-  '/products/s280-18.jpg',
-  '/products/tmp1852.jpg',
-  '/products/tmp5772.jpg',
-  '/products/tmp9978.jpg',
+  '/products/cables/R010-01.jpg',
+  '/products/cables/R010-03.jpg',
+  '/products/cables/R020-01A.jpg',
+  '/products/cables/R030-103.jpg',
+  '/products/cables/R030-170.jpg',
+  '/products/cables/R030-180.jpg',
+  '/products/couplings/S010-01.jpg',
+  '/products/couplings/S010-02.jpg',
+  '/products/couplings/S090-01.jpg',
+  '/products/couplings/S130-01.jpg',
+  '/products/couplings/S130-02.jpg',
+  '/products/couplings/S140.jpg',
+  '/products/hub-caps/TMP1852.jpg',
+  '/products/hub-caps/TMP5772.jpg',
+  '/products/hub-caps/TMP9978.jpg',
 ] as const;
 
 export const SHOWCASE_CATEGORY_DATA: Partial<
@@ -169,41 +152,40 @@ export const SHOWCASE_CATEGORY_DATA: Partial<
   cables: {
     icon: Cable,
     imageSrc: [
-      '/products/s182-245pur.jpg',
-      '/products/r030-172.jpg',
-      '/products/s186-115.jpg',
-      '/products/r030-130.jpg',
+      '/products/cables/R030-190PM.jpg',
+      '/products/cables/R030-170.jpg',
+      '/products/cables/S070-01.jpg',
+      '/products/cables/S080-02.jpg',
     ],
     href: '/categories/cables',
   },
   couplings: {
     icon: Disc,
     imageSrc: [
-      '/products/s010-01.jpg',
-      '/products/s060-01.jpg',
-      '/products/s130-01.jpg',
-      '/products/s140.jpg',
+      '/products/couplings/S010-01.jpg',
+      '/products/couplings/S020-05.jpg',
+      '/products/couplings/S130-01.jpg',
+      '/products/couplings/S140.jpg',
     ],
     href: '/categories/couplings',
   },
   tankCaps: {
     icon: ShieldCheck,
     imageSrc: [
-      '/products/s280-02.jpg',
-      '/products/s280-10.jpg',
-      '/products/s270.jpg',
-      '/products/s277.jpg',
+      '/products/tank-caps/S280-02.jpg',
+      '/products/tank-caps/S280-10.jpg',
+      '/products/tank-caps/S270.jpg',
+      '/products/tank-caps/S277.jpg',
     ],
     href: '/categories/tank-caps',
   },
-  repairKits: {
+  hubCaps: {
     icon: Wrench,
     imageSrc: [
-      '/products/tmp1852.jpg',
-      '/products/tmp5772.jpg',
-      '/products/tmp9978.jpg',
+      '/products/hub-caps/TMP9652.jpg',
+      '/products/hub-caps/TMP9650.jpg',
     ],
-    href: '/categories/repair-kits',
+    href: '/categories/hub-caps',
   },
 } as const;
 
@@ -239,7 +221,7 @@ export const CATALOGUES_DATA: CatalogItem[] = [
     pdfUrl: '/pdf/SMR-Catalogue.pdf',
   },
   {
-    id: 'repairKits',
+    id: 'hubCaps',
     fileSize: '7.5 MB',
     pdfUrl: '/pdf/SMR-RepairSet-2018.pdf',
   },

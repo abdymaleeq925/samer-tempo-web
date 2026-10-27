@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import Link from 'next/link';
 
 import {
   Breadcrumb,
@@ -12,24 +13,20 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { useLang } from '@/context/lang-context';
-import { MOCK_PRODUCTS } from '@/data/mock-catalog';
 
 export function AppBreadcrumbs() {
   const pathname = usePathname();
   const { lang, dict } = useLang();
   const n = dict.navigation;
 
-  if (pathname === '/' || pathname === `/${lang}`) return null;
-
+  const isHome = pathname === '/' || pathname === `/${lang}`;
   const rawSegments = pathname.split('/').filter(Boolean);
   const VIRTUAL_SEGMENTS = new Set(['products', 'product', 'categories']);
 
   const displaySegments =
     rawSegments[0] === lang ? rawSegments.slice(1) : rawSegments;
-  const lastSegment = displaySegments[displaySegments.length - 1];
-  const currentProduct = MOCK_PRODUCTS.find(
-    (p) => p.slug === lastSegment || p.id === lastSegment,
-  );
+
+  if (isHome || displaySegments[0] === 'product') return null;
 
   function resolveLabel(segment: string): string {
     const navValue = n[segment as keyof typeof n];
@@ -46,7 +43,9 @@ export function AppBreadcrumbs() {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem className="font-heading font-medium text-lg md:text-2xl">
-            <BreadcrumbLink href={`/${lang}`}>{n.home}</BreadcrumbLink>
+            <BreadcrumbLink render={<Link href={`/${lang}`} />}>
+              {n.home}
+            </BreadcrumbLink>
           </BreadcrumbItem>
           {displaySegments.map((segment, index) => {
             const isLast = index === displaySegments.length - 1;
@@ -60,14 +59,12 @@ export function AppBreadcrumbs() {
               <React.Fragment key={href}>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem className="font-heading font-medium text-lg md:text-2xl">
-                  {isLast && currentProduct ? (
-                    <BreadcrumbPage>
-                      {currentProduct.title[lang]}
-                    </BreadcrumbPage>
-                  ) : isLast || isNonClickable ? (
+                  {isLast || isNonClickable ? (
                     <BreadcrumbPage>{label}</BreadcrumbPage>
                   ) : (
-                    <BreadcrumbLink href={href}>{label}</BreadcrumbLink>
+                    <BreadcrumbLink render={<Link href={href} />}>
+                      {label}
+                    </BreadcrumbLink>
                   )}
                 </BreadcrumbItem>
               </React.Fragment>

@@ -11,8 +11,8 @@ import Header from '@/components/header/header';
 import LenisProvider from '@/providers/lenis-provider';
 
 import { AppBreadcrumbs } from '@/components/header/breadcrumbs';
-import { Toaster } from '@/components/ui/sonner';
 import { LangProvider } from '@/context/lang-context';
+import MotionProvider from '@/providers/motion-provider';
 import './globals.css';
 
 const getCachedDictionary = cache(getDictionary);
@@ -20,19 +20,20 @@ const getCachedDictionary = cache(getDictionary);
 const commissioner = Commissioner({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   variable: '--font-commissioner',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  preload: false,
 });
 
 const mulish = Mulish({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   variable: '--font-mulish',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  preload: false,
 });
 
 const ptSansCaption = PT_Sans_Caption({
   subsets: ['latin', 'latin-ext', 'cyrillic'],
   weight: ['400', '700'],
   variable: '--font-pt-caption',
+  preload: false,
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://samer.com.tr';
@@ -88,13 +89,14 @@ export default async function RootLayout({ children, params }: Props) {
         className={`${commissioner.variable} ${mulish.variable} ${ptSansCaption.variable} font-sans min-h-full flex flex-col`}
       >
         <LenisProvider>
-          <LangProvider lang={lang} dict={dict}>
-            <Header />
-            <AppBreadcrumbs />
-            <main className="flex-1"> {children} </main>
-            <Toaster />
-            <Footer />
-          </LangProvider>
+          <MotionProvider>
+            <LangProvider lang={lang} dict={dict}>
+              <Header />
+              <AppBreadcrumbs />
+              <main className="flex-1"> {children} </main>
+              <Footer lang={lang} dict={dict} />
+            </LangProvider>
+          </MotionProvider>
         </LenisProvider>
       </body>
     </html>

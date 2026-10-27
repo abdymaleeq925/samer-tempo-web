@@ -35,7 +35,7 @@ export function Catalog() {
                       PDF • {item.fileSize}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold">{catalogTitle}</h3>
+                  <h2 className="text-lg font-semibold">{catalogTitle}</h2>
                 </div>
                 <div className="flex items-center gap-3 pt-4 border-t border-border-strong">
                   <Button

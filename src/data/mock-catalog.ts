@@ -20,11 +20,10 @@ export interface Product {
   slug: string;
   smrCode: string;
   oemNumbers?: string[];
-  crossReferences: string[];
-  subcategoryId: SubcategoryId;
+  subcategoryId?: SubcategoryId;
   categoryId: string;
   title: LocalizedText;
-  description: LocalizedText;
+  description?: LocalizedText;
   images: string[];
   videoUrl?: string;
   specs: {
@@ -69,7 +68,7 @@ Als SMR fertigen wir LKW-Elektrokabel neben den Standard-Arbeitslängen auch nac
 
 Unsere ABS/EBS-Stecker der 7-poligen, 15-poligen und Adapter-Klasse mit ADR/GGVS- und IP54-Zertifizierung bieten weltweiten Schutz gegen alle Betriebsbedingungen.`,
     },
-    image: '/products/s185-111pur.jpg',
+    image: '/products/cables/R030-190PM.jpg',
   },
   {
     id: 'cat-couplings',
@@ -114,7 +113,7 @@ Die Ventilfamilie der SMR-Pneumatikgruppe besteht aus LKW-Schnellentlüftungsven
 Fast alle in verschiedenen Größen hergestellten Ventile und Zylinder werden in europäische Länder exportiert.
 SMR-Luftschläuche, Kabinenschläuche und Reifenfüllschläuche werden aus PUR (TPU)-Material hergestellt. Diese auf Wunschlänge zuschneidbaren Produkte zeichnen sich durch hohe Beständigkeit aus.`,
     },
-    image: '/products/s010-02.jpg',
+    image: '/products/couplings/S010-02.jpg',
   },
   {
     id: 'cat-tank-caps',
@@ -139,599 +138,272 @@ Our tank anti-siphon necks and protective caps aim to ensure our customers opera
 AdBlue-kompatible DEF-Tankdeckel werden in den Universalgrößen 40 mm und 60 mm mit und ohne Schloss für alle Fahrzeugmarken angeboten.
 Unsere Tankschutzstutzen und -abdeckungen bieten hochwirksame Lösungen gegen Kraftstoffdiebstahl. Gelochte Einfüllstutzen verhindern das Absaugen von Kraftstoff vollständig, während unsere Tankschutzabdeckungen den Tankdeckel komplett sichern.`,
     },
-    image: '/products/s280-10.jpg',
+    image: '/products/tank-caps/S280-10.jpg',
   },
   {
-    id: 'cat-repair-kits',
-    slug: 'repair-kits',
+    id: 'cat-hub-caps',
+    slug: 'hub-caps',
     title: {
-      en: 'Truck & Trailer Repair Kits',
-      tr: 'Kamyon ve Treyler Tamir Takımları',
-      ru: 'Ремкомплекты для грузовиков и прицепов',
-      de: 'LKW & Anhänger Reparatursätze',
+      en: 'Hub Caps',
+      tr: 'Porya Kapakları',
+      ru: 'Колпаки ступиц',
+      de: 'Radnabenkappen',
     },
     description: {
-      tr: `SMR tamir takımları ağırlıklı olarak dingil tamir takımlarından oluşmaktadır. BPW, SAF, Gigant-SAE, ROR, Fruehauf-SMB ve Trailor dingil tamir takımları üretimimiz dahilindedir.
-
-Fren pabuç yayları, fren pabucu kilitleme somunları, toz kapak sacları da bu ürün grubumuzun içinde yer almaktadır. Tamamı kendi imalatımız olan dingil tamir takımları ürün grubu S-kam mili bakımı için imal edilmektedir. Çeşitli özel ebatlarda Pirinç burçlar da imalatını yaptığımız ürünler arasındadır.
-Ayrıca yüksek tonajlı TIR’lar için gerek pres, gerekse alüminyum porya kapakları üretimi de mevcuttur.
-
-Tamir takımı grubumuza dahil ettiğimiz bir diğer ürün ailesi de “Gece Kilidi” (Night Lock) olarak adlandırdığımız Tır kapı iç kilit menteşeleridir. Bu kilitler sayesinde TIR şoförlerinin dinlenme esnasında dışarıdan gelebilecek kapı zorlamalarına karşı ekstra güven sağlanmaktadır.`,
-      en: `SMR repair kits mainly consist of axle repair kits. Our production includes repair kits for BPW, SAF, Gigant-SAE, ROR, Fruehauf-SMB, and Trailor axles.
-
-Brake shoe springs, brake shoe lock nuts, and dust shields are also included in this product group. All axle repair kits of our own manufacture are designed for S-camshaft maintenance. Brass bushings in various custom dimensions are also among the products we manufacture.
-Furthermore, both pressed steel and aluminum hub caps are produced for heavy-duty commercial vehicles.
-
-Another product family included in our repair kit category is the internal cab door lock hinges, referred to as "Night Lock". These locks provide extra security for truck drivers against external door intrusion during rest periods.`,
-      ru: `Ремкомплекты SMR преимущественно состоят из комплектов для ремонта осей коммерческой техники. В наше производство входят ремкомплекты для осей BPW, SAF, Gigant-SAE, ROR, Fruehauf-SMB и Trailor.
-
-В эту группу товаров также входят пружины тормозных колодок, стопорные гайки тормозных колодок и пылезащитные щиты. Все ремкомплекты осей собственного производства предназначены для обслуживания разжимных валов (S-cam). Кроме того, мы изготавливаем латунные втулки различных специальных размеров.
-Для тяжеловозных грузовиков также налажен выпуск как штампованных (прессованных), так и алюминиевых крышек ступиц.
-
-Еще одно семейство продуктов в нашей группе ремкомплектов — это внутренние дверные фиксаторы кабины, называемые «Ночной замок» (Night Lock). Эти замки обеспечивают дополнительную безопасность водителей во время отдыха, предотвращая взлом дверей снаружи.`,
-      de: `SMR-Reparatursätze bestehen hauptsächlich aus Achsreparatursätzen. Unsere Produktion umfasst Reparatursätze für BPW-, SAF-, Gigant-SAE-, ROR-, Fruehauf-SMB- und Trailor-Achsen.
-
-Bremsschuhfedern, Bremsschuh-Sicherungsmuttern und Staubschutzbleche gehören ebenfalls zu dieser Produktgruppe. Alle selbst hergestellten Achsreparatursätze sind für die Wartung von S-Nockenwellen ausgelegt. Messingbuchsen in verschiedenen Sondergrößen gehören ebenfalls zu unseren Fertigungsprodukten.
-Darüber hinaus werden sowohl gepresste als auch Aluminium-Nabendeckel für schwerlastige LKW hergestellt.
-
-Eine weitere Produktfamilie in unserer Reparatursatzgruppe sind die als „Night Lock“ (Nachtschloss) bezeichneten LKW-Türinnenverriegelungen. Diese Schlösser bieten LKW-Fahrern während der Ruhezeiten zusätzlichen Schutz gegen gewaltsames Öffnen der Türen von außen.`,
+      en: 'Hub caps for truck and trailer axle hubs, available with external or internal thread. The range covers sizes from M115 to M230 and caps for SAF, ROR, SMB, FRUEHAUF and SAE GIGANT axles.',
+      tr: 'Çekici ve römork aks porya kapakları; dıştan veya içten dişli seçenekleriyle. Ürün yelpazesi M115 ile M230 arasındaki ölçüleri ve SAF, ROR, SMB, FRUEHAUF ile SAE GIGANT aksları için kapakları kapsar.',
+      ru: 'Колпаки ступиц осей грузовиков и прицепов с наружной или внутренней резьбой. В ассортименте размеры от M115 до M230 и колпаки для осей SAF, ROR, SMB, FRUEHAUF и SAE GIGANT.',
+      de: 'Radnabenkappen für Achsnaben von Lkw und Anhängern mit Außen- oder Innengewinde. Das Sortiment umfasst Größen von M115 bis M230 sowie Kappen für SAF-, ROR-, SMB-, FRUEHAUF- und SAE-GIGANT-Achsen.',
     },
-    image: '/products/tmp5772.jpg',
+    image: '/products/hub-caps/TMP5772.jpg',
   },
 ];
 
 export const MOCK_PRODUCTS: Product[] = [
-  // --- AIR COUPLINGS & VALVES ---
+  // ───────────── Air couplings / cylinders / handle sets / valves  (cat-couplings) ─────────────
   {
     id: 'prod-s010-01',
-    slug: 's010-01-standard-coupling-red-m16',
+    slug: 's010-01-standard-coupling-m16x1-5-red',
     smrCode: 'S010-01',
-    oemNumbers: ['452 200 021 0', '952 200 021 0', '000 429 763 0'],
-    crossReferences: ['WABCO 4522000210', 'KNORR K004212', 'DT 2.30210'],
     categoryId: 'cat-couplings',
     subcategoryId: 'subcat-coupling',
     title: {
-      en: 'Standard Red Air Coupling M16x1.5',
-      tr: 'STANDART KIRMIZI KAPLİN M16',
-      ru: 'Головка соединительная стандартная (Красная) M16x1.5',
-      de: 'Kupplungskopf Standard Rot M16x1.5',
+      en: 'Standard Air Coupling (Without Valve) M16x1.5 (Red)',
+      tr: 'Standart Kaplin (Sibopsuz) M16x1.5 (Kırmızı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M16x1.5 (Красный)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M16x1.5 (Rot)',
     },
     description: {
-      en: 'Standard emergency red palm coupling head with M16x1.5 connection for trailer brake lines.',
-      tr: 'Treyler fren hatları için M16x1,5 bağlantılı standart kırmızı imdat kaplin başlığı.',
-      ru: 'Стандартная пневматическая соединительная головка аварийной магистрали (красная) с резьбой M16x1.5.',
-      de: 'Standard-Kupplungskopf Rot für die Vorratsleitung des Anhängers mit M16x1.5 Gewinde.',
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; model (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) modeli Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; модель (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
     },
-    images: [
-      '/products/s010-01.jpg',
-      '/products/r030-101.jpg',
-      '/products/r030-130.jpg',
-    ],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
-        label: {
-          en: 'Thread Size',
-          tr: 'Diş Ölçüsü',
-          ru: 'Резьба',
-          de: 'Gewinde',
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Wabco',
+          tr: 'Wabco',
+          ru: 'Wabco',
+          de: 'Wabco',
         },
-        value: 'M16 x 1.5',
       },
       {
-        label: {
-          en: 'Color Code',
-          tr: 'Renk Kodu',
-          ru: 'Цветовая маркировка',
-          de: 'Farbcode',
-        },
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
         value: {
-          en: 'Red (Emergency)',
-          tr: 'Kırmızı (İmdat)',
-          ru: 'Красная (Аварийная)',
-          de: 'Rot (Vorratsleitung)',
+          en: 'M16x1.5',
+          tr: 'M16x1.5',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
         },
       },
       {
         label: {
-          en: 'Max Pressure',
-          tr: 'Maks. Basınç',
-          ru: 'Макс. давление',
-          de: 'Max. Druck',
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
         },
         value: {
-          en: '10 bar',
-          tr: '10 bar',
-          ru: '10 бар',
-          de: '10 bar',
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request;\ Optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre;\ Opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу;\ Опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage;\ Optional verchromte Ausführung',
         },
       },
     ],
+    images: ['/products/couplings/S010-01.jpg'],
+  },
+  {
+    id: 'prod-s010-01a',
+    slug: 's010-01a-standard-coupling-m16x1-5-red',
+    smrCode: 'S010-01A',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Standard Air Coupling (Without Valve) M16x1.5 (Red)',
+      tr: 'Standart Kaplin (Sibopsuz) M16x1.5 (Kırmızı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M16x1.5 (Красный)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M16x1.5 (Rot)',
+    },
+    description: {
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; model (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) modeli Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; модель (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
+    },
+    specs: [
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Haldex',
+          tr: 'Haldex',
+          ru: 'Haldex',
+          de: 'Haldex',
+        },
+      },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request;\ Optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre;\ Opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу;\ Опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage;\ Optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-01.jpg'],
   },
   {
     id: 'prod-s010-02',
-    slug: 's010-02-standard-coupling-yellow-m16',
+    slug: 's010-02-standard-coupling-m16x1-5-yellow',
     smrCode: 'S010-02',
-    oemNumbers: ['452 200 022 0', '952 200 022 0', '000 429 38 30'],
-    crossReferences: ['WABCO 4522000220', 'KNORR K004213', 'DT 2.30211'],
     categoryId: 'cat-couplings',
     subcategoryId: 'subcat-coupling',
     title: {
-      en: 'Standard Yellow Air Coupling M16x1.5',
-      tr: 'STANDART SARI KAPLİN M16',
-      ru: 'Головка соединительная стандартная (Желтая) M16x1.5',
-      de: 'Kupplungskopf Standard Gelb M16x1.5',
+      en: 'Standard Air Coupling (Without Valve) M16x1.5 (Yellow)',
+      tr: 'Standart Kaplin (Sibopsuz) M16x1.5 (Sarı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M16x1.5 (Жёлтый)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M16x1.5 (Gelb)',
     },
     description: {
-      en: 'Standard service yellow palm coupling head with M16x1.5 connection for trailer air brake lines.',
-      tr: 'Treyler hava fren hatları için M16x1,5 bağlantılı standart sarı servis kaplin başlığı.',
-      ru: 'Стандартная пневматическая соединительная головка рабочей магистрали (желтая) с резьбой M16x1.5.',
-      de: 'Standard-Kupplungskopf Gelb für die Bremsleitung des Anhängers mit M16x1.5 Gewinde.',
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; model (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) modeli Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; модель (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
     },
-    images: ['/products/s010-02.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
-        label: {
-          en: 'Thread Size',
-          tr: 'Diş Ölçüsü',
-          ru: 'Резьба',
-          de: 'Gewinde',
-        },
-        value: 'M16 x 1.5',
-      },
-      {
-        label: {
-          en: 'Color Code',
-          tr: 'Renk Kodu',
-          ru: 'Цветовая маркировка',
-          de: 'Farbcode',
-        },
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
         value: {
-          en: 'Yellow (Service)',
-          tr: 'Sarı (Servis)',
-          ru: 'Желтый (Голова)',
-          de: 'Gelb (Bremse)',
+          en: 'Wabco',
+          tr: 'Wabco',
+          ru: 'Wabco',
+          de: 'Wabco',
         },
       },
       {
-        label: {
-          en: 'Max Pressure',
-          tr: 'Maks. Basınç',
-          ru: 'Макс. давление',
-          de: 'Max. Druck',
-        },
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
         value: {
-          en: '10 bar',
-          tr: '10 bar',
-          ru: '10 бар',
-          de: '10 bar',
-        },
-      },
-    ],
-  },
-  {
-    id: 'prod-s060-01',
-    slug: 's060-01-short-valve-m12',
-    smrCode: 'S060-01',
-    oemNumbers: ['000 429 23 01', '463 013 110 0', '463 013 116 0'],
-    crossReferences: ['WABCO 4630131100', 'COJALI 2202100', 'DT 4.61200'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-valve',
-    title: {
-      en: '3/2 Short Air Valve M12x1.5 (46.9mm)',
-      tr: 'KISA VENTİL M12x1,5 46,9mm',
-      ru: 'Клапан пневматический короткий 3/2 M12x1.5 (46.9мм)',
-      de: '3/2 Kurzes Luftventil M12x1.5 (46.9mm)',
-    },
-    description: {
-      en: 'Compact 3/2-way pneumatic control valve with M12x1.5 ports and 46.9mm total body length.',
-      tr: 'M12x1,5 portlu ve 46,9 mm toplam gövde uzunluğuna sahip kompakt 3/2 yollu pnömatik yön kontrol ventili.',
-      ru: 'Компактный 3/2-ходовой пневматический управляющий клапан с резьбой M12x1.5 и длиной корпуса 46.9 мм.',
-      de: 'Kompaktes 3/2-Wege-Pneumatikventil mit M12x1.5 Anschlüssen und 46.9mm Gehäuselänge.',
-    },
-    images: ['/products/s060-01.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Port Thread',
-          tr: 'Bağlantı Ölçüsü',
-          ru: 'Резьба портов',
-          de: 'Anschlussgewinde',
-        },
-        value: 'M12 x 1.5',
-      },
-      {
-        label: {
-          en: 'Body Length',
-          tr: 'Gövde Boyu',
-          ru: 'Длина корпуса',
-          de: 'Gehäuselänge',
-        },
-        value: {
-          en: '46.9 mm',
-          tr: '46.9 mm',
-          ru: '46.9 мм',
-          de: '46.9 mm',
-        },
-      },
-      {
-        label: {
-          en: 'Valve Type',
-          tr: 'Ventil Tipi',
-          ru: 'Тип клапана',
-          de: 'Ventiltyp',
-        },
-        value: {
-          en: '3/2 Way Pneumatic',
-          tr: '3/2 Yollu Pnömatik',
-          ru: '3/2-ходовой пневматический',
-          de: '3/2-Wege Pneumatik',
-        },
-      },
-    ],
-  },
-  {
-    id: 'prod-s130-01',
-    slug: 's130-01-pneumatic-cylinder-m6',
-    smrCode: 'S130-01',
-    oemNumbers: ['000 429 01 02', '421 350 000 0', '131 452 0'],
-    crossReferences: ['WABCO 4213500000', 'DT 2.40101'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-cylinder',
-    title: {
-      en: 'Pneumatic Cylinder 24mm M6 Thread',
-      tr: 'SİLİNDİR 24mm M6',
-      ru: 'Цилиндр пневматический 24мм M6',
-      de: 'Pneumatikzylinder 24mm M6',
-    },
-    description: {
-      en: 'Compact 24mm stroke/piston pneumatic cylinder with M6 connection thread for truck auxiliary control systems.',
-      tr: 'Kamyon yardımcı kontrol sistemleri için M6 bağlantı dişli 24mm pistonlu kompakt pnömatik silindir.',
-      ru: 'Компактный пневматический цилиндр (поршень 24 мм) с присоединительной резьбой M6.',
-      de: 'Kompakter Pneumatikzylinder (24mm Kolben) mit M6 Anschlussgewinde für LKW-Steuerungssysteme.',
-    },
-    images: ['/products/s130-01.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Piston Diameter',
-          tr: 'Piston Çapı',
-          ru: 'Диаметр поршня',
-          de: 'Kolbendurchmesser',
-        },
-        value: '24 mm',
-      },
-      {
-        label: {
-          en: 'Rod Thread',
-          tr: 'Mil Dişi',
-          ru: 'Резьба штока',
-          de: 'Gewinde',
-        },
-        value: 'M6',
-      },
-    ],
-  },
-  {
-    id: 'prod-s130-02',
-    slug: 's130-02-pneumatic-cylinder-m8',
-    smrCode: 'S130-02',
-    oemNumbers: ['000 072 15 12', '000 072 18 12', '000 072 19 12'],
-    crossReferences: ['MERCEDES 0000721812', 'DT 4.61502'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-cylinder',
-    title: {
-      en: 'Pneumatic Cylinder 24mm M8 Thread',
-      tr: 'SİLİNDİR 24mm M8',
-      ru: 'Цилиндр пневматический 24мм M8',
-      de: 'Pneumatikzylinder 24mm M8',
-    },
-    description: {
-      en: 'Pneumatic cylinder with 24mm internal piston and M8 threaded rod for gearbox and engine brake actuators.',
-      tr: 'Şanzıman ve motor freni aktüatörleri için 24 mm iç pistonlu ve M8 dişli pnömatik silindir.',
-      ru: 'Пневмоцилиндр с поршнем 24 мм и шпилькой M8 для привода тормоза двигателем и КПП.',
-      de: 'Pneumatikzylinder mit 24mm Kolben und M8 Gewindestange für Getriebe- und Motorbremssteuerung.',
-    },
-    images: ['/products/s130-02.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Piston Diameter',
-          tr: 'Piston Çapı',
-          ru: 'Диаметр поршня',
-          de: 'Kolbendurchmesser',
-        },
-        value: '24 mm',
-      },
-      {
-        label: {
-          en: 'Rod Thread',
-          tr: 'Mil Dişi',
-          ru: 'Резьба штока',
-          de: 'Gewinde',
-        },
-        value: 'M8',
-      },
-    ],
-  },
-  {
-    id: 'prod-s140',
-    slug: 's140-brake-cylinder-28mm-m8',
-    smrCode: 'S140',
-    oemNumbers: ['000 430 79 26', '000 429 000 0', '000 430 49 26'],
-    crossReferences: ['KNORR II32100', 'DT 4.62001'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-cylinder',
-    title: {
-      en: 'Brake Actuator Cylinder 28mm M8',
-      tr: 'FREN SİLİNDİRİ 28mm M8',
-      ru: 'Тормозной цилиндр 28мм M8',
-      de: 'Bremszylinder 28mm M8',
-    },
-    description: {
-      en: 'Heavy-duty brake actuator cylinder featuring 28mm piston diameter and M8 mounting fittings.',
-      tr: '28 mm piston çapına ve M8 montaj bağlantılarına sahip ağır hizmet tipi fren silindiri.',
-      ru: 'Усиленный тормозной пневмоцилиндр с диаметром поршня 28 мм и резьбовым креплением M8.',
-      de: 'Robuster Bremszylinder mit 28mm Kolbendurchmesser und M8 Gewindeanschlüssen.',
-    },
-    images: [
-      '/products/s140.jpg',
-      '/products/r030-101.jpg',
-      '/products/r030-130.jpg',
-    ],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Piston Diameter',
-          tr: 'Piston Çapı',
-          ru: 'Диаметр поршня',
-          de: 'Kolbendurchmesser',
-        },
-        value: {
-          en: '28 mm',
-          tr: '28 mm',
-          ru: '28 мм',
-          de: '28 mm',
-        },
-      },
-      {
-        label: {
-          en: 'Mounting Thread',
-          tr: 'Bağlantı Dişi',
-          ru: 'Резьба крепления',
-          de: 'Befestigungsgewinde',
-        },
-        value: 'M8',
-      },
-    ],
-  },
-  {
-    id: 'prod-s182-245pur',
-    slug: 's182-245pur-air-hose-black-yellow-5m-m16',
-    smrCode: 'S182-245 PUR',
-    oemNumbers: ['000 429 41 85', '133 348 2', '81512106001'],
-    crossReferences: ['COJALI 2211010', 'DT 2.30100'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-air-hose',
-    title: {
-      en: 'Coiled Air Hose PUR Black/Yellow 5.0m M16',
-      tr: 'HAVA HORTUMU SİYAH/SARI 5,00m M16 PUR',
-      ru: 'Шланг пневматический витой ПУ Черно/Желтый 5м M16',
-      de: 'Druckluft-Wendelschlauch PUR Schwarz/Gelb 5.0m M16',
-    },
-    description: {
-      en: 'Polyurethane (PUR) spiral coiled air hose in black/yellow safety pattern. 5.0m max working length with M16 fittings.',
-      tr: 'Siyah/sarı güvenlik desenli poliüretan (PUR) spiral hava hortumu. M16 rekorlu, 5,0 m maks çalışma uzunluğu.',
-      ru: 'Полиуретановый (PUR) спиральный шланг с черно-желтой маркировкой. Рабочая длина 5.0м, резьба M16.',
-      de: 'Polyurethan (PUR) Wendelschlauch in Schwarz/Gelb. 5.0m max. Arbeitslänge mit M16 Anschlüssen.',
-    },
-    images: ['/products/s182-245pur.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Working Length',
-          tr: 'Çalışma Boyu',
-          ru: 'Рабочая длина',
-          de: 'Arbeitslänge',
-        },
-        value: {
-          en: '5 m',
-          tr: '5 m',
-          ru: '5 м',
-          de: '5 m',
-        },
-      },
-      {
-        label: {
-          en: 'Material',
-          tr: 'Malzeme',
-          ru: 'Материал',
-          de: 'Material',
-        },
-        value: 'Polyurethane (PUR)',
-      },
-      {
-        label: {
-          en: 'Thread Fitting',
-          tr: 'Rekor Ölçüsü',
-          ru: 'Фитинги',
-          de: 'Gewindeanschluss',
-        },
-        value: 'M16 x 1.5',
-      },
-    ],
-  },
-  {
-    id: 'prod-s185-111pur',
-    slug: 's185-111pur-cabin-cleaning-hose-actros-4m',
-    smrCode: 'S185-111 PUR',
-    oemNumbers: ['000 584 02 38', 'A0005840238'],
-    crossReferences: ['MERCEDES A0005840238', 'DT 4.80302'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-air-hose',
-    title: {
-      en: 'Cabin Air Cleaning Hose Kit PUR 4.0m for Mercedes Actros',
-      tr: 'PLASTİK TABANCALI KABİN TEMİZLEME HORTUMU PUR 4,00m ACTROS',
-      ru: 'Шланг продувочный для кабины с пистолетом ПУ 4.0м (Mercedes Actros)',
-      de: 'Kabinen-Reinigungsschlauch-Set PUR 4.0m für Actros',
-    },
-    description: {
-      en: 'Blue polyurethane spiralled hose kit complete with air blow gun for interior cabin cleaning in Mercedes-Benz Actros trucks.',
-      tr: 'Mercedes-Benz Actros kamyonlarda kabin içi temizlik için tasarlanmış, hava tabancalı mavi poliüretan spiral hortum seti.',
-      ru: 'Спиральный полиуретановый шланг синего цвета с пистолетом для обдува кабины грузовиков Mercedes-Benz Actros.',
-      de: 'Blauer PUR-Spiralen-Schlauch mit Blaspistole für die Kabinenreinigung in Mercedes-Benz Actros LKW.',
-    },
-    images: ['/products/s185-111pur.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Working Length',
-          tr: 'Çalışma Boyu',
-          ru: 'Рабочая длина',
-          de: 'Arbeitslänge',
-        },
-        value: {
-          en: '4 m',
-          tr: '4 m',
-          ru: '4 м',
-          de: '4 m',
-        },
-      },
-      {
-        label: {
-          en: 'Material',
-          tr: 'Malzeme',
-          ru: 'Материал',
-          de: 'Material',
-        },
-        value: 'Polyurethane (PUR)',
-      },
-      {
-        label: {
-          en: 'Application',
-          tr: 'Uygulama',
-          ru: 'Применяемость',
-          de: 'Anwendung',
-        },
-        value: 'Mercedes-Benz Actros / Axor / Antos',
-      },
-    ],
-  },
-  {
-    id: 'prod-s186-115',
-    slug: 's186-115-braided-tyre-inflation-hose-15m',
-    smrCode: 'S186-115',
-    oemNumbers: ['000 583 07 10', '81512206010', '133 348 5'],
-    crossReferences: ['DT 2.30120', 'COJALI 2211020'],
-    categoryId: 'cat-couplings',
-    subcategoryId: 'subcat-air-hose',
-    title: {
-      en: 'Braided Reinforced Tyre Inflation Hose 15m',
-      tr: 'LASTİK ŞİŞİRME HORTUMU İÇTEN ÖRGÜLÜ 15m',
-      ru: 'Шланг подкачки шин текстильно-армированный 15м',
-      de: 'Textilverstärkter Reifeneinfüllschlauch 15m',
-    },
-    description: {
-      en: 'High-pressure internal textile braided rubber hose designed for heavy commercial vehicle tyre inflation. 15 meters length.',
-      tr: 'Ağır ticari araç lastiklerini şişirmek için tasarlanmış içten tekstil örgülü, yüksek basınca dayanıklı 15 metre hortum.',
-      ru: 'Высоконапорный шланг подкачки колес с внутренним текстильным армированием. Длина 15 метров.',
-      de: 'Hochdruck-Reifeneinfüllschlauch mit gewebeverstärkter Innenseite für LKW und Auflieger. Länge 15m.',
-    },
-    images: ['/products/s186-115.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: { en: 'Length', tr: 'Uzunluk', ru: 'Длина', de: 'Länge' },
-        value: {
-          en: '15 m',
-          tr: '15 m',
-          ru: '15 м',
-          de: '15 m',
-        },
-      },
-      {
-        label: {
-          en: 'Reinforcement',
-          tr: 'Takviye',
-          ru: 'Армирование',
-          de: 'Verstärkung',
-        },
-        value: 'Internal Textile Braiding',
-      },
-      {
-        label: {
-          en: 'Max Pressure',
-          tr: 'Maks. Basınç',
-          ru: 'Макс. давление',
-          de: 'Max. Druck',
-        },
-        value: {
-          en: '20 bar',
-          tr: '20 bar',
-          ru: '20 бар',
-          de: '20 bar',
-        },
-      },
-    ],
-  },
-
-  // --- ELECTRICAL CABLES & plugs ---
-  {
-    id: 'prod-r020-01a',
-    slug: 'r020-01a-24v-7pin-plastic-plug-n-type',
-    smrCode: 'R020-01A',
-    oemNumbers: ['111008', '111009', '51305287', '000 545 62 14'],
-    crossReferences: ['HELLA 8JB001933011', 'DT 4.80250'],
-    categoryId: 'cat-cables',
-    subcategoryId: 'subcat-plugs-sockets',
-    title: {
-      en: '24V 7-Pin Plastic Plug Black N-Type (Pinned Terminals)',
-      tr: '24V PLASTİK SOKET SİYAH N TİPİ AYAKLAR PİMLİ',
-      ru: 'Розетка 24V 7-контактная пластиковая (Тип N, штыревые контакты)',
-      de: '24V 7-Polige Kunststoff-Steckdose Schwarz N-Typ',
-    },
-    description: {
-      en: '24V 7-pin N-type female plug made of impact-resistant polyamide plastic with crimp pin terminals (ISO 1185 standard).',
-      tr: 'ISO 1185 standardına uygun, sıkmalı/pimli terminallere sahip دارбеye dayanıklı plastik 24V 7li N Tipi dişi soket.',
-      ru: 'Пластиковая 7-контактная розетка тип N (24V) из ударопрочного полиамида со штыревыми контактами (стандарт ISO 1185).',
-      de: '24V 7-polige N-Typ Steckdose aus schlagfestem Kunststoff mit Stiftkontakten nach ISO 1185.',
-    },
-    images: ['/products/r020-01a.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Voltage / Pins',
-          tr: 'Voltaj / Pin',
-          ru: 'Напряжение / Контакты',
-          de: 'Spannung / Pole',
-        },
-        value: {
-          en: '24V / 7-Pin',
-          tr: '24V / 7 Pinli',
-          ru: '24V / 7-контактный',
-          de: '24V / 7-Polig',
-        },
-      },
-      {
-        label: {
-          en: 'Type Standard',
-          tr: 'Tip Standardı',
-          ru: 'Тип разъема',
-          de: 'Standard',
-        },
-        value: {
-          en: 'ISO 1185 (N-Type)',
-          tr: 'ISO 1185 (N Tipi)',
-          ru: 'ISO 1185 (Тип N)',
-          de: 'ISO 1185 (N-Typ)',
+          en: 'M16x1.5',
+          tr: 'M16x1.5',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
         },
       },
       {
@@ -742,1087 +414,8729 @@ export const MOCK_PRODUCTS: Product[] = [
           de: 'Material',
         },
         value: {
-          en: 'PA6 Plastic (Black)',
-          tr: 'PA6 Plastik (Siyah)',
-          ru: 'Пластик PA6 (Черный)',
-          de: 'PA6 Kunststoff (Schwarz)',
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
         },
       },
     ],
+    images: ['/products/couplings/S010-02.jpg'],
   },
   {
-    id: 'prod-r010-02',
-    slug: 'r010-02-24v-7pin-green-plug-s-type',
-    smrCode: 'R010-02',
-    oemNumbers: ['111030', '000 545 78 14', '81254320002'],
-    crossReferences: ['HELLA 8JA001930001', 'DT 4.80252'],
-    categoryId: 'cat-cables',
-    subcategoryId: 'subcat-plugs-sockets',
+    id: 'prod-s010-02a',
+    slug: 's010-02a-standard-coupling-m16x1-5-yellow',
+    smrCode: 'S010-02A',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
     title: {
-      en: '24V 7-Pin Plastic Green Plug S-Type',
-      tr: '24V PLASTİK YEŞİL FİŞ S TİPİ',
-      ru: 'Вилка 24V 7-контактная пластиковая Зеленая (Тип S)',
-      de: '24V 7-Poliger Kunststoff-Stecker Grün S-Typ',
+      en: 'Standard Air Coupling (Without Valve) M16x1.5 (Yellow)',
+      tr: 'Standart Kaplin (Sibopsuz) M16x1.5 (Sarı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M16x1.5 (Жёлтый)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M16x1.5 (Gelb)',
     },
     description: {
-      en: '24V 7-pin supplementary S-type male connector plug in green plastic housing (ISO 3731).',
-      tr: 'Yeşil plastik gövdeli, ISO 3731 standardında 24V 7li S Tipi ilave elektrik tesisat fişi.',
-      ru: 'Кабельная вилка 24V 7 контактов типа S (вспомогательная) в зеленом пластиковом корпусе (ISO 3731).',
-      de: '24V 7-poliger S-Typ Zusatzstecker im grünen Kunststoffgehäuse nach ISO 3731.',
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; model (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) modeli Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; модель (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
     },
-    images: ['/products/r010-02.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
-        label: {
-          en: 'Voltage / Pins',
-          tr: 'Voltaj / Pin',
-          ru: 'Напряжение / Контакты',
-          de: 'Spannung / Pole',
-        },
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
         value: {
-          en: '24V / 7-Pin',
-          tr: '24V / 7 Pinli',
-          ru: '24V / 7-контактный',
-          de: '24V / 7-Polig',
+          en: 'Haldex',
+          tr: 'Haldex',
+          ru: 'Haldex',
+          de: 'Haldex',
+        },
+      },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
         },
       },
       {
         label: {
-          en: 'Type Standard',
-          tr: 'Tip Standardı',
-          ru: 'Тип разъема',
-          de: 'Standard',
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
         },
         value: {
-          en: 'ISO 3731 (S-Type)',
-          tr: 'ISO 3731 (S Tipi)',
-          ru: 'ISO 3731 (Тип S)',
-          de: 'ISO 3731 (S-Typ)',
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-02.jpg'],
+  },
+  {
+    id: 'prod-s010-03',
+    slug: 's010-03-standard-coupling-m22x1-5-red',
+    smrCode: 'S010-03',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Standard Air Coupling (Without Valve) M22x1.5 (Red)',
+      tr: 'Standart Kaplin (Sibopsuz) M22x1.5 (Kırmızı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M22x1.5 (Красный)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M22x1.5 (Rot)',
+    },
+    description: {
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; version (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) versiyonu Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; исполнение (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
+    },
+    specs: [
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Wabco',
+          tr: 'Wabco',
+          ru: 'Wabco',
+          de: 'Wabco',
+        },
+      },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-01.jpg'],
+  },
+  {
+    id: 'prod-s010-03a',
+    slug: 's010-03a-standard-coupling-m22x1-5-red',
+    smrCode: 'S010-03A',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Standard Air Coupling (Without Valve) M22x1.5 (Red)',
+      tr: 'Standart Kaplin (Sibopsuz) M22x1.5 (Kırmızı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M22x1.5 (Красный)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M22x1.5 (Rot)',
+    },
+    description: {
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; version (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) versiyonu Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; исполнение (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
+    },
+    specs: [
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Haldex',
+          tr: 'Haldex',
+          ru: 'Haldex',
+          de: 'Haldex',
+        },
+      },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-01.jpg'],
+  },
+  {
+    id: 'prod-s010-04',
+    slug: 's010-04-standard-coupling-m22x1-5-yellow',
+    smrCode: 'S010-04',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Standard Air Coupling (Without Valve) M22x1.5 (Yellow)',
+      tr: 'Standart Kaplin (Sibopsuz) M22x1.5 (Sarı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M22x1.5 (Жёлтый)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M22x1.5 (Gelb)',
+    },
+    description: {
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; version (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) versiyonu Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; исполнение (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
+    },
+    specs: [
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Wabco',
+          tr: 'Wabco',
+          ru: 'Wabco',
+          de: 'Wabco',
+        },
+      },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-02.jpg'],
+  },
+  {
+    id: 'prod-s010-04a',
+    slug: 's010-04a-standard-coupling-m22x1-5-yellow',
+    smrCode: 'S010-04A',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Standard Air Coupling (Without Valve) M22x1.5 (Yellow)',
+      tr: 'Standart Kaplin (Sibopsuz) M22x1.5 (Sarı)',
+      ru: 'Стандартная пневматическая соединительная головка (без клапана) M22x1.5 (Жёлтый)',
+      de: 'Standard-Druckluftkupplung (ohne Ventil) M22x1.5 (Gelb)',
+    },
+    description: {
+      en: 'Aluminium air coupling head without valve for truck and trailer pneumatic brake lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar. Wabco type; version (A) is Haldex type.',
+      tr: 'Çekici ve römork pnömatik fren hatları için sibopsuz alüminyum kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar. Wabco tipi; (A) versiyonu Haldex tipidir.',
+      ru: 'Алюминиевая пневматическая соединительная головка без клапана для тормозных магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) защищает от ржавчины и коррозии, максимальное давление воздуха 10 бар. Тип Wabco; исполнение (A) — тип Haldex.',
+      de: 'Kupplungskopf aus Aluminium ohne Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar. Wabco-Typ; Ausführung (A) im Haldex-Typ.',
+    },
+    specs: [
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Haldex',
+          tr: 'Haldex',
+          ru: 'Haldex',
+          de: 'Haldex',
+        },
+      },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-02.jpg'],
+  },
+  {
+    id: 'prod-s010-05',
+    slug: 's010-05-filter-coupling-m16x1-5-red',
+    smrCode: 'S010-05',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Air Coupling with Filter M16x1.5, Without Nut (Red)',
+      tr: 'Filtreli Kaplin M16x1.5, Düz (Kırmızı)',
+      ru: 'Пневматическая соединительная головка с фильтром M16x1.5, без гайки (Красный)',
+      de: 'Druckluftkupplung mit Filter M16x1.5, ohne Mutter (Rot)',
+    },
+    description: {
+      en: 'Aluminium air coupling head with filter for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar, maximum torque 50 Nm. Plain version without nut.',
+      tr: 'Çekici ve römork pnömatik fren hatları için filtreli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar, maksimum tork 50 Nm. Düz (somunsuz) versiyon.',
+      ru: 'Алюминиевая пневматическая соединительная головка с фильтром для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар, максимальный крутящий момент 50 Нм. Исполнение без гайки (прямое).',
+      de: 'Kupplungskopf aus Aluminium mit Filter für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar, max. Drehmoment 50 Nm. Gerade Ausführung ohne Mutter.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '50 Nm', tr: '50 Nm', ru: '50 Нм', de: '50 Nm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'Without Nut',
+          tr: 'Düz',
+          ru: 'без гайки',
+          de: 'ohne Mutter',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-06',
+    slug: 's010-06-filter-coupling-m16x1-5-red',
+    smrCode: 'S010-06',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Air Coupling with Filter M16x1.5, With Metal Nut (Red)',
+      tr: 'Filtreli Kaplin M16x1.5, Metal Somunlu (Kırmızı)',
+      ru: 'Пневматическая соединительная головка с фильтром M16x1.5, с металлической гайкой (Красный)',
+      de: 'Druckluftkupplung mit Filter M16x1.5, mit Metallmutter (Rot)',
+    },
+    description: {
+      en: 'Aluminium air coupling head with filter for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar, maximum torque 50 Nm. Version with metal nut.',
+      tr: 'Çekici ve römork pnömatik fren hatları için filtreli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar, maksimum tork 50 Nm. Metal somunlu versiyon.',
+      ru: 'Алюминиевая пневматическая соединительная головка с фильтром для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар, максимальный крутящий момент 50 Нм. Исполнение с металлической гайкой.',
+      de: 'Kupplungskopf aus Aluminium mit Filter für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar, max. Drehmoment 50 Nm. Ausführung mit Metallmutter.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '50 Nm', tr: '50 Nm', ru: '50 Нм', de: '50 Nm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'With Metal Nut',
+          tr: 'Metal Somunlu',
+          ru: 'с металлической гайкой',
+          de: 'mit Metallmutter',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-07',
+    slug: 's010-07-filter-coupling-m16x1-5-yellow',
+    smrCode: 'S010-07',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Air Coupling with Filter M16x1.5, Without Nut (Yellow)',
+      tr: 'Filtreli Kaplin M16x1.5, Düz (Sarı)',
+      ru: 'Пневматическая соединительная головка с фильтром M16x1.5, без гайки (Жёлтый)',
+      de: 'Druckluftkupplung mit Filter M16x1.5, ohne Mutter (Gelb)',
+    },
+    description: {
+      en: 'Aluminium air coupling head with filter for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar, maximum torque 50 Nm. Plain version without nut.',
+      tr: 'Çekici ve römork pnömatik fren hatları için filtreli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar, maksimum tork 50 Nm. Düz (somunsuz) versiyon.',
+      ru: 'Алюминиевая пневматическая соединительная головка с фильтром для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар, максимальный крутящий момент 50 Нм. Исполнение без гайки (прямое).',
+      de: 'Kupplungskopf aus Aluminium mit Filter für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar, max. Drehmoment 50 Nm. Gerade Ausführung ohne Mutter.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '50 Nm', tr: '50 Nm', ru: '50 Нм', de: '50 Nm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'Without Nut',
+          tr: 'Düz',
+          ru: 'без гайки',
+          de: 'ohne Mutter',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-08',
+    slug: 's010-08-filter-coupling-m16x1-5-yellow',
+    smrCode: 'S010-08',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Air Coupling with Filter M16x1.5, With Metal Nut (Yellow)',
+      tr: 'Filtreli Kaplin M16x1.5, Metal Somunlu (Sarı)',
+      ru: 'Пневматическая соединительная головка с фильтром M16x1.5, с металлической гайкой (Жёлтый)',
+      de: 'Druckluftkupplung mit Filter M16x1.5, mit Metallmutter (Gelb)',
+    },
+    description: {
+      en: 'Aluminium air coupling head with filter for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar, maximum torque 50 Nm. Version with metal nut.',
+      tr: 'Çekici ve römork pnömatik fren hatları için filtreli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar, maksimum tork 50 Nm. Metal somunlu versiyon.',
+      ru: 'Алюминиевая пневматическая соединительная головка с фильтром для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар, максимальный крутящий момент 50 Нм. Исполнение с металлической гайкой.',
+      de: 'Kupplungskopf aus Aluminium mit Filter für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar, max. Drehmoment 50 Nm. Ausführung mit Metallmutter.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '50 Nm', tr: '50 Nm', ru: '50 Нм', de: '50 Nm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'With Metal Nut',
+          tr: 'Metal Somunlu',
+          ru: 'с металлической гайкой',
+          de: 'mit Metallmutter',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-09',
+    slug: 's010-09-filter-coupling-m16x1-5-yellow',
+    smrCode: 'S010-09',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Air Coupling with Filter M16x1.5, Without Nut, With Connector (Yellow)',
+      tr: 'Filtreli Kaplin M16x1.5, Düz, Konektörlü (Sarı)',
+      ru: 'Пневматическая соединительная головка с фильтром M16x1.5, без гайки, с коннектором (Жёлтый)',
+      de: 'Druckluftkupplung mit Filter M16x1.5, ohne Mutter, mit Konnektor (Gelb)',
+    },
+    description: {
+      en: 'Aluminium air coupling head with filter for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar, maximum torque 50 Nm. Plain version without nut, with connector.',
+      tr: 'Çekici ve römork pnömatik fren hatları için filtreli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar, maksimum tork 50 Nm. Düz (somunsuz), konektörlü versiyon.',
+      ru: 'Алюминиевая пневматическая соединительная головка с фильтром для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар, максимальный крутящий момент 50 Нм. Исполнение без гайки, с коннектором.',
+      de: 'Kupplungskopf aus Aluminium mit Filter für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar, max. Drehmoment 50 Nm. Gerade Ausführung ohne Mutter, mit Konnektor.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '50 Nm', tr: '50 Nm', ru: '50 Нм', de: '50 Nm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'Without Nut, With Connector',
+          tr: 'Düz, Konektörlü',
+          ru: 'без гайки, с коннектором',
+          de: 'ohne Mutter, mit Konnektor',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-10',
+    slug: 's010-10-filter-coupling-m16x1-5-yellow',
+    smrCode: 'S010-10',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Air Coupling with Filter M16x1.5, With Nut and Connector (Yellow)',
+      tr: 'Filtreli Kaplin M16x1.5, Somunlu, Konektörlü (Sarı)',
+      ru: 'Пневматическая соединительная головка с фильтром M16x1.5, с гайкой и коннектором (Жёлтый)',
+      de: 'Druckluftkupplung mit Filter M16x1.5, mit Mutter und Konnektor (Gelb)',
+    },
+    description: {
+      en: 'Aluminium air coupling head with filter for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar, maximum torque 50 Nm. Version with nut and connector.',
+      tr: 'Çekici ve römork pnömatik fren hatları için filtreli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar, maksimum tork 50 Nm. Somunlu ve konektörlü versiyon.',
+      ru: 'Алюминиевая пневматическая соединительная головка с фильтром для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар, максимальный крутящий момент 50 Нм. Исполнение с гайкой и коннектором.',
+      de: 'Kupplungskopf aus Aluminium mit Filter für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar, max. Drehmoment 50 Nm. Ausführung mit Mutter und Konnektor.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '50 Nm', tr: '50 Nm', ru: '50 Нм', de: '50 Nm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'With Nut and Connector',
+          tr: 'Somunlu, Konektörlü',
+          ru: 'с гайкой и коннектором',
+          de: 'mit Mutter und Konnektor',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '10', tr: '10', ru: '10', de: '10' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request; optional chromium-plated finish',
+          tr: 'Lazer ve ambalaj talebe göre; opsiyonel krom kaplama',
+          ru: 'Лазерная маркировка и упаковка по запросу; опционально хромированное покрытие',
+          de: 'Lasergravur und Verpackung auf Anfrage; optional verchromte Ausführung',
+        },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-11',
+    slug: 's010-11-standard-coupling-gasket',
+    smrCode: 'S010-11',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling-accessories',
+    title: {
+      en: 'Standard Coupling Gasket',
+      tr: 'Standart Kaplin Contası',
+      ru: 'Уплотнение для стандартной соединительной головки',
+      de: 'Dichtung für Standard-Kupplungskopf',
+    },
+    description: {
+      en: 'Replacement sealing gasket for standard air coupling heads.',
+      tr: 'Standart kaplinler için yedek conta.',
+      ru: 'Запасное уплотнение для стандартных пневматических соединительных головок.',
+      de: 'Ersatzdichtung für Standard-Kupplungsköpfe.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '100', tr: '100', ru: '100', de: '100' },
+      },
+    ],
+    images: ['/products/couplings/S010-01.jpg'],
+  },
+  {
+    id: 'prod-s010-12',
+    slug: 's010-12-filter-coupling-gasket',
+    smrCode: 'S010-12',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling-accessories',
+    title: {
+      en: 'Filtered Coupling Gasket',
+      tr: 'Filtreli Kaplin Contası',
+      ru: 'Уплотнение для соединительной головки с фильтром',
+      de: 'Dichtung für Kupplungskopf mit Filter',
+    },
+    description: {
+      en: 'Replacement sealing gasket for air coupling heads with filter.',
+      tr: 'Filtreli kaplinler için yedek conta.',
+      ru: 'Запасное уплотнение для пневматических соединительных головок с фильтром.',
+      de: 'Ersatzdichtung für Kupplungsköpfe mit Filter.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '100', tr: '100', ru: '100', de: '100' },
+      },
+    ],
+    images: ['/products/couplings/S010-06.jpg'],
+  },
+  {
+    id: 'prod-s010-19',
+    slug: 's010-19-handle-set-m16x1-5',
+    smrCode: 'S010-19',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling-accessories',
+    title: {
+      en: 'Coupling Handle Set (Yellow-Red)',
+      tr: 'Tutamak Takımı (Sarı-Kırmızı)',
+      ru: 'Комплект рукояток (жёлто-красный)',
+      de: 'Griffsatz (Gelb-Rot)',
+    },
+    description: {
+      en: 'Plastic handle set for air coupling heads, supplied with 12 screws and 2 O-rings. Thread M16x1.5. Colour: yellow-red. Laser marking and packaging on request.',
+      tr: 'Hava kaplinleri için plastik tutamak takımı; 12 vida ve 2 o-ring ile birlikte. Diş M16x1.5. Renk: sarı-kırmızı. Lazer ve ambalaj talebe göre.',
+      ru: 'Пластиковый комплект рукояток для пневматических соединительных головок: 12 винтов и 2 уплотнительных кольца в комплекте. Резьба M16x1.5. Цвет: жёлто-красный. Лазерная маркировка и упаковка по запросу.',
+      de: 'Kunststoff-Griffsatz für Druckluft-Kupplungsköpfe, inklusive 12 Schrauben und 2 O-Ringen. Gewinde M16x1.5. Farbe: Gelb-Rot. Lasergravur und Verpackung auf Anfrage.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Contents',
+          tr: 'Set içeriği',
+          ru: 'Комплектация',
+          de: 'Lieferumfang',
+        },
+        value: {
+          en: '12 screws and 2 O-rings',
+          tr: '12 vida ve 2 o-ring',
+          ru: '12 винтов и 2 уплотнительных кольца',
+          de: '12 Schrauben und 2 O-Ringe',
         },
       },
       {
         label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
         value: {
-          en: 'Green',
-          tr: 'Yeşil',
-          ru: 'Зеленый',
-          de: 'Grün',
+          en: 'Yellow-Red',
+          tr: 'Sarı-Kırmızı',
+          ru: 'Жёлто-красный',
+          de: 'Gelb-Rot',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '20', tr: '20', ru: '20', de: '20' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
         },
       },
     ],
+    images: ['/products/couplings/S010-19.jpg'],
   },
   {
-    id: 'prod-r010-04',
-    slug: 'r010-04-ebs-7pin-plug-crimp-terminals',
-    smrCode: 'R010-04',
-    oemNumbers: ['441 035 001 0', '000 545 80 14', '150 493 8'],
-    crossReferences: ['WABCO 4410350010', 'COJALI 2210001', 'DT 2.30200'],
+    id: 'prod-s020-01',
+    slug: 's020-01-automatic-coupling-m16x1-5-red',
+    smrCode: 'S020-01',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Automatic Air Coupling (With Valve) M16x1.5 (Red)',
+      tr: 'Otomatik Kaplin (Siboplu) M16x1.5 (Kırmızı)',
+      ru: 'Автоматическая пневматическая соединительная головка (с клапаном) M16x1.5 (Красный)',
+      de: 'Automatik-Druckluftkupplung (mit Ventil) M16x1.5 (Rot)',
+    },
+    description: {
+      en: 'Automatic aluminium air coupling head with valve for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik fren hatları için siboplu otomatik alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Автоматическая алюминиевая пневматическая соединительная головка с клапаном для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Automatik-Kupplungskopf aus Aluminium mit Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S020-01.jpg'],
+  },
+  {
+    id: 'prod-s020-02',
+    slug: 's020-02-automatic-coupling-m16x1-5-yellow',
+    smrCode: 'S020-02',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Automatic Air Coupling (With Valve) M16x1.5 (Yellow)',
+      tr: 'Otomatik Kaplin (Siboplu) M16x1.5 (Sarı)',
+      ru: 'Автоматическая пневматическая соединительная головка (с клапаном) M16x1.5 (Жёлтый)',
+      de: 'Automatik-Druckluftkupplung (mit Ventil) M16x1.5 (Gelb)',
+    },
+    description: {
+      en: 'Automatic aluminium air coupling head with valve for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik fren hatları için siboplu otomatik alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Автоматическая алюминиевая пневматическая соединительная головка с клапаном для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Automatik-Kupplungskopf aus Aluminium mit Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S020-02.jpg'],
+  },
+  {
+    id: 'prod-s020-03',
+    slug: 's020-03-automatic-coupling-m22x1-5-red',
+    smrCode: 'S020-03',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Automatic Air Coupling (With Valve) M22x1.5 (Red)',
+      tr: 'Otomatik Kaplin (Siboplu) M22x1.5 (Kırmızı)',
+      ru: 'Автоматическая пневматическая соединительная головка (с клапаном) M22x1.5 (Красный)',
+      de: 'Automatik-Druckluftkupplung (mit Ventil) M22x1.5 (Rot)',
+    },
+    description: {
+      en: 'Automatic aluminium air coupling head with valve for truck and trailer pneumatic brake lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik fren hatları için siboplu otomatik alüminyum kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Автоматическая алюминиевая пневматическая соединительная головка с клапаном для тормозных магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Automatik-Kupplungskopf aus Aluminium mit Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S020-01.jpg'],
+  },
+  {
+    id: 'prod-s020-04',
+    slug: 's020-04-automatic-coupling-m22x1-5-yellow',
+    smrCode: 'S020-04',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Automatic Air Coupling (With Valve) M22x1.5 (Yellow)',
+      tr: 'Otomatik Kaplin (Siboplu) M22x1.5 (Sarı)',
+      ru: 'Автоматическая пневматическая соединительная головка (с клапаном) M22x1.5 (Жёлтый)',
+      de: 'Automatik-Druckluftkupplung (mit Ventil) M22x1.5 (Gelb)',
+    },
+    description: {
+      en: 'Automatic aluminium air coupling head with valve for truck and trailer pneumatic brake lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik fren hatları için siboplu otomatik alüminyum kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Автоматическая алюминиевая пневматическая соединительная головка с клапаном для тормозных магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Automatik-Kupplungskopf aus Aluminium mit Ventil für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Yellow', tr: 'Sarı', ru: 'Жёлтый', de: 'Gelb' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S020-02.jpg'],
+  },
+  {
+    id: 'prod-s020-05',
+    slug: 's020-05-double-coupling-m16x1-5-red',
+    smrCode: 'S020-05',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Automatic Double Air Coupling M16x1.5 (Red)',
+      tr: 'Otomatik Çiftli Kaplin M16x1.5 (Kırmızı)',
+      ru: 'Автоматическая двойная пневматическая соединительная головка M16x1.5 (Красный)',
+      de: 'Automatische Doppel-Druckluftkupplung M16x1.5 (Rot)',
+    },
+    description: {
+      en: 'Automatic double aluminium air coupling head for truck and trailer pneumatic brake lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik fren hatları için otomatik çiftli alüminyum kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Автоматическая двойная алюминиевая пневматическая соединительная головка для тормозных магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Automatische Doppel-Kupplung aus Aluminium für Druckluftbremsleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S020-05.jpg'],
+  },
+  {
+    id: 'prod-s030-10',
+    slug: 's030-10-gladhand-coupling-m22x1-5-red',
+    smrCode: 'S030-10',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Angled Gladhand Coupling M22x1.5 (Red)',
+      tr: 'Gladhand Köşeli Kaplin M22x1.5 (Kırmızı)',
+      ru: 'Угловая соединительная головка Gladhand M22x1.5 (Красный)',
+      de: 'Gladhand-Winkelkupplung M22x1.5 (Rot)',
+    },
+    description: {
+      en: 'Angled aluminium gladhand air coupling for truck and trailer pneumatic lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik hatları için köşeli alüminyum gladhand kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Угловая алюминиевая соединительная головка Gladhand для пневматических магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Gladhand-Winkelkupplung aus Aluminium für Druckluftleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S030-11.jpg'],
+  },
+  {
+    id: 'prod-s030-11',
+    slug: 's030-11-gladhand-coupling-m16x1-5-red',
+    smrCode: 'S030-11',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Angled Gladhand Coupling M16x1.5 (Red)',
+      tr: 'Gladhand Köşeli Kaplin M16x1.5 (Kırmızı)',
+      ru: 'Угловая соединительная головка Gladhand M16x1.5 (Красный)',
+      de: 'Gladhand-Winkelkupplung M16x1.5 (Rot)',
+    },
+    description: {
+      en: 'Angled aluminium gladhand air coupling for truck and trailer pneumatic lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik hatları için köşeli alüminyum gladhand kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Угловая алюминиевая соединительная головка Gladhand для пневматических магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Gladhand-Winkelkupplung aus Aluminium für Druckluftleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S030-11.jpg'],
+  },
+  {
+    id: 'prod-s030-12',
+    slug: 's030-12-gladhand-coupling-1-2-red',
+    smrCode: 'S030-12',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Angled Gladhand Coupling 1/2" (Red)',
+      tr: 'Gladhand Köşeli Kaplin 1/2" (Kırmızı)',
+      ru: 'Угловая соединительная головка Gladhand 1/2" (Красный)',
+      de: 'Gladhand-Winkelkupplung 1/2" (Rot)',
+    },
+    description: {
+      en: 'Angled aluminium gladhand air coupling for truck and trailer pneumatic lines. 1/2" connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik hatları için köşeli alüminyum gladhand kaplin. 1/2" bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Угловая алюминиевая соединительная головка Gladhand для пневматических магистралей грузовиков и прицепов. Резьба 1/2", покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Gladhand-Winkelkupplung aus Aluminium für Druckluftleitungen an Lkw und Anhängern. Anschluss 1/2", Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: '1/2"', tr: '1/2"', ru: '1/2"', de: '1/2"' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Red', tr: 'Kırmızı', ru: 'Красный', de: 'Rot' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S030-11.jpg'],
+  },
+  {
+    id: 'prod-s030-13',
+    slug: 's030-13-gladhand-coupling-m22x1-5-blue',
+    smrCode: 'S030-13',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Angled Gladhand Coupling M22x1.5 (Blue)',
+      tr: 'Gladhand Köşeli Kaplin M22x1.5 (Mavi)',
+      ru: 'Угловая соединительная головка Gladhand M22x1.5 (Синий)',
+      de: 'Gladhand-Winkelkupplung M22x1.5 (Blau)',
+    },
+    description: {
+      en: 'Angled aluminium gladhand air coupling for truck and trailer pneumatic lines. M22x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik hatları için köşeli alüminyum gladhand kaplin. M22x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Угловая алюминиевая соединительная головка Gladhand для пневматических магистралей грузовиков и прицепов. Резьба M22x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Gladhand-Winkelkupplung aus Aluminium für Druckluftleitungen an Lkw und Anhängern. Anschluss M22x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Blue', tr: 'Mavi', ru: 'Синий', de: 'Blau' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S030-13.jpg'],
+  },
+  {
+    id: 'prod-s030-14',
+    slug: 's030-14-gladhand-coupling-m16x1-5-blue',
+    smrCode: 'S030-14',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Angled Gladhand Coupling M16x1.5 (Blue)',
+      tr: 'Gladhand Köşeli Kaplin M16x1.5 (Mavi)',
+      ru: 'Угловая соединительная головка Gladhand M16x1.5 (Синий)',
+      de: 'Gladhand-Winkelkupplung M16x1.5 (Blau)',
+    },
+    description: {
+      en: 'Angled aluminium gladhand air coupling for truck and trailer pneumatic lines. M16x1.5 connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik hatları için köşeli alüminyum gladhand kaplin. M16x1.5 bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Угловая алюминиевая соединительная головка Gladhand для пневматических магистралей грузовиков и прицепов. Резьба M16x1.5, покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Gladhand-Winkelkupplung aus Aluminium für Druckluftleitungen an Lkw und Anhängern. Anschluss M16x1.5, Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Blue', tr: 'Mavi', ru: 'Синий', de: 'Blau' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S030-13.jpg'],
+  },
+  {
+    id: 'prod-s030-15',
+    slug: 's030-15-gladhand-coupling-1-2-blue',
+    smrCode: 'S030-15',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling',
+    title: {
+      en: 'Angled Gladhand Coupling 1/2" (Blue)',
+      tr: 'Gladhand Köşeli Kaplin 1/2" (Mavi)',
+      ru: 'Угловая соединительная головка Gladhand 1/2" (Синий)',
+      de: 'Gladhand-Winkelkupplung 1/2" (Blau)',
+    },
+    description: {
+      en: 'Angled aluminium gladhand air coupling for truck and trailer pneumatic lines. 1/2" connection, trivalent chromium (Cr3) coating against rust and corrosion, maximum air pressure 10 bar.',
+      tr: 'Çekici ve römork pnömatik hatları için köşeli alüminyum gladhand kaplin. 1/2" bağlantı, pas ve korozyona karşı üç değerlikli krom (Cr3) kaplama, maksimum hava basıncı 10 bar.',
+      ru: 'Угловая алюминиевая соединительная головка Gladhand для пневматических магистралей грузовиков и прицепов. Резьба 1/2", покрытие трёхвалентным хромом (Cr3) от ржавчины и коррозии, максимальное давление воздуха 10 бар.',
+      de: 'Gladhand-Winkelkupplung aus Aluminium für Druckluftleitungen an Lkw und Anhängern. Anschluss 1/2", Korrosionsschutz durch dreiwertige Chrombeschichtung (Cr3), max. Luftdruck 10 bar.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: '1/2"', tr: '1/2"', ru: '1/2"', de: '1/2"' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coating',
+          tr: 'Kaplama',
+          ru: 'Покрытие',
+          de: 'Beschichtung',
+        },
+        value: {
+          en: 'Trivalent chromium (Cr3) – protection against rust and corrosion',
+          tr: 'Üç değerlikli krom (Cr3) – pas ve korozyon koruması',
+          ru: 'Трёхвалентный хром (Cr3) — защита от ржавчины и коррозии',
+          de: 'Dreiwertiges Chrom (Cr3) – Rost- und Korrosionsschutz',
+        },
+      },
+      {
+        label: {
+          en: 'Max. air pressure',
+          tr: 'Maksimum hava basıncı',
+          ru: 'Макс. давление воздуха',
+          de: 'Max. Luftdruck',
+        },
+        value: { en: '10 bar', tr: '10 bar', ru: '10 бар', de: '10 bar' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Blue', tr: 'Mavi', ru: 'Синий', de: 'Blau' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+      {
+        label: {
+          en: 'Customization',
+          tr: 'Özelleştirme',
+          ru: 'Индивидуализация',
+          de: 'Individualisierung',
+        },
+        value: {
+          en: 'Laser marking and packaging on request',
+          tr: 'Lazer ve ambalaj talebe göre',
+          ru: 'Лазерная маркировка и упаковка по запросу',
+          de: 'Lasergravur und Verpackung auf Anfrage',
+        },
+      },
+    ],
+    images: ['/products/couplings/S030-13.jpg'],
+  },
+  {
+    id: 'prod-s050-01',
+    slug: 's050-01-quick-release-valve-22x22x22',
+    smrCode: 'S050-01',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-valve',
+    title: {
+      en: 'Quick Release Valve 22x22x22',
+      tr: 'Çabuk Tahliye 22x22x22',
+      ru: 'Клапан быстрого сброса давления 22x22x22',
+      de: 'Schnellentlüftungsventil 22x22x22',
+    },
+    description: {
+      en: 'Quick release valve for pneumatic brake systems of trucks and trailers; rapidly vents air from the brake chamber to shorten release time.',
+      tr: 'Çekici ve römork pnömatik fren sistemleri için çabuk tahliye valfi; fren haznesindeki havayı hızla boşaltarak fren çözme süresini kısaltır.',
+      ru: 'Клапан быстрого сброса давления для пневматических тормозных систем грузовиков и прицепов; быстро выпускает воздух из тормозной камеры и сокращает время растормаживания.',
+      de: 'Schnellentlüftungsventil für Druckluftbremsanlagen an Lkw und Anhängern; entlüftet die Bremskammer rasch und verkürzt die Lösezeit.',
+    },
+    specs: [
+      {
+        label: { en: 'Size', tr: 'Ölçü', ru: 'Размер', de: 'Größe' },
+        value: {
+          en: '22x22x22',
+          tr: '22x22x22',
+          ru: '22x22x22',
+          de: '22x22x22',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S050-01.jpg'],
+  },
+  {
+    id: 'prod-s050-10',
+    slug: 's050-10-quick-release-valve-16x16x16',
+    smrCode: 'S050-10',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-valve',
+    title: {
+      en: 'Quick Release Valve 16x16x16',
+      tr: 'Çabuk Tahliye 16x16x16',
+      ru: 'Клапан быстрого сброса давления 16x16x16',
+      de: 'Schnellentlüftungsventil 16x16x16',
+    },
+    description: {
+      en: 'Quick release valve for pneumatic brake systems of trucks and trailers; rapidly vents air from the brake chamber to shorten release time.',
+      tr: 'Çekici ve römork pnömatik fren sistemleri için çabuk tahliye valfi; fren haznesindeki havayı hızla boşaltarak fren çözme süresini kısaltır.',
+      ru: 'Клапан быстрого сброса давления для пневматических тормозных систем грузовиков и прицепов; быстро выпускает воздух из тормозной камеры и сокращает время растормаживания.',
+      de: 'Schnellentlüftungsventil für Druckluftbremsanlagen an Lkw und Anhängern; entlüftet die Bremskammer rasch und verkürzt die Lösezeit.',
+    },
+    specs: [
+      {
+        label: { en: 'Size', tr: 'Ölçü', ru: 'Размер', de: 'Größe' },
+        value: {
+          en: '16x16x16',
+          tr: '16x16x16',
+          ru: '16x16x16',
+          de: '16x16x16',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S050-01.jpg'],
+  },
+  {
+    id: 'prod-s090-01',
+    slug: 's090-01-air-cock-bronze-handle-m22x1-5',
+    smrCode: 'S090-01',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-valve',
+    title: {
+      en: 'Air Cock, Bronze Handle M22x1.5',
+      tr: 'Hava Musluğu, Bronz Kollu M22x1.5',
+      ru: 'Воздушный кран с бронзовой рукояткой M22x1.5',
+      de: 'Druckluft-Absperrhahn mit Bronzehebel M22x1.5',
+    },
+    description: {
+      en: 'Air shut-off cock with bronze handle for pneumatic lines of trucks and trailers. Thread M22x1.5.',
+      tr: 'Çekici ve römork pnömatik hatları için bronz kollu hava musluğu. Diş M22x1.5.',
+      ru: 'Воздушный запорный кран с бронзовой рукояткой для пневматических магистралей грузовиков и прицепов. Резьба M22x1.5.',
+      de: 'Druckluft-Absperrhahn mit Bronzehebel für Druckluftleitungen an Lkw und Anhängern. Gewinde M22x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: { en: 'Handle', tr: 'Kol', ru: 'Рукоятка', de: 'Hebel' },
+        value: { en: 'Bronze', tr: 'Bronz', ru: 'Бронза', de: 'Bronze' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S090-01.jpg'],
+  },
+  {
+    id: 'prod-s090-01-a',
+    slug: 's090-01-a-air-cock-plastic-handle-m22x1-5',
+    smrCode: 'S090-01/A',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-valve',
+    title: {
+      en: 'Air Cock, Plastic Handle M22x1.5',
+      tr: 'Hava Musluğu, Plastik Kollu M22x1.5',
+      ru: 'Воздушный кран с пластиковой рукояткой M22x1.5',
+      de: 'Druckluft-Absperrhahn mit Kunststoffhebel M22x1.5',
+    },
+    description: {
+      en: 'Air shut-off cock with plastic handle for pneumatic lines of trucks and trailers. Thread M22x1.5.',
+      tr: 'Çekici ve römork pnömatik hatları için plastik kollu hava musluğu. Diş M22x1.5.',
+      ru: 'Воздушный запорный кран с пластиковой рукояткой для пневматических магистралей грузовиков и прицепов. Резьба M22x1.5.',
+      de: 'Druckluft-Absperrhahn mit Kunststoffhebel für Druckluftleitungen an Lkw und Anhängern. Gewinde M22x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: { en: 'Handle', tr: 'Kol', ru: 'Рукоятка', de: 'Hebel' },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S090-01.jpg'],
+  },
+  {
+    id: 'prod-s100-01',
+    slug: 's100-01-line-filter-m16x1-5',
+    smrCode: 'S100-01',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling-accessories',
+    title: {
+      en: 'Line Filter M16x1.5',
+      tr: 'Boru Filtresi M16x1.5',
+      ru: 'Магистральный фильтр M16x1.5',
+      de: 'Leitungsfilter M16x1.5',
+    },
+    description: {
+      en: 'Air line filter for pneumatic brake lines of trucks and trailers. Thread M16x1.5.',
+      tr: 'Çekici ve römork pnömatik fren hatları için boru filtresi. Diş M16x1.5.',
+      ru: 'Фильтр для воздушных магистралей пневматической тормозной системы грузовиков и прицепов. Резьба M16x1.5.',
+      de: 'Leitungsfilter für Druckluftbremsleitungen an Lkw und Anhängern. Gewinde M16x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S100-01.jpg'],
+  },
+  {
+    id: 'prod-s100-02',
+    slug: 's100-02-line-filter-m22x1-5',
+    smrCode: 'S100-02',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-coupling-accessories',
+    title: {
+      en: 'Line Filter M22x1.5',
+      tr: 'Boru Filtresi M22x1.5',
+      ru: 'Магистральный фильтр M22x1.5',
+      de: 'Leitungsfilter M22x1.5',
+    },
+    description: {
+      en: 'Air line filter for pneumatic brake lines of trucks and trailers. Thread M22x1.5.',
+      tr: 'Çekici ve römork pnömatik fren hatları için boru filtresi. Diş M22x1.5.',
+      ru: 'Фильтр для воздушных магистралей пневматической тормозной системы грузовиков и прицепов. Резьба M22x1.5.',
+      de: 'Leitungsfilter für Druckluftbremsleitungen an Lkw und Anhängern. Gewinde M22x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M22x1.5',
+          tr: 'M22x1.5 (Maça)',
+          ru: 'M22x1.5',
+          de: 'M22x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S100-01.jpg'],
+  },
+  {
+    id: 'prod-s130-01',
+    slug: 's130-01-gas-piston-24mm-m6',
+    smrCode: 'S130-01',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-cylinder',
+    title: {
+      en: '24 mm Gas Piston M6',
+      tr: "24'lük Gaz Pistonu M6",
+      ru: 'Газовый поршень 24 мм M6',
+      de: 'Gaskolben 24 mm M6',
+    },
+    description: {
+      en: '24 mm gas piston with M6 mounting thread, stroke 32/50 mm, port M12x1.5.',
+      tr: "M6 bağlantı dişli 24'lük gaz pistonu, strok 32/50 mm, port M12x1.5.",
+      ru: 'Газовый поршень диаметром 24 мм, присоединительная резьба M6, ход 32/50 мм, порт M12x1.5.',
+      de: 'Gaskolben 24 mm mit Befestigungsgewinde M6, Hub 32/50 mm, Anschluss M12x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M6', tr: 'M6', ru: 'M6', de: 'M6' },
+      },
+      {
+        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
+        value: { en: '24 mm', tr: '24 mm', ru: '24 мм', de: '24 mm' },
+      },
+      {
+        label: { en: 'Stroke', tr: 'Strok', ru: 'Ход', de: 'Hub' },
+        value: {
+          en: '32/50 mm',
+          tr: '32/50 mm',
+          ru: '32/50 мм',
+          de: '32/50 mm',
+        },
+      },
+      {
+        label: { en: 'Port', tr: 'Port', ru: 'Порт', de: 'Anschluss' },
+        value: { en: 'M12x1.5', tr: 'M12x1.5', ru: 'M12x1.5', de: 'M12x1.5' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S130-01.jpg'],
+  },
+  {
+    id: 'prod-s130-02',
+    slug: 's130-02-gas-piston-24mm-m8',
+    smrCode: 'S130-02',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-cylinder',
+    title: {
+      en: '24 mm Gas Piston M8',
+      tr: "24'lük Gaz Pistonu M8",
+      ru: 'Газовый поршень 24 мм M8',
+      de: 'Gaskolben 24 mm M8',
+    },
+    description: {
+      en: '24 mm gas piston with M8 mounting thread, stroke 32/50 mm, port M12x1.5.',
+      tr: "M8 bağlantı dişli 24'lük gaz pistonu, strok 32/50 mm, port M12x1.5.",
+      ru: 'Газовый поршень диаметром 24 мм, присоединительная резьба M8, ход 32/50 мм, порт M12x1.5.',
+      de: 'Gaskolben 24 mm mit Befestigungsgewinde M8, Hub 32/50 mm, Anschluss M12x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M8', tr: 'M8', ru: 'M8', de: 'M8' },
+      },
+      {
+        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
+        value: { en: '24 mm', tr: '24 mm', ru: '24 мм', de: '24 mm' },
+      },
+      {
+        label: { en: 'Stroke', tr: 'Strok', ru: 'Ход', de: 'Hub' },
+        value: {
+          en: '32/50 mm',
+          tr: '32/50 mm',
+          ru: '32/50 мм',
+          de: '32/50 mm',
+        },
+      },
+      {
+        label: { en: 'Port', tr: 'Port', ru: 'Порт', de: 'Anschluss' },
+        value: { en: 'M12x1.5', tr: 'M12x1.5', ru: 'M12x1.5', de: 'M12x1.5' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S130-02.jpg'],
+  },
+  {
+    id: 'prod-s140',
+    slug: 's140-exhaust-brake-cylinder-28mm-m8',
+    smrCode: 'S140',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-cylinder',
+    title: {
+      en: '28 mm Exhaust Brake Cylinder M8',
+      tr: "28'lik Egzoz Fren Silindiri M8",
+      ru: 'Цилиндр выпускного (моторного) тормоза 28 мм M8',
+      de: 'Auspuffbremszylinder 28 mm M8',
+    },
+    description: {
+      en: '28 mm exhaust brake cylinder with M8 mounting thread, stroke 48 mm, port M12x1.5.',
+      tr: "M8 bağlantı dişli 28'lik egzoz fren silindiri, strok 48 mm, port M12x1.5.",
+      ru: 'Цилиндр выпускного (моторного) тормоза диаметром 28 мм, присоединительная резьба M8, ход 48 мм, порт M12x1.5.',
+      de: 'Auspuffbremszylinder 28 mm mit Befestigungsgewinde M8, Hub 48 mm, Anschluss M12x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M8', tr: 'M8', ru: 'M8', de: 'M8' },
+      },
+      {
+        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
+        value: { en: '28 mm', tr: '28 mm', ru: '28 мм', de: '28 mm' },
+      },
+      {
+        label: { en: 'Stroke', tr: 'Strok', ru: 'Ход', de: 'Hub' },
+        value: { en: '48 mm', tr: '48 mm', ru: '48 мм', de: '48 mm' },
+      },
+      {
+        label: { en: 'Port', tr: 'Port', ru: 'Порт', de: 'Anschluss' },
+        value: { en: 'M12x1.5', tr: 'M12x1.5', ru: 'M12x1.5', de: 'M12x1.5' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S140.jpg'],
+  },
+  {
+    id: 'prod-s160',
+    slug: 's160-piston-50mm-no-fitting-m10',
+    smrCode: 'S160',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-cylinder',
+    title: {
+      en: '50 mm Piston Without Fitting M10',
+      tr: "50'lik Piston Rekorsuz M10",
+      ru: 'Поршень 50 мм без штуцера M10',
+      de: 'Kolben 50 mm ohne Anschlussverschraubung M10',
+    },
+    description: {
+      en: '50 mm class piston without fitting, M10 mounting thread, stroke 48 mm, port M12x1.5. Specified bore diameter: 48 mm.',
+      tr: "M10 bağlantı dişli 50'lik rekorsuz piston, strok 48 mm, port M12x1.5. Belirtilen çap: 48 mm.",
+      ru: 'Поршень класса 50 мм без штуцера, присоединительная резьба M10, ход 48 мм, порт M12x1.5. Указанный диаметр: 48 мм.',
+      de: 'Kolben der 50-mm-Klasse ohne Anschlussverschraubung, Befestigungsgewinde M10, Hub 48 mm, Anschluss M12x1.5. Angegebener Durchmesser: 48 mm.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M10', tr: 'M10', ru: 'M10', de: 'M10' },
+      },
+      {
+        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
+        value: { en: '48 mm', tr: '48 mm', ru: '48 мм', de: '48 mm' },
+      },
+      {
+        label: { en: 'Stroke', tr: 'Strok', ru: 'Ход', de: 'Hub' },
+        value: { en: '48 mm', tr: '48 mm', ru: '48 мм', de: '48 mm' },
+      },
+      {
+        label: { en: 'Port', tr: 'Port', ru: 'Порт', de: 'Anschluss' },
+        value: { en: 'M12x1.5', tr: 'M12x1.5', ru: 'M12x1.5', de: 'M12x1.5' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S140.jpg'],
+  },
+  {
+    id: 'prod-s220-01',
+    slug: 's220-01-two-way-valve-m16x1-5',
+    smrCode: 'S220-01',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-valve',
+    title: {
+      en: 'Two-Way Valve M16x1.5',
+      tr: 'İki Yönlü Valf M16x1.5',
+      ru: 'Двухходовой клапан M16x1.5',
+      de: 'Zweiwegeventil M16x1.5',
+    },
+    description: {
+      en: 'Two-way valve for pneumatic systems of trucks and trailers. Thread M16x1.5.',
+      tr: 'Çekici ve römork pnömatik sistemleri için iki yönlü valf. Diş M16x1.5.',
+      ru: 'Двухходовой клапан для пневматических систем грузовиков и прицепов. Резьба M16x1.5.',
+      de: 'Zweiwegeventil für Druckluftsysteme an Lkw und Anhängern. Gewinde M16x1.5.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M16x1.5',
+          tr: 'M16x1.5 (Maça)',
+          ru: 'M16x1.5',
+          de: 'M16x1.5',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S220-01.jpg'],
+  },
+  {
+    id: 'prod-s220-02',
+    slug: 's220-02-two-way-valve-3-8-18-nptf',
+    smrCode: 'S220-02',
+    categoryId: 'cat-couplings',
+    subcategoryId: 'subcat-valve',
+    title: {
+      en: 'Two-Way Valve 3/8-18 NPTF',
+      tr: 'İki Yönlü Valf 3/8-18 NPTF',
+      ru: 'Двухходовой клапан 3/8-18 NPTF',
+      de: 'Zweiwegeventil 3/8-18 NPTF',
+    },
+    description: {
+      en: 'Two-way valve for pneumatic systems of trucks and trailers. Thread 3/8-18 NPTF.',
+      tr: 'Çekici ve römork pnömatik sistemleri için iki yönlü valf. Diş 3/8-18 NPTF.',
+      ru: 'Двухходовой клапан для пневматических систем грузовиков и прицепов. Резьба 3/8-18 NPTF.',
+      de: 'Zweiwegeventil für Druckluftsysteme an Lkw und Anhängern. Gewinde 3/8-18 NPTF.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: '3/8-18 NPTF',
+          tr: '3/8-18 NPTF',
+          ru: '3/8-18 NPTF',
+          de: '3/8-18 NPTF',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/couplings/S220-01.jpg'],
+  },
+  // ───────────── Cables / plugs & sockets  (cat-cables) ─────────────
+  {
+    id: 'prod-r010-01',
+    slug: 'r010-01-plug-24v-7p-plastic-black-n-type',
+    smrCode: 'R010-01',
     categoryId: 'cat-cables',
     subcategoryId: 'subcat-plugs-sockets',
     title: {
-      en: 'EBS 7-Pin Trailer Plug with Crimp Contacts',
-      tr: 'EBS 7 Lİ FİŞ AYAKLAR SIKMALI',
-      ru: 'Вилка EBS 7-контактная под обжим контактов (ISO 7638)',
-      de: 'EBS 7-Poliger Stecker mit Crimp-Kontakten',
+      en: '24V/7P Plastic Plug, Black (N-Type)',
+      tr: '24V/7P Plastik Siyah Fiş (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, пластиковая, чёрная (тип N)',
+      de: 'Kunststoffstecker 24 V/7-polig, schwarz (N-Typ)',
     },
     description: {
-      en: '7-pin EBS brake connection plug with heavy-duty crimp pin terminals according to ISO 7638-1 standard.',
-      tr: 'ISO 7638-1 standardında, sıkmalı (krimp) bacaklara sahip 7li EBS fren sistem fişi.',
-      ru: '7-контактная кабельная вилка системы EBS/ABS с опрессовываемыми контактами по стандарту ISO 7638-1.',
-      de: '7-poliger EBS-Bremsstecker mit Crimp-Kontakten nach ISO 7638-1 Norm.',
+      en: '24 V, 7-pin plastic plug for the electrical connection between tractor unit and trailer (N-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli plastik fiş (N tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, пластиковая, для электрического соединения тягача и прицепа (тип N, винтовые клеммы).',
+      de: 'Kunststoffstecker 24 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Schraubklemmen).',
     },
-    images: ['/products/r010-04.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
-        label: { en: 'Standard', tr: 'Standard', ru: 'Стандарт', de: 'Norm' },
-        value: 'ISO 7638-1 (EBS / ABS)',
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
       },
       {
         label: {
-          en: 'Pin Type',
-          tr: 'Pim Tipi',
-          ru: 'Тип контактов',
-          de: 'Kontakttyp',
-        },
-        value: {
-          en: 'Crimp Terminal',
-          tr: 'Sıkmalı',
-          ru: 'Обжимной',
-          de: 'Crimpanschluss',
-        },
-      },
-      {
-        label: {
-          en: 'Pin Count',
-          tr: 'Pin Sayısı',
-          ru: 'Кол-во контактов',
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
           de: 'Polzahl',
         },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
         value: {
-          en: '7 Pins',
-          tr: '7 Pinli',
-          ru: '7 контактов',
-          de: '7 Polig',
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
         },
       },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
     ],
+    images: ['/products/cables/R010-01.jpg'],
   },
   {
-    id: 'prod-r030-101',
-    slug: 'r030-101-24v-metal-plug-spiral-cable-n-type-4-5m',
-    smrCode: 'R030-101',
-    oemNumbers: ['000 540 83 07', '81254116020', '139 217 8'],
-    crossReferences: ['HELLA 8KA007123021', 'DT 2.30150'],
+    id: 'prod-r010-02',
+    slug: 'r010-02-plug-24v-7p-plastic-s-type',
+    smrCode: 'R010-02',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Plastic Plug (S-Type)',
+      tr: '24V/7P Plastik Fiş (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, пластиковая (тип S)',
+      de: 'Kunststoffstecker 24 V/7-polig (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin plastic plug for the electrical connection between tractor unit and trailer (S-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli plastik fiş (S tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, пластиковая, для электрического соединения тягача и прицепа (тип S, винтовые клеммы).',
+      de: 'Kunststoffstecker 24 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-r010-03',
+    slug: 'r010-03-abs-plug-24v-5p',
+    smrCode: 'R010-03',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: 'ABS 24V/5P Plug',
+      tr: 'ABS 24V/5P Fiş',
+      ru: 'Вилка ABS 24 В/5 контактов',
+      de: 'ABS-Stecker 24 V/5-polig',
+    },
+    description: {
+      en: '24 V, 5-pin ABS plug with flat terminals for the trailer ABS connection.',
+      tr: 'Römork ABS bağlantısı için yassı terminalli 24 V, 5 pinli ABS fişi.',
+      ru: 'Вилка ABS 24 В, 5 контактов, с плоскими клеммами, для подключения ABS прицепа.',
+      de: 'ABS-Stecker 24 V, 5-polig, mit Flachklemmen für den ABS-Anschluss am Anhänger.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '5', tr: '5', ru: '5', de: '5' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'ABS', tr: 'ABS', ru: 'ABS', de: 'ABS' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R010-03.jpg'],
+  },
+  {
+    id: 'prod-r010-04',
+    slug: 'r010-04-new-model-ebs-plug-24v-7p-unassembled',
+    smrCode: 'R010-04',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: 'New Model EBS 24V/7P Plug (Unassembled)',
+      tr: 'Yeni Model EBS 24V/7P Fiş Demonte',
+      ru: 'Вилка EBS 24 В/7 контактов, новая модель (в разобранном виде)',
+      de: 'EBS-Stecker 24 V/7-polig, Neues Modell (unmontiert)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin EBS plug with flat terminals, supplied unassembled.',
+      tr: 'Yassı terminalli, demonte teslim edilen yeni model 24 V, 7 pinli EBS fişi.',
+      ru: 'Вилка EBS 24 В, 7 контактов, новая модель, с плоскими клеммами, поставляется в разобранном виде.',
+      de: 'EBS-Stecker 24 V, 7-polig, Neues Modell, mit Flachklemmen, unmontiert geliefert.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'EBS', tr: 'EBS', ru: 'EBS', de: 'EBS' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'New model, unassembled',
+          tr: 'Yeni model, demonte',
+          ru: 'Новая модель, в разобранном виде',
+          de: 'Neues Modell, unmontiert',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-r010-05',
+    slug: 'r010-05-new-model-abs-plug-24v-15p-unassembled',
+    smrCode: 'R010-05',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: 'New Model ABS 24V/15P Plug (Unassembled)',
+      tr: 'Yeni Model ABS 24V/15P Fiş Demonte',
+      ru: 'Вилка ABS 24 В/15 контактов, новая модель (в разобранном виде)',
+      de: 'ABS-Stecker 24 V/15-polig, Neues Modell (unmontiert)',
+    },
+    description: {
+      en: 'New model 24 V, 15-pin ABS plug with flat terminals, supplied unassembled.',
+      tr: 'Yassı terminalli, demonte teslim edilen yeni model 24 V, 15 pinli ABS fişi.',
+      ru: 'Вилка ABS 24 В, 15 контактов, новая модель, с плоскими клеммами, поставляется в разобранном виде.',
+      de: 'ABS-Stecker 24 V, 15-polig, Neues Modell, mit Flachklemmen, unmontiert geliefert.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '15', tr: '15', ru: '15', de: '15' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'ABS', tr: 'ABS', ru: 'ABS', de: 'ABS' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'New model, unassembled',
+          tr: 'Yeni model, demonte',
+          ru: 'Новая модель, в разобранном виде',
+          de: 'Neues Modell, unmontiert',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R010-05.jpg'],
+  },
+  {
+    id: 'prod-r010-06',
+    slug: 'r010-06-new-model-adapter-plug-binocular',
+    smrCode: 'R010-06',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: 'New Model Adapter Plug – Binocular',
+      tr: 'Yeni Model Adaptör Fiş - Dürbün',
+      ru: 'Переходная вилка, новая модель, тип «бинокль»',
+      de: 'Adapterstecker Neues Modell – Binocular-Ausführung',
+    },
+    description: {
+      en: 'New model adapter plug in binocular design for trailer electrical connections.',
+      tr: 'Römork elektrik bağlantıları için dürbün yapılı yeni model adaptör fiş.',
+      ru: 'Переходная вилка новой модели в исполнении «бинокль» для электрических соединений прицепа.',
+      de: 'Adapterstecker Neues Modell in Binocular-Ausführung für elektrische Anhängerverbindungen.',
+    },
+    specs: [
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'Adapter plug',
+          tr: 'Adaptör fiş',
+          ru: 'Переходная вилка',
+          de: 'Adapterstecker',
+        },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: {
+          en: 'New model, binocular',
+          tr: 'Yeni model, dürbün',
+          ru: 'Новая модель, «бинокль»',
+          de: 'Neues Modell, Binocular',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R010-06.jpg'],
+  },
+  {
+    id: 'prod-r020-01',
+    slug: 'r020-01-plug-24v-7p-plastic-cover-black-n-type',
+    smrCode: 'R020-01',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Plastic Plug with Cover, Black (N-Type)',
+      tr: '24V/7P Plastik Kapaklı Siyah Fiş (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, пластиковая, с крышкой, чёрная (тип N)',
+      de: 'Kunststoffstecker 24 V/7-polig mit Deckel, schwarz (N-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin plastic plug with cover for the electrical connection between tractor unit and trailer (N-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli plastik kapaklı fiş (N tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, пластиковая, с крышкой, для электрического соединения тягача и прицепа (тип N, винтовые клеммы).',
+      de: 'Kunststoffstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R020-01.jpg'],
+  },
+  {
+    id: 'prod-r020-01a',
+    slug: 'r020-01a-plug-24v-7p-plastic-cover-black-foot-n-type',
+    smrCode: 'R020-01A',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Plastic Plug with Cover, Black, Foot – Socket Entry (N-Type)',
+      tr: '24V/7P Plastik Kapaklı Siyah Fiş, Ayak - Soket Girişli (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, пластиковая, с крышкой, чёрная, ножка — гнездовой ввод (тип N)',
+      de: 'Kunststoffstecker 24 V/7-polig mit Deckel, schwarz, Fuß – Buchseneingang (N-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin plastic plug with cover for the electrical connection between tractor unit and trailer (N-type, flat terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli plastik kapaklı fiş (N tipi, yassı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, пластиковая, с крышкой, для электрического соединения тягача и прицепа (тип N, плоские клеммы).',
+      de: 'Kunststoffstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Flachklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Foot – Socket Entry',
+          tr: 'Ayak - Soket Girişli',
+          ru: 'ножка — гнездовой ввод',
+          de: 'Fuß – Buchseneingang',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R020-01A.jpg'],
+  },
+  {
+    id: 'prod-r020-02',
+    slug: 'r020-02-plug-24v-7p-plastic-cover-white-s-type',
+    smrCode: 'R020-02',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Plastic Plug with Cover, White (S-Type)',
+      tr: '24V/7P Plastik Kapaklı Beyaz Fiş (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, пластиковая, с крышкой, белая (тип S)',
+      de: 'Kunststoffstecker 24 V/7-polig mit Deckel, weiß (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin plastic plug with cover for the electrical connection between tractor unit and trailer (S-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli plastik kapaklı fiş (S tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, пластиковая, с крышкой, для электрического соединения тягача и прицепа (тип S, винтовые клеммы).',
+      de: 'Kunststoffstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R020-02.jpg'],
+  },
+  {
+    id: 'prod-r020-02a',
+    slug: 'r020-02a-plug-24v-7p-plastic-cover-white-foot-s-type',
+    smrCode: 'R020-02A',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Plastic Plug with Cover, White, Foot – Socket Entry (S-Type)',
+      tr: '24V/7P Plastik Kapaklı Beyaz Fiş, Ayak - Soket Girişli (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, пластиковая, с крышкой, белая, ножка — гнездовой ввод (тип S)',
+      de: 'Kunststoffstecker 24 V/7-polig mit Deckel, weiß, Fuß – Buchseneingang (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin plastic plug with cover for the electrical connection between tractor unit and trailer (S-type, flat terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli plastik kapaklı fiş (S tipi, yassı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, пластиковая, с крышкой, для электрического соединения тягача и прицепа (тип S, плоские клеммы).',
+      de: 'Kunststoffstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Flachklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Foot – Socket Entry',
+          tr: 'Ayak - Soket Girişli',
+          ru: 'ножка — гнездовой ввод',
+          de: 'Fuß – Buchseneingang',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s070-01',
+    slug: 's070-01-plug-24v-7p-alu-black-n-type',
+    smrCode: 'S070-01',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug, Black (N-Type)',
+      tr: '24V/7P Alüminyum Siyah Fiş (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, чёрная (тип N)',
+      de: 'Aluminiumstecker 24 V/7-polig, schwarz (N-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug for the electrical connection between tractor unit and trailer (N-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum fiş (N tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, для электрического соединения тягача и прицепа (тип N, винтовые клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S070-01.jpg'],
+  },
+  {
+    id: 'prod-s070-01a',
+    slug: 's070-01a-plug-24v-7p-alu-black-socket-n-type',
+    smrCode: 'S070-01A',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug, Black, Socket Entry (N-Type)',
+      tr: '24V/7P Alüminyum Siyah Fiş, Soket Girişli (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, чёрная, гнездовой ввод (тип N)',
+      de: 'Aluminiumstecker 24 V/7-polig, schwarz, Buchseneingang (N-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug for the electrical connection between tractor unit and trailer (N-type, flat terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum fiş (N tipi, yassı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, для электрического соединения тягача и прицепа (тип N, плоские клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Flachklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Socket Entry',
+          tr: 'Soket Girişli',
+          ru: 'гнездовой ввод',
+          de: 'Buchseneingang',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S070-01A.jpg'],
+  },
+  {
+    id: 'prod-s070-02',
+    slug: 's070-02-plug-24v-7p-alu-white-s-type',
+    smrCode: 'S070-02',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug, White (S-Type)',
+      tr: '24V/7P Alüminyum Beyaz Fiş (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, белая (тип S)',
+      de: 'Aluminiumstecker 24 V/7-polig, weiß (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug for the electrical connection between tractor unit and trailer (S-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum fiş (S tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, для электрического соединения тягача и прицепа (тип S, винтовые клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s070-02a',
+    slug: 's070-02a-plug-24v-7p-alu-white-socket-s-type',
+    smrCode: 'S070-02A',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug, White, Socket Entry (S-Type)',
+      tr: '24V/7P Alüminyum Beyaz Fiş, Soket Girişli (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, белая, гнездовой ввод (тип S)',
+      de: 'Aluminiumstecker 24 V/7-polig, weiß, Buchseneingang (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug for the electrical connection between tractor unit and trailer (S-type, flat terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum fiş (S tipi, yassı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, для электрического соединения тягача и прицепа (тип S, плоские клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Flachklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Socket Entry',
+          tr: 'Soket Girişli',
+          ru: 'гнездовой ввод',
+          de: 'Buchseneingang',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S070-02A.jpg'],
+  },
+  {
+    id: 'prod-s070-03',
+    slug: 's070-03-plug-12v-7p-alu-black-n-type',
+    smrCode: 'S070-03',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '12V/7P Aluminium Plug, Black (N-Type)',
+      tr: '12V/7P Alüminyum Siyah Fiş (N Tipi)',
+      ru: 'Вилка 12 В/7 контактов, алюминиевая, чёрная (тип N)',
+      de: 'Aluminiumstecker 12 V/7-polig, schwarz (N-Typ)',
+    },
+    description: {
+      en: '12 V, 7-pin aluminium plug for the electrical connection between tractor unit and trailer (N-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 12 V, 7 pinli alüminyum fiş (N tipi, vidalı terminal).',
+      ru: 'Вилка 12 В, 7 контактов, алюминиевая, для электрического соединения тягача и прицепа (тип N, винтовые клеммы).',
+      de: 'Aluminiumstecker 12 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '12 V', tr: '12 V', ru: '12 В', de: '12 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S070-03.jpg'],
+  },
+  {
+    id: 'prod-s070-04',
+    slug: 's070-04-plug-12v-7p-alu-white-s-type',
+    smrCode: 'S070-04',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '12V/7P Aluminium Plug, White (S-Type)',
+      tr: '12V/7P Alüminyum Beyaz Fiş (S Tipi)',
+      ru: 'Вилка 12 В/7 контактов, алюминиевая, белая (тип S)',
+      de: 'Aluminiumstecker 12 V/7-polig, weiß (S-Typ)',
+    },
+    description: {
+      en: '12 V, 7-pin aluminium plug for the electrical connection between tractor unit and trailer (S-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 12 V, 7 pinli alüminyum fiş (S tipi, vidalı terminal).',
+      ru: 'Вилка 12 В, 7 контактов, алюминиевая, для электрического соединения тягача и прицепа (тип S, винтовые клеммы).',
+      de: 'Aluminiumstecker 12 V, 7-polig, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '12 V', tr: '12 V', ru: '12 В', de: '12 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S070-02A.jpg'],
+  },
+  {
+    id: 'prod-s080-01',
+    slug: 's080-01-plug-24v-7p-alu-cover-black-n-type',
+    smrCode: 'S080-01',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug with Cover, Black (N-Type)',
+      tr: '24V/7P Alüminyum Kapaklı Siyah Fiş (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, с крышкой, чёрная (тип N)',
+      de: 'Aluminiumstecker 24 V/7-polig mit Deckel, schwarz (N-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug with cover for the electrical connection between tractor unit and trailer (N-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum kapaklı fiş (N tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, с крышкой, для электрического соединения тягача и прицепа (тип N, винтовые клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S080-01.jpg'],
+  },
+  {
+    id: 'prod-s080-01a',
+    slug: 's080-01a-plug-24v-7p-alu-cover-black-foot-n-type',
+    smrCode: 'S080-01A',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug with Cover, Black, Foot – Socket Entry (N-Type)',
+      tr: '24V/7P Alüminyum Kapaklı Siyah Fiş, Ayak - Soket Girişli (N Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, с крышкой, чёрная, ножка — гнездовой ввод (тип N)',
+      de: 'Aluminiumstecker 24 V/7-polig mit Deckel, schwarz, Fuß – Buchseneingang (N-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug with cover for the electrical connection between tractor unit and trailer (N-type, flat terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum kapaklı fiş (N tipi, yassı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, с крышкой, для электрического соединения тягача и прицепа (тип N, плоские клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Flachklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Foot – Socket Entry',
+          tr: 'Ayak - Soket Girişli',
+          ru: 'ножка — гнездовой ввод',
+          de: 'Fuß – Buchseneingang',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S080-01A.jpg'],
+  },
+  {
+    id: 'prod-s080-02',
+    slug: 's080-02-plug-24v-7p-alu-cover-white-s-type',
+    smrCode: 'S080-02',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug with Cover, White (S-Type)',
+      tr: '24V/7P Alüminyum Kapaklı Beyaz Fiş (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, с крышкой, белая (тип S)',
+      de: 'Aluminiumstecker 24 V/7-polig mit Deckel, weiß (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug with cover for the electrical connection between tractor unit and trailer (S-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum kapaklı fiş (S tipi, vidalı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, с крышкой, для электрического соединения тягача и прицепа (тип S, винтовые клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S080-02.jpg'],
+  },
+  {
+    id: 'prod-s080-02a',
+    slug: 's080-02a-plug-24v-7p-alu-cover-white-foot-s-type',
+    smrCode: 'S080-02A',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '24V/7P Aluminium Plug with Cover, White, Foot – Socket Entry (S-Type)',
+      tr: '24V/7P Alüminyum Kapaklı Beyaz Fiş, Ayak - Soket Girişli (S Tipi)',
+      ru: 'Вилка 24 В/7 контактов, алюминиевая, с крышкой, белая, ножка — гнездовой ввод (тип S)',
+      de: 'Aluminiumstecker 24 V/7-polig mit Deckel, weiß, Fuß – Buchseneingang (S-Typ)',
+    },
+    description: {
+      en: '24 V, 7-pin aluminium plug with cover for the electrical connection between tractor unit and trailer (S-type, flat terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 24 V, 7 pinli alüminyum kapaklı fiş (S tipi, yassı terminal).',
+      ru: 'Вилка 24 В, 7 контактов, алюминиевая, с крышкой, для электрического соединения тягача и прицепа (тип S, плоские клеммы).',
+      de: 'Aluminiumstecker 24 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Flachklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Flat terminals',
+          tr: 'Yassı terminal',
+          ru: 'Плоские клеммы',
+          de: 'Flachklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Foot – Socket Entry',
+          tr: 'Ayak - Soket Girişli',
+          ru: 'ножка — гнездовой ввод',
+          de: 'Fuß – Buchseneingang',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S080-02A.jpg'],
+  },
+  {
+    id: 'prod-s080-03',
+    slug: 's080-03-plug-12v-7p-alu-cover-black-n-type',
+    smrCode: 'S080-03',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '12V/7P Aluminium Plug with Cover, Black (N-Type)',
+      tr: '12V/7P Alüminyum Kapaklı Siyah Fiş (N Tipi)',
+      ru: 'Вилка 12 В/7 контактов, алюминиевая, с крышкой, чёрная (тип N)',
+      de: 'Aluminiumstecker 12 V/7-polig mit Deckel, schwarz (N-Typ)',
+    },
+    description: {
+      en: '12 V, 7-pin aluminium plug with cover for the electrical connection between tractor unit and trailer (N-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 12 V, 7 pinli alüminyum kapaklı fiş (N tipi, vidalı terminal).',
+      ru: 'Вилка 12 В, 7 контактов, алюминиевая, с крышкой, для электрического соединения тягача и прицепа (тип N, винтовые клеммы).',
+      de: 'Aluminiumstecker 12 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (N-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '12 V', tr: '12 V', ru: '12 В', de: '12 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S080-03.jpg'],
+  },
+  {
+    id: 'prod-s080-04',
+    slug: 's080-04-plug-12v-7p-alu-cover-white-s-type',
+    smrCode: 'S080-04',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-plugs-sockets',
+    title: {
+      en: '12V/7P Aluminium Plug with Cover, White (S-Type)',
+      tr: '12V/7P Alüminyum Kapaklı Beyaz Fiş (S Tipi)',
+      ru: 'Вилка 12 В/7 контактов, алюминиевая, с крышкой, белая (тип S)',
+      de: 'Aluminiumstecker 12 V/7-polig mit Deckel, weiß (S-Typ)',
+    },
+    description: {
+      en: '12 V, 7-pin aluminium plug with cover for the electrical connection between tractor unit and trailer (S-type, screw terminals).',
+      tr: 'Çekici ile römork arasındaki elektrik bağlantısı için 12 V, 7 pinli alüminyum kapaklı fiş (S tipi, vidalı terminal).',
+      ru: 'Вилка 12 В, 7 контактов, алюминиевая, с крышкой, для электрического соединения тягача и прицепа (тип S, винтовые клеммы).',
+      de: 'Aluminiumstecker 12 V, 7-polig mit Deckel, für die elektrische Verbindung zwischen Zugfahrzeug und Anhänger (S-Typ, Schraubklemmen).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '12 V', tr: '12 V', ru: '12 В', de: '12 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: {
+          en: 'Terminals',
+          tr: 'Terminal',
+          ru: 'Клеммы',
+          de: 'Anschlussklemmen',
+        },
+        value: {
+          en: 'Screw terminals',
+          tr: 'Vidalı terminal',
+          ru: 'Винтовые клеммы',
+          de: 'Schraubklemmen',
+        },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: { en: 'Cover', tr: 'Kapak', ru: 'Крышка', de: 'Deckel' },
+        value: { en: 'Yes', tr: 'Var', ru: 'Есть', de: 'Ja' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/S080-04.jpg'],
+  },
+  {
+    id: 'prod-r030-100',
+    slug: 'r030-100-spiral-cable-24v-7p-aluminium-black-3m-4m',
+    smrCode: 'R030-100',
     categoryId: 'cat-cables',
     subcategoryId: 'subcat-spiral-cable',
     title: {
-      en: '24V Coiled Cable Aluminum Plugs N-Type 4.5m',
-      tr: '24V ALÜMİNYUM METAL FİŞLİ KABLO N TİPİ 4,5m',
-      ru: 'Кабель спиральный 24V N-тип с алюминиевыми вилками 4.5м',
-      de: '24V Wendelkanal Aluminium-Stecker N-Typ 4.5m',
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, Black N-Type Plug (3 m / 4 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Siyah N-Tipli Fişli Kablo (3 m / 4 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, чёрная, тип N (3 м / 4 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, schwarz, N-Typ (3 m / 4 m)',
     },
     description: {
-      en: '24V 7-core (6x1.0mm² + 1x1.5mm²) polyurethane spiral cable with durable die-cast aluminum N-type plugs. Max extension 4.5 meters.',
-      tr: 'Alüminyum döküm N-Tipi fişli, (6x1,00 mm² + 1x1,50 mm²) kesitli, 4,5 metreye uzayabilen poliüretan 24V spiral kablo.',
-      ru: '7-жильный (6x1.0 + 1x1.5 мм²) полиуретановый спиральный кабель 24V с литыми алюминиевыми вилками N-типа. Длина 4.5м.',
-      de: '24V 7-adriges (6x1.0 + 1x1.5mm²) PUR-Spiralkabel mit Alu-Gusssteckern Typ-N. Max. Auszugslänge 4.5m.',
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with black N-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3 m / 4 m.',
+      tr: 'Çekici-römork bağlantısı için siyah N tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3 m / 4 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа N (чёрные, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3 м / 4 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzen N-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3 m / 4 m.',
     },
-    images: ['/products/r030-101.jpg', '/products/r030-130.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Working Length',
-          tr: 'Çalışma Boyu',
-          ru: 'Рабочая длина',
-          de: 'Arbeitslänge',
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
         },
         value: {
-          en: '4.5 m',
-          tr: '4.5 m',
-          ru: '4.5 м',
-          de: '4.5 m',
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
         },
       },
       {
         label: {
-          en: 'Wire Cross-Section',
-          tr: 'Kablo Kesiti',
-          ru: 'Сечение жил',
-          de: 'Kabelquerschnitt',
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
         },
         value: {
-          en: '6 x 1.0 mm² + 1 x 1.5 mm²',
-          tr: '6 x 1.0 mm² + 1 x 1.5 mm²',
-          ru: '6 x 1.0 мм² + 1 x 1.5 мм²',
-          de: '6 x 1.0 mm² + 1 x 1.5 mm²',
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
         },
       },
       {
         label: {
-          en: 'Plug Material',
-          tr: 'Fiş Malzemesi',
-          ru: 'Материал вилок',
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
           de: 'Steckermaterial',
         },
         value: {
-          en: 'Aluminum Alloy',
-          tr: 'Alüminyum Alaşım',
-          ru: 'Алюминиевый сплав',
-          de: 'Aluminiumlegierung',
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
         },
       },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-120',
+          tr: 'R030-120',
+          ru: 'R030-120',
+          de: 'R030-120',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
     ],
+    images: ['/products/cables/R030-103.jpg'],
   },
   {
-    id: 'prod-r030-130',
-    slug: 'r030-130-24v-plastic-green-plug-cable-s-type-4m',
-    smrCode: 'R030-130',
-    oemNumbers: ['000 540 84 07', '81254116021', '139 217 9'],
-    crossReferences: ['HELLA 8KA007123031', 'DT 2.30151'],
+    id: 'prod-r030-101',
+    slug: 'r030-101-spiral-cable-24v-7p-aluminium-black-3-5m-4-5m',
+    smrCode: 'R030-101',
     categoryId: 'cat-cables',
     subcategoryId: 'subcat-spiral-cable',
     title: {
-      en: '24V Coiled Cable Plastic Green Plugs S-Type 4.0m',
-      tr: '24V PLASTİK YEŞİL FİŞLİ KABLO S TİPİ 4m',
-      ru: 'Кабель спиральный 24V S-тип с зелеными пластиковыми вилками 4м',
-      de: '24V Wendelkanal Kunststoff-Grün-Stecker S-Typ 4.0m',
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, Black N-Type Plug (3.5 m / 4.5 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Siyah N-Tipli Fişli Kablo (3,5 m / 4,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, чёрная, тип N (3,5 м / 4,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, schwarz, N-Typ (3,5 m / 4,5 m)',
     },
     description: {
-      en: '24V 7-core S-type spiral cable fitted with impact-resistant green plastic plugs. Working length 4.0 meters.',
-      tr: 'Darbeye dayanıklı yeşil plastik S-Tipi fişlerle donatılmış, 4,0 metre çalışma boyuna sahip 24V 7li spiral kablo.',
-      ru: '7-жильный спиральный кабель тип S (24V) с зелеными ударопрочными вилками. Рабочая длина 4.0м.',
-      de: '24V 7-adriges S-Typ Spiralkabel mit grünen Kunststoffsteckern. Max. Arbeitslänge 4.0m.',
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with black N-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3.5 m / 4.5 m.',
+      tr: 'Çekici-römork bağlantısı için siyah N tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа N (чёрные, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3,5 м / 4,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzen N-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3,5 m / 4,5 m.',
     },
-    images: ['/products/r030-130.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Working Length',
-          tr: 'Çalışma Boyu',
-          ru: 'Рабочая длина',
-          de: 'Arbeitslänge',
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
         },
         value: {
-          en: '4 m',
-          tr: '4 m',
-          ru: '4 м',
-          de: '4 m',
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
         },
       },
       {
         label: {
-          en: 'Wire Cross-Section',
-          tr: 'Kablo Kesiti',
-          ru: 'Сечение жил',
-          de: 'Kabelquerschnitt',
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
         },
-        value: '6 x 1.0 mm² + 1 x 1.5 mm²',
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
       },
       {
-        label: { en: 'Standard', tr: 'Standard', ru: 'Стандарт', de: 'Norm' },
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
         value: {
-          en: 'ISO 3731 (S-Type)',
-          tr: 'ISO 3731 (S Tipi)',
-          ru: 'ISO 3731 (Тип S)',
-          de: 'ISO 3731 (S-Typ)',
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
         },
       },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-121',
+          tr: 'R030-121',
+          ru: 'R030-121',
+          de: 'R030-121',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
     ],
+    images: ['/products/cables/R030-103.jpg'],
+  },
+  {
+    id: 'prod-r030-102',
+    slug: 'r030-102-spiral-cable-24v-7p-aluminium-black-4m-5m',
+    smrCode: 'R030-102',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, Black N-Type Plug (4 m / 5 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Siyah N-Tipli Fişli Kablo (4 m / 5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, чёрная, тип N (4 м / 5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, schwarz, N-Typ (4 m / 5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with black N-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4 m / 5 m.',
+      tr: 'Çekici-römork bağlantısı için siyah N tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4 m / 5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа N (чёрные, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4 м / 5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzen N-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4 m / 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4 m / 5 m',
+          tr: '4 m / 5 m',
+          ru: '4 м / 5 м',
+          de: '4 m / 5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-122',
+          tr: 'R030-122',
+          ru: 'R030-122',
+          de: 'R030-122',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-103.jpg'],
+  },
+  {
+    id: 'prod-r030-103',
+    slug: 'r030-103-spiral-cable-24v-7p-aluminium-black-4-5m-5-5m',
+    smrCode: 'R030-103',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, Black N-Type Plug (4.5 m / 5.5 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Siyah N-Tipli Fişli Kablo (4,5 m / 5,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, чёрная, тип N (4,5 м / 5,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, schwarz, N-Typ (4,5 m / 5,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with black N-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4.5 m / 5.5 m.',
+      tr: 'Çekici-römork bağlantısı için siyah N tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4,5 m / 5,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа N (чёрные, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4,5 м / 5,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzen N-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4,5 m / 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4.5 m / 5.5 m',
+          tr: '4,5 m / 5,5 m',
+          ru: '4,5 м / 5,5 м',
+          de: '4,5 m / 5,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-123',
+          tr: 'R030-123',
+          ru: 'R030-123',
+          de: 'R030-123',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-103.jpg'],
+  },
+  {
+    id: 'prod-r030-110',
+    slug: 'r030-110-spiral-cable-24v-7p-aluminium-white-3m-4m',
+    smrCode: 'R030-110',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, White S-Type Plug (3 m / 4 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Beyaz S-Tipli Fişli Kablo (3 m / 4 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, белая, тип S (3 м / 4 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, weiß, S-Typ (3 m / 4 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with white S-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3 m / 4 m.',
+      tr: 'Çekici-römork bağlantısı için beyaz S tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3 m / 4 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа S (белые, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3 м / 4 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißen S-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3 m / 4 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-130',
+          tr: 'R030-130',
+          ru: 'R030-130',
+          de: 'R030-130',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-113.jpg'],
+  },
+  {
+    id: 'prod-r030-111',
+    slug: 'r030-111-spiral-cable-24v-7p-aluminium-white-3-5m-4-5m',
+    smrCode: 'R030-111',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, White S-Type Plug (3.5 m / 4.5 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Beyaz S-Tipli Fişli Kablo (3,5 m / 4,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, белая, тип S (3,5 м / 4,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, weiß, S-Typ (3,5 m / 4,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with white S-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3.5 m / 4.5 m.',
+      tr: 'Çekici-römork bağlantısı için beyaz S tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа S (белые, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3,5 м / 4,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißen S-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3,5 m / 4,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-131',
+          tr: 'R030-131',
+          ru: 'R030-131',
+          de: 'R030-131',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-113.jpg'],
+  },
+  {
+    id: 'prod-r030-112',
+    slug: 'r030-112-spiral-cable-24v-7p-aluminium-white-4m-5m',
+    smrCode: 'R030-112',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, White S-Type Plug (4 m / 5 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Beyaz S-Tipli Fişli Kablo (4 m / 5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, белая, тип S (4 м / 5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, weiß, S-Typ (4 m / 5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with white S-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4 m / 5 m.',
+      tr: 'Çekici-römork bağlantısı için beyaz S tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4 m / 5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа S (белые, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4 м / 5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißen S-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4 m / 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4 m / 5 m',
+          tr: '4 m / 5 m',
+          ru: '4 м / 5 м',
+          de: '4 m / 5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-132',
+          tr: 'R030-132',
+          ru: 'R030-132',
+          de: 'R030-132',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-113.jpg'],
+  },
+  {
+    id: 'prod-r030-113',
+    slug: 'r030-113-spiral-cable-24v-7p-aluminium-white-4-5m-5-5m',
+    smrCode: 'R030-113',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Aluminium / Plastic Spiral Cable, White S-Type Plug (4.5 m / 5.5 m)',
+      tr: 'Yeni Model 24V/7P Alüminyum / Plastik Beyaz S-Tipli Fişli Kablo (4,5 m / 5,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, вилка алюминий / пластик, белая, тип S (4,5 м / 5,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Stecker Aluminium / Kunststoff, weiß, S-Typ (4,5 m / 5,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with white S-type aluminium / plastic plugs for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4.5 m / 5.5 m.',
+      tr: 'Çekici-römork bağlantısı için beyaz S tipi alüminyum / plastik fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4,5 m / 5,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с вилками типа S (белые, алюминий / пластик) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4,5 м / 5,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißen S-Typ-Steckern aus Aluminium / Kunststoff für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4,5 m / 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'S-type', tr: 'S tipi', ru: 'Тип S', de: 'S-Typ' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4.5 m / 5.5 m',
+          tr: '4,5 m / 5,5 m',
+          ru: '4,5 м / 5,5 м',
+          de: '4,5 m / 5,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Alternative SMR code',
+          tr: 'Alternatif SMR kodu',
+          ru: 'Альтернативный код SMR',
+          de: 'Alternativer SMR-Code',
+        },
+        value: {
+          en: 'R030-133',
+          tr: 'R030-133',
+          ru: 'R030-133',
+          de: 'R030-133',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-113.jpg'],
+  },
+  {
+    id: 'prod-r030-142',
+    slug: 'r030-142-electric-cable-12v-n-type-mn-5m',
+    smrCode: 'R030-142',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: '12V Electric Cable – N-Type (MN System) (5 m)',
+      tr: '12V Elektrik Kablosu - N Tipi (MN System) (5 m)',
+      ru: 'Электрический кабель 12 В — тип N (система MN) (5 м)',
+      de: '12-V-Elektrokabel – N-Typ (MN-System) (5 m)',
+    },
+    description: {
+      en: '12 V electric cable with N-type plug (MN system) for trailer connections. Length: 5 m.',
+      tr: 'Römork bağlantıları için N tipi fişli 12 V elektrik kablosu (MN System). Uzunluk: 5 m.',
+      ru: 'Электрический кабель 12 В с вилкой типа N (система MN) для подключения прицепа. Длина: 5 м.',
+      de: '12-V-Elektrokabel mit N-Typ-Stecker (MN-System) für Anhängerverbindungen. Länge: 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '12 V', tr: '12 V', ru: '12 В', de: '12 V' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'MN System',
+          tr: 'MN System',
+          ru: 'Система MN',
+          de: 'MN-System',
+        },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: { en: '5 m', tr: '5 m', ru: '5 м', de: '5 m' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-r030-143',
+    slug: 'r030-143-electric-cable-12v-n-type-mn-5-5m',
+    smrCode: 'R030-143',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: '12V Electric Cable – N-Type (MN System) (5.5 m)',
+      tr: '12V Elektrik Kablosu - N Tipi (MN System) (5,5 m)',
+      ru: 'Электрический кабель 12 В — тип N (система MN) (5,5 м)',
+      de: '12-V-Elektrokabel – N-Typ (MN-System) (5,5 m)',
+    },
+    description: {
+      en: '12 V electric cable with N-type plug (MN system) for trailer connections. Length: 5.5 m.',
+      tr: 'Römork bağlantıları için N tipi fişli 12 V elektrik kablosu (MN System). Uzunluk: 5,5 m.',
+      ru: 'Электрический кабель 12 В с вилкой типа N (система MN) для подключения прицепа. Длина: 5,5 м.',
+      de: '12-V-Elektrokabel mit N-Typ-Stecker (MN-System) für Anhängerverbindungen. Länge: 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '12 V', tr: '12 V', ru: '12 В', de: '12 V' },
+      },
+      {
+        label: {
+          en: 'Plug type',
+          tr: 'Fiş tipi',
+          ru: 'Тип вилки',
+          de: 'Steckertyp',
+        },
+        value: { en: 'N-type', tr: 'N tipi', ru: 'Тип N', de: 'N-Typ' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: {
+          en: 'MN System',
+          tr: 'MN System',
+          ru: 'Система MN',
+          de: 'MN-System',
+        },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: { en: '5.5 m', tr: '5,5 m', ru: '5,5 м', de: '5,5 m' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-r030-170',
+    slug: 'r030-170-spiral-cable-ebs-24v-7p-3m-4m',
+    smrCode: 'R030-170',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/7P EBS Spiral Cable (3 m / 4 m)',
+      tr: 'Yeni Model 24V/7P EBS Kablo (3 m / 4 m)',
+      ru: 'Спиральный кабель EBS 24 В/7 контактов, новая модель (3 м / 4 м)',
+      de: 'EBS-Spiralkabel 24 V/7-polig, Neues Modell (3 m / 4 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin EBS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø45 mm, wire 5x1.5 mm + 2x2.5 mm. Length: 3 m / 4 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 7 pinli EBS spiral kablo. Poliüretan spiral Ø45 mm, tel 5x1,5 mm + 2x2,5 mm. Uzunluk: 3 m / 4 m.',
+      ru: 'Спиральный кабель EBS 24 В, 7 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø45 мм, жилы 5x1,5 мм + 2x2,5 мм. Длина: 3 м / 4 м.',
+      de: 'EBS-Spiralkabel 24 V, 7-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø45 mm, Adern 5x1,5 mm + 2x2,5 mm. Länge: 3 m / 4 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'EBS', tr: 'EBS', ru: 'EBS', de: 'EBS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '45 mm', tr: '45 mm', ru: '45 мм', de: '45 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '5x1.5 mm + 2x2.5 mm',
+          tr: '5x1.5 mm + 2x2.5 mm',
+          ru: '5x1.5 мм + 2x2.5 мм',
+          de: '5x1.5 mm + 2x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-170.jpg'],
+  },
+  {
+    id: 'prod-r030-171',
+    slug: 'r030-171-spiral-cable-ebs-24v-7p-3-5m-4-5m',
+    smrCode: 'R030-171',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/7P EBS Spiral Cable (3.5 m / 4.5 m)',
+      tr: 'Yeni Model 24V/7P EBS Kablo (3,5 m / 4,5 m)',
+      ru: 'Спиральный кабель EBS 24 В/7 контактов, новая модель (3,5 м / 4,5 м)',
+      de: 'EBS-Spiralkabel 24 V/7-polig, Neues Modell (3,5 m / 4,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin EBS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø45 mm, wire 5x1.5 mm + 2x2.5 mm. Length: 3.5 m / 4.5 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 7 pinli EBS spiral kablo. Poliüretan spiral Ø45 mm, tel 5x1,5 mm + 2x2,5 mm. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Спиральный кабель EBS 24 В, 7 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø45 мм, жилы 5x1,5 мм + 2x2,5 мм. Длина: 3,5 м / 4,5 м.',
+      de: 'EBS-Spiralkabel 24 V, 7-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø45 mm, Adern 5x1,5 mm + 2x2,5 mm. Länge: 3,5 m / 4,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'EBS', tr: 'EBS', ru: 'EBS', de: 'EBS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '45 mm', tr: '45 mm', ru: '45 мм', de: '45 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '5x1.5 mm + 2x2.5 mm',
+          tr: '5x1.5 mm + 2x2.5 mm',
+          ru: '5x1.5 мм + 2x2.5 мм',
+          de: '5x1.5 mm + 2x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-170.jpg'],
   },
   {
     id: 'prod-r030-172',
-    slug: 'r030-172-ebs-7-pin-spiral-cable-5m',
+    slug: 'r030-172-spiral-cable-ebs-24v-7p-4m-5m',
     smrCode: 'R030-172',
-    oemNumbers: ['446 008 240 0', '20803584', '000 540 00 80'],
-    crossReferences: ['WABCO 4460082400', 'COJALI 2210100', 'DT 2.30210'],
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/7P EBS Spiral Cable (4 m / 5 m)',
+      tr: 'Yeni Model 24V/7P EBS Kablo (4 m / 5 m)',
+      ru: 'Спиральный кабель EBS 24 В/7 контактов, новая модель (4 м / 5 м)',
+      de: 'EBS-Spiralkabel 24 V/7-polig, Neues Modell (4 m / 5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin EBS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø45 mm, wire 5x1.5 mm + 2x2.5 mm. Length: 4 m / 5 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 7 pinli EBS spiral kablo. Poliüretan spiral Ø45 mm, tel 5x1,5 mm + 2x2,5 mm. Uzunluk: 4 m / 5 m.',
+      ru: 'Спиральный кабель EBS 24 В, 7 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø45 мм, жилы 5x1,5 мм + 2x2,5 мм. Длина: 4 м / 5 м.',
+      de: 'EBS-Spiralkabel 24 V, 7-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø45 mm, Adern 5x1,5 mm + 2x2,5 mm. Länge: 4 m / 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'EBS', tr: 'EBS', ru: 'EBS', de: 'EBS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4 m / 5 m',
+          tr: '4 m / 5 m',
+          ru: '4 м / 5 м',
+          de: '4 m / 5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '45 mm', tr: '45 mm', ru: '45 мм', de: '45 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '5x1.5 mm + 2x2.5 mm',
+          tr: '5x1.5 mm + 2x2.5 mm',
+          ru: '5x1.5 мм + 2x2.5 мм',
+          de: '5x1.5 mm + 2x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-170.jpg'],
+  },
+  {
+    id: 'prod-r030-173',
+    slug: 'r030-173-spiral-cable-ebs-24v-7p-4-5m-5-5m',
+    smrCode: 'R030-173',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/7P EBS Spiral Cable (4.5 m / 5.5 m)',
+      tr: 'Yeni Model 24V/7P EBS Kablo (4,5 m / 5,5 m)',
+      ru: 'Спиральный кабель EBS 24 В/7 контактов, новая модель (4,5 м / 5,5 м)',
+      de: 'EBS-Spiralkabel 24 V/7-polig, Neues Modell (4,5 m / 5,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin EBS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø45 mm, wire 5x1.5 mm + 2x2.5 mm. Length: 4.5 m / 5.5 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 7 pinli EBS spiral kablo. Poliüretan spiral Ø45 mm, tel 5x1,5 mm + 2x2,5 mm. Uzunluk: 4,5 m / 5,5 m.',
+      ru: 'Спиральный кабель EBS 24 В, 7 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø45 мм, жилы 5x1,5 мм + 2x2,5 мм. Длина: 4,5 м / 5,5 м.',
+      de: 'EBS-Spiralkabel 24 V, 7-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø45 mm, Adern 5x1,5 mm + 2x2,5 mm. Länge: 4,5 m / 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'EBS', tr: 'EBS', ru: 'EBS', de: 'EBS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4.5 m / 5.5 m',
+          tr: '4,5 m / 5,5 m',
+          ru: '4,5 м / 5,5 м',
+          de: '4,5 m / 5,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '45 mm', tr: '45 mm', ru: '45 мм', de: '45 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '5x1.5 mm + 2x2.5 mm',
+          tr: '5x1.5 mm + 2x2.5 mm',
+          ru: '5x1.5 мм + 2x2.5 мм',
+          de: '5x1.5 mm + 2x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-170.jpg'],
+  },
+  {
+    id: 'prod-r030-180',
+    slug: 'r030-180-spiral-cable-abs-24v-15p-3m-4m',
+    smrCode: 'R030-180',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/15P ABS Spiral Cable (3 m / 4 m)',
+      tr: 'Yeni Model 24V/15P ABS Kablo (3 m / 4 m)',
+      ru: 'Спиральный кабель ABS 24 В/15 контактов, новая модель (3 м / 4 м)',
+      de: 'ABS-Spiralkabel 24 V/15-polig, Neues Modell (3 m / 4 m)',
+    },
+    description: {
+      en: 'New model 24 V, 15-pin ABS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø65 mm, wire 12x1.5 mm + 3x2.5 mm. Length: 3 m / 4 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 15 pinli ABS spiral kablo. Poliüretan spiral Ø65 mm, tel 12x1,5 mm + 3x2,5 mm. Uzunluk: 3 m / 4 m.',
+      ru: 'Спиральный кабель ABS 24 В, 15 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø65 мм, жилы 12x1,5 мм + 3x2,5 мм. Длина: 3 м / 4 м.',
+      de: 'ABS-Spiralkabel 24 V, 15-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø65 mm, Adern 12x1,5 mm + 3x2,5 mm. Länge: 3 m / 4 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '15', tr: '15', ru: '15', de: '15' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'ABS', tr: 'ABS', ru: 'ABS', de: 'ABS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '65 mm', tr: '65 mm', ru: '65 мм', de: '65 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '30 mm', tr: '30 mm', ru: '30 мм', de: '30 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '12x1.5 mm + 3x2.5 mm',
+          tr: '12x1.5 mm + 3x2.5 mm',
+          ru: '12x1.5 мм + 3x2.5 мм',
+          de: '12x1.5 mm + 3x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-180.jpg'],
+  },
+  {
+    id: 'prod-r030-181',
+    slug: 'r030-181-spiral-cable-abs-24v-15p-3-5m-4-5m',
+    smrCode: 'R030-181',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/15P ABS Spiral Cable (3.5 m / 4.5 m)',
+      tr: 'Yeni Model 24V/15P ABS Kablo (3,5 m / 4,5 m)',
+      ru: 'Спиральный кабель ABS 24 В/15 контактов, новая модель (3,5 м / 4,5 м)',
+      de: 'ABS-Spiralkabel 24 V/15-polig, Neues Modell (3,5 m / 4,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 15-pin ABS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø65 mm, wire 12x1.5 mm + 3x2.5 mm. Length: 3.5 m / 4.5 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 15 pinli ABS spiral kablo. Poliüretan spiral Ø65 mm, tel 12x1,5 mm + 3x2,5 mm. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Спиральный кабель ABS 24 В, 15 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø65 мм, жилы 12x1,5 мм + 3x2,5 мм. Длина: 3,5 м / 4,5 м.',
+      de: 'ABS-Spiralkabel 24 V, 15-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø65 mm, Adern 12x1,5 mm + 3x2,5 mm. Länge: 3,5 m / 4,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '15', tr: '15', ru: '15', de: '15' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'ABS', tr: 'ABS', ru: 'ABS', de: 'ABS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '65 mm', tr: '65 mm', ru: '65 мм', de: '65 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '30 mm', tr: '30 mm', ru: '30 мм', de: '30 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '12x1.5 mm + 3x2.5 mm',
+          tr: '12x1.5 mm + 3x2.5 mm',
+          ru: '12x1.5 мм + 3x2.5 мм',
+          de: '12x1.5 mm + 3x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-180.jpg'],
+  },
+  {
+    id: 'prod-r030-182',
+    slug: 'r030-182-spiral-cable-abs-24v-15p-4m-5m',
+    smrCode: 'R030-182',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/15P ABS Spiral Cable (4 m / 5 m)',
+      tr: 'Yeni Model 24V/15P ABS Kablo (4 m / 5 m)',
+      ru: 'Спиральный кабель ABS 24 В/15 контактов, новая модель (4 м / 5 м)',
+      de: 'ABS-Spiralkabel 24 V/15-polig, Neues Modell (4 m / 5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 15-pin ABS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø65 mm, wire 12x1.5 mm + 3x2.5 mm. Length: 4 m / 5 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 15 pinli ABS spiral kablo. Poliüretan spiral Ø65 mm, tel 12x1,5 mm + 3x2,5 mm. Uzunluk: 4 m / 5 m.',
+      ru: 'Спиральный кабель ABS 24 В, 15 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø65 мм, жилы 12x1,5 мм + 3x2,5 мм. Длина: 4 м / 5 м.',
+      de: 'ABS-Spiralkabel 24 V, 15-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø65 mm, Adern 12x1,5 mm + 3x2,5 mm. Länge: 4 m / 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '15', tr: '15', ru: '15', de: '15' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'ABS', tr: 'ABS', ru: 'ABS', de: 'ABS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4 m / 5 m',
+          tr: '4 m / 5 m',
+          ru: '4 м / 5 м',
+          de: '4 m / 5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '65 mm', tr: '65 mm', ru: '65 мм', de: '65 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '30 mm', tr: '30 mm', ru: '30 мм', de: '30 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '12x1.5 mm + 3x2.5 mm',
+          tr: '12x1.5 mm + 3x2.5 mm',
+          ru: '12x1.5 мм + 3x2.5 мм',
+          de: '12x1.5 mm + 3x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-180.jpg'],
+  },
+  {
+    id: 'prod-r030-183',
+    slug: 'r030-183-spiral-cable-abs-24v-15p-4-5m-5-5m',
+    smrCode: 'R030-183',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-abs-ebs-cable',
+    title: {
+      en: 'New Model 24V/15P ABS Spiral Cable (4.5 m / 5.5 m)',
+      tr: 'Yeni Model 24V/15P ABS Kablo (4,5 m / 5,5 m)',
+      ru: 'Спиральный кабель ABS 24 В/15 контактов, новая модель (4,5 м / 5,5 м)',
+      de: 'ABS-Spiralkabel 24 V/15-polig, Neues Modell (4,5 m / 5,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 15-pin ABS spiral (coiled) cable for the tractor–trailer connection. Polyurethane coil Ø65 mm, wire 12x1.5 mm + 3x2.5 mm. Length: 4.5 m / 5.5 m.',
+      tr: 'Çekici-römork bağlantısı için yeni model 24 V, 15 pinli ABS spiral kablo. Poliüretan spiral Ø65 mm, tel 12x1,5 mm + 3x2,5 mm. Uzunluk: 4,5 m / 5,5 m.',
+      ru: 'Спиральный кабель ABS 24 В, 15 контактов, новая модель, для соединения тягача и прицепа. Спираль из полиуретана Ø65 мм, жилы 12x1,5 мм + 3x2,5 мм. Длина: 4,5 м / 5,5 м.',
+      de: 'ABS-Spiralkabel 24 V, 15-polig, Neues Modell, für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø65 mm, Adern 12x1,5 mm + 3x2,5 mm. Länge: 4,5 m / 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '15', tr: '15', ru: '15', de: '15' },
+      },
+      {
+        label: { en: 'Type', tr: 'Tip', ru: 'Тип', de: 'Typ' },
+        value: { en: 'ABS', tr: 'ABS', ru: 'ABS', de: 'ABS' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4.5 m / 5.5 m',
+          tr: '4,5 m / 5,5 m',
+          ru: '4,5 м / 5,5 м',
+          de: '4,5 m / 5,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '65 mm', tr: '65 mm', ru: '65 мм', de: '65 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '30 mm', tr: '30 mm', ru: '30 мм', de: '30 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '12x1.5 mm + 3x2.5 mm',
+          tr: '12x1.5 mm + 3x2.5 mm',
+          ru: '12x1.5 мм + 3x2.5 мм',
+          de: '12x1.5 mm + 3x2.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-180.jpg'],
+  },
+  {
+    id: 'prod-r030-190p',
+    slug: 'r030-190p-adapter-cable-plastic-3m-4m',
+    smrCode: 'R030-190P',
     categoryId: 'cat-cables',
     subcategoryId: 'subcat-spiral-cable',
     title: {
-      en: '7-Pin EBS Coiled Cable 24V 5.0m',
-      tr: '7 Lİ EBS SPİRAL KABLO 5m',
-      ru: 'Кабель спиральный EBS 7-контактный 5м (ISO 7638)',
-      de: '7-Poliges EBS Spiralkabel 24V 5.0m',
+      en: 'New Model Adapter Cable, Plastic / Injection-Moulded Plugs, Black – White (3 m / 4 m)',
+      tr: 'Yeni Model Adaptör Kablo Plastik / Enjeksiyon Baskılı Fişli Siyah - Beyaz (3 m / 4 m)',
+      ru: 'Адаптерный кабель, новая модель, вилки пластик / литая под давлением, чёрный — белый (3 м / 4 м)',
+      de: 'Adapterkabel Neues Modell, Stecker Kunststoff / Spritzguss, Schwarz – Weiß (3 m / 4 m)',
     },
     description: {
-      en: '24V 7-pin EBS/ABS braking spiral cable with (5x1.50mm² + 2x2.50mm²) core specification and PUR jacket. 5m max working length.',
-      tr: 'ISO 7638 fren sistemleri için (5x1,50 mm² + 2x2,50 mm²) kesitli, poliüretan kılıflı 5 metre 7li EBS spiral kablo.',
-      ru: 'Спиральный EBS кабель 24V (5x1.5 + 2x2.5 мм²) в износостойкой полиуретановой изоляции. Рабочая длина 5 метров.',
-      de: 'EBS/ABS Spiralkabel (5x1.5 + 2x2.5mm²) für elektronische Bremssysteme. 5m Max. Arbeitslänge.',
+      en: 'New model adapter cable with plastic / injection-moulded plugs in black or white for trailer electrical connections. Length: 3 m / 4 m.',
+      tr: 'Römork elektrik bağlantıları için siyah veya beyaz, plastik / enjeksiyon baskılı fişli yeni model adaptör kablo. Uzunluk: 3 m / 4 m.',
+      ru: 'Адаптерный кабель новой модели с вилками (пластик / литая под давлением) чёрного или белого цвета для электрических соединений прицепа. Длина: 3 м / 4 м.',
+      de: 'Adapterkabel Neues Modell mit Steckern (Kunststoff / Spritzguss) in Schwarz oder Weiß für elektrische Anhängerverbindungen. Länge: 3 m / 4 m.',
     },
-    images: ['/products/r030-172.jpg'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Working Length',
-          tr: 'Çalışma Boyu',
-          ru: 'Рабочая длина',
-          de: 'Arbeitslänge',
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
         },
         value: {
-          en: '5 m',
-          tr: '5 m',
-          ru: '5 м',
-          de: '5 m',
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
         },
       },
       {
         label: {
-          en: 'Wire Cross-Section',
-          tr: 'Kablo Kesiti',
+          en: 'Plug variants',
+          tr: 'Fiş versiyonları',
+          ru: 'Варианты вилки',
+          de: 'Steckervarianten',
+        },
+        value: {
+          en: 'P: plastic plug; PM: injection-moulded plug',
+          tr: 'P: plastik fiş; PM: enjeksiyon baskılı fiş',
+          ru: 'P: пластиковая вилка; PM: литая вилка',
+          de: 'P: Kunststoffstecker; PM: Spritzgussstecker',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: {
+          en: 'Black – White',
+          tr: 'Siyah - Beyaz',
+          ru: 'Чёрный — белый',
+          de: 'Schwarz – Weiß',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-190PM.jpg'],
+  },
+  {
+    id: 'prod-r030-191p',
+    slug: 'r030-191p-adapter-cable-plastic-3-5m-4-5m',
+    smrCode: 'R030-191P',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model Adapter Cable, Plastic / Injection-Moulded Plugs, Black – White (3.5 m / 4.5 m)',
+      tr: 'Yeni Model Adaptör Kablo Plastik / Enjeksiyon Baskılı Fişli Siyah - Beyaz (3,5 m / 4,5 m)',
+      ru: 'Адаптерный кабель, новая модель, вилки пластик / литая под давлением, чёрный — белый (3,5 м / 4,5 м)',
+      de: 'Adapterkabel Neues Modell, Stecker Kunststoff / Spritzguss, Schwarz – Weiß (3,5 m / 4,5 m)',
+    },
+    description: {
+      en: 'New model adapter cable with plastic / injection-moulded plugs in black or white for trailer electrical connections. Length: 3.5 m / 4.5 m.',
+      tr: 'Römork elektrik bağlantıları için siyah veya beyaz, plastik / enjeksiyon baskılı fişli yeni model adaptör kablo. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Адаптерный кабель новой модели с вилками (пластик / литая под давлением) чёрного или белого цвета для электрических соединений прицепа. Длина: 3,5 м / 4,5 м.',
+      de: 'Adapterkabel Neues Modell mit Steckern (Kunststoff / Spritzguss) in Schwarz oder Weiß für elektrische Anhängerverbindungen. Länge: 3,5 m / 4,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Plug variants',
+          tr: 'Fiş versiyonları',
+          ru: 'Варианты вилки',
+          de: 'Steckervarianten',
+        },
+        value: {
+          en: 'P: plastic plug; PM: injection-moulded plug',
+          tr: 'P: plastik fiş; PM: enjeksiyon baskılı fiş',
+          ru: 'P: пластиковая вилка; PM: литая вилка',
+          de: 'P: Kunststoffstecker; PM: Spritzgussstecker',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: {
+          en: 'Black – White',
+          tr: 'Siyah - Beyaz',
+          ru: 'Чёрный — белый',
+          de: 'Schwarz – Weiß',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-190PM.jpg'],
+  },
+  {
+    id: 'prod-r030-192ma',
+    slug: 'r030-192ma-adapter-cable-metal-plastic-5m',
+    smrCode: 'R030-192MA',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model Adapter Cable, Metal / Plastic / Injection-Moulded Plugs, Black – White (5 m)',
+      tr: 'Yeni Model Adaptör Kablo Metal / Plastik / Enjeksiyon Baskılı Fişli Siyah - Beyaz (5 m)',
+      ru: 'Адаптерный кабель, новая модель, вилки металл / пластик / литая под давлением, чёрный — белый (5 м)',
+      de: 'Adapterkabel Neues Modell, Stecker Metall / Kunststoff / Spritzguss, Schwarz – Weiß (5 m)',
+    },
+    description: {
+      en: 'New model adapter cable with metal / plastic / injection-moulded plugs in black or white for trailer electrical connections. Length: 5 m.',
+      tr: 'Römork elektrik bağlantıları için siyah veya beyaz, metal / plastik / enjeksiyon baskılı fişli yeni model adaptör kablo. Uzunluk: 5 m.',
+      ru: 'Адаптерный кабель новой модели с вилками (металл / пластик / литая под давлением) чёрного или белого цвета для электрических соединений прицепа. Длина: 5 м.',
+      de: 'Adapterkabel Neues Modell mit Steckern (Metall / Kunststoff / Spritzguss) in Schwarz oder Weiß für elektrische Anhängerverbindungen. Länge: 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: { en: '5 m', tr: '5 m', ru: '5 м', de: '5 m' },
+      },
+      {
+        label: {
+          en: 'Plug variants',
+          tr: 'Fiş versiyonları',
+          ru: 'Варианты вилки',
+          de: 'Steckervarianten',
+        },
+        value: {
+          en: 'MA: metal plug; P: plastic plug; PM: injection-moulded plug',
+          tr: 'MA: metal fiş; P: plastik fiş; PM: enjeksiyon baskılı fiş',
+          ru: 'MA: металлическая вилка; P: пластиковая вилка; PM: литая вилка',
+          de: 'MA: Metallstecker; P: Kunststoffstecker; PM: Spritzgussstecker',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: {
+          en: 'Black – White',
+          tr: 'Siyah - Beyaz',
+          ru: 'Чёрный — белый',
+          de: 'Schwarz – Weiß',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-190PM.jpg'],
+  },
+  {
+    id: 'prod-r030-193p',
+    slug: 'r030-193p-adapter-cable-plastic-5-5m',
+    smrCode: 'R030-193P',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model Adapter Cable, Plastic / Injection-Moulded Plugs, Black – White (5.5 m)',
+      tr: 'Yeni Model Adaptör Kablo Plastik / Enjeksiyon Baskılı Fişli Siyah - Beyaz (5,5 m)',
+      ru: 'Адаптерный кабель, новая модель, вилки пластик / литая под давлением, чёрный — белый (5,5 м)',
+      de: 'Adapterkabel Neues Modell, Stecker Kunststoff / Spritzguss, Schwarz – Weiß (5,5 m)',
+    },
+    description: {
+      en: 'New model adapter cable with plastic / injection-moulded plugs in black or white for trailer electrical connections. Length: 5.5 m.',
+      tr: 'Römork elektrik bağlantıları için siyah veya beyaz, plastik / enjeksiyon baskılı fişli yeni model adaptör kablo. Uzunluk: 5,5 m.',
+      ru: 'Адаптерный кабель новой модели с вилками (пластик / литая под давлением) чёрного или белого цвета для электрических соединений прицепа. Длина: 5,5 м.',
+      de: 'Adapterkabel Neues Modell mit Steckern (Kunststoff / Spritzguss) in Schwarz oder Weiß für elektrische Anhängerverbindungen. Länge: 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: { en: '5.5 m', tr: '5,5 m', ru: '5,5 м', de: '5,5 m' },
+      },
+      {
+        label: {
+          en: 'Plug variants',
+          tr: 'Fiş versiyonları',
+          ru: 'Варианты вилки',
+          de: 'Steckervarianten',
+        },
+        value: {
+          en: 'P: plastic plug; PM: injection-moulded plug',
+          tr: 'P: plastik fiş; PM: enjeksiyon baskılı fiş',
+          ru: 'P: пластиковая вилка; PM: литая вилка',
+          de: 'P: Kunststoffstecker; PM: Spritzgussstecker',
+        },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: {
+          en: 'Black – White',
+          tr: 'Siyah - Beyaz',
+          ru: 'Чёрный — белый',
+          de: 'Schwarz – Weiß',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-190PM.jpg'],
+  },
+  {
+    id: 'prod-r030-200',
+    slug: 'r030-200-spiral-cable-24v-7p-molded-black-3m-4m',
+    smrCode: 'R030-200',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded Black Plug (3 m / 4 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Siyah Fişli Kablo (3 m / 4 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, чёрная (3 м / 4 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker schwarz (3 m / 4 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded black plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3 m / 4 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı siyah fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3 m / 4 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (чёрной) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3 м / 4 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3 m / 4 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
           ru: 'Сечение жил',
-          de: 'Kabelquerschnitt',
+          de: 'Aderquerschnitt',
         },
         value: {
-          en: '5 x 1.50 mm² + 2 x 2.50 mm²',
-          tr: '5 x 1.50 mm² + 2 x 2.50 mm²',
-          ru: '5 x 1.50 мм² + 2 x 2.50 мм²',
-          de: '5 x 1.50 mm² + 2 x 2.50 mm²',
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
         },
       },
       {
-        label: { en: 'Standard', tr: 'Standard', ru: 'Стандарт', de: 'Norm' },
-        value: 'ISO 7638-1 (EBS / ABS)',
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/cables/R030-200.jpg'],
   },
-
-  // --- FUEL TANK CAPS & ANTI-THEFT ---
   {
-    id: 'prod-s280-01',
-    slug: 's280-01-galvanized-tank-cap-60mm-without-key',
-    smrCode: 'S 280-01',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
+    id: 'prod-r030-201',
+    slug: 'r030-201-spiral-cable-24v-7p-molded-black-3-5m-4-5m',
+    smrCode: 'R030-201',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
     title: {
-      en: 'Galvanized Tank Cap 60mm (Without Key)',
-      tr: 'Galvanizli Depo Kapağı 60mm (Anahtarsız)',
-      ru: 'Крышка бака оцинкованная 60мм (без ключа)',
-      de: 'Verzinkter Tankdeckel 60mm (Ohne Schlüssel)',
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded Black Plug (3.5 m / 4.5 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Siyah Fişli Kablo (3,5 m / 4,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, чёрная (3,5 м / 4,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker schwarz (3,5 m / 4,5 m)',
     },
     description: {
-      en: 'Galvanized 60mm tank cap without lock, fuel-resistant rubber seal, leakproof for 7 minutes, fits Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-      tr: 'Kilitsiz 60mm galvanizli depo kapağı, yakıt dayanımlı lastik conta, 7 dk sızdırmazlık garantisi, Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN için uygun.',
-      ru: 'Оцинкованная крышка бака 60мм без замка, топливостойкий резиновый уплотнитель, герметичность 7 минут, подходит для Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-      de: 'Verzinkter 60mm Tankdeckel ohne Schloss, kraftstoffbeständige Gummidichtung, 7 Minuten Dichtheitsgarantie, passend für Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded black plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3.5 m / 4.5 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı siyah fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (чёрной) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3,5 м / 4,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3,5 m / 4,5 m.',
     },
-    images: [
-      '/samer-catalog-images/TankCap/img-002-012.png',
-      '/samer-catalog-images/TankCap/img-002-013.png',
-    ],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
         },
-        value: '60mm',
-      },
-      {
-        label: { en: 'Locking', tr: 'Kilit', ru: 'Замок', de: 'Verriegelung' },
-        value: {
-          en: 'Without Key',
-          tr: 'Anahtarsız',
-          ru: 'Без ключа',
-          de: 'Ohne Schlüssel',
-        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
       },
       {
         label: {
-          en: 'Leakproof Guarantee',
-          tr: 'Sızdırmazlık',
-          ru: 'Герметичность',
-          de: 'Dichtheit',
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
         },
-        value: '7 min',
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-02',
-    slug: 's280-02-galvanized-tank-cap-60mm-with-key',
-    smrCode: 'S 280-02',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Galvanized Tank Cap 60mm (With Key)',
-      tr: 'Galvanizli Depo Kapağı 60mm (Anahtarlı)',
-      ru: 'Крышка бака оцинкованная 60мм (с ключом)',
-      de: 'Verzinkter Tankdeckel 60mm (Mit Schlüssel)',
-    },
-    description: {
-      en: 'Galvanized 60mm locking tank cap, locking unit made in Germany, protective plastic handled key, fits Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-      tr: 'Almanya üretimi kilit mekanizmalı 60mm galvanizli kilitli depo kapağı, koruyucu plastik saplı anahtar, Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN için uygun.',
-      ru: 'Оцинкованная крышка бака 60мм с замком, запорный механизм произведён в Германии, защитный ключ с пластиковой ручкой, подходит для Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-      de: 'Verzinkter 60mm Tankdeckel mit Schloss, Schließmechanismus made in Germany, Schutz-Schlüssel mit Kunststoffgriff, passend für Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-    },
-    images: [
-      '/samer-catalog-images/TankCap/img-002-014.png',
-      '/samer-catalog-images/TankCap/img-002-015.png',
-    ],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '60mm',
-      },
-      {
-        label: { en: 'Locking', tr: 'Kilit', ru: 'Замок', de: 'Verriegelung' },
-        value: {
-          en: 'With Key',
-          tr: 'Anahtarlı',
-          ru: 'С ключом',
-          de: 'Mit Schlüssel',
-        },
-      },
-      {
-        label: {
-          en: 'Locking Unit',
-          tr: 'Kilit Mekanizması',
-          ru: 'Запорный механизм',
-          de: 'Schließmechanismus',
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
         },
         value: {
-          en: 'Made in Germany',
-          tr: 'Almanya Üretimi',
-          ru: 'Производство Германия',
-          de: 'Made in Germany',
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
         },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-05',
-    slug: 's280-05-galvanized-tank-cap-80mm-without-key',
-    smrCode: 'S 280-05',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Galvanized Tank Cap 80mm (Without Key)',
-      tr: 'Galvanizli Depo Kapağı 80mm (Anahtarsız)',
-      ru: 'Крышка бака оцинкованная 80мм (без ключа)',
-      de: 'Verzinkter Tankdeckel 80mm (Ohne Schlüssel)',
-    },
-    description: {
-      en: 'Galvanized 80mm tank cap without lock, fuel-resistant rubber seal, compatible with S 263/S 264 anti-theft devices.',
-      tr: 'Kilitsiz 80mm galvanizli depo kapağı, yakıt dayanımlı lastik conta, S 263/S 264 hırsızlık önleyici cihazlarla uyumlu.',
-      ru: 'Оцинкованная крышка бака 80мм без замка, топливостойкий уплотнитель, совместима с антивором S 263/S 264.',
-      de: 'Verzinkter 80mm Tankdeckel ohne Schloss, kraftstoffbeständige Dichtung, kompatibel mit Diebstahlschutz S 263/S 264.',
-    },
-    images: [
-      '/samer-catalog-images/TankCap/img-004-103.png',
-      '/samer-catalog-images/TankCap/img-004-046.png',
-    ],
-    videoUrl: 'https://vimeo.com/76979871',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '80mm',
-      },
-      {
-        label: { en: 'Locking', tr: 'Kilit', ru: 'Замок', de: 'Verriegelung' },
-        value: {
-          en: 'Without Key',
-          tr: 'Anahtarsız',
-          ru: 'Без ключа',
-          de: 'Ohne Schlüssel',
-        },
-      },
-      {
-        label: {
-          en: 'Compatible Anti-Theft',
-          tr: 'Uyumlu Hırsızlık Önleyici',
-          ru: 'Совместимая защита',
-          de: 'Kompatibler Diebstahlschutz',
-        },
-        value: 'S 263, S 264',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-16',
-    slug: 's280-16-metal-tank-cap-80mm-with-key',
-    smrCode: 'S 280-16',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Metal Tank Cap 80mm (With Key)',
-      tr: 'Metal Depo Kapağı 80mm (Anahtarlı)',
-      ru: 'Крышка бака металлическая 80мм (с ключом)',
-      de: 'Metall-Tankdeckel 80mm (Mit Schlüssel)',
-    },
-    description: {
-      en: 'Chrome metal 80mm locking tank cap with dust cover, for Mercedes-Benz (Axor), BMC, IVECO, DAF, Volvo, MAN.',
-      tr: 'Toz kapaklı krom metal 80mm kilitli depo kapağı, Mercedes-Benz (Axor), BMC, IVECO, DAF, Volvo, MAN için.',
-      ru: 'Хромированная металлическая крышка бака 80мм с замком и пылезащитным колпачком, для Mercedes-Benz (Axor), BMC, IVECO, DAF, Volvo, MAN.',
-      de: 'Verchromter Metall-Tankdeckel 80mm mit Schloss und Staubschutzkappe, für Mercedes-Benz (Axor), BMC, IVECO, DAF, Volvo, MAN.',
-    },
-    images: [
-      '/samer-catalog-images/TankCap/img-010-055.png',
-      '/samer-catalog-images/TankCap/img-010-056.png',
-      '/samer-catalog-images/TankCap/img-002-012.png',
-    ],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '80mm',
-      },
-      {
-        label: {
-          en: 'Accessories',
-          tr: 'Aksesuarlar',
-          ru: 'Комплектация',
-          de: 'Zubehör',
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
         },
         value: {
-          en: 'Protective Key, Dust Cover',
-          tr: 'Koruyucu Anahtar, Toz Kapağı',
-          ru: 'Защитный ключ, пылезащитный колпачок',
-          de: 'Schutzschlüssel, Staubschutzkappe',
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
         },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Mercedes-Benz (Axor), BMC, IVECO, DAF, Volvo, MAN',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-09',
-    slug: 's280-09-stainless-tank-cap-40mm-with-key',
-    smrCode: 'S 280-09',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Stainless Tank Cap 40mm (With Key)',
-      tr: 'Paslanmaz Depo Kapağı 40mm (Anahtarlı)',
-      ru: 'Крышка бака нержавеющая 40мм (с ключом)',
-      de: 'Edelstahl-Tankdeckel 40mm (Mit Schlüssel)',
-    },
-    description: {
-      en: 'Stainless steel 40mm locking tank cap, packaging 240pcs/parcel, for Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-      tr: 'Paslanmaz çelik 40mm kilitli depo kapağı, 240 adet/koli paketleme, Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN için.',
-      ru: 'Крышка бака из нержавеющей стали 40мм с замком, упаковка 240шт/коробка, для Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-      de: 'Edelstahl-Tankdeckel 40mm mit Schloss, Verpackung 240 Stück/Karton, für Mercedes-Benz, BMC, DAF, IVECO, Volvo, MAN.',
-    },
-    images: ['/samer-catalog-images/TankCap/img-006-058.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '40mm',
-      },
-      {
-        label: {
-          en: 'Packaging',
-          tr: 'Paketleme',
-          ru: 'Упаковка',
-          de: 'Verpackung',
-        },
-        value: '240 pcs/parcel',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-13z',
-    slug: 's280-13z-plastic-tank-cap-60mm-key-chain',
-    smrCode: 'S 280-13Z',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Plastic Tank Cap 60mm (With Key & Chain) — For Scania',
-      tr: 'Plastik Depo Kapağı 60mm (Anahtarlı ve Zincirli) — Scania İçin',
-      ru: 'Крышка бака пластиковая 60мм (с ключом и цепочкой) — для Scania',
-      de: 'Plastik-Tankdeckel 60mm (Mit Schlüssel und Kette) — Für Scania',
-    },
-    description: {
-      en: 'New plastic 60mm tank cap with key and safety chain, dust cover included, made specifically for Scania.',
-      tr: 'Yeni ürün — anahtarlı, güvenlik zincirli 60mm plastik depo kapağı, toz kapağı dahil, özel olarak Scania için üretilmiştir.',
-      ru: 'Новинка — пластиковая крышка бака 60мм с ключом и страховочной цепочкой, в комплекте пылезащитный колпачок, специально для Scania.',
-      de: 'Neuheit — Plastik-Tankdeckel 60mm mit Schlüssel und Sicherheitskette, inkl. Staubschutzkappe, speziell für Scania.',
-    },
-    images: [
-      '/samer-catalog-images/TankCap/img-006-064.png',
-      '/samer-catalog-images/TankCap/img-006-065.png',
-    ],
-    videoUrl: 'https://vimeo.com/76979871',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '60mm',
-      },
-      {
-        label: {
-          en: 'Accessories',
-          tr: 'Aksesuarlar',
-          ru: 'Комплектация',
-          de: 'Zubehör',
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
         },
         value: {
-          en: 'Key, Chain, Dust Cover',
-          tr: 'Anahtar, Zincir, Toz Kapağı',
-          ru: 'Ключ, цепочка, пылезащитный колпачок',
-          de: 'Schlüssel, Kette, Staubschutzkappe',
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
         },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
         },
-        value: 'Scania',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-17',
-    slug: 's280-17-plastic-sidelocked-tank-cap-80mm',
-    smrCode: 'S 280-17',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Plastic Sidelocked Tank Cap 80mm (With Key & Chain)',
-      tr: 'Plastik Yandan Kilitli Depo Kapağı 80mm (Anahtarlı ve Zincirli)',
-      ru: 'Крышка бака пластиковая с боковым замком 80мм (с ключом и цепочкой)',
-      de: 'Plastik-Tankdeckel Seitenverriegelung 80mm (Mit Schlüssel und Kette)',
-    },
-    description: {
-      en: 'New — side-locking plastic tank cap 80mm with key and chain, for RENAULT, DAF, Volvo, IVECO.',
-      tr: 'Yeni ürün — anahtarlı ve zincirli, yandan kilitli 80mm plastik depo kapağı, RENAULT, DAF, Volvo, IVECO için.',
-      ru: 'Новинка — пластиковая крышка бака 80мм с боковым замком, ключом и цепочкой, для RENAULT, DAF, Volvo, IVECO.',
-      de: 'Neuheit — seitlich verriegelbarer Plastik-Tankdeckel 80mm mit Schlüssel und Kette, für RENAULT, DAF, Volvo, IVECO.',
-    },
-    images: ['/samer-catalog-images/TankCap/img-007-070.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '80mm',
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
         },
-        value: 'RENAULT, DAF, Volvo, IVECO',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-19',
-    slug: 's280-19-biodiesel-cap-40mm-without-key',
-    smrCode: 'S 280-19',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'BioDiesel Cap 40mm (Without Key)',
-      tr: 'BioDiesel Kapağı 40mm (Anahtarsız)',
-      ru: 'Крышка BioDiesel 40мм (без ключа)',
-      de: 'BioDiesel-Deckel 40mm (Ohne Schlüssel)',
-    },
-    description: {
-      en: 'New — 40mm biodiesel tank cap without lock, for Mercedes-Benz, Renault Rvi, DAF, MAN, Volvo.',
-      tr: 'Yeni ürün — kilitsiz 40mm biodizel depo kapağı, Mercedes-Benz, Renault Rvi, DAF, MAN, Volvo için.',
-      ru: 'Новинка — крышка бака для биодизеля 40мм без замка, для Mercedes-Benz, Renault Rvi, DAF, MAN, Volvo.',
-      de: 'Neuheit — 40mm Biodiesel-Tankdeckel ohne Schloss, für Mercedes-Benz, Renault Rvi, DAF, MAN, Volvo.',
-    },
-    images: ['/samer-catalog-images/TankCap/img-013-095.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '40mm',
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Mercedes-Benz, Renault Rvi, DAF, MAN, Volvo',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-10',
-    slug: 's280-10-blue-cap-60mm-with-key-scania',
-    smrCode: 'S 280-10',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-fuel-cap',
-    title: {
-      en: 'Blue Cap 60mm (With Key) — For Scania',
-      tr: 'Mavi Kapak 60mm (Anahtarlı) — Scania İçin',
-      ru: 'Синяя крышка 60мм (с ключом) — для Scania',
-      de: 'Blauer Deckel 60mm (Mit Schlüssel) — Für Scania',
-    },
-    description: {
-      en: 'AdBlue-style blue 60mm locking cap for Scania, protective key included.',
-      tr: 'Scania için AdBlue tarzı mavi 60mm kilitli kapak, koruyucu anahtar dahil.',
-      ru: 'Синяя крышка 60мм в стиле AdBlue с замком для Scania, в комплекте защитный ключ.',
-      de: 'Blauer AdBlue-Stil-Deckel 60mm mit Schloss für Scania, inkl. Schutzschlüssel.',
-    },
-    images: ['/samer-catalog-images/TankCap/img-011-072.png'],
-    videoUrl: 'https://vimeo.com/76979871',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '60mm',
-      },
-      {
-        label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Scania',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-25',
-    slug: 's280-25-standard-stainless-radiator-cap-square',
-    smrCode: 'S280-25',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-radiator-cap',
-    title: {
-      en: 'Standard Stainless Radiator Cap with Gasket — Square',
-      tr: 'Standart Paslanmaz Contalı Radyatör Kapağı — Kare',
-      ru: 'Крышка радиатора нержавеющая с прокладкой — квадратная',
-      de: 'Standard-Edelstahl-Kühlerverschluss mit Dichtung — Eckig',
-    },
-    description: {
-      en: 'New 2026 product — universal stainless radiator cap with gasket, square shape, working pressure 0.7-1.1 bar.',
-      tr: '2026 yeni ürünü — evrensel paslanmaz radyatör kapağı, kare şekilli, çalışma basıncı 0,7-1,1 bar.',
-      ru: 'Новинка 2026 — универсальная крышка радиатора из нержавеющей стали с прокладкой, квадратная форма, рабочее давление 0,7-1,1 бар.',
-      de: 'Neuheit 2026 — universeller Edelstahl-Kühlerverschluss mit Dichtung, eckige Form, Betriebsdruck 0,7-1,1 bar.',
-    },
-    images: ['/products/NewProducts/img-002-005.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Working Pressure',
-          tr: 'Çalışma Basıncı',
-          ru: 'Рабочее давление',
-          de: 'Betriebsdruck',
-        },
-        value: '0.7-1.1 bar',
-      },
-      {
-        label: { en: 'Shape', tr: 'Şekil', ru: 'Форма', de: 'Form' },
-        value: { en: 'Square', tr: 'Kare', ru: 'Квадратная', de: 'Eckig' },
-      },
-      {
-        label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Universal',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-26',
-    slug: 's280-26-standard-stainless-radiator-cap-circle',
-    smrCode: 'S280-26',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-radiator-cap',
-    title: {
-      en: 'Standard Stainless Radiator Cap with Gasket — Circle',
-      tr: 'Standart Paslanmaz Contalı Radyatör Kapağı — Yuvarlak',
-      ru: 'Крышка радиатора нержавеющая с прокладкой — круглая',
-      de: 'Standard-Edelstahl-Kühlerverschluss mit Dichtung — Rund',
-    },
-    description: {
-      en: 'New 2026 product — universal stainless radiator cap with gasket, round shape, working pressure 0.7-1.1 bar.',
-      tr: '2026 yeni ürünü — evrensel paslanmaz radyatör kapağı, yuvarlak şekilli, çalışma basıncı 0,7-1,1 bar.',
-      ru: 'Новинка 2026 — универсальная крышка радиатора из нержавеющей стали с прокладкой, круглая форма, рабочее давление 0,7-1,1 бар.',
-      de: 'Neuheit 2026 — universeller Edelstahl-Kühlerverschluss mit Dichtung, runde Form, Betriebsdruck 0,7-1,1 bar.',
-    },
-    images: ['/products/NewProducts/img-002-006.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: {
-          en: 'Working Pressure',
-          tr: 'Çalışma Basıncı',
-          ru: 'Рабочее давление',
-          de: 'Betriebsdruck',
-        },
-        value: '0.7-1.1 bar',
-      },
-      {
-        label: { en: 'Shape', tr: 'Şekil', ru: 'Форма', de: 'Form' },
-        value: { en: 'Circle', tr: 'Yuvarlak', ru: 'Круглая', de: 'Rund' },
-      },
-      {
-        label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Universal',
-      },
-    ],
-  },
-  {
-    id: 'prod-s280-27',
-    slug: 's280-27-standard-stainless-fuel-cap-vented',
-    smrCode: 'S280-27',
-    oemNumbers: [
-      'Massey Ferguson 240',
-      'Massey Ferguson 265',
-      'Massey Ferguson 285',
-    ],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-radiator-cap',
-    title: {
-      en: 'Standard Vented Fuel Cap — Stainless',
-      tr: 'Standart Ventilli Depo Kapağı — Paslanmaz',
-      ru: 'Вентилируемая крышка бака стандартная — нержавейка',
-      de: 'Standard-Belüfteter Tankdeckel — Edelstahl',
-    },
-    description: {
-      en: 'New 2026 product — standard vented stainless fuel cap for Massey Ferguson, Gold Tractor and universal applications.',
-      tr: '2026 yeni ürünü — Massey Ferguson, Gold Traktör ve evrensel uygulamalar için standart ventilli paslanmaz depo kapağı.',
-      ru: 'Новинка 2026 — стандартная вентилируемая крышка бака из нержавеющей стали для Massey Ferguson, Gold Traktor и универсального применения.',
-      de: 'Neuheit 2026 — Standard-belüfteter Edelstahl-Tankdeckel für Massey Ferguson, Gold Traktör und universelle Anwendungen.',
-    },
-    images: ['/products/NewProducts/img-002-007.png'],
-    videoUrl: 'https://vimeo.com/76979871',
-    specs: [
-      {
-        label: {
-          en: 'Ventilation',
-          tr: 'Ventilasyon',
-          ru: 'Вентиляция',
-          de: 'Belüftung',
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
         },
         value: {
-          en: 'Vented',
-          tr: 'Ventilli',
-          ru: 'Вентилируемая',
-          de: 'Belüftet',
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
         },
       },
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
         },
-        value:
-          'Massey Ferguson (240, 265, 285), Gold Traktör (265, 285), Universal',
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/cables/R030-200.jpg'],
   },
+  {
+    id: 'prod-r030-202',
+    slug: 'r030-202-spiral-cable-24v-7p-molded-black-4m-5m',
+    smrCode: 'R030-202',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded Black Plug (4 m / 5 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Siyah Fişli Kablo (4 m / 5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, чёрная (4 м / 5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker schwarz (4 m / 5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded black plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4 m / 5 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı siyah fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4 m / 5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (чёрной) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4 м / 5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4 m / 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4 m / 5 m',
+          tr: '4 m / 5 m',
+          ru: '4 м / 5 м',
+          de: '4 m / 5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-200.jpg'],
+  },
+  {
+    id: 'prod-r030-203',
+    slug: 'r030-203-spiral-cable-24v-7p-molded-black-4-5m-5-5m',
+    smrCode: 'R030-203',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded Black Plug (4.5 m / 5.5 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Siyah Fişli Kablo (4,5 m / 5,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, чёрная (4,5 м / 5,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker schwarz (4,5 m / 5,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded black plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4.5 m / 5.5 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı siyah fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4,5 m / 5,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (чёрной) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4,5 м / 5,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit schwarzem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4,5 m / 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4.5 m / 5.5 m',
+          tr: '4,5 m / 5,5 m',
+          ru: '4,5 м / 5,5 м',
+          de: '4,5 m / 5,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-200.jpg'],
+  },
+  {
+    id: 'prod-r030-210',
+    slug: 'r030-210-spiral-cable-24v-7p-molded-white-3m-4m',
+    smrCode: 'R030-210',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded White Plug (3 m / 4 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Beyaz Fişli Kablo (3 m / 4 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, белая (3 м / 4 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker weiß (3 m / 4 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded white plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3 m / 4 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı beyaz fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3 m / 4 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (белой) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3 м / 4 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3 m / 4 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3 m / 4 m',
+          tr: '3 m / 4 m',
+          ru: '3 м / 4 м',
+          de: '3 m / 4 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-210.jpg'],
+  },
+  {
+    id: 'prod-r030-211',
+    slug: 'r030-211-spiral-cable-24v-7p-molded-white-3-5m-4-5m',
+    smrCode: 'R030-211',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded White Plug (3.5 m / 4.5 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Beyaz Fişli Kablo (3,5 m / 4,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, белая (3,5 м / 4,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker weiß (3,5 m / 4,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded white plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 3.5 m / 4.5 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı beyaz fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 3,5 m / 4,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (белой) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 3,5 м / 4,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 3,5 m / 4,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '3.5 m / 4.5 m',
+          tr: '3,5 m / 4,5 m',
+          ru: '3,5 м / 4,5 м',
+          de: '3,5 m / 4,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-210.jpg'],
+  },
+  {
+    id: 'prod-r030-212',
+    slug: 'r030-212-spiral-cable-24v-7p-molded-white-4m-5m',
+    smrCode: 'R030-212',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded White Plug (4 m / 5 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Beyaz Fişli Kablo (4 m / 5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, белая (4 м / 5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker weiß (4 m / 5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded white plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4 m / 5 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı beyaz fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4 m / 5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (белой) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4 м / 5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4 m / 5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4 m / 5 m',
+          tr: '4 m / 5 m',
+          ru: '4 м / 5 м',
+          de: '4 m / 5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-210.jpg'],
+  },
+  {
+    id: 'prod-r030-213',
+    slug: 'r030-213-spiral-cable-24v-7p-molded-white-4-5m-5-5m',
+    smrCode: 'R030-213',
+    categoryId: 'cat-cables',
+    subcategoryId: 'subcat-spiral-cable',
+    title: {
+      en: 'New Model 24V/7P Spiral Cable, Injection-Moulded White Plug (4.5 m / 5.5 m)',
+      tr: 'Yeni Model 24V/7P Enjeksiyon Baskılı Beyaz Fişli Kablo (4,5 m / 5,5 m)',
+      ru: 'Спиральный кабель 24 В/7 контактов, новая модель, литая вилка, белая (4,5 м / 5,5 м)',
+      de: 'Spiralkabel 24 V/7-polig, Neues Modell, Spritzgussstecker weiß (4,5 m / 5,5 m)',
+    },
+    description: {
+      en: 'New model 24 V, 7-pin spiral (coiled) cable with an injection-moulded white plug for the tractor–trailer connection. Polyurethane coil Ø40 mm, wire 6x1 mm + 1x1.5 mm. Length: 4.5 m / 5.5 m.',
+      tr: 'Çekici-römork bağlantısı için enjeksiyon baskılı beyaz fişli yeni model 24 V, 7 pinli spiral kablo. Poliüretan spiral Ø40 mm, tel 6x1 mm + 1x1,5 mm. Uzunluk: 4,5 m / 5,5 m.',
+      ru: 'Спиральный кабель 24 В, 7 контактов, новая модель, с литой вилкой (белой) для соединения тягача и прицепа. Спираль из полиуретана Ø40 мм, жилы 6x1 мм + 1x1,5 мм. Длина: 4,5 м / 5,5 м.',
+      de: 'Spiralkabel 24 V, 7-polig, Neues Modell, mit weißem Spritzgussstecker für die Verbindung zwischen Zugfahrzeug und Anhänger. Polyurethan-Spirale Ø40 mm, Adern 6x1 mm + 1x1,5 mm. Länge: 4,5 m / 5,5 m.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Voltage',
+          tr: 'Voltaj',
+          ru: 'Напряжение',
+          de: 'Spannung',
+        },
+        value: { en: '24 V', tr: '24 V', ru: '24 В', de: '24 V' },
+      },
+      {
+        label: {
+          en: 'Number of pins',
+          tr: 'Pin sayısı',
+          ru: 'Количество контактов',
+          de: 'Polzahl',
+        },
+        value: { en: '7', tr: '7', ru: '7', de: '7' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'White', tr: 'Beyaz', ru: 'Белый', de: 'Weiß' },
+      },
+      {
+        label: {
+          en: 'Cable length',
+          tr: 'Kablo uzunluğu',
+          ru: 'Длина кабеля',
+          de: 'Kabellänge',
+        },
+        value: {
+          en: '4.5 m / 5.5 m',
+          tr: '4,5 m / 5,5 m',
+          ru: '4,5 м / 5,5 м',
+          de: '4,5 m / 5,5 m',
+        },
+      },
+      {
+        label: {
+          en: 'Coil material',
+          tr: 'Spiral malzemesi',
+          ru: 'Материал спирали',
+          de: 'Spiralenmaterial',
+        },
+        value: {
+          en: 'Polyurethane',
+          tr: 'Poliüretan',
+          ru: 'Полиуретан',
+          de: 'Polyurethan',
+        },
+      },
+      {
+        label: {
+          en: 'Plug material',
+          tr: 'Fiş malzemesi',
+          ru: 'Материал вилки',
+          de: 'Steckermaterial',
+        },
+        value: {
+          en: 'Molded plastic',
+          tr: 'Enjeksiyon baskılı plastik',
+          ru: 'Литой пластик',
+          de: 'Spritzguss-Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Coil diameter',
+          tr: 'Spiral çapı',
+          ru: 'Диаметр спирали',
+          de: 'Spiralendurchmesser',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Inner diameter',
+          tr: 'İç çap',
+          ru: 'Внутренний диаметр',
+          de: 'Innendurchmesser',
+        },
+        value: { en: '20 mm', tr: '20 mm', ru: '20 мм', de: '20 mm' },
+      },
+      {
+        label: {
+          en: 'Wire cross-section',
+          tr: 'Tel kesiti',
+          ru: 'Сечение жил',
+          de: 'Aderquerschnitt',
+        },
+        value: {
+          en: '6x1 mm + 1x1.5 mm',
+          tr: '6x1 mm + 1x1.5 mm',
+          ru: '6x1 мм + 1x1.5 мм',
+          de: '6x1 mm + 1x1.5 mm',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/cables/R030-210.jpg'],
+  },
+  // ───────────── Tank caps / anti-theft devices  (cat-tank-caps) ─────────────
   {
     id: 'prod-s263',
-    slug: 's263-anti-theft-device-universal-80mm',
-    smrCode: 'S 263',
-    oemNumbers: [],
-    crossReferences: [],
+    slug: 's263-fuel-tank-protector-80mm-155mm',
+    smrCode: 'S263',
     categoryId: 'cat-tank-caps',
     subcategoryId: 'subcat-anti-theft',
     title: {
-      en: 'Anti-Theft Device — Universal, 80mm',
-      tr: 'Hırsızlık Önleyici Cihaz — Evrensel, 80mm',
-      ru: 'Устройство защиты от слива топлива — универсальное, 80мм',
-      de: 'Diebstahlschutzvorrichtung — Universal, 80mm',
+      en: '80 mm Fuel Tank Protector (155 mm)',
+      tr: "80'lik Depo Mazot Koruması (155 mm)",
+      ru: 'Защита топливного бака 80 мм (155 мм)',
+      de: 'Tankschutz 80 mm (155 mm)',
     },
     description: {
-      en: 'Zinc plate coated ST37 steel anti-siphon device, 80mm filler neck, height 155mm, rubber seal and 2 rivets included.',
-      tr: 'Çinko kaplamalı ST37 çelik yakıt hırsızlık önleyici, 80mm depo ağzı, yükseklik 155mm, lastik conta ve 2 perçin dahil.',
-      ru: 'Устройство защиты от слива топлива из стали ST37 с цинковым покрытием, горловина 80мм, высота 155мм, резиновый уплотнитель и 2 заклёпки в комплекте.',
-      de: 'Zinkbeschichtete ST37-Stahl-Diebstahlschutzvorrichtung, 80mm Einfüllstutzen, Höhe 155mm, inkl. Gummidichtung und 2 Nieten.',
+      en: 'Anti-theft protector for the diesel fuel tank filler neck, 80 mm version (155 mm).',
+      tr: "Depo ağzı için 80'lik mazot hırsızlık koruması (155 mm).",
+      ru: 'Антикражная защита заливной горловины топливного бака, исполнение 80 мм (155 мм).',
+      de: 'Diebstahlschutz für den Dieseltank-Einfüllstutzen, Ausführung 80 mm (155 mm).',
     },
-    images: ['/samer-catalog-images/TankCap/img-014-098.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
         },
-        value: '80mm',
-      },
-      {
-        label: { en: 'Height', tr: 'Yükseklik', ru: 'Высота', de: 'Höhe' },
-        value: '155mm',
-      },
-      {
-        label: {
-          en: 'Material',
-          tr: 'Malzeme',
-          ru: 'Материал',
-          de: 'Material',
+        value: {
+          en: '80 mm (155 mm)',
+          tr: '80 mm (155 mm)',
+          ru: '80 мм (155 мм)',
+          de: '80 mm (155 mm)',
         },
-        value: 'Zinc Plate Coated ST 37 Steel Sheet',
       },
       {
         label: {
-          en: 'Accessories',
-          tr: 'Aksesuarlar',
-          ru: 'Комплектация',
-          de: 'Zubehör',
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
         },
-        value: 'Rubber Seal — 2x Rivet',
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s264',
+    slug: 's264-fuel-tank-protector-80mm-165mm',
+    smrCode: 'S264',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '80 mm Fuel Tank Protector (165 mm)',
+      tr: "80'lik Depo Mazot Koruması (165 mm)",
+      ru: 'Защита топливного бака 80 мм (165 мм)',
+      de: 'Tankschutz 80 mm (165 mm)',
+    },
+    description: {
+      en: 'Anti-theft protector for the diesel fuel tank filler neck, 80 mm version (165 mm).',
+      tr: "Depo ağzı için 80'lik mazot hırsızlık koruması (165 mm).",
+      ru: 'Антикражная защита заливной горловины топливного бака, исполнение 80 мм (165 мм).',
+      de: 'Diebstahlschutz für den Dieseltank-Einfüllstutzen, Ausführung 80 mm (165 mm).',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: {
+          en: '80 mm (165 mm)',
+          tr: '80 mm (165 mm)',
+          ru: '80 мм (165 мм)',
+          de: '80 mm (165 mm)',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s266',
+    slug: 's266-fuel-tank-protector-60mm',
+    smrCode: 'S266',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '60 mm Fuel Tank Protector',
+      tr: "60'lık Depo Mazot Koruması",
+      ru: 'Защита топливного бака 60 мм',
+      de: 'Tankschutz 60 mm',
+    },
+    description: {
+      en: 'Anti-theft protector for the diesel fuel tank filler neck, 60 mm version.',
+      tr: "Depo ağzı için 60'lık mazot hırsızlık koruması.",
+      ru: 'Антикражная защита заливной горловины топливного бака, исполнение 60 мм.',
+      de: 'Diebstahlschutz für den Dieseltank-Einfüllstutzen, Ausführung 60 mm.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s267',
+    slug: 's267-fuel-tank-protector-60mm-threaded',
+    smrCode: 'S267',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '60 mm Threaded Fuel Tank Protector',
+      tr: "60'lık Depo Mazot Koruması Dişli",
+      ru: 'Защита топливного бака 60 мм, резьбовая',
+      de: 'Tankschutz 60 mm mit Gewinde',
+    },
+    description: {
+      en: 'Threaded anti-theft protector for the diesel fuel tank filler neck, 60 mm version.',
+      tr: "Depo ağzı için dişli 60'lık mazot hırsızlık koruması.",
+      ru: 'Резьбовая антикражная защита заливной горловины топливного бака, исполнение 60 мм.',
+      de: 'Diebstahlschutz mit Gewinde für den Dieseltank-Einfüllstutzen, Ausführung 60 mm.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Threaded',
+          tr: 'Dişli',
+          ru: 'Резьбовая',
+          de: 'Mit Gewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
   },
   {
     id: 'prod-s269',
-    slug: 's269-anti-theft-device-scania-60mm',
-    smrCode: 'S 269',
-    oemNumbers: [],
-    crossReferences: [],
+    slug: 's269-fuel-tank-protector-60mm-aluminium-head',
+    smrCode: 'S269',
     categoryId: 'cat-tank-caps',
     subcategoryId: 'subcat-anti-theft',
     title: {
-      en: 'Anti-Theft Device — For Scania, 60mm',
-      tr: 'Hırsızlık Önleyici Cihaz — Scania İçin, 60mm',
-      ru: 'Устройство защиты от слива топлива — для Scania, 60мм',
-      de: 'Diebstahlschutzvorrichtung — Für Scania, 60mm',
+      en: '60 mm Fuel Tank Protector, Aluminium Head',
+      tr: '60mm Alüminyum Kafalı Depo Mazot Koruması',
+      ru: 'Защита топливного бака 60 мм с алюминиевой головкой',
+      de: 'Tankschutz 60 mm mit Aluminiumkopf',
     },
     description: {
-      en: 'Aluminium neck anti-siphon device for Scania, 60mm, height 155mm, rubber seal, 2 screws and Allen key included.',
-      tr: 'Scania için alüminyum boyunlu yakıt hırsızlık önleyici, 60mm, yükseklik 155mm, lastik conta, 2 vida ve Allen anahtarı dahil.',
-      ru: 'Устройство защиты от слива с алюминиевой горловиной для Scania, 60мм, высота 155мм, резиновый уплотнитель, 2 винта и шестигранный ключ в комплекте.',
-      de: 'Diebstahlschutzvorrichtung mit Aluminiumhals für Scania, 60mm, Höhe 155mm, inkl. Gummidichtung, 2 Schrauben und Inbusschlüssel.',
+      en: 'Anti-theft protector with aluminium head for the diesel fuel tank filler neck, 60 mm version.',
+      tr: 'Depo ağzı için alüminyum kafalı 60 mm mazot hırsızlık koruması.',
+      ru: 'Антикражная защита заливной горловины топливного бака с алюминиевой головкой, исполнение 60 мм.',
+      de: 'Diebstahlschutz mit Aluminiumkopf für den Dieseltank-Einfüllstutzen, Ausführung 60 mm.',
     },
-    images: ['/samer-catalog-images/TankCap/img-014-102.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
     specs: [
       {
         label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
         },
-        value: '60mm',
-      },
-      {
-        label: {
-          en: 'Neck Material',
-          tr: 'Boyun Malzemesi',
-          ru: 'Материал горловины',
-          de: 'Halsmaterial',
-        },
-        value: 'Aluminum',
-      },
-      {
-        label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
-        },
-        value: 'Scania',
-      },
-    ],
-  },
-  {
-    id: 'prod-s270',
-    slug: 's270-anti-theft-device-universal-aluminium-80mm',
-    smrCode: 'S 270',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-anti-theft',
-    title: {
-      en: 'Anti-Theft Device — Universal, Aluminium, 80mm',
-      tr: 'Hırsızlık Önleyici Cihaz — Evrensel, Alüminyum, 80mm',
-      ru: 'Устройство защиты от слива топлива — универсальное, алюминий, 80мм',
-      de: 'Diebstahlschutzvorrichtung — Universal, Aluminium, 80mm',
-    },
-    description: {
-      en: 'New — all-aluminium anti-siphon device, 80mm, height 155mm, available in black/nickel/yellow/raw coating, heights 27/35/40/45mm filler neck options.',
-      tr: 'Yeni ürün — tamamen alüminyum yakıt hırsızlık önleyici, 80mm, yükseklik 155mm, siyah/nikel/sarı/ham kaplama seçenekleri, 27/35/40/45mm depo ağzı yükseklik seçenekleri.',
-      ru: 'Новинка — полностью алюминиевое устройство защиты от слива, 80мм, высота 155мм, доступны покрытия чёрный/никель/жёлтый/без покрытия, варианты горловины 27/35/40/45мм.',
-      de: 'Neuheit — komplett aus Aluminium gefertigte Diebstahlschutzvorrichtung, 80mm, Höhe 155mm, erhältlich in Schwarz/Nickel/Gelb/Roh, Einfüllstutzen-Höhen 27/35/40/45mm.',
-    },
-    images: ['/samer-catalog-images/TankCap/img-015-110.png'],
-    videoUrl: 'https://vimeo.com/76979871',
-    specs: [
-      {
-        label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
-        },
-        value: '80mm',
-      },
-      {
-        label: { en: 'Height', tr: 'Yükseklik', ru: 'Высота', de: 'Höhe' },
-        value: '155mm',
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
       },
       {
         label: {
@@ -1831,1109 +9145,2793 @@ export const MOCK_PRODUCTS: Product[] = [
           ru: 'Материал',
           de: 'Material',
         },
-        value: 'Aluminium',
+        value: {
+          en: 'Aluminium head',
+          tr: 'Alüminyum kafa',
+          ru: 'Алюминиевая головка',
+          de: 'Aluminiumkopf',
+        },
       },
       {
         label: {
-          en: 'Coating Options',
-          tr: 'Kaplama Seçenekleri',
-          ru: 'Варианты покрытия',
-          de: 'Beschichtungsoptionen',
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
         },
-        value: 'Black, Nickel, Yellow, Raw',
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s270',
+    slug: 's270-fuel-tank-protector-80mm-aluminium-head',
+    smrCode: 'S270',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '80 mm Fuel Tank Protector, Aluminium Head',
+      tr: '80mm Alüminyum Kafalı Depo Mazot Koruması',
+      ru: 'Защита топливного бака 80 мм с алюминиевой головкой',
+      de: 'Tankschutz 80 mm mit Aluminiumkopf',
+    },
+    description: {
+      en: 'Anti-theft protector with aluminium head for the diesel fuel tank filler neck, 80 mm version.',
+      tr: 'Depo ağzı için alüminyum kafalı 80 mm mazot hırsızlık koruması.',
+      ru: 'Антикражная защита заливной горловины топливного бака с алюминиевой головкой, исполнение 80 мм.',
+      de: 'Diebstahlschutz mit Aluminiumkopf für den Dieseltank-Einfüllstutzen, Ausführung 80 mm.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '80 mm', tr: '80 mm', ru: '80 мм', de: '80 mm' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium head',
+          tr: 'Alüminyum kafa',
+          ru: 'Алюминиевая головка',
+          de: 'Aluminiumkopf',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S270.jpg'],
+  },
+  {
+    id: 'prod-s268',
+    slug: 's268-adblue-scania-adapter',
+    smrCode: 'S268',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue Scania Adapter',
+      tr: 'Adblue Scania Adaptör',
+      ru: 'Адаптер AdBlue для Scania',
+      de: 'AdBlue-Adapter für Scania',
+    },
+    description: {
+      en: 'Adapter for the AdBlue tank filler neck of Scania vehicles.',
+      tr: 'Scania araçların Adblue depo ağzı için adaptör.',
+      ru: 'Адаптер для заливной горловины бака AdBlue автомобилей Scania.',
+      de: 'Adapter für den AdBlue-Tankstutzen von Scania-Fahrzeugen.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: { en: 'Scania', tr: 'Scania', ru: 'Scania', de: 'Scania' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s271-1',
+    slug: 's271-1-document-tube-chained-cap',
+    smrCode: 'S271-1',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-accessories',
+    title: {
+      en: 'Document Tube (Without Clamp, With Chained Cap)',
+      tr: 'Doküman Borusu (Kelepçesiz + Zincirli Kapaklı)',
+      ru: 'Тубус для документов (без хомута, с крышкой на цепочке)',
+      de: 'Dokumentenrohr (ohne Schelle, mit Kappe an Kette)',
+    },
+    description: {
+      en: 'Document tube without clamp, supplied with a cap attached by a chain.',
+      tr: 'Kelepçesiz doküman borusu; zincirli kapak ile birlikte.',
+      ru: 'Тубус для документов без хомута, крышка крепится на цепочке.',
+      de: 'Dokumentenrohr ohne Schelle, mit an einer Kette befestigter Kappe.',
+    },
+    specs: [
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Without clamp; chained cap',
+          tr: 'Kelepçesiz; zincirli kapak',
+          ru: 'Без хомута; крышка на цепочке',
+          de: 'Ohne Schelle; Kappe an Kette',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
   },
   {
     id: 'prod-s275',
-    slug: 's275-anti-theft-lock-60mm',
-    smrCode: 'S 275',
-    oemNumbers: [],
-    crossReferences: [],
+    slug: 's275-fuel-tank-protection-cap-60mm-black',
+    smrCode: 'S275',
     categoryId: 'cat-tank-caps',
-    subcategoryId: 'subcat-anti-theft-lock',
+    subcategoryId: 'subcat-anti-theft',
     title: {
-      en: 'Anti-Theft Lock — 60mm (Universal)',
-      tr: 'Hırsızlık Önleyici Kilit — 60mm (Evrensel)',
-      ru: 'Замок защиты бака — 60мм (универсальный)',
-      de: 'Diebstahlschutzschloss — 60mm (Universal)',
+      en: '60 mm Fuel Tank Protection Cap (Black Painted)',
+      tr: '60mm Depo Mazot Koruma Kapağı (Siyah Boyalı)',
+      ru: 'Защитная крышка топливного бака 60 мм (чёрная окраска)',
+      de: 'Tankschutzkappe 60 mm (schwarz lackiert)',
     },
     description: {
-      en: 'Padlock-style protective housing that covers the tank cap area, 60mm, height 55mm, keylock sold separately.',
-      tr: 'Depo kapağı bölgesini kaplayan asma kilit tarzı koruyucu muhafaza, 60mm, yükseklik 55mm, kilit ayrı satılır.',
-      ru: 'Защитный кожух-навесной замок, закрывающий область крышки бака, 60мм, высота 55мм, замок продаётся отдельно.',
-      de: 'Vorhängeschloss-artiges Schutzgehäuse, das den Tankdeckelbereich abdeckt, 60mm, Höhe 55mm, Schloss separat erhältlich.',
+      en: '60 mm anti-theft protection cap for diesel fuel tanks, black painted.',
+      tr: 'Mazot depoları için 60 mm hırsızlık koruma kapağı, siyah boyalı.',
+      ru: 'Антикражная защитная крышка для топливных баков 60 мм, окрашена в чёрный цвет.',
+      de: 'Diebstahlschutzkappe 60 mm für Dieseltanks, schwarz lackiert.',
     },
-    images: ['/samer-catalog-images/TankCap/img-016-115.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
         },
-        value: '60mm',
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
       },
       {
-        label: { en: 'Height', tr: 'Yükseklik', ru: 'Высота', de: 'Höhe' },
-        value: '55mm',
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
       },
       {
-        label: { en: 'Note', tr: 'Not', ru: 'Примечание', de: 'Hinweis' },
-        value: {
-          en: 'Keylock sold separately',
-          tr: 'Kilit ayrı satılır',
-          ru: 'Замок продаётся отдельно',
-          de: 'Schloss separat erhältlich',
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
         },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s275a',
+    slug: 's275a-fuel-tank-protection-cap-60mm-no-inner-part',
+    smrCode: 'S275A',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '60 mm Fuel Tank Protection Cap (Without Allen Key and Inner Part)',
+      tr: '60 mm Depo Mazot Koruma Kapağı (Alyan ve İç Parçasız)',
+      ru: 'Защитная крышка топливного бака 60 мм (без шестигранного ключа и внутренней части)',
+      de: 'Tankschutzkappe 60 mm (ohne Inbusschlüssel und Innenteil)',
+    },
+    description: {
+      en: '60 mm fuel tank protection cap, supplied without Allen key and inner part.',
+      tr: '60 mm depo mazot koruma kapağı; alyan ve iç parça olmadan.',
+      ru: 'Защитная крышка топливного бака 60 мм, поставляется без шестигранного ключа и внутренней части.',
+      de: 'Tankschutzkappe 60 mm, ohne Inbusschlüssel und Innenteil geliefert.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Without Allen key and inner part',
+          tr: 'Alyan ve iç parçasız',
+          ru: 'Без шестигранного ключа и внутренней части',
+          de: 'Ohne Inbusschlüssel und Innenteil',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
   },
   {
     id: 'prod-s277',
-    slug: 's277-anti-theft-lock-80mm',
-    smrCode: 'S 277',
-    oemNumbers: [],
-    crossReferences: [],
+    slug: 's277-fuel-tank-protection-cap-80mm-black',
+    smrCode: 'S277',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '80 mm Fuel Tank Protection Cap (Black Painted)',
+      tr: '80mm Depo Mazot Koruma Kapağı (Siyah Boyalı)',
+      ru: 'Защитная крышка топливного бака 80 мм (чёрная окраска)',
+      de: 'Tankschutzkappe 80 mm (schwarz lackiert)',
+    },
+    description: {
+      en: '80 mm anti-theft protection cap for diesel fuel tanks, black painted.',
+      tr: 'Mazot depoları için 80 mm hırsızlık koruma kapağı, siyah boyalı.',
+      ru: 'Антикражная защитная крышка для топливных баков 80 мм, окрашена в чёрный цвет.',
+      de: 'Diebstahlschutzkappe 80 mm für Dieseltanks, schwarz lackiert.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '80 mm', tr: '80 mm', ru: '80 мм', de: '80 mm' },
+      },
+      {
+        label: { en: 'Color', tr: 'Renk', ru: 'Цвет', de: 'Farbe' },
+        value: { en: 'Black', tr: 'Siyah', ru: 'Чёрный', de: 'Schwarz' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S277.jpg'],
+  },
+  {
+    id: 'prod-s277a',
+    slug: 's277a-fuel-tank-protection-cap-80mm-no-inner-part',
+    smrCode: 'S277A',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft',
+    title: {
+      en: '80 mm Fuel Tank Protection Cap (Without Allen Key and Inner Part)',
+      tr: '80 mm Depo Mazot Koruma Kapağı (Alyan ve İç Parçasız)',
+      ru: 'Защитная крышка топливного бака 80 мм (без шестигранного ключа и внутренней части)',
+      de: 'Tankschutzkappe 80 mm (ohne Inbusschlüssel und Innenteil)',
+    },
+    description: {
+      en: '80 mm fuel tank protection cap, supplied without Allen key and inner part.',
+      tr: '80 mm depo mazot koruma kapağı; alyan ve iç parça olmadan.',
+      ru: 'Защитная крышка топливного бака 80 мм, поставляется без шестигранного ключа и внутренней части.',
+      de: 'Tankschutzkappe 80 mm, ohne Inbusschlüssel und Innenteil geliefert.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '80 mm', tr: '80 mm', ru: '80 мм', de: '80 mm' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Without Allen key and inner part',
+          tr: 'Alyan ve iç parçasız',
+          ru: 'Без шестигранного ключа и внутренней части',
+          de: 'Ohne Inbusschlüssel und Innenteil',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-01',
+    slug: 's280-01-fuel-tank-cap-b60-galv',
+    smrCode: 'S280-01',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60 Galvanized Fuel Tank Cap',
+      tr: 'B60 Galvaniz Depo Kapağı',
+      ru: 'Крышка топливного бака B60, оцинкованная',
+      de: 'Tankdeckel B60, verzinkt',
+    },
+    description: {
+      en: 'Galvanized fuel tank cap, size B60. For truck fuel tanks.',
+      tr: 'B60 ölçüsünde galvaniz depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60, оцинкованная. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60, verzinkt. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60', tr: 'B60', ru: 'B60', de: 'B60' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Galvanized',
+          tr: 'Galvaniz',
+          ru: 'Оцинкованный',
+          de: 'Verzinkt',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-02',
+    slug: 's280-02-fuel-tank-cap-b60a-galv',
+    smrCode: 'S280-02',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60A Galvanized Fuel Tank Cap',
+      tr: 'B60A Galvaniz Depo Kapağı',
+      ru: 'Крышка топливного бака B60A, оцинкованная',
+      de: 'Tankdeckel B60A, verzinkt',
+    },
+    description: {
+      en: 'Galvanized fuel tank cap, size B60A. For truck fuel tanks.',
+      tr: 'B60A ölçüsünde galvaniz depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60A, оцинкованная. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60A, verzinkt. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60A', tr: 'B60A', ru: 'B60A', de: 'B60A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Galvanized',
+          tr: 'Galvaniz',
+          ru: 'Оцинкованный',
+          de: 'Verzinkt',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-02.jpg'],
+  },
+  {
+    id: 'prod-s280-03',
+    slug: 's280-03-fuel-tank-cap-b60-alu',
+    smrCode: 'S280-03',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60 Aluminium Fuel Tank Cap',
+      tr: 'B60 Alüminyum Depo Kapağı',
+      ru: 'Крышка топливного бака B60, алюминиевая',
+      de: 'Tankdeckel B60, aus Aluminium',
+    },
+    description: {
+      en: 'Aluminium fuel tank cap, size B60. For truck fuel tanks.',
+      tr: 'B60 ölçüsünde alüminyum depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60, алюминиевая. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60, aus Aluminium. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60', tr: 'B60', ru: 'B60', de: 'B60' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-04',
+    slug: 's280-04-fuel-tank-cap-b60a-alu',
+    smrCode: 'S280-04',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60A Aluminium Fuel Tank Cap',
+      tr: 'B60A Alüminyum Depo Kapağı',
+      ru: 'Крышка топливного бака B60A, алюминиевая',
+      de: 'Tankdeckel B60A, aus Aluminium',
+    },
+    description: {
+      en: 'Aluminium fuel tank cap, size B60A. For truck fuel tanks.',
+      tr: 'B60A ölçüsünde alüminyum depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60A, алюминиевая. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60A, aus Aluminium. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60A', tr: 'B60A', ru: 'B60A', de: 'B60A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-05',
+    slug: 's280-05-fuel-tank-cap-b80-galv',
+    smrCode: 'S280-05',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B80 Galvanized Fuel Tank Cap',
+      tr: 'B80 Galvaniz Depo Kapağı',
+      ru: 'Крышка топливного бака B80, оцинкованная',
+      de: 'Tankdeckel B80, verzinkt',
+    },
+    description: {
+      en: 'Galvanized fuel tank cap, size B80. For truck fuel tanks.',
+      tr: 'B80 ölçüsünde galvaniz depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80, оцинкованная. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80, verzinkt. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B80', tr: 'B80', ru: 'B80', de: 'B80' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Galvanized',
+          tr: 'Galvaniz',
+          ru: 'Оцинкованный',
+          de: 'Verzinkt',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-06',
+    slug: 's280-06-fuel-tank-cap-b80a-galv',
+    smrCode: 'S280-06',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B80A Galvanized Fuel Tank Cap',
+      tr: 'B80A Galvaniz Depo Kapağı',
+      ru: 'Крышка топливного бака B80A, оцинкованная',
+      de: 'Tankdeckel B80A, verzinkt',
+    },
+    description: {
+      en: 'Galvanized fuel tank cap, size B80A. For truck fuel tanks.',
+      tr: 'B80A ölçüsünde galvaniz depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80A, оцинкованная. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80A, verzinkt. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B80A', tr: 'B80A', ru: 'B80A', de: 'B80A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Galvanized',
+          tr: 'Galvaniz',
+          ru: 'Оцинкованный',
+          de: 'Verzinkt',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-07',
+    slug: 's280-07-fuel-tank-cap-b80-alu',
+    smrCode: 'S280-07',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B80 Aluminium Fuel Tank Cap',
+      tr: 'B80 Alüminyum Depo Kapağı',
+      ru: 'Крышка топливного бака B80, алюминиевая',
+      de: 'Tankdeckel B80, aus Aluminium',
+    },
+    description: {
+      en: 'Aluminium fuel tank cap, size B80. For truck fuel tanks.',
+      tr: 'B80 ölçüsünde alüminyum depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80, алюминиевая. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80, aus Aluminium. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B80', tr: 'B80', ru: 'B80', de: 'B80' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-08',
+    slug: 's280-08-fuel-tank-cap-b80a-alu',
+    smrCode: 'S280-08',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B80A Aluminium Fuel Tank Cap',
+      tr: 'B80A Alüminyum Depo Kapağı',
+      ru: 'Крышка топливного бака B80A, алюминиевая',
+      de: 'Tankdeckel B80A, aus Aluminium',
+    },
+    description: {
+      en: 'Aluminium fuel tank cap, size B80A. For truck fuel tanks.',
+      tr: 'B80A ölçüsünde alüminyum depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80A, алюминиевая. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80A, aus Aluminium. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B80A', tr: 'B80A', ru: 'B80A', de: 'B80A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Aluminium',
+          tr: 'Alüminyum',
+          ru: 'Алюминий',
+          de: 'Aluminium',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-09',
+    slug: 's280-09-fuel-tank-cap-b40a-inox',
+    smrCode: 'S280-09',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B40A Stainless Fuel Tank Cap',
+      tr: 'B40A Paslanmaz Depo Kapağı',
+      ru: 'Крышка топливного бака B40A, из нержавеющей стали',
+      de: 'Tankdeckel B40A, aus Edelstahl',
+    },
+    description: {
+      en: 'Stainless fuel tank cap, size B40A. For truck fuel tanks.',
+      tr: 'B40A ölçüsünde paslanmaz depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B40A, из нержавеющей стали. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B40A, aus Edelstahl. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B40A', tr: 'B40A', ru: 'B40A', de: 'B40A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Stainless steel',
+          tr: 'Paslanmaz',
+          ru: 'Нержавеющая сталь',
+          de: 'Edelstahl',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-09.jpg'],
+  },
+  {
+    id: 'prod-s280-13',
+    slug: 's280-13-fuel-tank-cap-b60a-plastic-scania',
+    smrCode: 'S280-13',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60A Plastic Fuel Tank Cap for Scania',
+      tr: 'B60A Plastik Depo Kapağı Scania',
+      ru: 'Крышка топливного бака B60A, пластиковая для Scania',
+      de: 'Tankdeckel B60A, aus Kunststoff für Scania',
+    },
+    description: {
+      en: 'Plastic fuel tank cap, size B60A for Scania vehicles. For truck fuel tanks.',
+      tr: 'B60A ölçüsünde plastik depo kapağı (Scania). Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60A, пластиковая для автомобилей Scania. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60A, aus Kunststoff für Scania-Fahrzeuge. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60A', tr: 'B60A', ru: 'B60A', de: 'B60A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: { en: 'Scania', tr: 'Scania', ru: 'Scania', de: 'Scania' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-13.jpg'],
+  },
+  {
+    id: 'prod-s280-14',
+    slug: 's280-14-fuel-tank-cap-b60a-plastic-scania-ring',
+    smrCode: 'S280-14',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60A Plastic Fuel Tank Cap for Scania, with Ring',
+      tr: 'B60A Plastik Depo Kapağı Scania Çemberli',
+      ru: 'Крышка топливного бака B60A, пластиковая для Scania, с кольцом',
+      de: 'Tankdeckel B60A, aus Kunststoff für Scania, mit Ring',
+    },
+    description: {
+      en: 'Plastic fuel tank cap, size B60A for Scania vehicles, with ring. For truck fuel tanks.',
+      tr: 'B60A ölçüsünde plastik depo kapağı (Scania), çemberli. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60A, пластиковая для автомобилей Scania, с кольцом. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60A, aus Kunststoff für Scania-Fahrzeuge, mit Ring. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60A', tr: 'B60A', ru: 'B60A', de: 'B60A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: { en: 'Scania', tr: 'Scania', ru: 'Scania', de: 'Scania' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'with Ring',
+          tr: 'Çemberli',
+          ru: 'с кольцом',
+          de: 'mit Ring',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-14z',
+    slug: 's280-14z-fuel-tank-cap-b60a-plastic-scania-ringchain',
+    smrCode: 'S280-14Z',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B60A Plastic Fuel Tank Cap for Scania, with Ring and Chain',
+      tr: 'B60A Plastik Depo Kapağı Scania Çemberli Zincirli',
+      ru: 'Крышка топливного бака B60A, пластиковая для Scania, с кольцом и цепочкой',
+      de: 'Tankdeckel B60A, aus Kunststoff für Scania, mit Ring und Kette',
+    },
+    description: {
+      en: 'Plastic fuel tank cap, size B60A for Scania vehicles, with ring and chain. For truck fuel tanks.',
+      tr: 'B60A ölçüsünde plastik depo kapağı (Scania), çemberli zincirli. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B60A, пластиковая для автомобилей Scania, с кольцом и цепочкой. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B60A, aus Kunststoff für Scania-Fahrzeuge, mit Ring und Kette. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60A', tr: 'B60A', ru: 'B60A', de: 'B60A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: { en: 'Scania', tr: 'Scania', ru: 'Scania', de: 'Scania' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'with Ring and Chain',
+          tr: 'Çemberli Zincirli',
+          ru: 'с кольцом и цепочкой',
+          de: 'mit Ring und Kette',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-14Z.jpg'],
+  },
+  {
+    id: 'prod-s280-15',
+    slug: 's280-15-fuel-tank-cap-b80a-plastic',
+    smrCode: 'S280-15',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B80A Plastic Fuel Tank Cap',
+      tr: 'B80A Plastik Depo Kapağı',
+      ru: 'Крышка топливного бака B80A, пластиковая',
+      de: 'Tankdeckel B80A, aus Kunststoff',
+    },
+    description: {
+      en: 'Plastic fuel tank cap, size B80A. For truck fuel tanks.',
+      tr: 'B80A ölçüsünde plastik depo kapağı. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80A, пластиковая. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80A, aus Kunststoff. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B80A', tr: 'B80A', ru: 'B80A', de: 'B80A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-15.jpg'],
+  },
+  {
+    id: 'prod-s280-15z',
+    slug: 's280-15z-fuel-tank-cap-b80a-plastic-chain',
+    smrCode: 'S280-15Z',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'B80A Plastic Fuel Tank Cap, with Chain',
+      tr: 'B80A Plastik Depo Kapağı Zincirli',
+      ru: 'Крышка топливного бака B80A, пластиковая, с цепочкой',
+      de: 'Tankdeckel B80A, aus Kunststoff, mit Kette',
+    },
+    description: {
+      en: 'Plastic fuel tank cap, size B80A, with chain. For truck fuel tanks.',
+      tr: 'B80A ölçüsünde plastik depo kapağı, zincirli. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80A, пластиковая, с цепочкой. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80A, aus Kunststoff, mit Kette. Für Kraftstofftanks von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B80A', tr: 'B80A', ru: 'B80A', de: 'B80A' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'with Chain',
+          tr: 'Zincirli',
+          ru: 'с цепочкой',
+          de: 'mit Kette',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-15Z.jpg'],
+  },
+  {
+    id: 'prod-s280-17',
+    slug: 's280-17-fuel-tank-cap-b80a-plastic-side',
+    smrCode: 'S280-17',
     categoryId: 'cat-tank-caps',
     subcategoryId: 'subcat-anti-theft-lock',
     title: {
-      en: 'Anti-Theft Lock — 80mm (Universal)',
-      tr: 'Hırsızlık Önleyici Kilit — 80mm (Evrensel)',
-      ru: 'Замок защиты бака — 80мм (универсальный)',
-      de: 'Diebstahlschutzschloss — 80mm (Universal)',
+      en: 'B80A Plastic Fuel Tank Cap, Side Locking',
+      tr: 'B80A Plastik Depo Kapağı Yandan Kilitli',
+      ru: 'Крышка топливного бака B80A, пластиковая, с боковым замком',
+      de: 'Tankdeckel B80A, aus Kunststoff, seitlich abschließbar',
     },
     description: {
-      en: 'New — larger padlock-style protective housing, 80mm, height 55mm, keylock sold separately.',
-      tr: 'Yeni ürün — daha büyük asma kilit tarzı koruyucu muhafaza, 80mm, yükseklik 55mm, kilit ayrı satılır.',
-      ru: 'Новинка — увеличенный защитный кожух-навесной замок, 80мм, высота 55мм, замок продаётся отдельно.',
-      de: 'Neuheit — größeres Vorhängeschloss-artiges Schutzgehäuse, 80mm, Höhe 55mm, Schloss separat erhältlich.',
+      en: 'Plastic fuel tank cap, size B80A, side locking. For truck fuel tanks.',
+      tr: 'B80A ölçüsünde plastik depo kapağı, yandan kilitli. Kamyon yakıt depoları için.',
+      ru: 'Крышка топливного бака B80A, пластиковая, с боковым замком. Для топливных баков грузовых автомобилей.',
+      de: 'Tankdeckel B80A, aus Kunststoff, seitlich abschließbar. Für Kraftstofftanks von Lkw.',
     },
-    images: ['/samer-catalog-images/TankCap/img-016-118.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
     specs: [
       {
         label: {
-          en: 'Filler Neck Size',
-          tr: 'Depo Ağzı',
-          ru: 'Диаметр горловины',
-          de: 'Einfüllstutzen',
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
         },
-        value: '80mm',
+        value: { en: 'B80A', tr: 'B80A', ru: 'B80A', de: 'B80A' },
       },
       {
-        label: { en: 'Height', tr: 'Yükseklik', ru: 'Высота', de: 'Höhe' },
-        value: '55mm',
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Side Locking',
+          tr: 'Yandan Kilitli',
+          ru: 'с боковым замком',
+          de: 'seitlich abschließbar',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/tank-caps/S280-17.jpg'],
   },
+  {
+    id: 'prod-s280-19',
+    slug: 's280-19-fuel-tank-cap-40mm-biodiesel',
+    smrCode: 'S280-19',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-fuel-cap',
+    title: {
+      en: 'Bio Diesel 40 mm Fuel Tank Cap',
+      tr: "Bio Dizel 40'lık Depo Kapağı",
+      ru: 'Крышка топливного бака для биодизеля 40 мм',
+      de: 'Tankdeckel für Biodiesel 40 mm',
+    },
+    description: {
+      en: '40 mm tank cap for biodiesel fuel tanks.',
+      tr: "Biyodizel yakıt depoları için 40'lık depo kapağı.",
+      ru: 'Крышка 40 мм для топливных баков с биодизелем.',
+      de: 'Tankdeckel 40 mm für Biodiesel-Kraftstofftanks.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: {
+          en: 'Biodiesel',
+          tr: 'Biyodizel',
+          ru: 'Биодизель',
+          de: 'Biodiesel',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-19.jpg'],
+  },
+  {
+    id: 'prod-s280-10',
+    slug: 's280-10-adblue-tank-cap-60mm-scania',
+    smrCode: 'S280-10',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue 60 mm Tank Cap for Scania',
+      tr: "Adblue 60'lık Scania Depo Kapağı",
+      ru: 'Крышка бака AdBlue 60 мм для Scania',
+      de: 'AdBlue-Tankdeckel 60 mm für Scania',
+    },
+    description: {
+      en: 'Tank cap 60 mm for the AdBlue tank of Scania vehicles.',
+      tr: 'Adblue deposu için 60 mm depo kapağı (Scania).',
+      ru: 'Крышка 60 мм для бака AdBlue автомобилей Scania.',
+      de: 'Tankdeckel 60 mm für den AdBlue-Tank von Scania-Fahrzeugen.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: { en: 'Scania', tr: 'Scania', ru: 'Scania', de: 'Scania' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-10.jpg'],
+  },
+  {
+    id: 'prod-s280-11',
+    slug: 's280-11-adblue-tank-cap-60mm-iveco',
+    smrCode: 'S280-11',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue 60 mm Tank Cap for Iveco',
+      tr: "Adblue 60'lık Iveco Depo Kapağı",
+      ru: 'Крышка бака AdBlue 60 мм для Iveco',
+      de: 'AdBlue-Tankdeckel 60 mm für Iveco',
+    },
+    description: {
+      en: 'Tank cap 60 mm for the AdBlue tank of Iveco vehicles.',
+      tr: 'Adblue deposu için 60 mm depo kapağı (Iveco).',
+      ru: 'Крышка 60 мм для бака AdBlue автомобилей Iveco.',
+      de: 'Tankdeckel 60 mm für den AdBlue-Tank von Iveco-Fahrzeugen.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '60 mm', tr: '60 mm', ru: '60 мм', de: '60 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: { en: 'Iveco', tr: 'Iveco', ru: 'Iveco', de: 'Iveco' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-11.jpg'],
+  },
+  {
+    id: 'prod-s280-12',
+    slug: 's280-12-adblue-tank-cap-40mm',
+    smrCode: 'S280-12',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue 40 mm Tank Cap',
+      tr: "Adblue 40'lık Depo Kapağı",
+      ru: 'Крышка бака AdBlue 40 мм',
+      de: 'AdBlue-Tankdeckel 40 mm',
+    },
+    description: {
+      en: 'Tank cap 40 mm for the AdBlue tank of trucks.',
+      tr: 'Adblue deposu için 40 mm depo kapağı.',
+      ru: 'Крышка 40 мм для бака AdBlue грузовых автомобилей.',
+      de: 'Tankdeckel 40 mm für den AdBlue-Tank von Lkw.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-12.jpg'],
+  },
+  {
+    id: 'prod-s280-18',
+    slug: 's280-18-adblue-tank-cap-40mm-nolock-tail',
+    smrCode: 'S280-18',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue 40 mm Tank Cap, Non-Locking, With Tail',
+      tr: "Adblue 40'lık Depo Kapağı Kilitsiz Kuyruklu",
+      ru: 'Крышка бака AdBlue 40 мм, без замка, с хвостовиком',
+      de: 'AdBlue-Tankdeckel 40 mm, nicht abschließbar, mit Lasche',
+    },
+    description: {
+      en: 'Tank cap 40 mm for the AdBlue tank of trucks, non-locking, with tail.',
+      tr: 'Adblue deposu için 40 mm depo kapağı, kilitsiz kuyruklu.',
+      ru: 'Крышка 40 мм для бака AdBlue грузовых автомобилей, без замка, с хвостовиком.',
+      de: 'Tankdeckel 40 mm für den AdBlue-Tank von Lkw, nicht abschließbar, mit Lasche.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Non-Locking, With Tail',
+          tr: 'Kilitsiz Kuyruklu',
+          ru: 'без замка, с хвостовиком',
+          de: 'nicht abschließbar, mit Lasche',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-18.jpg'],
+  },
+  {
+    id: 'prod-s280-21',
+    slug: 's280-21-adblue-tank-cap-40mm-nolock',
+    smrCode: 'S280-21',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue 40 mm Tank Cap, Non-Locking',
+      tr: "Adblue 40'lık Depo Kapağı Kilitsiz",
+      ru: 'Крышка бака AdBlue 40 мм, без замка',
+      de: 'AdBlue-Tankdeckel 40 mm, nicht abschließbar',
+    },
+    description: {
+      en: 'Tank cap 40 mm for the AdBlue tank of trucks, non-locking.',
+      tr: 'Adblue deposu için 40 mm depo kapağı, kilitsiz.',
+      ru: 'Крышка 40 мм для бака AdBlue грузовых автомобилей, без замка.',
+      de: 'Tankdeckel 40 mm für den AdBlue-Tank von Lkw, nicht abschließbar.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Non-Locking',
+          tr: 'Kilitsiz',
+          ru: 'без замка',
+          de: 'nicht abschließbar',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  {
+    id: 'prod-s280-22',
+    slug: 's280-22-adblue-tank-cap-40mm-lock',
+    smrCode: 'S280-22',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-anti-theft-lock',
+    title: {
+      en: 'AdBlue 40 mm Tank Cap, Locking',
+      tr: "Adblue 40'lık Depo Kapağı Kilitli",
+      ru: 'Крышка бака AdBlue 40 мм, с замком',
+      de: 'AdBlue-Tankdeckel 40 mm, abschließbar',
+    },
+    description: {
+      en: 'Tank cap 40 mm for the AdBlue tank of trucks, locking.',
+      tr: 'Adblue deposu için 40 mm depo kapağı, kilitli.',
+      ru: 'Крышка 40 мм для бака AdBlue грузовых автомобилей, с замком.',
+      de: 'Tankdeckel 40 mm für den AdBlue-Tank von Lkw, abschließbar.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: '40 mm', tr: '40 mm', ru: '40 мм', de: '40 mm' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Locking',
+          tr: 'Kilitli',
+          ru: 'с замком',
+          de: 'abschließbar',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/tank-caps/S280-22.jpg'],
+  },
+  {
+    id: 'prod-s280-23',
+    slug: 's280-23-adblue-tank-cap-b60-plastic-rv',
+    smrCode: 'S280-23',
+    categoryId: 'cat-tank-caps',
+    subcategoryId: 'subcat-adblue-fuel-cap',
+    title: {
+      en: 'AdBlue B60 Plastic Tank Cap for Renault-Volvo',
+      tr: 'Adblue B60 Reno-Volvo Plastik Depo Kapağı',
+      ru: 'Пластиковая крышка бака AdBlue B60 для Renault-Volvo',
+      de: 'AdBlue-Tankdeckel B60 aus Kunststoff für Renault-Volvo',
+    },
+    description: {
+      en: 'Plastic tank cap B60 for the AdBlue tank of Renault-Volvo vehicles.',
+      tr: 'Adblue deposu için B60 plastik depo kapağı (Reno-Volvo).',
+      ru: 'Пластиковая крышка B60 для бака AdBlue автомобилей Renault-Volvo.',
+      de: 'Kunststoff-Tankdeckel B60 für den AdBlue-Tank von Renault-Volvo-Fahrzeugen.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Cap size',
+          tr: 'Kapak ölçüsü',
+          ru: 'Размер крышки',
+          de: 'Deckelgröße',
+        },
+        value: { en: 'B60', tr: 'B60', ru: 'B60', de: 'B60' },
+      },
+      {
+        label: {
+          en: 'Intended for',
+          tr: 'Kullanım alanı',
+          ru: 'Назначение',
+          de: 'Verwendung',
+        },
+        value: { en: 'AdBlue', tr: 'AdBlue', ru: 'AdBlue', de: 'AdBlue' },
+      },
+      {
+        label: {
+          en: 'Material',
+          tr: 'Malzeme',
+          ru: 'Материал',
+          de: 'Material',
+        },
+        value: {
+          en: 'Plastic',
+          tr: 'Plastik',
+          ru: 'Пластик',
+          de: 'Kunststoff',
+        },
+      },
+      {
+        label: { en: 'Vehicle', tr: 'Araç', ru: 'Автомобиль', de: 'Fahrzeug' },
+        value: {
+          en: 'Renault-Volvo',
+          tr: 'Renault-Volvo',
+          ru: 'Renault-Volvo',
+          de: 'Renault-Volvo',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/placeholder.png'],
+  },
+  // ───────────── Hub caps  (cat-hub-caps) ─────────────
+  {
+    id: 'prod-tmp-9899',
+    slug: 'tmp-9899-hub-cap-m230x3',
+    smrCode: 'TMP 9899',
+    oemNumbers: [
+      '03.212.27.01.0',
+      '10.10605',
+      '08171',
+      '404.111-00',
+      '070.076',
+      '52132',
+    ],
+    categoryId: 'cat-hub-caps',
 
-  // --- TRUCK & TRAILER REPAIR KITS ---
-  {
-    id: 'prod-tmp-9978',
-    slug: 'tmp-9978-camshaft-repair-kit-bpw-42mm',
-    smrCode: 'TMP 9978',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-camshaft-kit',
     title: {
-      en: 'Repair Kit for Camshaft 42mm — BPW',
-      tr: 'Kam Mili Tamir Takımı 42mm — BPW',
-      ru: 'Ремкомплект распредвала 42мм — BPW',
-      de: 'Reparatursatz für Nockenwelle 42mm — BPW',
+      en: 'Hub Cap, External Thread M230x3 (SW120)',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M230 x 3 (SW120)',
+      ru: 'Колпак ступицы, наружная резьба M230x3 (SW120)',
+      de: 'Radnabenkappe, Außengewinde M230x3 (SW120)',
     },
     description: {
-      en: 'Complete camshaft repair kit for BPW axles, 42mm, includes bushings, seals, retaining rings and mounting hardware.',
-      tr: 'BPW aksları için komple kam mili tamir takımı, 42mm, burç, keçe, seger ve montaj malzemelerini içerir.',
-      ru: 'Полный ремкомплект распредвала для осей BPW, 42мм, включает втулки, сальники, стопорные кольца и крепёж.',
-      de: 'Kompletter Nockenwellen-Reparatursatz für BPW-Achsen, 42mm, inkl. Buchsen, Dichtungen, Sicherungsringen und Montagematerial.',
+      en: 'Hub cap with external thread M230x3 for truck and trailer axle hubs, wrench size SW120.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M230x3, anahtar ağzı SW120.',
+      ru: 'Колпак ступицы с наружной резьбой M230x3 для ступиц осей грузовиков и прицепов, размер под ключ SW120.',
+      de: 'Radnabenkappe mit Außengewinde M230x3 für Achsnaben von Lkw und Anhängern, Schlüsselweite SW120.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-002-007.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
-        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
-        value: '42mm',
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M230x3', tr: 'M230x3', ru: 'M230x3', de: 'M230x3' },
       },
       {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'BPW',
-      },
-    ],
-  },
-  {
-    id: 'prod-tmp-9569',
-    slug: 'tmp-9569-camshaft-repair-kit-bpw-plastic-bearing-42mm',
-    smrCode: 'TMP 9569',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-camshaft-kit',
-    title: {
-      en: 'Repair Kit for Camshaft 42mm — BPW (With Plastic Bearing)',
-      tr: 'Kam Mili Tamir Takımı 42mm — BPW (Plastik Yataklı)',
-      ru: 'Ремкомплект распредвала 42мм — BPW (с пластиковым подшипником)',
-      de: 'Reparatursatz für Nockenwelle 42mm — BPW (mit Kunststofflager)',
-    },
-    description: {
-      en: 'Camshaft repair kit for BPW axles, 42mm, with plastic bearing bushings, includes seals, retaining rings and mounting hardware.',
-      tr: 'BPW aksları için kam mili tamir takımı, 42mm, plastik yataklı, keçe, seger ve montaj malzemelerini içerir.',
-      ru: 'Ремкомплект распредвала для осей BPW, 42мм, с пластиковыми подшипниками, включает сальники, стопорные кольца и крепёж.',
-      de: 'Nockenwellen-Reparatursatz für BPW-Achsen, 42mm, mit Kunststofflagerbuchsen, inkl. Dichtungen, Sicherungsringen und Montagematerial.',
-    },
-    images: ['/samer-catalog-images/RepairSet/img-002-008.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
-        value: '42mm',
-      },
-      {
-        label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'BPW',
-      },
-      {
-        label: {
-          en: 'Bearing Type',
-          tr: 'Yatak Tipi',
-          ru: 'Тип подшипника',
-          de: 'Lagertyp',
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
         },
         value: {
-          en: 'Plastic',
-          tr: 'Plastik',
-          ru: 'Пластиковый',
-          de: 'Kunststoff',
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
         },
+      },
+      {
+        label: {
+          en: 'Wrench size (SW)',
+          tr: 'Anahtar ağzı (SW)',
+          ru: 'Размер под ключ (SW)',
+          de: 'Schlüsselweite (SW)',
+        },
+        value: { en: 'SW120', tr: 'SW120', ru: 'SW120', de: 'SW120' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP9899.jpg'],
   },
   {
-    id: 'prod-tmp-9569a',
-    slug: 'tmp-9569a-camshaft-repair-kit-bpw-plastic-bearing-42mm',
-    smrCode: 'TMP 9569A',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-camshaft-kit',
+    id: 'prod-tmp-9895',
+    slug: 'tmp-9895-hub-cap-m155x3',
+    smrCode: 'TMP 9895',
+    oemNumbers: [
+      '03.212.26.01.0',
+      '10.10603',
+      '05949',
+      '046.136-00',
+      '11.080.0244.450',
+      '070.071',
+      '52127',
+    ],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Repair Kit for Camshaft 42mm — BPW (With Plastic Bearing, Type A)',
-      tr: 'Kam Mili Tamir Takımı 42mm — BPW (Plastik Yataklı, A Tipi)',
-      ru: 'Ремкомплект распредвала 42мм — BPW (с пластиковым подшипником, тип A)',
-      de: 'Reparatursatz für Nockenwelle 42mm — BPW (mit Kunststofflager, Typ A)',
+      en: 'Hub Cap, External Thread M155x3 (SW120)',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M155 x 3 (SW120)',
+      ru: 'Колпак ступицы, наружная резьба M155x3 (SW120)',
+      de: 'Radnabenkappe, Außengewinde M155x3 (SW120)',
     },
     description: {
-      en: 'Alternative camshaft repair kit for BPW axles, 42mm, with plastic bearing bushings.',
-      tr: 'BPW aksları için alternatif kam mili tamir takımı, 42mm, plastik yataklı.',
-      ru: 'Альтернативный ремкомплект распредвала для осей BPW, 42мм, с пластиковыми подшипниками.',
-      de: 'Alternativer Nockenwellen-Reparatursatz für BPW-Achsen, 42mm, mit Kunststofflagerbuchsen.',
+      en: 'Hub cap with external thread M155x3 for truck and trailer axle hubs, wrench size SW120, max. torque 700 Nm.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M155x3, anahtar ağzı SW120, maksimum tork 700 Nm.',
+      ru: 'Колпак ступицы с наружной резьбой M155x3 для ступиц осей грузовиков и прицепов, размер под ключ SW120, макс. крутящий момент 700 Нм.',
+      de: 'Radnabenkappe mit Außengewinde M155x3 für Achsnaben von Lkw und Anhängern, Schlüsselweite SW120, max. Drehmoment 700 Nm.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-002-009.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
     specs: [
       {
-        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
-        value: '42mm',
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M155x3', tr: 'M155x3', ru: 'M155x3', de: 'M155x3' },
       },
       {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'BPW',
-      },
-      {
-        label: {
-          en: 'Bearing Type',
-          tr: 'Yatak Tipi',
-          ru: 'Тип подшипника',
-          de: 'Lagertyp',
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
         },
         value: {
-          en: 'Plastic',
-          tr: 'Plastik',
-          ru: 'Пластиковый',
-          de: 'Kunststoff',
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
         },
       },
+      {
+        label: {
+          en: 'Wrench size (SW)',
+          tr: 'Anahtar ağzı (SW)',
+          ru: 'Размер под ключ (SW)',
+          de: 'Schlüsselweite (SW)',
+        },
+        value: { en: 'SW120', tr: 'SW120', ru: 'SW120', de: 'SW120' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '700 Nm', tr: '700 Nm', ru: '700 Нм', de: '700 Nm' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
     ],
+    images: ['/products/hub-caps/TMP9899.jpg'],
   },
   {
-    id: 'prod-tmp-9569b',
-    slug: 'tmp-9569b-camshaft-repair-kit-bpw-sinter-bearing-42mm',
-    smrCode: 'TMP 9569B',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-camshaft-kit',
+    id: 'prod-tmp-9894',
+    slug: 'tmp-9894-hub-cap-m135x3',
+    smrCode: 'TMP 9894',
+    oemNumbers: [
+      '03.212.25.02.0',
+      '10.10601',
+      '05948',
+      '406.129-00',
+      '11.080.0244.440',
+      '070.070',
+      '52126',
+    ],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Repair Kit for Camshaft 42mm — BPW (With Sinter Bearing)',
-      tr: 'Kam Mili Tamir Takımı 42mm — BPW (Sinter Yataklı)',
-      ru: 'Ремкомплект распредвала 42мм — BPW (со спечённым подшипником)',
-      de: 'Reparatursatz für Nockenwelle 42mm — BPW (mit Sinterlager)',
+      en: 'Hub Cap, External Thread M135x3 (SW120)',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M135 x 3 (SW120)',
+      ru: 'Колпак ступицы, наружная резьба M135x3 (SW120)',
+      de: 'Radnabenkappe, Außengewinde M135x3 (SW120)',
     },
     description: {
-      en: 'Camshaft repair kit for BPW axles, 42mm, with sintered bearing bushings for extended durability.',
-      tr: 'BPW aksları için kam mili tamir takımı, 42mm, uzun ömür için sinter yataklı.',
-      ru: 'Ремкомплект распредвала для осей BPW, 42мм, со спечёнными подшипниками повышенной износостойкости.',
-      de: 'Nockenwellen-Reparatursatz für BPW-Achsen, 42mm, mit Sinterlagerbuchsen für erhöhte Lebensdauer.',
+      en: 'Hub cap with external thread M135x3 for truck and trailer axle hubs, wrench size SW120, max. torque 700 Nm.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M135x3, anahtar ağzı SW120, maksimum tork 700 Nm.',
+      ru: 'Колпак ступицы с наружной резьбой M135x3 для ступиц осей грузовиков и прицепов, размер под ключ SW120, макс. крутящий момент 700 Нм.',
+      de: 'Radnabenkappe mit Außengewinde M135x3 für Achsnaben von Lkw und Anhängern, Schlüsselweite SW120, max. Drehmoment 700 Nm.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-002-012.png'],
-    videoUrl: 'https://vimeo.com/76979871',
     specs: [
       {
-        label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
-        value: '42mm',
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M135x3', tr: 'M135x3', ru: 'M135x3', de: 'M135x3' },
       },
       {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
         },
-        value: 'BPW',
+        value: {
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
+        },
       },
       {
         label: {
-          en: 'Bearing Type',
-          tr: 'Yatak Tipi',
-          ru: 'Тип подшипника',
-          de: 'Lagertyp',
+          en: 'Wrench size (SW)',
+          tr: 'Anahtar ağzı (SW)',
+          ru: 'Размер под ключ (SW)',
+          de: 'Schlüsselweite (SW)',
         },
-        value: { en: 'Sinter', tr: 'Sinter', ru: 'Спечённый', de: 'Sinter' },
+        value: { en: 'SW120', tr: 'SW120', ru: 'SW120', de: 'SW120' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '700 Nm', tr: '700 Nm', ru: '700 Нм', de: '700 Nm' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP9899.jpg'],
   },
   {
-    id: 'prod-tmp-99104',
-    slug: 'tmp-99104-brake-shoe-repair-kit-bpw',
-    smrCode: 'TMP 99104',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-brake-shoe-kit',
+    id: 'prod-tmp-9893',
+    slug: 'tmp-9893-hub-cap-m125x3',
+    smrCode: 'TMP 9893',
+    oemNumbers: [
+      '03.212.24.02.0',
+      '10.10602',
+      '04171',
+      '046.135-00',
+      '11.080.0241.110',
+      '070.069',
+      '52125',
+    ],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Brake Shoe Repair Kit — BPW',
-      tr: 'Balata Tamir Takımı — BPW',
-      ru: 'Ремкомплект тормозных колодок — BPW',
-      de: 'Bremsbacken-Reparatursatz — BPW',
+      en: 'Hub Cap, External Thread M125x3 (SW120)',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M125 x 3 (SW120)',
+      ru: 'Колпак ступицы, наружная резьба M125x3 (SW120)',
+      de: 'Radnabenkappe, Außengewinde M125x3 (SW120)',
     },
     description: {
-      en: 'Complete brake shoe repair kit for BPW axles, includes springs, bushings, retaining rings and pins.',
-      tr: 'BPW aksları için komple balata tamir takımı, yay, burç, seger ve pimleri içerir.',
-      ru: 'Полный ремкомплект тормозных колодок для осей BPW: пружины, втулки, стопорные кольца и пальцы.',
-      de: 'Kompletter Bremsbacken-Reparatursatz für BPW-Achsen, inkl. Federn, Buchsen, Sicherungsringen und Bolzen.',
+      en: 'Hub cap with external thread M125x3 for truck and trailer axle hubs, wrench size SW120, max. torque 700 Nm.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M125x3, anahtar ağzı SW120, maksimum tork 700 Nm.',
+      ru: 'Колпак ступицы с наружной резьбой M125x3 для ступиц осей грузовиков и прицепов, размер под ключ SW120, макс. крутящий момент 700 Нм.',
+      de: 'Radnabenkappe mit Außengewinde M125x3 für Achsnaben von Lkw und Anhängern, Schlüsselweite SW120, max. Drehmoment 700 Nm.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-002-013.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M125x3', tr: 'M125x3', ru: 'M125x3', de: 'M125x3' },
+      },
+      {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
         },
-        value: 'BPW',
+        value: {
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Wrench size (SW)',
+          tr: 'Anahtar ağzı (SW)',
+          ru: 'Размер под ключ (SW)',
+          de: 'Schlüsselweite (SW)',
+        },
+        value: { en: 'SW120', tr: 'SW120', ru: 'SW120', de: 'SW120' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '700 Nm', tr: '700 Nm', ru: '700 Нм', de: '700 Nm' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP9899.jpg'],
   },
   {
-    id: 'prod-tmp-99105',
-    slug: 'tmp-99105-brake-shoe-repair-kit-bpw',
-    smrCode: 'TMP 99105',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-brake-shoe-kit',
+    id: 'prod-tmp-9892',
+    slug: 'tmp-9892-hub-cap-m115x3',
+    smrCode: 'TMP 9892',
+    oemNumbers: [
+      '03.212.23.02.0',
+      '10.10608',
+      '04170',
+      '046.134-00',
+      '11.080.0241.100',
+      '070.067',
+      '52123',
+    ],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Brake Shoe Repair Kit — BPW (Alternative)',
-      tr: 'Balata Tamir Takımı — BPW (Alternatif)',
-      ru: 'Ремкомплект тормозных колодок — BPW (альтернативный)',
-      de: 'Bremsbacken-Reparatursatz — BPW (Alternative)',
+      en: 'Hub Cap, External Thread M115x3 (SW95)',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M115 x 3 (SW95)',
+      ru: 'Колпак ступицы, наружная резьба M115x3 (SW95)',
+      de: 'Radnabenkappe, Außengewinde M115x3 (SW95)',
     },
     description: {
-      en: 'Alternative brake shoe repair kit for BPW axles, includes springs, bushings, retaining rings and pins.',
-      tr: 'BPW aksları için alternatif balata tamir takımı, yay, burç, seger ve pimleri içerir.',
-      ru: 'Альтернативный ремкомплект тормозных колодок для осей BPW: пружины, втулки, стопорные кольца и пальцы.',
-      de: 'Alternativer Bremsbacken-Reparatursatz für BPW-Achsen, inkl. Federn, Buchsen, Sicherungsringen und Bolzen.',
+      en: 'Hub cap with external thread M115x3 for truck and trailer axle hubs, wrench size SW95, max. torque 700 Nm.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M115x3, anahtar ağzı SW95, maksimum tork 700 Nm.',
+      ru: 'Колпак ступицы с наружной резьбой M115x3 для ступиц осей грузовиков и прицепов, размер под ключ SW95, макс. крутящий момент 700 Нм.',
+      de: 'Radnabenkappe mit Außengewinde M115x3 für Achsnaben von Lkw und Anhängern, Schlüsselweite SW95, max. Drehmoment 700 Nm.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-002-014.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
     specs: [
       {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M115x3', tr: 'M115x3', ru: 'M115x3', de: 'M115x3' },
+      },
+      {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
         },
-        value: 'BPW',
+        value: {
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Wrench size (SW)',
+          tr: 'Anahtar ağzı (SW)',
+          ru: 'Размер под ключ (SW)',
+          de: 'Schlüsselweite (SW)',
+        },
+        value: { en: 'SW95', tr: 'SW95', ru: 'SW95', de: 'SW95' },
+      },
+      {
+        label: {
+          en: 'Max. torque',
+          tr: 'Maksimum tork',
+          ru: 'Макс. крутящий момент',
+          de: 'Max. Drehmoment',
+        },
+        value: { en: '700 Nm', tr: '700 Nm', ru: '700 Нм', de: '700 Nm' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP9899.jpg'],
+  },
+  {
+    id: 'prod-tmp-97262',
+    slug: 'tmp-97262-hub-cap-m136x2-5',
+    smrCode: 'TMP 97262',
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'Economy Hub Cap, Internal Thread M136x2.5',
+      tr: 'Eko Porya Kapağı (İçten Dişli) - M136 x 2,5',
+      ru: 'Колпак ступицы «Эко», внутренняя резьба M136x2,5',
+      de: 'Radnabenkappe Eco, Innengewinde M136x2,5',
+    },
+    description: {
+      en: 'Hub cap with internal thread M136x2.5 for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, i̇çten dişli M136x2,5.',
+      ru: 'Колпак ступицы с внутренней резьбой M136x2,5 для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe mit Innengewinde M136x2,5 für Achsnaben von Lkw und Anhängern.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: {
+          en: 'M136x2.5',
+          tr: 'M136x2.5',
+          ru: 'M136x2.5',
+          de: 'M136x2.5',
+        },
+      },
+      {
+        label: {
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
+        },
+        value: {
+          en: 'Internal thread',
+          tr: 'İçten dişli',
+          ru: 'Внутренняя резьба',
+          de: 'Innengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Version',
+          tr: 'Versiyon',
+          ru: 'Исполнение',
+          de: 'Ausführung',
+        },
+        value: { en: 'Economy', tr: 'Eko', ru: 'Эконом', de: 'Eco' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP9724.jpg'],
+  },
+  {
+    id: 'prod-tmp-9726',
+    slug: 'tmp-9726-hub-cap-m135x2',
+    smrCode: 'TMP 9726',
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'Hub Cap, Internal Thread M135x2',
+      tr: 'Porya Kapağı (İçten Dişli) - M135 x 2',
+      ru: 'Колпак ступицы, внутренняя резьба M135x2',
+      de: 'Radnabenkappe, Innengewinde M135x2',
+    },
+    description: {
+      en: 'Hub cap with internal thread M135x2 for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, i̇çten dişli M135x2.',
+      ru: 'Колпак ступицы с внутренней резьбой M135x2 для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe mit Innengewinde M135x2 für Achsnaben von Lkw und Anhängern.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M135x2', tr: 'M135x2', ru: 'M135x2', de: 'M135x2' },
+      },
+      {
+        label: {
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
+        },
+        value: {
+          en: 'Internal thread',
+          tr: 'İçten dişli',
+          ru: 'Внутренняя резьба',
+          de: 'Innengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP9724.jpg'],
+  },
+  {
+    id: 'prod-tmp-9724',
+    slug: 'tmp-9724-hub-cap-m125x2',
+    smrCode: 'TMP 9724',
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'Hub Cap, Internal Thread M125x2',
+      tr: 'Porya Kapağı (İçten Dişli) - M125 x 2',
+      ru: 'Колпак ступицы, внутренняя резьба M125x2',
+      de: 'Radnabenkappe, Innengewinde M125x2',
+    },
+    description: {
+      en: 'Hub cap with internal thread M125x2 for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, i̇çten dişli M125x2.',
+      ru: 'Колпак ступицы с внутренней резьбой M125x2 для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe mit Innengewinde M125x2 für Achsnaben von Lkw und Anhängern.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M125x2', tr: 'M125x2', ru: 'M125x2', de: 'M125x2' },
+      },
+      {
+        label: {
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
+        },
+        value: {
+          en: 'Internal thread',
+          tr: 'İçten dişli',
+          ru: 'Внутренняя резьба',
+          de: 'Innengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP9724.jpg'],
+  },
+  {
+    id: 'prod-tmp-9652',
+    slug: 'tmp-9652-hub-cap-m125x2',
+    smrCode: 'TMP 9652',
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'Hub Cap, External Thread M125x2',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M125 x 2',
+      ru: 'Колпак ступицы, наружная резьба M125x2',
+      de: 'Radnabenkappe, Außengewinde M125x2',
+    },
+    description: {
+      en: 'Hub cap with external thread M125x2 for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M125x2.',
+      ru: 'Колпак ступицы с наружной резьбой M125x2 для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe mit Außengewinde M125x2 für Achsnaben von Lkw und Anhängern.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M125x2', tr: 'M125x2', ru: 'M125x2', de: 'M125x2' },
+      },
+      {
+        label: {
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
+        },
+        value: {
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP9652.jpg'],
+  },
+  {
+    id: 'prod-tmp-9652-colakoglu',
+    slug: 'tmp-9652-hub-cap-m125x2-colakoglu',
+    smrCode: 'TMP 9652',
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'Hub Cap, External Thread M125x2 (Çolakoğlu)',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M125 x 2 (Çolakoğlu)',
+      ru: 'Колпак ступицы, наружная резьба M125x2 (Çolakoğlu)',
+      de: 'Radnabenkappe, Außengewinde M125x2 (Çolakoğlu)',
+    },
+    description: {
+      en: 'Hub cap with external thread M125x2 for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M125x2.',
+      ru: 'Колпак ступицы с наружной резьбой M125x2 для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe mit Außengewinde M125x2 für Achsnaben von Lkw und Anhängern.',
+    },
+    specs: [
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M125x2', tr: 'M125x2', ru: 'M125x2', de: 'M125x2' },
+      },
+      {
+        label: {
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
+        },
+        value: {
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP9652.jpg'],
   },
   {
     id: 'prod-tmp-9650',
-    slug: 'tmp-9650-hub-cap-bpw-6-9-ton',
+    slug: 'tmp-9650-hub-cap-m115x2',
     smrCode: 'TMP 9650',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-hub-cap',
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Hub Cap 6-9 Ton — BPW, Screw-In',
-      tr: 'Göbek Kapağı 6-9 Ton — BPW, Vidalı',
-      ru: 'Колпак ступицы 6-9 тонн — BPW, резьбовой',
-      de: 'Nabenkappe 6-9 Tonnen — BPW, Einschraubbar',
+      en: 'Hub Cap, External Thread M115x2',
+      tr: 'Porya Kapağı (Dıştan Dişli) - M115 x 2',
+      ru: 'Колпак ступицы, наружная резьба M115x2',
+      de: 'Radnabenkappe, Außengewinde M115x2',
     },
     description: {
-      en: 'Screw-in hub cap for 6-9 ton BPW axles, thread 115x2, SW95, torque 500Nm, thickness 4mm.',
-      tr: '6-9 ton BPW aksları için vidalı göbek kapağı, diş 115x2, SW95, tork 500Nm, kalınlık 4mm.',
-      ru: 'Резьбовой колпак ступицы для осей BPW 6-9 тонн, резьба 115x2, SW95, момент затяжки 500Нм, толщина 4мм.',
-      de: 'Einschraubbare Nabenkappe für 6-9 Tonnen BPW-Achsen, Gewinde 115x2, SW95, Drehmoment 500Nm, Stärke 4mm.',
+      en: 'Hub cap with external thread M115x2 for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, dıştan dişli M115x2.',
+      ru: 'Колпак ступицы с наружной резьбой M115x2 для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe mit Außengewinde M115x2 für Achsnaben von Lkw und Anhängern.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-004-029.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
     specs: [
       {
-        label: {
-          en: 'Load Capacity',
-          tr: 'Taşıma Kapasitesi',
-          ru: 'Грузоподъёмность',
-          de: 'Tragfähigkeit',
-        },
-        value: '6-9 Ton',
-      },
-      {
-        label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'BPW',
-      },
-      {
         label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
-        value: '115x2 / SW95',
+        value: { en: 'M115x2', tr: 'M115x2', ru: 'M115x2', de: 'M115x2' },
       },
       {
         label: {
-          en: 'Torque',
-          tr: 'Tork',
-          ru: 'Момент затяжки',
-          de: 'Drehmoment',
+          en: 'Thread type',
+          tr: 'Diş tipi',
+          ru: 'Тип резьбы',
+          de: 'Gewindeart',
         },
-        value: '500 Nm',
-      },
-      {
-        label: { en: 'Thickness', tr: 'Kalınlık', ru: 'Толщина', de: 'Stärke' },
-        value: '4mm',
-      },
-      {
-        label: { en: 'Mounting', tr: 'Montaj', ru: 'Крепление', de: 'Montage' },
         value: {
-          en: 'Screw-In',
-          tr: 'Vidalı',
-          ru: 'Резьбовое',
-          de: 'Einschraubbar',
+          en: 'External thread',
+          tr: 'Dıştan dişli',
+          ru: 'Наружная резьба',
+          de: 'Außengewinde',
         },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP9650.jpg'],
   },
   {
-    id: 'prod-tmp-9899',
-    slug: 'tmp-9899-hub-cap-bpw-16-20-ton',
-    smrCode: 'TMP 9899',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-hub-cap',
+    id: 'prod-tmp-6700',
+    slug: 'tmp-6700-sae-gigant-hub-cap',
+    smrCode: 'TMP 6700',
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Hub Cap 16-20 Ton — BPW, Screw-On',
-      tr: 'Göbek Kapağı 16-20 Ton — BPW, Vidalı (Dıştan)',
-      ru: 'Колпак ступицы 16-20 тонн — BPW, накидной',
-      de: 'Nabenkappe 16-20 Tonnen — BPW, Aufschraubbar',
+      en: 'SAE GIGANT Hub Cap',
+      tr: 'SAE GIGANT Porya Kapağı',
+      ru: 'Колпак ступицы SAE GIGANT',
+      de: 'Radnabenkappe SAE GIGANT',
     },
     description: {
-      en: 'Screw-on hub cap for 16-20 ton BPW axles, thread 230x3, SW120, torque 800Nm, thickness 4mm.',
-      tr: '16-20 ton BPW aksları için dıştan vidalı göbek kapağı, diş 230x3, SW120, tork 800Nm, kalınlık 4mm.',
-      ru: 'Накидной колпак ступицы для осей BPW 16-20 тонн, резьба 230x3, SW120, момент затяжки 800Нм, толщина 4мм.',
-      de: 'Aufschraubbare Nabenkappe für 16-20 Tonnen BPW-Achsen, Gewinde 230x3, SW120, Drehmoment 800Nm, Stärke 4mm.',
+      en: 'SAE GIGANT hub cap for truck and trailer axle hubs.',
+      tr: 'Çekici ve römork aks porya kapağı, SAE GIGANT.',
+      ru: 'Колпак ступицы SAE GIGANT для ступиц осей грузовиков и прицепов.',
+      de: 'Radnabenkappe SAE GIGANT für Achsnaben von Lkw und Anhängern.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-004-031.png'],
-    videoUrl: 'https://vimeo.com/76979871',
     specs: [
       {
         label: {
-          en: 'Load Capacity',
-          tr: 'Taşıma Kapasitesi',
-          ru: 'Грузоподъёмность',
-          de: 'Tragfähigkeit',
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
         },
-        value: '16-20 Ton',
+        value: {
+          en: 'SAE GIGANT',
+          tr: 'SAE GIGANT',
+          ru: 'SAE GIGANT',
+          de: 'SAE GIGANT',
+        },
       },
       {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
         },
-        value: 'BPW',
-      },
-      {
-        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
-        value: '230x3 / SW120',
-      },
-      {
-        label: {
-          en: 'Torque',
-          tr: 'Tork',
-          ru: 'Момент затяжки',
-          de: 'Drehmoment',
-        },
-        value: '800 Nm',
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP6700.jpg'],
   },
   {
     id: 'prod-tmp-6601',
-    slug: 'tmp-6601-hub-cap-gigant-sae',
+    slug: 'tmp-6601-sae-gigant-hub-cap-m165x2-sw148',
     smrCode: 'TMP 6601',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-hub-cap',
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Hub Cap — Gigant-SAE',
-      tr: 'Göbek Kapağı — Gigant-SAE',
-      ru: 'Колпак ступицы — Gigant-SAE',
-      de: 'Nabenkappe — Gigant-SAE',
+      en: 'SAE GIGANT Hub Cap M165x2 / SW148',
+      tr: 'SAE GIGANT Porya Kapağı M165x2 / SW148',
+      ru: 'Колпак ступицы SAE GIGANT M165x2 / SW148',
+      de: 'Radnabenkappe SAE GIGANT M165x2 / SW148',
     },
     description: {
-      en: 'Hex-style hub cap for Gigant-SAE axles, thread M165x2, SW148.',
-      tr: 'Gigant-SAE aksları için altıgen göbek kapağı, diş M165x2, SW148.',
-      ru: 'Шестигранный колпак ступицы для осей Gigant-SAE, резьба M165x2, SW148.',
-      de: 'Sechskant-Nabenkappe für Gigant-SAE-Achsen, Gewinde M165x2, SW148.',
+      en: 'SAE GIGANT hub cap for truck and trailer axle hubs. Thread M165x2, wrench size SW148.',
+      tr: 'Çekici ve römork aks porya kapağı, SAE GIGANT. Diş M165x2, anahtar ağzı SW148.',
+      ru: 'Колпак ступицы SAE GIGANT для ступиц осей грузовиков и прицепов. Резьба M165x2, размер под ключ SW148.',
+      de: 'Radnabenkappe SAE GIGANT für Achsnaben von Lkw und Anhängern. Gewinde M165x2, Schlüsselweite SW148.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-004-045.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'GIGANT - SAE',
-      },
-      {
-        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
-        value: 'M165x2 / SW148',
-      },
-    ],
-  },
-  {
-    id: 'prod-tmp-5499',
-    slug: 'tmp-5499-set-of-axle-lock-nuts-saf',
-    smrCode: 'TMP 5499',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-axle-lock-nut',
-    title: {
-      en: 'Set of Axle Lock Nuts — SAF',
-      tr: 'Aks Kilit Somunu Seti — SAF',
-      ru: 'Комплект стопорных гаек оси — SAF',
-      de: 'Achs-Sicherungsmuttern-Set — SAF',
-    },
-    description: {
-      en: 'Complete axle lock nut set for SAF axles, includes lock nut, retaining ring and washer (TMP 5460, TMP 5470, TMP 5480).',
-      tr: 'SAF aksları için komple aks kilit somunu seti, kilit somunu, seger ve pulu içerir (TMP 5460, TMP 5470, TMP 5480).',
-      ru: 'Полный комплект стопорных гаек для осей SAF: гайка, стопорное кольцо и шайба (TMP 5460, TMP 5470, TMP 5480).',
-      de: 'Komplettes Achs-Sicherungsmuttern-Set für SAF-Achsen, inkl. Sicherungsmutter, Sicherungsring und Scheibe (TMP 5460, TMP 5470, TMP 5480).',
-    },
-    images: ['/samer-catalog-images/RepairSet/img-008-098.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'SAF',
-      },
-      {
-        label: {
-          en: 'Includes',
-          tr: 'İçerik',
-          ru: 'Комплектация',
-          de: 'Enthält',
-        },
-        value: 'TMP 5460, TMP 5470, TMP 5480',
-      },
-    ],
-  },
-  {
-    id: 'prod-tmp-5722',
-    slug: 'tmp-5722-axle-lock-nut-left-saf',
-    smrCode: 'TMP 5722',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-axle-lock-nut',
-    title: {
-      en: 'Axle Lock Nut (Left) — SAF, M120x2',
-      tr: 'Aks Kilit Somunu (Sol) — SAF, M120x2',
-      ru: 'Стопорная гайка оси (левая) — SAF, M120x2',
-      de: 'Achs-Sicherungsmutter (Links) — SAF, M120x2',
-    },
-    description: {
-      en: 'Left-hand thread axle lock nut for SAF axles, M120x2, SW140.',
-      tr: 'SAF aksları için sol dişli aks kilit somunu, M120x2, SW140.',
-      ru: 'Стопорная гайка оси с левой резьбой для SAF, M120x2, SW140.',
-      de: 'Achs-Sicherungsmutter mit Linksgewinde für SAF-Achsen, M120x2, SW140.',
-    },
-    images: ['/samer-catalog-images/RepairSet/img-008-100.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
-    specs: [
-      {
-        label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'SAF',
-      },
-      {
-        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
-        value: 'M120x2 / SW140',
-      },
-      {
-        label: { en: 'Side', tr: 'Taraf', ru: 'Сторона', de: 'Seite' },
-        value: { en: 'Left', tr: 'Sol', ru: 'Левая', de: 'Links' },
-      },
-    ],
-  },
-  {
-    id: 'prod-tmp-5548',
-    slug: 'tmp-5548-bronze-bush-bpw',
-    smrCode: 'TMP 9548',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-bush-bearing',
-    title: {
-      en: 'Bronze Bush — BPW, Ø42x46x72mm',
-      tr: 'Bronz Burç — BPW, Ø42x46x72mm',
-      ru: 'Бронзовая втулка — BPW, Ø42x46x72мм',
-      de: 'Bronzebuchse — BPW, Ø42x46x72mm',
-    },
-    description: {
-      en: 'Bronze bush for BPW camshaft repair, Ø42x46x72mm.',
-      tr: 'BPW kam mili tamiri için bronz burç, Ø42x46x72mm.',
-      ru: 'Бронзовая втулка для ремонта распредвала BPW, Ø42x46x72мм.',
-      de: 'Bronzebuchse für BPW-Nockenwellenreparatur, Ø42x46x72mm.',
-    },
-    images: ['/samer-catalog-images/RepairSet/img-003-020.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    specs: [
-      {
-        label: {
-          en: 'Dimensions',
-          tr: 'Ölçüler',
-          ru: 'Размеры',
-          de: 'Abmessungen',
-        },
-        value: 'Ø42x46x72mm',
-      },
-      {
-        label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'BPW',
-      },
-    ],
-  },
-  {
-    id: 'prod-tmp-1841',
-    slug: 'tmp-1841-spherical-bearing-ror',
-    smrCode: 'TMP 1841',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-bush-bearing',
-    title: {
-      en: 'Spherical Bearing — ROR, Ø41.5x46 (Forged, Bronze Bush Inside)',
-      tr: 'Küresel Yatak — ROR, Ø41.5x46 (Dövme, İçi Bronz Burçlu)',
-      ru: 'Сферический подшипник — ROR, Ø41.5x46 (кованый, с бронзовой втулкой внутри)',
-      de: 'Kugellager — ROR, Ø41.5x46 (Geschmiedet, mit Bronzebuchse innen)',
-    },
-    description: {
-      en: 'Forged metal spherical bearing with bronze bush inside, for ROR axles, Ø41.5x46mm.',
-      tr: 'ROR aksları için içi bronz burçlu dövme metal küresel yatak, Ø41.5x46mm.',
-      ru: 'Кованый сферический подшипник с бронзовой втулкой внутри для осей ROR, Ø41.5x46мм.',
-      de: 'Geschmiedetes Kugellager mit Bronzebuchse innen für ROR-Achsen, Ø41.5x46mm.',
-    },
-    images: ['/samer-catalog-images/RepairSet/img-009-113.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
-    specs: [
-      {
-        label: {
-          en: 'Dimensions',
-          tr: 'Ölçüler',
-          ru: 'Размеры',
-          de: 'Abmessungen',
-        },
-        value: 'Ø41.5x46',
-      },
-      {
-        label: {
-          en: 'Axle Type',
-          tr: 'Aks Tipi',
-          ru: 'Тип оси',
-          de: 'Achstyp',
-        },
-        value: 'ROR',
-      },
-      {
-        label: {
-          en: 'Construction',
-          tr: 'Yapı',
-          ru: 'Конструкция',
-          de: 'Bauart',
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
         },
         value: {
-          en: 'Forged, bronze bush inside',
-          tr: 'Dövme, içi bronz burçlu',
-          ru: 'Кованый, с бронзовой втулкой',
-          de: 'Geschmiedet, mit Bronzebuchse',
+          en: 'SAE GIGANT',
+          tr: 'SAE GIGANT',
+          ru: 'SAE GIGANT',
+          de: 'SAE GIGANT',
         },
       },
+      {
+        label: { en: 'Thread', tr: 'Diş', ru: 'Резьба', de: 'Gewinde' },
+        value: { en: 'M165x2', tr: 'M165x2', ru: 'M165x2', de: 'M165x2' },
+      },
+      {
+        label: {
+          en: 'Wrench size (SW)',
+          tr: 'Anahtar ağzı (SW)',
+          ru: 'Размер под ключ (SW)',
+          de: 'Schlüsselweite (SW)',
+        },
+        value: { en: 'SW148', tr: 'SW148', ru: 'SW148', de: 'SW148' },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
     ],
+    images: ['/products/hub-caps/TMP6601.jpg'],
   },
   {
-    id: 'prod-s290',
-    slug: 's290-truck-door-inside-locking-hinge-scania',
-    smrCode: 'S 290',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-door-lock',
+    id: 'prod-tmp-5832',
+    slug: 'tmp-5832-smb-hub-cap',
+    smrCode: 'TMP 5832',
+    oemNumbers: ['M044554'],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Truck Door Inside Locking Hinge — For Scania',
-      tr: 'Kamyon Kapı İç Kilit Menteşesi — Scania İçin',
-      ru: 'Внутренний замок-петля двери грузовика — для Scania',
-      de: 'Innenverriegelungsscharnier für LKW-Tür — Für Scania',
+      en: 'SMB Hub Cap',
+      tr: 'SMB Porya Kapağı',
+      ru: 'Колпак ступицы SMB',
+      de: 'Radnabenkappe SMB',
     },
     description: {
-      en: 'New — inside-mounted locking hinge for Scania truck doors, protects the truck and driver from intruders.',
-      tr: 'Yeni — Scania kamyon kapıları için içten monte edilen kilit menteşesi, kamyonu ve sürücüyü izinsiz girişlerden korur.',
-      ru: 'Новинка — внутренний замок-петля для дверей грузовиков Scania, защищает от несанкционированного проникновения.',
-      de: 'Neu — von innen montiertes Verriegelungsscharnier für Scania-LKW-Türen, schützt vor unbefugtem Zutritt.',
+      en: 'SMB hub cap for truck and trailer axle hubs. Size designation: 158-Q8G-167.',
+      tr: 'Çekici ve römork aks porya kapağı, SMB. Ölçü kodu: 158-Q8G-167.',
+      ru: 'Колпак ступицы SMB для ступиц осей грузовиков и прицепов. Обозначение размера: 158-Q8G-167.',
+      de: 'Radnabenkappe SMB für Achsnaben von Lkw und Anhängern. Maßbezeichnung: 158-Q8G-167.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-016-245.png'],
-    videoUrl: 'https://vimeo.com/76979871',
     specs: [
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
         },
-        value: 'SCANIA',
+        value: { en: 'SMB', tr: 'SMB', ru: 'SMB', de: 'SMB' },
+      },
+      {
+        label: {
+          en: 'Size designation',
+          tr: 'Ölçü kodu',
+          ru: 'Обозначение размера',
+          de: 'Maßbezeichnung',
+        },
+        value: {
+          en: '158-Q8G-167',
+          tr: '158-Q8G-167',
+          ru: '158-Q8G-167',
+          de: '158-Q8G-167',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP5832.jpg'],
   },
   {
-    id: 'prod-s291',
-    slug: 's291-truck-door-inside-locking-hinge-volvo',
-    smrCode: 'S 291',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-door-lock',
+    id: 'prod-tmp-5831',
+    slug: 'tmp-5831-fruehauf-hub-cap',
+    smrCode: 'TMP 5831',
+    oemNumbers: ['AJA 0577 001', '11.080.3504.340', '090.037', '57159'],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Truck Door Inside Locking Hinge — For Volvo',
-      tr: 'Kamyon Kapı İç Kilit Menteşesi — Volvo İçin',
-      ru: 'Внутренний замок-петля двери грузовика — для Volvo',
-      de: 'Innenverriegelungsscharnier für LKW-Tür — Für Volvo',
+      en: 'FRUEHAUF Hub Cap',
+      tr: 'FRUEHAUF Porya Kapağı',
+      ru: 'Колпак ступицы FRUEHAUF',
+      de: 'Radnabenkappe FRUEHAUF',
     },
     description: {
-      en: 'New — mounted from the inside for extra protection on Volvo truck doors.',
-      tr: 'Yeni — Volvo kamyon kapılarında ekstra koruma için içten monte edilir.',
-      ru: 'Новинка — устанавливается изнутри для дополнительной защиты дверей Volvo.',
-      de: 'Neu — von innen montiert für zusätzlichen Schutz bei Volvo-LKW-Türen.',
+      en: 'FRUEHAUF hub cap for truck and trailer axle hubs. Size designation: Ø158 W8G/167. Unpainted version also available.',
+      tr: 'Çekici ve römork aks porya kapağı, FRUEHAUF. Ölçü kodu: Ø158 W8G/167. Boyasız versiyonu da mevcuttur.',
+      ru: 'Колпак ступицы FRUEHAUF для ступиц осей грузовиков и прицепов. Обозначение размера: Ø158 W8G/167. Доступно также исполнение без покраски.',
+      de: 'Radnabenkappe FRUEHAUF für Achsnaben von Lkw und Anhängern. Maßbezeichnung: Ø158 W8G/167. Auch in unlackierter Ausführung erhältlich.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-016-246.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     specs: [
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
         },
-        value: 'VOLVO',
+        value: {
+          en: 'FRUEHAUF',
+          tr: 'FRUEHAUF',
+          ru: 'FRUEHAUF',
+          de: 'FRUEHAUF',
+        },
+      },
+      {
+        label: {
+          en: 'Size designation',
+          tr: 'Ölçü kodu',
+          ru: 'Обозначение размера',
+          de: 'Maßbezeichnung',
+        },
+        value: {
+          en: 'Ø158 W8G/167',
+          tr: 'Ø158 W8G/167',
+          ru: 'Ø158 W8G/167',
+          de: 'Ø158 W8G/167',
+        },
+      },
+      {
+        label: { en: 'Design', tr: 'Yapı', ru: 'Конструкция', de: 'Bauart' },
+        value: {
+          en: 'Unpainted version also available',
+          tr: 'Boyasız versiyonu da mevcut',
+          ru: 'Доступно исполнение без покраски',
+          de: 'Auch unlackiert erhältlich',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP5831.jpg'],
   },
   {
-    id: 'prod-s292',
-    slug: 's292-truck-door-inside-locking-hinge-renault-premium',
-    smrCode: 'S 292',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-door-lock',
+    id: 'prod-tmp-5070',
+    slug: 'tmp-5070-saf-hub-cap-9-140x165x42-5',
+    smrCode: 'TMP 5070',
+    oemNumbers: ['1 304 0016 00', '075.029', '52360'],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Truck Door Inside Locking Hinge — For Renault Premium',
-      tr: 'Kamyon Kapı İç Kilit Menteşesi — Renault Premium İçin',
-      ru: 'Внутренний замок-петля двери грузовика — для Renault Premium',
-      de: 'Innenverriegelungsscharnier für LKW-Tür — Für Renault Premium',
+      en: 'SAF Hub Cap 9/140x165x42.5',
+      tr: 'SAF Porya Kapağı 9/140x165x42.5',
+      ru: 'Колпак ступицы SAF 9/140x165x42.5',
+      de: 'Radnabenkappe SAF 9/140x165x42.5',
     },
     description: {
-      en: 'New — effective truck door protection for Renault Premium.',
-      tr: 'Yeni — Renault Premium için etkili kamyon kapı koruması.',
-      ru: 'Новинка — эффективная защита двери для Renault Premium.',
-      de: 'Neu — wirksamer LKW-Türschutz für Renault Premium.',
+      en: 'SAF hub cap for truck and trailer axle hubs. Dimensions: 9/140x165x42.5.',
+      tr: 'Çekici ve römork aks porya kapağı, SAF. Ölçüler: 9/140x165x42.5.',
+      ru: 'Колпак ступицы SAF для ступиц осей грузовиков и прицепов. Размеры: 9/140x165x42.5.',
+      de: 'Radnabenkappe SAF für Achsnaben von Lkw und Anhängern. Abmessungen: 9/140x165x42.5.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-016-250.png'],
-    videoUrl: 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
     specs: [
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
         },
-        value: 'RENAULT Premium',
+        value: { en: 'SAF', tr: 'SAF', ru: 'SAF', de: 'SAF' },
+      },
+      {
+        label: {
+          en: 'Dimensions',
+          tr: 'Ölçüler',
+          ru: 'Размеры',
+          de: 'Abmessungen',
+        },
+        value: {
+          en: '9/140x165x42.5',
+          tr: '9/140x165x42.5',
+          ru: '9/140x165x42.5',
+          de: '9/140x165x42.5',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP5070.jpg'],
   },
   {
-    id: 'prod-s293',
-    slug: 's293-truck-door-inside-locking-hinge-actros',
-    smrCode: 'S 293',
-    oemNumbers: [],
-    crossReferences: [],
-    categoryId: 'cat-repair-kits',
-    subcategoryId: 'subcat-door-lock',
+    id: 'prod-tmp-19871',
+    slug: 'tmp-19871-ror-hub-cap-8-5x188-5x24',
+    smrCode: 'TMP 19871',
+    oemNumbers: ['212 2 6038', '10.20603', '085.058', '54408'],
+    categoryId: 'cat-hub-caps',
+
     title: {
-      en: 'Truck Door Inside Locking Hinge — For Actros',
-      tr: 'Kamyon Kapı İç Kilit Menteşesi — Actros İçin',
-      ru: 'Внутренний замок-петля двери грузовика — для Actros',
-      de: 'Innenverriegelungsscharnier für LKW-Tür — Für Actros',
+      en: 'ROR Hub Cap 8.5x188.5x24',
+      tr: 'ROR Porya Kapağı 8.5x188.5x24',
+      ru: 'Колпак ступицы ROR 8.5x188.5x24',
+      de: 'Radnabenkappe ROR 8.5x188.5x24',
     },
     description: {
-      en: 'New — truck door cannot be opened from outside once installed on Actros.',
-      tr: 'Yeni — Actros üzerine takıldığında kamyon kapısı dışarıdan açılamaz.',
-      ru: 'Новинка — после установки на Actros дверь невозможно открыть снаружи.',
-      de: 'Neu — nach der Montage bei Actros kann die LKW-Tür nicht von außen geöffnet werden.',
+      en: 'ROR hub cap for truck and trailer axle hubs. Dimensions: 8.5x188.5x24.',
+      tr: 'Çekici ve römork aks porya kapağı, ROR. Ölçüler: 8.5x188.5x24.',
+      ru: 'Колпак ступицы ROR для ступиц осей грузовиков и прицепов. Размеры: 8.5x188.5x24.',
+      de: 'Radnabenkappe ROR für Achsnaben von Lkw und Anhängern. Abmessungen: 8.5x188.5x24.',
     },
-    images: ['/samer-catalog-images/RepairSet/img-016-257.png'],
-    videoUrl: 'https://vimeo.com/76979871',
     specs: [
       {
         label: {
-          en: 'Suitable For',
-          tr: 'Uygunluk',
-          ru: 'Совместимость',
-          de: 'Geeignet für',
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
         },
-        value: 'ACTROS',
+        value: { en: 'ROR', tr: 'ROR', ru: 'ROR', de: 'ROR' },
+      },
+      {
+        label: {
+          en: 'Dimensions',
+          tr: 'Ölçüler',
+          ru: 'Размеры',
+          de: 'Abmessungen',
+        },
+        value: {
+          en: '8.5x188.5x24',
+          tr: '8.5x188.5x24',
+          ru: '8.5x188.5x24',
+          de: '8.5x188.5x24',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
       },
     ],
+    images: ['/products/hub-caps/TMP19871.jpg'],
+  },
+  {
+    id: 'prod-tmp-1987',
+    slug: 'tmp-1987-ror-hub-cap-9-162x15',
+    smrCode: 'TMP 1987',
+    oemNumbers: ['212 24 673', '10.20602', '085.023', '52900'],
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'ROR Hub Cap 9-162x15',
+      tr: 'ROR Porya Kapağı 9-162x15',
+      ru: 'Колпак ступицы ROR 9-162x15',
+      de: 'Radnabenkappe ROR 9-162x15',
+    },
+    description: {
+      en: 'ROR hub cap for truck and trailer axle hubs. Dimensions: 9-162x15.',
+      tr: 'Çekici ve römork aks porya kapağı, ROR. Ölçüler: 9-162x15.',
+      ru: 'Колпак ступицы ROR для ступиц осей грузовиков и прицепов. Размеры: 9-162x15.',
+      de: 'Radnabenkappe ROR für Achsnaben von Lkw und Anhängern. Abmessungen: 9-162x15.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
+        },
+        value: { en: 'ROR', tr: 'ROR', ru: 'ROR', de: 'ROR' },
+      },
+      {
+        label: {
+          en: 'Dimensions',
+          tr: 'Ölçüler',
+          ru: 'Размеры',
+          de: 'Abmessungen',
+        },
+        value: {
+          en: '9-162x15',
+          tr: '9-162x15',
+          ru: '9-162x15',
+          de: '9-162x15',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP1987.jpg'],
+  },
+  {
+    id: 'prod-tmp-1801',
+    slug: 'tmp-1801-ror-hub-cap-9x139-156x49',
+    smrCode: 'TMP 1801',
+    oemNumbers: [
+      '212 02 627',
+      '10.20601',
+      '02296',
+      '266.532-00',
+      '085.033',
+      '52908',
+    ],
+    categoryId: 'cat-hub-caps',
+
+    title: {
+      en: 'ROR Hub Cap 9x139-156x49',
+      tr: 'ROR Porya Kapağı 9x139-156x49',
+      ru: 'Колпак ступицы ROR 9x139-156x49',
+      de: 'Radnabenkappe ROR 9x139-156x49',
+    },
+    description: {
+      en: 'ROR hub cap for truck and trailer axle hubs. Dimensions: 9x139-156x49.',
+      tr: 'Çekici ve römork aks porya kapağı, ROR. Ölçüler: 9x139-156x49.',
+      ru: 'Колпак ступицы ROR для ступиц осей грузовиков и прицепов. Размеры: 9x139-156x49.',
+      de: 'Radnabenkappe ROR für Achsnaben von Lkw und Anhängern. Abmessungen: 9x139-156x49.',
+    },
+    specs: [
+      {
+        label: {
+          en: 'Application',
+          tr: 'Uygulama',
+          ru: 'Применение',
+          de: 'Anwendung',
+        },
+        value: { en: 'ROR', tr: 'ROR', ru: 'ROR', de: 'ROR' },
+      },
+      {
+        label: {
+          en: 'Dimensions',
+          tr: 'Ölçüler',
+          ru: 'Размеры',
+          de: 'Abmessungen',
+        },
+        value: {
+          en: '9x139-156x49',
+          tr: '9x139-156x49',
+          ru: '9x139-156x49',
+          de: '9x139-156x49',
+        },
+      },
+      {
+        label: {
+          en: 'Quantity per box',
+          tr: 'Kutudaki adet',
+          ru: 'Количество в коробке',
+          de: 'Stück pro Karton',
+        },
+        value: { en: '0', tr: '0', ru: '0', de: '0' },
+      },
+    ],
+    images: ['/products/hub-caps/TMP1801.jpg'],
   },
 ];
-
-// export const MOCK_PRODUCTS: Product[] = [
-//   {
-//     id: 'prod-s010-02',
-//     slug: 's010-02-standard-coupling-yellow-m16',
-//     smrCode: 'S010-02',
-//     oemNumbers: [],
-//     crossReferences: [],
-//     categoryId: 'cat-couplings',
-//     subcategoryId: 'subcat-coupling',
-//     title: {
-//       en: 'Standard Yellow Air Coupling M16x1.5 (Service Line)',
-//       tr: 'Standart Sarı Kaplin M16x1.5 (Servis Hattı)',
-//       ru: 'Головка соединительная стандартная (Жёлтая) M16x1.5, рабочая магистраль',
-//       de: 'Kupplungskopf Standard Gelb M16x1.5 (Betriebsleitung)',
-//     },
-//     description: {
-//       en: 'Standard service line yellow air coupling with M16x1.5 connection, ISO 1728 / DIN 74342 compliant, aluminium body with Cr3 coating.',
-//       tr: 'ISO 1728 / DIN 74342 uyumlu, M16x1,5 bağlantılı, Cr3 kaplamalı alüminyum gövdeli standart sarı servis kaplini.',
-//       ru: 'Стандартная жёлтая пневматическая головка рабочей магистрали, резьба M16x1.5, соответствует ISO 1728 / DIN 74342, корпус — алюминий с покрытием Cr3.',
-//       de: 'Standard-Kupplungskopf Gelb für die Betriebsleitung mit M16x1.5 Gewinde, konform mit ISO 1728 / DIN 74342, Aluminiumgehäuse mit Cr3-Beschichtung.',
-//     },
-//     images: ['/products/s010-02.jpg'],
-//     specs: [
-//       {
-//         label: {
-//           en: 'Thread Size',
-//           tr: 'Diş Ölçüsü',
-//           ru: 'Резьба',
-//           de: 'Gewinde',
-//         },
-//         value: 'M16 x 1.5',
-//       },
-//       {
-//         label: {
-//           en: 'Color Code',
-//           tr: 'Renk Kodu',
-//           ru: 'Цветовая маркировка',
-//           de: 'Farbcode',
-//         },
-//         value: {
-//           en: 'Yellow (Service Line)',
-//           tr: 'Sarı (Servis Hattı)',
-//           ru: 'Жёлтая (рабочая магистраль)',
-//           de: 'Gelb (Betriebsleitung)',
-//         },
-//       },
-//       {
-//         label: {
-//           en: 'Body Material',
-//           tr: 'Gövde Malzemesi',
-//           ru: 'Материал корпуса',
-//           de: 'Gehäusematerial',
-//         },
-//         value: {
-//           en: 'Aluminium with Cr3 coating',
-//           tr: 'Cr3 kaplamalı alüminyum',
-//           ru: 'Алюминий с покрытием Cr3',
-//           de: 'Aluminium mit Cr3-Beschichtung',
-//         },
-//       },
-//       {
-//         label: { en: 'Standard', tr: 'Standart', ru: 'Стандарт', de: 'Norm' },
-//         value: 'ISO 1728 / DIN 74342',
-//       },
-//       {
-//         label: {
-//           en: 'Packaging',
-//           tr: 'Paketleme',
-//           ru: 'Упаковка',
-//           de: 'Verpackung',
-//         },
-//         value: '10 pcs/Box — 2340 pcs/Pallet',
-//       },
-//     ],
-//   },
-//   {
-//     id: 'prod-r030-100',
-//     slug: 'r030-100-spiral-cable-7p-24v-n-type-3m',
-//     smrCode: 'R030-100',
-//     oemNumbers: [],
-//     crossReferences: [],
-//     categoryId: 'cat-cables',
-//     subcategoryId: 'subcat-spiral-cable',
-//     title: {
-//       en: 'Spiral Cable with Plugs 7P/24V N-Type, 3.0m',
-//       tr: 'Fişli Spiral Kablo 7P/24V N-Tipi, 3.0m',
-//       ru: 'Спиральный кабель с вилками 7P/24V, тип N, 3.0м',
-//       de: 'Spiralkabel mit Steckern 7P/24V N-Typ, 3,0m',
-//     },
-//     description: {
-//       en: 'ISO 1185 / ISO 4141-3 compliant 7-pole 24V spiral cable with aluminium plugs, N-type, working length 3.0m, max extension 4.0m.',
-//       tr: 'ISO 1185 / ISO 4141-3 uyumlu, alüminyum fişli 7 kutuplu 24V spiral kablo, N-tipi, çalışma uzunluğu 3.0m, maksimum uzama 4.0m.',
-//       ru: 'Спиральный 7-полюсный кабель 24В по стандарту ISO 1185 / ISO 4141-3 с алюминиевыми вилками, тип N, рабочая длина 3.0м, макс. растяжение 4.0м.',
-//       de: 'Spiralkabel 7-polig 24V nach ISO 1185 / ISO 4141-3 mit Aluminiumsteckern, N-Typ, Arbeitslänge 3,0m, maximale Dehnung 4,0m.',
-//     },
-//     images: ['/products/r030-100.jpg'],
-//     specs: [
-//       {
-//         label: {
-//           en: 'Working Length',
-//           tr: 'Çalışma Uzunluğu',
-//           ru: 'Рабочая длина',
-//           de: 'Arbeitslänge',
-//         },
-//         value: '3.0 m',
-//       },
-//       {
-//         label: {
-//           en: 'Maximum Extension',
-//           tr: 'Maksimum Uzama',
-//           ru: 'Макс. растяжение',
-//           de: 'Maximale Dehnung',
-//         },
-//         value: '4.0 m',
-//       },
-//       {
-//         label: {
-//           en: 'Plug Type',
-//           tr: 'Fiş Tipi',
-//           ru: 'Тип вилки',
-//           de: 'Stecker-Typ',
-//         },
-//         value: '7P / 24V — N Type',
-//       },
-//       {
-//         label: {
-//           en: 'Coil Material',
-//           tr: 'Sarma Malzemesi',
-//           ru: 'Материал спирали',
-//           de: 'Spiralmaterial',
-//         },
-//         value: 'Polyurethane',
-//       },
-//       {
-//         label: {
-//           en: 'Plug Material',
-//           tr: 'Fiş Malzemesi',
-//           ru: 'Материал вилки',
-//           de: 'Steckermaterial',
-//         },
-//         value: 'Aluminium',
-//       },
-//       {
-//         label: {
-//           en: 'Wire Thickness',
-//           tr: 'Tel Kalınlığı',
-//           ru: 'Сечение проводов',
-//           de: 'Drahtstärke',
-//         },
-//         value: '6x1.0mm + 1x1.5mm',
-//       },
-//       {
-//         label: { en: 'Standard', tr: 'Standart', ru: 'Стандарт', de: 'Norm' },
-//         value: 'ISO 1185 / ISO 4141-3',
-//       },
-//     ],
-//   },
-//   {
-//     id: 'prod-s280-16v',
-//     slug: 's280-16v-plastic-tank-cap-vented-locking-80mm',
-//     smrCode: 'S280-16V',
-//     oemNumbers: [
-//       '5000787148',
-//       '5001856142',
-//       '5001864551',
-//       '5000439032', // Renault
-//       'A0004705205', // Mercedes-Benz ACTROS
-//       '81122106027', // MAN
-//       '20392751',
-//       '3198271',
-//       '1189577',
-//       '8152630', // Volvo
-//       '1599007', // Scania
-//       '500302656', // Iveco
-//       '2993918',
-//       '2534687', // STARLIS/EUROSTAR/EUROTECH
-//       '1697734', // DAF
-//     ],
-//     crossReferences: [],
-//     categoryId: 'cat-tank-caps',
-//     subcategoryId: 'subcat-fuel-cap',
-//     title: {
-//       en: 'Plastic Fuel Tank Cap Vented Locking Ø80mm',
-//       tr: 'Plastik Depo Kapağı Ventilli Kilitli Ø80mm',
-//       ru: 'Пластиковая крышка топливного бака вентилируемая с замком Ø80мм',
-//       de: 'Plastik-Tankdeckel belüftet abschließbar Ø80mm',
-//     },
-//     description: {
-//       en: 'New 2026 product — vented locking plastic fuel tank cap, Ø80mm, compatible with Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH and DAF.',
-//       tr: '2026 yeni ürünü — ventilli kilitli plastik depo kapağı, Ø80mm, Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH ve DAF ile uyumlu.',
-//       ru: 'Новинка 2026 года — вентилируемая пластиковая крышка топливного бака с замком, Ø80мм, совместима с Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH и DAF.',
-//       de: 'Neuheit 2026 — belüfteter, abschließbarer Plastik-Tankdeckel, Ø80mm, kompatibel mit Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH und DAF.',
-//     },
-//     images: ['/products/s280-16v.jpg'],
-//     specs: [
-//       {
-//         label: {
-//           en: 'Filler Neck Size',
-//           tr: 'Depo Ağzı Ölçüsü',
-//           ru: 'Диаметр горловины',
-//           de: 'Einfüllstutzengröße',
-//         },
-//         value: 'Ø80mm',
-//       },
-//       {
-//         label: { en: 'Locking', tr: 'Kilit', ru: 'Замок', de: 'Verriegelung' },
-//         value: {
-//           en: 'Vented, Locking',
-//           tr: 'Ventilli, Kilitli',
-//           ru: 'Вентилируемая, с замком',
-//           de: 'Belüftet, abschließbar',
-//         },
-//       },
-//       {
-//         label: {
-//           en: 'Suitable For',
-//           tr: 'Uygunluk',
-//           ru: 'Совместимость',
-//           de: 'Geeignet für',
-//         },
-//         value:
-//           'Renault, Mercedes ACTROS, MAN, Volvo, Scania, Iveco, STARLIS/EUROSTAR/EUROTECH, DAF',
-//       },
-//     ],
-//   },
-//   {
-//     id: 'prod-tmp-9978',
-//     slug: 'tmp-9978-camshaft-repair-kit-bpw-42mm',
-//     smrCode: 'TMP 9978',
-//     oemNumbers: [],
-//     crossReferences: [],
-//     categoryId: 'cat-repair-kits',
-//     subcategoryId: 'subcat-camshaft-kit',
-//     title: {
-//       en: 'Repair Kit for Camshaft 42mm — BPW',
-//       tr: 'Kam Mili Tamir Takımı 42mm — BPW',
-//       ru: 'Ремкомплект распредвала 42мм — BPW',
-//       de: 'Reparatursatz für Nockenwelle 42mm — BPW',
-//     },
-//     description: {
-//       en: 'Complete camshaft repair kit for BPW axles, 42mm, includes bushings, seals, retaining rings and mounting hardware.',
-//       tr: 'BPW aksları için komple kam mili tamir takımı, 42mm, burç, keçe, seger ve montaj malzemelerini içerir.',
-//       ru: 'Полный ремкомплект распредвала для осей BPW, 42мм, включает втулки, сальники, стопорные кольца и крепёж.',
-//       de: 'Kompletter Nockenwellen-Reparatursatz für BPW-Achsen, 42mm, inkl. Buchsen, Dichtungen, Sicherungsringen und Montagematerial.',
-//     },
-//     images: ['/products/tmp-9978.jpg'],
-//     specs: [
-//       {
-//         label: { en: 'Diameter', tr: 'Çap', ru: 'Диаметр', de: 'Durchmesser' },
-//         value: '42mm',
-//       },
-//       {
-//         label: {
-//           en: 'Axle Type',
-//           tr: 'Aks Tipi',
-//           ru: 'Тип оси',
-//           de: 'Achstyp',
-//         },
-//         value: 'BPW',
-//       },
-//     ],
-//   },
-// ];

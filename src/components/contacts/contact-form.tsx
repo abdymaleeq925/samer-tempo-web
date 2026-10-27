@@ -69,7 +69,6 @@ export function ContactForm() {
 
       if (!response.ok) throw new Error('Failed to send message');
       setIsSubmitted(true);
-      console.log('Data is sent to server:', values);
       form.reset();
       toast.success(dict.contacts.successTitle ?? 'Message sent successfully!');
     } catch (error) {
@@ -129,7 +128,7 @@ export function ContactForm() {
         <div className="hidden" aria-hidden="true">
           <label htmlFor="website">Website</label>
           <input
-            id="website"
+            id="contact_hp"
             type="text"
             tabIndex={-1}
             autoComplete="off"
@@ -159,7 +158,7 @@ export function ContactForm() {
                 {fieldState.invalid && (
                   <FieldError
                     errors={[fieldState.error]}
-                    className="text-xs font-medium text-red-500"
+                    className="text-xs font-medium text-red-600"
                   />
                 )}
               </Field>
@@ -187,7 +186,7 @@ export function ContactForm() {
                 {fieldState.invalid && (
                   <FieldError
                     errors={[fieldState.error]}
-                    className="text-xs font-medium text-red-500"
+                    className="text-xs font-medium text-red-600"
                   />
                 )}
               </Field>
@@ -218,7 +217,7 @@ export function ContactForm() {
                 {fieldState.invalid && (
                   <FieldError
                     errors={[fieldState.error]}
-                    className="text-xs font-medium text-red-500"
+                    className="text-xs font-medium text-red-600"
                   />
                 )}
               </Field>
@@ -247,7 +246,7 @@ export function ContactForm() {
                 {fieldState.invalid && (
                   <FieldError
                     errors={[fieldState.error]}
-                    className="text-xs font-medium text-red-500"
+                    className="text-xs font-medium text-red-600"
                   />
                 )}
               </Field>
@@ -298,7 +297,7 @@ export function ContactForm() {
               {fieldState.invalid && (
                 <FieldError
                   errors={[fieldState.error]}
-                  className="text-xs font-medium text-red-500"
+                  className="text-xs font-medium text-red-600"
                 />
               )}
             </Field>

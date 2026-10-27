@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Samer Tempo | Ticari Araç ve Treyler Yedek Parçaları",
-    "description": "Ticari araçlar ve treylerler için elektrik kabloları, depo kapakları, tamir takımları, hava kaplinleri ve hırsızlık önleme sistemleri."
+    "description": "Ticari araçlar ve treylerler için elektrik kabloları, depo kapakları, porya kapakları, hava kaplinleri ve hırsızlık önleme sistemleri."
   },
   "accessibility": {
     "selectLanguage": "Dil seçin",
@@ -27,7 +27,7 @@
       "cables": "Elektrik Kabloları ve Fişler",
       "couplings": "Kaplinler ve Silindirler",
       "tankCaps": "Depo Kapakları ve Mazot Koruma Sistemleri",
-      "repairKits": "Tamir Takımları",
+      "hubCaps": "Porya Kapakları",
       "company": "Hakkımızda",
       "vision": "Vizyonumuz",
       "mission": "Misyonumuz",
@@ -49,15 +49,11 @@
         "subcat-air-hose": "Hava Hortumları",
         "subcat-tire-inflator": "Lastik Şişirme Hortum Setleri",
         "subcat-fuel-cap": "Yakıt Depo Kapakları",
+        "subcat-adblue-fuel-cap": "Adblue Yakıt Depo Kapakları",
+        "subcat-accessories": "Aksesuarlar",
         "subcat-radiator-cap": "Radyatör Kapakları",
         "subcat-anti-theft": "Hırsızlık Önleyici Cihazlar",
-        "subcat-anti-theft-lock": "Depo Koruma Kilitleri",
-        "subcat-camshaft-kit": "Kam Mili Tamir Takımları",
-        "subcat-brake-shoe-kit": "Balata Tamir Takımları",
-        "subcat-hub-cap": "Göbek Kapakları",
-        "subcat-axle-lock-nut": "Aks Kilit Somunları",
-        "subcat-bush-bearing": "Burç ve Rulmanlar",
-        "subcat-door-lock": "Kapı Kilitleri"
+        "subcat-anti-theft-lock": "Depo Koruma Kilitleri"
       }
     },
     "subcategory": "Subkategori"
@@ -178,16 +174,16 @@
           ]
         },
         {
-          "id": "repairKits",
-          "name": "Tamir Takımları",
-          "tagline": "Bakım ve Servis",
-          "title": "Eksiksiz Tamir ve Bakım Takımları",
-          "description": "Hızlı, güvenilir ve maliyet etkin araç bakımı için yüksek kaliteli contalar, O-ringler ve bağlantı elemanları içeren eksiksiz tamir setleri.",
+          "id": "hubCaps",
+          "name": "Porya Kapakları",
+          "tagline": "Aks Göbeği Koruması",
+          "title": "Kamyon ve Treyler Göbek (Porya) Kapakları",
+          "description": "Kamyon ve treyler aks göbeklerini kapatan ve koruyan, dıştan veya içten dişli porya kapakları. M115 ile M230 arası ölçüler ile SAF, ROR, SMB, FRUEHAUF ve SAE GIGANT akslar için seçenekler.",
           "highlights": [
-            "Birebir Parça Uyumluluğu",
-            "Birinci Sınıf Elastomer Malzeme",
-            "Minimum Servis Duruş Süresi",
-            "Sıkı Kalite Testleri"
+            "Dıştan ve İçten Dişli Seçenekler",
+            "M115 – M230 Arası Ölçüler",
+            "SAF, ROR, SMB, FRUEHAUF ve SAE GIGANT Uyumlu",
+            "700 Nm'ye Kadar Tork Değeri"
           ]
         }
       ]
@@ -229,16 +225,10 @@
     "cables": "Elektrik Kabloları ve Fiş Kataloğu",
     "air": "Pnömatik Kaplinler ve Silindirler Kataloğu",
     "tankCaps": "Depo Kapakları ve Mazot Koruma Kataloğu",
-    "repairKits": "Tamir Takımları Kataloğu",
+    "hubCaps": "Porya Kapakları Kataloğu",
     "steelCables": "Çelik Halatlar Kataloğu",
     "newProducts2026": "Yeni Ürünler Kataloğu 2026",
     "abs": "ABS/EBS Sensörleri ve Bağlantı Kabloları Kataloğu"
-  },
-  "sections": {
-    "featuredProducts": "Öne Çıkan Ürünler",
-    "topCategories": "Ana Ürün Kategorileri",
-    "whyChooseUs": "Neden Bizi Seçmelisiniz",
-    "exportMarkets": "Küresel İhracat Ağımız"
   },
   "product": {
     "description": "Ürün Açıklaması",

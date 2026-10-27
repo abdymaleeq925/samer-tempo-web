@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import {
   Award,
   Building2,
@@ -97,7 +97,7 @@ export default function AboutPage() {
 
           <AnimatePresence mode="wait">
             {activeTab === 'company' && (
-              <motion.div
+              <m.div
                 key="company"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -113,10 +113,10 @@ export default function AboutPage() {
                     <p key={idx}>{p}</p>
                   ))}
                 </div>
-              </motion.div>
+              </m.div>
             )}
             {activeTab === 'mission' && (
-              <motion.div
+              <m.div
                 key="mission"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -142,10 +142,10 @@ export default function AboutPage() {
                       </div>
                     ))}
                 </div>
-              </motion.div>
+              </m.div>
             )}
             {activeTab === 'vision' && (
-              <motion.div
+              <m.div
                 key="vision"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -162,10 +162,10 @@ export default function AboutPage() {
                     {aboutDict.vision?.paragraph}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             )}
             {activeTab === 'certificates' && (
-              <motion.div
+              <m.div
                 key="certificates"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -205,7 +205,7 @@ export default function AboutPage() {
                     </span>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </div>

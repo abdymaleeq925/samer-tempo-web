@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import type { LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,7 +33,7 @@ export default function NavDropdownPanel({
   if (!items.length || !hasImages) return null;
 
   return (
-    <motion.div
+    <m.div
       id={panelId}
       role="group"
       aria-labelledby={triggerId}
@@ -45,7 +45,7 @@ export default function NavDropdownPanel({
     >
       <div className="relative grid grid-cols-2 gap-2">
         {items.map((child) => (
-          <motion.div key={child.key} variants={itemVariants}>
+          <m.div key={child.key} variants={itemVariants}>
             <Link
               href={`/${lang}${child.href}`}
               onClick={onClose}
@@ -69,9 +69,9 @@ export default function NavDropdownPanel({
                 {getLabel(child.key)}
               </span>
             </Link>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.div>
+    </m.div>
   );
 }

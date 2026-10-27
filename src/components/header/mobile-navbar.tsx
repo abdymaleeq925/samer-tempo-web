@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { ChevronDown, Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -88,7 +88,7 @@ export default function MobileNavbar() {
                     </button>
                     <AnimatePresence initial={false}>
                       {isExpanded && (
-                        <motion.div
+                        <m.div
                           id={panelId}
                           role="group"
                           aria-labelledby={triggerId}
@@ -102,10 +102,7 @@ export default function MobileNavbar() {
                             {link.children?.map((child) => {
                               const ChildIcon = child.icon;
                               return (
-                                <motion.div
-                                  key={child.key}
-                                  variants={itemVariants}
-                                >
+                                <m.div key={child.key} variants={itemVariants}>
                                   <Link
                                     href={`/${lang}${child.href}`}
                                     onClick={handleLinkClick}
@@ -121,11 +118,11 @@ export default function MobileNavbar() {
                                         child.key}
                                     </span>
                                   </Link>
-                                </motion.div>
+                                </m.div>
                               );
                             })}
                           </div>
-                        </motion.div>
+                        </m.div>
                       )}
                     </AnimatePresence>
                   </div>

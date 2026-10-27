@@ -1,37 +1,60 @@
 'use client';
 
-import Lenis from 'lenis';
-import { ReactNode, useEffect, useRef } from 'react';
+import { type ReactNode, useEffect } from 'react';
 
+/**
+ * Smooth scrolling only where it helps: devices with a mouse and users who
+ * did not ask for reduced motion. On phones Lenis did nothing useful but
+ * still shipped its code and ran a requestAnimationFrame loop forever.
+ * The library is loaded lazily, after the page is interactive.
+ */
 export default function LenisProvider({ children }: { children: ReactNode }) {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
+    const finePointer = window.matchMedia('(pointer: fine)').matches;
+    const reduceMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+    if (!finePointer || reduceMotion) return;
 
-    lenisRef.current = lenis;
+    let cancelled = false;
+    let rafId = 0;
+    let instance: { raf: (t: number) => void; destroy: () => void } | undefined;
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    const rafId = requestAnimationFrame(raf);
+    const start = () => {
+      import('lenis').then(({ default: Lenis }) => {
+        if (cancelled) return;
+        // autoResize (default in lenis >= 1.1) replaces the manual ResizeObserver
+        instance = new Lenis({
+          duration: 1.2,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+        });
+        const loop = (time: number) => {
+          instance?.raf(time);
+          rafId = requestAnimationFrame(loop);
+        };
+        rafId = requestAnimationFrame(loop);
+      });
+    };
 
-    const resizeObserver = new ResizeObserver(() => {
-      lenis.resize();
-    });
-
-    resizeObserver.observe(document.body);
+    // Do not compete with hydration / LCP.
+    const idle = (
+      window as Window & {
+        requestIdleCallback?: (
+          cb: () => void,
+          o?: { timeout: number },
+        ) => number;
+      }
+    ).requestIdleCallback;
+    const timer = idle
+      ? idle(start, { timeout: 2000 })
+      : window.setTimeout(start, 1200);
 
     return () => {
+      cancelled = true;
       cancelAnimationFrame(rafId);
-      resizeObserver.disconnect();
-      lenis.destroy();
-      lenisRef.current = null;
+      if (!idle) window.clearTimeout(timer);
+      instance?.destroy();
     };
   }, []);
 

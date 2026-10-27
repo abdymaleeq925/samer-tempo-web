@@ -1,14 +1,13 @@
-'use client';
-
-import { Separator } from '@base-ui/react';
+import type { getDictionary } from '@/lib/get-dictionary';
 import { Award, CircleStar, Globe2 } from 'lucide-react';
 
-import { useLang } from '@/context/lang-context';
+type Dict = Awaited<ReturnType<typeof getDictionary>>;
 
-export default function About() {
-  const { dict } = useLang();
-  const about = dict.homepage.aboutus;
-
+export default function About({
+  about,
+}: {
+  about: Dict['homepage']['aboutus'];
+}) {
   return (
     <section className="w-full py-6 sm:py-14 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +24,7 @@ export default function About() {
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold font-heading leading-tight tracking-tight">
               {about.heading}
             </h2>
-            <Separator className="w-full h-1 bg-linear-to-r from-brand to-transparent rounded-full mt-2 border-none" />
+            <hr className="w-full h-1 bg-linear-to-r from-brand to-transparent rounded-full mt-2 border-none" />
           </div>
           {/* Information*/}
           <div className="lg:col-span-7 flex flex-col space-y-6">

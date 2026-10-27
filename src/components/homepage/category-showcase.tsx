@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -35,6 +35,7 @@ export default function CategoryShowcase() {
   const [activeTab, setActiveTab] = useState<string>(defaultTab);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   const activeMeta =
     SHOWCASE_CATEGORY_DATA[activeTab as keyof typeof SHOWCASE_CATEGORY_DATA];
@@ -44,14 +45,14 @@ export default function CategoryShowcase() {
       : ['/products/placeholder.png'];
 
   useEffect(() => {
-    if (activeImages.length <= 1 || isPaused) return;
+    if (activeImages.length <= 1 || isPaused || reduceMotion) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % activeImages.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [activeImages.length, isPaused, activeTab]);
+  }, [activeImages.length, isPaused, activeTab, reduceMotion]);
 
   const handleTabChange = (value: string) => {
     setActiveTab(value);
@@ -86,7 +87,7 @@ export default function CategoryShowcase() {
           {/* Horizontal scroll tab bar*/}
           <div className="relative w-full overflow-hidden">
             <TabsList
-              className="flex w-full h-12! overflow-x-auto scrollbar-none justify-start items-stretch p-0 border border-border-strong snap-x snap-mandatory gap-1"
+              className="flex w-full h-12! overflow-x-auto scrollbar-none justify-start items-stretch p-0 border border-border-strong snap-x snap-mandatory gap-1 text-ink"
               aria-label={
                 dict.accessibility?.selectCategory || 'Select category'
               }
@@ -102,7 +103,7 @@ export default function CategoryShowcase() {
                   <TabsTrigger
                     key={cat.id}
                     value={cat.id}
-                    className="snap-start shrink-0 h-full flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-4 text-xs sm:text-base md:text-lg font-medium font-heading transition-all duration-200 select-none cursor-pointer hover:bg-brand data-[state=active]:text-brand data-[state=active]:bg-transparent"
+                    className="snap-start shrink-0 h-full flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-4 text-xs sm:text-base md:text-lg font-medium font-heading transition-all duration-200 select-none cursor-pointer text-ink hover:bg-brand hover:text-ink data-active:text-brand-text data-active:bg-transparent"
                   >
                     {Icon && (
                       <Icon className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -130,7 +131,7 @@ export default function CategoryShowcase() {
               >
                 <AnimatePresence mode="wait">
                   {isActive && (
-                    <motion.div
+                    <m.div
                       key={cat.id}
                       variants={tabContentVariants}
                       initial="hidden"
@@ -210,7 +211,6 @@ export default function CategoryShowcase() {
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                                priority={cat.id === defaultTab && index === 0}
                               />
                             </div>
                           ))}
@@ -219,28 +219,36 @@ export default function CategoryShowcase() {
                         <div className="absolute inset-0 bg-linear-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
                         {/* Slide dot-indicators */}
                         {imageSrc.length > 1 && (
-                          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
+                          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1 z-10">
                             {imageSrc.map((_, idx) => (
                               <button
                                 key={idx}
                                 type="button"
                                 onClick={() => setCurrentIndex(idx)}
-                                className={cn(
-                                  'h-1.5 rounded-full transition-all duration-300 cursor-pointer',
-                                  currentIndex === idx
-                                    ? 'w-6 bg-brand'
-                                    : 'w-1.5 bg-surface/50 hover:bg-surface/80',
-                                )}
+                                className="flex items-center justify-center size-6 cursor-pointer"
+                                aria-current={
+                                  currentIndex === idx ? 'true' : undefined
+                                }
                                 aria-label={dict.accessibility?.goToSlide?.replace(
                                   '{slide}',
                                   String(idx + 1),
                                 )}
-                              />
+                              >
+                                <span
+                                  className={cn(
+                                    'rounded-full transition-all duration-300',
+                                    currentIndex === idx
+                                      ? 'h-1.5 w-6 bg-brand'
+                                      : 'size-1.5 bg-surface/80',
+                                  )}
+                                  aria-hidden="true"
+                                />
+                              </button>
                             ))}
                           </div>
                         )}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </TabsContent>

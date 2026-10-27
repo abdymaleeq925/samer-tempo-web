@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { SUBCATEGORIES, type CatKey } from '@/constants';
 import { useLang } from '@/context/lang-context';
 import { MOCK_CATEGORIES, MOCK_PRODUCTS } from '@/data/mock-catalog';
+import { toCardData } from '@/lib/product-card-data';
 import { formatString, normalizeCode } from '@/lib/utils';
 
 const ALL_CATEGORIES = 'all';
@@ -43,16 +44,21 @@ export default function SearchResultsPage() {
     });
   }
 
-  function handleCategoryChange(categoryId: string) {
-    setSelectedCategory(categoryId);
-    setSelectedSubcategory(ALL_SUBCATEGORIES);
-  }
+  // function handleCategoryChange(categoryId: string) {
+  //   setSelectedCategory(categoryId);
+  //   setSelectedSubcategory(ALL_SUBCATEGORIES);
+  // }
 
   function resetAll() {
     setQuery('');
     setSelectedCategory(ALL_CATEGORIES);
     setSelectedSubcategory(ALL_SUBCATEGORIES);
   }
+
+  const cards = useMemo(
+    () => MOCK_PRODUCTS.map((p) => toCardData(p, lang, dict)),
+    [lang, dict],
+  );
 
   const availableSubcategories = useMemo(() => {
     if (selectedCategory === ALL_CATEGORIES || selectedCategory === '')
@@ -62,51 +68,19 @@ export default function SearchResultsPage() {
   }, [selectedCategory]);
 
   const filteredProducts = useMemo(() => {
-    const normalizedSearch = normalizeCode(query);
+    const needle = normalizeCode(query);
     const hasActiveCategory =
       selectedCategory !== ALL_CATEGORIES && selectedCategory !== '';
     const hasActiveSubcategory = selectedSubcategory !== ALL_SUBCATEGORIES;
 
-    return MOCK_PRODUCTS.filter((product) => {
-      // Filter by category
-      if (hasActiveCategory && product.categoryId !== selectedCategory)
+    return cards.filter((card) => {
+      if (hasActiveCategory && card.categoryId !== selectedCategory)
         return false;
-      if (hasActiveSubcategory && product.subcategoryId !== selectedSubcategory)
+      if (hasActiveSubcategory && card.subcategoryId !== selectedSubcategory)
         return false;
-
-      // Shows all products if search bar is empty
-      if (!normalizedSearch) return true;
-
-      // Search by smrCode
-      if (normalizeCode(product.smrCode).includes(normalizedSearch))
-        return true;
-
-      // Search by OEM
-      if (
-        product.oemNumbers?.some((oem) =>
-          normalizeCode(oem).includes(normalizedSearch),
-        )
-      )
-        return true;
-
-      // Search by Cross-numbers
-      if (
-        product.crossReferences?.some((cross) =>
-          normalizeCode(cross).includes(normalizedSearch),
-        )
-      )
-        return true;
-
-      // Search by title
-      if (typeof product.title === 'object') {
-        const titles = Object.values(product.title) as string[];
-        if (titles.some((t) => normalizeCode(t).includes(normalizedSearch)))
-          return true;
-      }
-
-      return false;
+      return !needle || card.haystack.includes(needle);
     });
-  }, [query, selectedCategory, selectedSubcategory]);
+  }, [cards, query, selectedCategory, selectedSubcategory]);
 
   const resultsTitle = query
     ? formatString(dict.common.search?.resultsFor ?? 'Results for "{query}"', {
@@ -160,6 +134,7 @@ export default function SearchResultsPage() {
                 <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" />
                 <input
                   type="text"
+                  id="product"
                   value={query}
                   onChange={(e) => handleQueryChange(e.target.value)}
                   placeholder={search.searchPlaceholder}
@@ -213,7 +188,7 @@ export default function SearchResultsPage() {
                     onClick={() => setSelectedSubcategory(ALL_SUBCATEGORIES)}
                     className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
                       selectedSubcategory === ALL_SUBCATEGORIES
-                        ? 'bg-brand/20 text-brand-dark font-bold'
+                        ? 'bg-brand/20 text-ink font-bold'
                         : 'hover:bg-border-subtle'
                     }`}
                   >
@@ -227,7 +202,7 @@ export default function SearchResultsPage() {
                         onClick={() => setSelectedSubcategory(sub.id)}
                         className={`w-full text-left px-3 py-2 rounded-xl text-sm font-medium cursor-pointer transition-colors ${
                           isActive
-                            ? 'bg-brand/20 text-brand-dark font-bold'
+                            ? 'bg-brand/20 text-ink font-bold'
                             : 'hover:bg-border-subtle'
                         }`}
                       >
@@ -242,7 +217,7 @@ export default function SearchResultsPage() {
           </aside>
 
           {/* Search Result */}
-          <main className="lg:col-span-9 space-y-6">
+          <div className="lg:col-span-9 space-y-6">
             <div className="flex items-center justify-between text-base font-medium text-muted-ink">
               <span>{foundCountText}</span>
             </div>
@@ -250,7 +225,15 @@ export default function SearchResultsPage() {
             {filteredProducts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.map((product) => (
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard
+                    key={product.id}
+                    card={product}
+                    lang={lang}
+                    labels={{
+                      oem: dict.common.oemNumber,
+                      viewDetails: dict.common.viewDetails,
+                    }}
+                  />
                 ))}
               </div>
             ) : (
@@ -270,7 +253,7 @@ export default function SearchResultsPage() {
                 </Button>
               </div>
             )}
-          </main>
+          </div>
         </div>
       </div>
     </section>

@@ -1,12 +1,12 @@
-'use client';
-
 import { Mail, MapPin, Phone, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 
-import { useLang } from '@/context/lang-context';
+import type { Locale } from '@/config/locales';
+import type { getDictionary } from '@/lib/get-dictionary';
 
-export default function Footer() {
-  const { lang, dict } = useLang();
+type Dict = Awaited<ReturnType<typeof getDictionary>>;
+
+export default function Footer({ lang, dict }: { lang: Locale; dict: Dict }) {
   const f = dict.footer;
 
   return (
@@ -32,9 +32,9 @@ export default function Footer() {
             className="lg:col-span-3 flex flex-col space-y-3 sm:items-center lg:items-start"
             aria-label={dict.accessibility.footerNavAria}
           >
-            <h3 className="text-base font-bold uppercase tracking-wider">
+            <h2 className="text-base font-bold uppercase tracking-wider">
               {f.navigationTitle}
-            </h3>
+            </h2>
 
             <ul className="space-y-2.5 text-sm sm:text-base">
               <li>
@@ -64,9 +64,9 @@ export default function Footer() {
             </ul>
           </nav>
           <address className="lg:col-span-4 flex flex-col space-y-3 not-italic">
-            <h3 className="text-base font-bold uppercase tracking-wider">
+            <h2 className="text-base font-bold uppercase tracking-wider">
               {f.contactTitle}
-            </h3>
+            </h2>
             <ul className="space-y-2.5 text-sm sm:text-base">
               <li className="flex items-center gap-2.5">
                 <MapPin className="w-6 h-6 text-brand shrink-0" />

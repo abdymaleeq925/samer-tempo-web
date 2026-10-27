@@ -29,23 +29,23 @@ export default function Header() {
     closeTimer.current = setTimeout(() => setOpenKey(null), CLOSE_DELAY);
   }
 
-  useEffect(() => {
-    const el = headerRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver(([entry]) => {
-      document.documentElement.style.setProperty(
-        '--header-h',
-        `${entry.contentRect.height}px`,
-      );
-    });
-    ro.observe(el);
-    return () => {
-      ro.disconnect();
-      document.documentElement.style.removeProperty('--header-h');
-      if (openTimer.current) clearTimeout(openTimer.current);
-      if (closeTimer.current) clearTimeout(closeTimer.current);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const el = headerRef.current;
+  //   if (!el) return;
+  //   const ro = new ResizeObserver(([entry]) => {
+  //     document.documentElement.style.setProperty(
+  //       '--header-h lg:--header-h-mobile',
+  //       `${entry.contentRect.height}px`,
+  //     );
+  //   });
+  //   ro.observe(el);
+  //   return () => {
+  //     ro.disconnect();
+  //     document.documentElement.style.removeProperty('--header-h');
+  //     if (openTimer.current) clearTimeout(openTimer.current);
+  //     if (closeTimer.current) clearTimeout(closeTimer.current);
+  //   };
+  // }, []);
 
   return (
     <header

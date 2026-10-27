@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 
 import { getDictionary } from '@/lib/get-dictionary';
-import { getLanguageAlternates } from "@/lib/utils";
+import { getLanguageAlternates } from '@/lib/utils';
 import type { Locale } from '@/config/locales';
-import ContactsPage from "@/components/contacts/contacts-page";
+import ContactsPage from '@/components/contacts/contacts-page';
+import { Toaster } from '@/components/ui/sonner';
 
 type Props = {
-  params: Promise<{lang: Locale}>
-}
+  params: Promise<{ lang: Locale }>;
+};
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
@@ -26,5 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function Page() {
-  return <ContactsPage/>
+  return (
+    <>
+      <ContactsPage />
+      <Toaster />
+    </>
+  );
 }

@@ -28,14 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function HomePage() {
+export default async function HomePage({ params }: Props) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
 
   return (
     <>
-      <HeroCollage/>
-      <FeatureCards/> 
-      <About/>
-      <CategoryShowcase/>
+      <HeroCollage />
+      <FeatureCards features={dict.homepage.features} />
+      <About about={dict.homepage.aboutus} />
+      <CategoryShowcase />
     </>
   );
 }

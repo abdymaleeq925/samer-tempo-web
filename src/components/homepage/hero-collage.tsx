@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m, useReducedMotion } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -22,9 +22,11 @@ export default function HeroCollage() {
 
   const { dict } = useLang();
   const hero = dict.homepage.hero;
+  const reduceMotion = useReducedMotion();
 
   /* Periodically selects a random grid cell and swaps its image with an unrendered one. */
   useEffect(() => {
+    if (reduceMotion) return;
     // If the image pool has 8 or fewer items, continuous unique swapping is impossible
     if (PRODUCT_IMAGES.length <= GRID_CELLS_COUNT) return;
 
@@ -49,12 +51,12 @@ export default function HeroCollage() {
     }, SWAP_INTERVAL_MS);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [reduceMotion]);
 
   return (
     <section
       className="relative w-full overflow-hidden bg-zinc-950 flex items-center justify-center"
-      style={{ minHeight: 'calc(100dvh - var(--header-h, 88px))' }}
+      style={{ minHeight: 'calc(100dvh - var(--header-h))' }}
     >
       {/* BACKGROUND LAYER: Skewed 2x4 Image Collage Grid */}
       <div
@@ -65,11 +67,13 @@ export default function HeroCollage() {
           {cellImages.map((imgIndex, cellIdx) => (
             <div
               key={cellIdx}
-              className="relative w-full h-full overflow-hidden bg-ink border border-white/5"
+              className={`relative w-full h-full overflow-hidden bg-ink border border-white/5 ${
+                cellIdx >= 4 ? 'hidden sm:block' : ''
+              }`}
             >
               <div className="absolute inset-0 transform -skew-x-6 sm:-skew-x-12 scale-125">
-                <AnimatePresence>
-                  <motion.div
+                <AnimatePresence initial={false}>
+                  <m.div
                     key={imgIndex}
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -85,10 +89,13 @@ export default function HeroCollage() {
                       )}
                       fill
                       sizes="(max-width: 640px) 50vw, 25vw"
-                      priority={cellIdx < 4} // Priority load top row for LCP optimization
-                      className="object-cover brightness-90 contrast-105"
+                      preload={cellIdx < 2} // Priority load top row for LCP optimization
+                      loading={cellIdx < 2 ? 'eager' : 'lazy'}
+                      fetchPriority={cellIdx < 2 ? 'high' : 'low'}
+                      quality={55}
+                      className="object-cover"
                     />
-                  </motion.div>
+                  </m.div>
                 </AnimatePresence>
               </div>
             </div>

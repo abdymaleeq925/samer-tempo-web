@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Samer Tempo | Ersatzteile für Nutzfahrzeuge und Anhänger",
-    "description": "Elektrokabel, Tankdeckel, Reparatursätze, Luftkupplungen und Diebstahlsicherungen für Nutzfahrzeuge und Anhänger."
+    "description": "Elektrokabel, Tankdeckel, Nabenkappen, Luftkupplungen und Diebstahlsicherungen für Nutzfahrzeuge und Anhänger."
   },
   "accessibility": {
     "selectLanguage": "Sprache auswählen",
@@ -27,7 +27,7 @@
       "cables": "Elektrokabel & Stecker",
       "couplings": "Pneumatik-Kupplungen & Ventile",
       "tankCaps": "Tankdeckel & Diebstahlsicherungssysteme",
-      "repairKits": "Reparatursätze",
+      "hubCaps": "Nabenkappen",
       "company": "Über uns",
       "vision": "Unsere Vision",
       "mission": "Unsere Mission",
@@ -49,15 +49,11 @@
         "subcat-air-hose": "Luftschläuche",
         "subcat-tire-inflator": "Reifenfüllschlauch-Sets",
         "subcat-fuel-cap": "Kraftstofftankdeckel",
+        "subcat-adblue-fuel-cap": "Adblue Kraftstofftankdeckel",
         "subcat-radiator-cap": "Kühlerverschlüsse",
+        "subcat-accessories": "Zubehör",
         "subcat-anti-theft": "Diebstahlschutzvorrichtungen",
-        "subcat-anti-theft-lock": "Tankschloss-Sicherungen",
-        "subcat-camshaft-kit": "Nockenwellen-Reparatursätze",
-        "subcat-brake-shoe-kit": "Bremsbacken-Reparatursätze",
-        "subcat-hub-cap": "Nabenkappen",
-        "subcat-axle-lock-nut": "Achs-Sicherungsmuttern",
-        "subcat-bush-bearing": "Buchsen & Lager",
-        "subcat-door-lock": "Türschlösser"
+        "subcat-anti-theft-lock": "Tankschloss-Sicherungen"
       }
     },
     "subcategory": "Subcategorie"
@@ -178,16 +174,16 @@
           ]
         },
         {
-          "id": "repairKits",
-          "name": "Reparatursätze",
-          "tagline": "Wartung & Instandhaltung",
-          "title": "Komplette Reparatursätze in OEM-Qualität",
-          "description": "Komplettsets mit hochwertigen Dichtungen, O-Ringen und Kleinteilen für eine schnelle und kosteneffiziente Fahrzeugwartung.",
+          "id": "hubCaps",
+          "name": "Nabenkappen",
+          "tagline": "Schutz der Achsnabe",
+          "title": "Nabenkappen für Lkw und Anhänger",
+          "description": "Nabenkappen mit Außen- oder Innengewinde, die die Achsnaben von Lkw und Anhängern verschließen und schützen. Erhältlich in Größen von M115 bis M230 sowie für SAF-, ROR-, SMB-, FRUEHAUF- und SAE-GIGANT-Achsen.",
           "highlights": [
-            "Vollständige Komponentenabstimmung",
-            "Hochwertige Elastomere",
-            "Minimierte Ausfallzeiten",
-            "Strenge Qualitätsprüfung"
+            "Außen- und Innengewinde",
+            "Größen von M115 bis M230",
+            "Passend für SAF, ROR, SMB, FRUEHAUF & SAE GIGANT",
+            "Drehmoment bis 700 Nm"
           ]
         }
       ]
@@ -229,7 +225,7 @@
     "cables": "Katalog für Elektrokabel & Stecker",
     "air": "Katalog für Pneumatikkupplungen & Ventile",
     "tankCaps": "Katalog für Tankdeckel & Diebstahlsicherungen",
-    "repairKits": "Katalog für Reparatursätze",
+    "hubCaps": "Katalog für Nabenkappen",
     "steelCables": "Katalog für Stahlseile",
     "newProducts2026": "Katalog für Neuheiten 2026",
     "abs": "Katalog für ABS/EBS-Sensoren & Verbindungskabel"
